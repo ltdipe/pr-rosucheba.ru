@@ -1,0 +1,345 @@
+// Widescreens
+@include mediaXl {
+}
+
+// Desktops & Laptops
+@include mediaLg {
+}
+
+@media only screen and (min-width: 538px) {
+    .testimonials__testimonial{
+        // padding-top: 1.9375rem;
+        // font-size: 0.6875rem;
+        // line-height: 0.8125rem;
+        margin-right: 1.8125rem;
+      
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3){
+          padding-top: 0;
+        }
+        &:nth-child(3),
+        &:nth-child(6){
+          margin-right: 0;
+        } 
+      }
+}
+
+
+// Tablets & Small Laptops
+@include mediaMd {
+    .menu__menu-mobile{
+        visibility: hidden;
+    }
+    .menu-mobile__toggler{
+        visibility: hidden;
+    }
+    .menu-mobile__hamburder{
+        visibility: hidden;
+    }
+    .area-outside-of-menu{
+        visibility: hidden;
+    }
+    .area-at-the-right-edge{
+        visibility: hidden;
+    }
+    .menu-mobile__menu-panel{
+        visibility: hidden;
+    }
+    .menu__menu-items-container{
+        display: block;
+        width: 100%;
+    }
+    .header-wrapper {
+        align-items: initial;
+        flex-direction: column;
+    }
+    .header-wrapper__header-items{
+        display: flex;
+        justify-content: space-between;
+    }
+    .menu-items-container__menu-items{
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .menu-items__menu-item{
+        margin-right: 4.791875rem;
+        padding-top: 1.0625rem;
+        border-top: 0.3125rem solid transparent;
+        &:nth-last-child(1){
+            margin-right: 0;
+        }
+    }
+    .menu-items__menu-item--highlight{
+        border-top: 0.3125rem solid $secondary-color; 
+    }
+
+    header{
+        padding-bottom: 0;
+    }
+
+    .container{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .container-flex{
+        justify-content: space-between;
+    }
+
+    .h1{
+        font-size: 2.4375rem;
+        line-height: 2.875rem;
+    }
+
+    .h5{
+        font-size: 1.1875rem;
+        line-height: 1.375rem;
+    }
+
+    .header-wrapper__menu__line{
+        display: block;
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    .menu-item__link{
+        color: $menu-items-colors;
+    }
+      
+    .header-items__item-group-container{
+        display: block;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+    .item-group-container__row-wrapper{
+        display: flex;
+        margin-bottom: 0.96875rem;
+    }
+    
+    .row-wrapper__icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1.5rem;
+    }
+
+    .row-wrapper__sm-icons{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .row-wrapper__text{
+        font-size: 0.75rem;
+        line-height: 0.9375rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .row-wrapper__text--bigger{
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 1.0625rem;
+    }
+
+    .section-heading{
+        height: 39.029375rem;
+        padding-top: 3.6875rem;
+    }
+
+    .section-heading__left{
+        align-items: start;
+    }
+
+    .left__call-to-action{
+        max-width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        padding-top: 1.8125rem;
+    }
+
+    .text-headings__secondary{
+        padding-top: 1.5625rem;
+    }
+
+    .call-to-action__discount{
+        padding-left: 3rem;
+    }
+
+    .arrow-pointer__arrow-up{
+        display: none;
+    }
+
+    .arrow-pointer__left{
+        display: block;
+    }
+
+    .left__text-headings{
+        margin: 0;
+        justify-content: start;
+        align-items: start;
+        max-width: 39.0625rem;
+    }
+
+    .call-to-action__btn-group{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn-group__limited{
+        padding-bottom: 0;
+        padding-top: 0.625rem;
+    }
+
+    .btn-group__limited .text-highlight--bold{
+        font-weight: 500;
+    }
+
+    .btn-group__btn{
+        order: -1;
+    }
+
+    .section-heading__right{
+        display: block;
+    }
+
+    .img__img-container{
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+
+    .img-container__circles{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 16.32rem;
+        left: 2.25rem;
+    }
+
+    .circles__circle{
+        position: absolute;
+        z-index: -1;
+    }
+
+    .img-container__person{
+        width: 25.3125rem;
+        min-height: 527px;
+        background-image: url(../img/person-smiling_compressed.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: scroll;
+        background-size: auto;
+    }
+
+    .section-testimonials__testimonials{
+        max-width: 100%;
+        margin: 0;
+        justify-content: space-between;
+    }
+
+    .testimonials__testimonial{
+        min-width: 26%;
+        font-size: 1rem;
+        line-height: 1.1875rem;
+        padding-top: 0;
+        margin-right: 0;
+        &:nth-child(1){
+            order: 5;
+        }
+        &:nth-child(2){
+            order: 4;
+        }
+        &:nth-child(3){
+            order: 1;
+            padding-bottom: 3rem;
+        }
+        &:nth-child(4){
+            order: 6;
+        }
+        &:nth-child(5){
+            order: 2;
+            padding-bottom: 3rem;
+        }
+        &:nth-child(6){
+            order: 3;
+            padding-bottom: 3rem;
+        }
+        &:nth-child(odd){
+            margin-right: 0;
+        }
+    }
+    .testimonial__icon{
+        height: 100%;
+        text-align: left;
+    }
+    .testimonial__title{
+        text-align: left;
+    }
+    .testimonial__text-container{
+        text-align: left;
+    }
+
+    .inserted-text-1{
+        &::before{
+            content: ', зачисляем круглый год!';
+        }
+    }
+
+    .testimonial__icon svg{
+        width: 5.09rem;
+        height: 4.75rem;
+    }
+    .icon__checked-list{
+        width: 5.09rem;
+        height: 4.75rem;
+    }
+
+    .section-ask-questions{
+        display: none;
+    }
+
+    .section-sm{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1230px) {
+    .container{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+// Smartphones
+@include mediaSm {
+}
+
+@include orientLand {
+}
+
+@media only screen and (max-width: 364px) {
+    .section-testimonials__testimonials{
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    .testimonials__testimonial{
+        margin-right: 0;
+        padding-top: 1.9375rem;
+        &:nth-child(odd){
+            margin-right: 0;
+        }
+        &:nth-child(1),
+        &:nth-child(2){
+            padding-top: 1.9375rem;
+        }
+    }
+}

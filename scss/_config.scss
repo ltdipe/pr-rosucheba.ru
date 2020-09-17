@@ -1,0 +1,67 @@
+$primary-color: #adadad;
+$secondary-color: #2874FF;
+$secondary-color-r: 255;
+$secondary-color-g: 102;
+$secondary-color-b: 0;
+$tertiary-color: #00a3ff;
+$menu-items-colors: #858585;
+$section-bg-primary-color: #F9F9F9;
+$svg-color-counter: #2874FF;
+$svg-color-inner-counter: #000;
+$btn-color-primary: #1BC100;
+$background-opacity: 0.55;
+$sections-top-padding: 4.25rem;
+$sections-padding--half: 2.125rem;
+$sections-bottom-padding: 4.25rem;
+$card-border-radius: 0.3125rem;
+$_root-font-size: 16px;
+
+@mixin easeOut {
+  transition: all 0.4s ease-in-out;
+}
+
+// Set Text Color
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Media Query Mixins
+@mixin mediaSm {
+  @media only screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media only screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin mediaXl {
+  @media only screen and (min-width: 1171px) {
+    @content;
+  }
+}
+
+// @mixin orientPort {
+//   @media only screen and (orientation: portrait) {
+//     @content;
+//   }
+// }
+
+@mixin orientLand {
+  @media only screen and (orientation: landscape) {
+    @content;
+  }
+}
