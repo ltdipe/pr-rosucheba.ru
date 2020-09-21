@@ -319,6 +319,15 @@
         min-width: 19.0625rem;
         max-width: 19.0625rem;
     }
+
+    .content__img-group{
+        width: 100%;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .img-group__img-wrapper{
+        flex: initial;
+    }
 }
 
 @media only screen and (max-width: 1230px) {
@@ -362,4 +371,13 @@
         width: 6.375rem;
         height: 6.375rem;
       }
+
+    .content__img-wrapper{
+        width: 44%;
+        margin-right: $_10px;
+    }
+
+    .img-wrapper__img{
+        min-width: 40%;
+    }
 }

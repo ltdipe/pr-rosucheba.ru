@@ -33,16 +33,21 @@
   align-items: center;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   font-size: $root-font-size;
   min-height: 100%;
   max-width: 100%;
   overflow-x: hidden;
 }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
 
 a {
   text-decoration: none;
@@ -258,6 +263,24 @@ header {
   margin-bottom: $_18px;
 }
 
+.container-input__inner{
+  position: relative;
+}
+
+.input-select__arrow-down{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $secondary-color;
+  height: 100%;
+  width: 43px;
+  z-index: 2;
+  border-radius: $_5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .section-heading__right{
   display: none;
 }
@@ -276,6 +299,13 @@ header {
 }
 
 .input-style-primary{
+  border-radius: 0;
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance:none;
+  -moz-appearance:none;
   height: 2.6875rem;
   width: 100%;
   font-family: Roboto, sans-serif;
@@ -286,13 +316,22 @@ header {
   padding-right: $_15px;
   border-radius: 0.3125rem;
   box-shadow: none;
-  border: none;
+  border: $_1px solid transparent;
   background-color: #EEE;
+  position: relative;
   &:focus{
     outline: none !important;
-    border: none;
+    border: $_1px solid $secondary-color;
     box-shadow: none;
   }
+  // &::after{
+  //   content: '\f078';
+  //   color: #000;
+  //   background: blue;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  // }
 }
 
 .container-input-phone-number__input{
@@ -426,6 +465,7 @@ header {
 .section__content{
   display: flex;
   flex: 0 50%;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 }
@@ -470,14 +510,14 @@ header {
 .img__business-academy{
   @extend .c-fff_bgr-norepeat_bgs-contain;
   background-image: url('../img/partners/business-academy.jpg');
-  height: 55px;
+  height: 30px;
   width: 98px;
 }
 
 .img__tambov{
   @extend .c-fff_bgr-norepeat_bgs-contain;
   background-image: url('../img/partners/tambov.jpg');
-  height: 69px;
+  height: 35px;
   width: 102px;
 }
 
