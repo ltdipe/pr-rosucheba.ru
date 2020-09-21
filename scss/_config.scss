@@ -10,6 +10,7 @@ $section-bg-primary-color: #F9F9F9;
 $svg-color-counter: #2874FF;
 $svg-color-inner-counter: #000;
 $btn-color-primary: #1BC100;
+$danger-color: #FB0000;
 $background-opacity: 0.55;
 $sections-top-padding: 4.25rem;
 $sections-padding--half: 2.125rem;
@@ -28,6 +29,9 @@ $bg-color-phone: #0050E3;
 $bg-color-email: #FF6600;
 
 // Rem and px for font sizes
+$_33px: 33/$root-font-size-num-only+rem;
+$_32px: 32/$root-font-size-num-only+rem;
+$_31px: 31/$root-font-size-num-only+rem;
 $_30px: 30/$root-font-size-num-only+rem;
 $_29px: 29/$root-font-size-num-only+rem;
 $_28px: 28/$root-font-size-num-only+rem;

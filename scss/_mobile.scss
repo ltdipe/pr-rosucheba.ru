@@ -89,6 +89,10 @@
         justify-content: space-between;
     }
 
+    .container-flex--row{
+        flex-direction: row;
+    }
+
     .h1{
         font-size: 2.4375rem;
         line-height: 2.875rem;
@@ -354,4 +358,8 @@
     .side-panel-nav{
         font-size: 1rem;
     }
+    .img-wrapper__img--trust-boost{
+        width: 6.375rem;
+        height: 6.375rem;
+      }
 }
