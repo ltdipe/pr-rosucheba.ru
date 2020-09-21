@@ -922,10 +922,11 @@ header {
 }
 
 .step-two-row__input-group{
-  width: 50%;
+  // width: 60%;
   display: flex;
   align-items: center;
   position: relative;
+  margin: 0 auto;
   margin-bottom: $_33px;
 }
 
@@ -958,6 +959,12 @@ header {
   }
   &:checked ~ .square-radio-check{
     display: block;
+  }
+  &:checked ~ label{
+    color: $secondary-color;
+  }
+  & ~ label{
+    min-width: 5.125rem;
   }
 }
 
