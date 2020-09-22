@@ -18,7 +18,7 @@ $sections-bottom-padding: 4.25rem;
 $card-border-radius: 0.3125rem;
 
 $root-font-size-num-only: 16;
-$root-font-size: $root-font-size-num-only + 'px';
+$root-font-size: $root-font-size-num-only+'px';
 
 // Bacgkground colors for SM icons
 $bg-color-telegram: #00A3FF;
@@ -71,7 +71,9 @@ $_1px: (1/$root-font-size-num-only)+rem;
 @function set-text-color($color) {
   @if (lightness($color) > 50) {
     @return #000;
-  } @else {
+  }
+
+  @else {
     @return #fff;
   }
 }

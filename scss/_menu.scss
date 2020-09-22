@@ -1,5 +1,5 @@
 // Area outside of menu
-.area-outside-of-menu{
+.area-outside-of-menu {
   background: transparent;
   position: fixed;
   top: 0;
@@ -10,7 +10,7 @@
   visibility: hidden;
 }
 
-.area-at-the-right-edge{
+.area-at-the-right-edge {
   background: transparent;
   position: fixed;
   top: 10;
@@ -22,16 +22,17 @@
 }
 
 // Menu Button
-.header-wrapper__menu{
+.header-wrapper__menu {
   z-index: 99;
 }
 
-.menu__menu-mobile{
+.menu__menu-mobile {
   min-width: 100%;
   z-index: 99;
   @include easeOut;
 }
-.menu-mobile__toggler{
+
+.menu-mobile__toggler {
   display: block;
   position: absolute;
   width: 3.3125rem;
@@ -40,18 +41,22 @@
   padding: 0;
   opacity: 0;
   z-index: 90;
-  &:checked{
+
+  &:checked {
     position: fixed;
   }
-  &:checked ~ .menu-mobile__menu-panel{
+
+  &:checked~.menu-mobile__menu-panel {
     transform: translateX(0);
   }
-  &:checked ~ .area-outside-of-menu{
-   visibility: visible;
+
+  &:checked~.area-outside-of-menu {
+    visibility: visible;
   }
-  &:checked ~ .area-at-the-right-edge{
+
+  &:checked~.area-at-the-right-edge {
     visibility: hidden;
-   }
+  }
 }
 
 .menu-mobile__hamburder {
@@ -59,16 +64,18 @@
   z-index: 93;
 }
 
-.menu-mobile__hamburder--panel{
+.menu-mobile__hamburder--panel {
   position: absolute;
   top: 0;
   right: 0;
   margin-top: 1.8rem;
   margin-right: 1.5rem;
-  & .menu-btn__btn-line{
+
+  & .menu-btn__btn-line {
     background-color: #fff;
   }
-  &::before{
+
+  &::before {
     content: '\00d7';
     display: block;
     margin: 0 auto;
@@ -89,7 +96,7 @@
   background: $secondary-color;
 }
 
-.menu-mobile__menu-panel{
+.menu-mobile__menu-panel {
   position: fixed;
   background-color: $secondary-color;
   color: #fff;
@@ -109,42 +116,44 @@
   @include easeOut;
 }
 
-.number-wrapper__text{
+.number-wrapper__text {
   font-family: Montserrat, Roboto, sans-serif;
   font-size: 0.875rem;
   line-height: 1.0625rem;
 }
 
-.number-wrapper__number{
+.number-wrapper__number {
   margin-top: 0.5rem;
   font-size: 1.75rem;
   line-height: 2.125rem;
+
   // white-space:nowrap;
   // overflow-x: auto;
-  & a{
+  & a {
     color: #fff;
   }
 }
 
-.number-wrapper__btn{
+.number-wrapper__btn {
   margin-top: 1rem;
   font-size: 1.1875rem;
   line-height: 1.375rem;
-  & a{
+
+  & a {
     color: #fff;
   }
 }
 
-.side-panel-nav{
+.side-panel-nav {
   font-size: 1.25rem;
   line-height: 1.5rem;
   margin-top: 3.3125rem;
 }
 
-.side-panel-nav-items__nav-item{
+.side-panel-nav-items__nav-item {
   margin-bottom: 2.25rem;
 }
 
-.nav-item__link{
+.nav-item__link {
   color: #fff;
 }
