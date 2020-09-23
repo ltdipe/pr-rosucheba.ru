@@ -178,7 +178,8 @@ main {
 }
 
 .text-highlight--color,
-.text-highlight--color.menu-item__link {
+.text-highlight--color.menu-item__link,
+.text-highlight--color.input-style-select-primary {
   color: $secondary-color;
 }
 
@@ -294,6 +295,8 @@ header {
 
 .container-input__inner {
   position: relative;
+
+  // @include easeOut;
 }
 
 .input-select__arrow-down {
@@ -321,6 +324,9 @@ header {
   &.show-dropdown {
     height: 100%;
     visibility: visible;
+
+    -webkit-animation: 2s linear 0s infinite normal shine;
+    animation: 2s linear 0s infinite normal shine;
   }
 }
 
@@ -383,6 +389,8 @@ header {
   background-color: #EEE;
   position: relative;
 
+  // @include easeOut;
+
   &:focus {
     outline: none !important;
     border: $_1px solid $secondary-color;
@@ -403,7 +411,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 88%;
+  padding-right: 2.6875rem;
   color: $menu-items-colors;
 }
 
@@ -710,20 +718,29 @@ header {
   margin-right: 2.0625rem;
 }
 
-.arrow-left__link,
-.arrow-right__link {
+// .arrow-left__link,
+// .arrow-right__link {
 
-  &:hover,
-  &:focus {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-  }
-}
+//   &:hover,
+//   &:focus {
+//     -webkit-touch-callout: none;
+//     -webkit-user-select: none;
+//     -khtml-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+//     -webkit-tap-highlight-color: transparent;
+
+//     -webkit-touch-callout: none;
+//     /* prevent callout to copy image, etc when tap to hold */
+//     -webkit-text-size-adjust: none;
+//     /* prevent webkit from resizing text to fit */
+//     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+//     /* prevent tap highlight color / shadow */
+//     -webkit-user-select: none;
+//     /* prevent copy paste, to allow, change 'none' to 'text' */
+//   }
+// }
 
 // Section ask questions
 .section-ask-questions {
