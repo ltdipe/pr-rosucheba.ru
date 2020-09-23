@@ -374,7 +374,8 @@
     .testimonials__testimonial {
         margin-right: 0;
         padding-top: 1.9375rem;
-        max-width: 8rem;
+        width: 8rem;
+        max-width: 47%;
 
         &:nth-child(odd) {
             margin-right: 0.5rem;
@@ -406,5 +407,26 @@
 
     .img-wrapper__img {
         min-width: 40%;
+    }
+}
+
+// IOS support to prevent it from zooming when User clicks on the inputs
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+    select:focus,
+    textarea:focus,
+    input:focus {
+        font-size: 16px;
+        background: #fff;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+    select,
+    textarea,
+    input {
+        font-size: 16px;
     }
 }
