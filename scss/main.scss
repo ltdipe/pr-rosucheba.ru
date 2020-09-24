@@ -84,6 +84,7 @@ body.dark-overlay {
 main {
   min-height: 100%;
   padding-bottom: 12.02375rem;
+  // margin-top: 5.375rem;
 }
 
 // Utility Classes
@@ -235,9 +236,13 @@ main {
 // Header
 header {
   padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  // padding-bottom: 1.25rem;
   // position: fixed;
+  // width: 100%;
+  // background-color: #fff;
   // top: 0;
+  // z-index: 99;
+  // box-shadow: 0px 4px 15px 15px rgba(0, 0, 0, 0.08)
 }
 
 .header-wrapper {
@@ -343,11 +348,47 @@ header {
   padding-top: $_14px;
   padding-bottom: $_14px;
   border-bottom: $_1px solid #EFEFEF;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
 
   & p {
-    padding-left: 3.4375rem;
+    padding-left: $_22px;
     padding-right: 3.4375rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+  & p svg {
+    margin-right: $_22px;
+  }
+
+  &.text-highlight--color svg path {
+    fill: $secondary-color;
+  }
+
+  & p.text-highlight--color svg path {
+    fill: $secondary-color;
+  }
+}
+
+.inner-dropdown-items__item--selected {
+  background: $dropdown-item-selected-bg;
+}
+
+.inner-dropdown-items__item--selected p svg {
+  min-width: $_12px;
+}
+
+.inner-dropdown-items-uni__item__icon,
+.inner-dropdown-items-programm__item__icon {
+  // display: none;
+  min-width: $_12px;
+}
+
+.dropdown-show-check-icon path {
+  fill: $secondary-color;
 }
 
 .section-heading__right {
@@ -1254,6 +1295,27 @@ header {
 
   to {
     left: 700%;
+  }
+}
+
+// IOS support to prevent it from zooming when User clicks on the inputs
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 16px;
+    background: #fff;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+  select,
+  textarea,
+  input {
+    font-size: 16px;
   }
 }
 
