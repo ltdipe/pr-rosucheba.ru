@@ -17,7 +17,7 @@
     <meta name="author" content="Novailoveyou" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="manifest" type="style/css" href="manifest.webmanifest" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
     integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" /> -->
     <link rel="stylesheet" href="css/main.css" />
@@ -27,16 +27,16 @@
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({
-          'gtm.start': new Date().getTime(),
-          event: 'gtm.js',
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
         });
         var f = d.getElementsByTagName(s)[0],
           j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
+          dl = l != "dataLayer" ? "&l=" + l : "";
         j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
         f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-WL8MW5C');
+      })(window, document, "script", "dataLayer", "GTM-WL8MW5C");
     </script>
     <!-- End Google Tag Manager -->
 
@@ -565,7 +565,7 @@
                               fill="#fff"
                             />
                           </svg>
-                          Синергия
+                          Синергия&nbsp;
                         </p>
                       </li>
                     </ul>
@@ -798,11 +798,13 @@
                           <span
                             id="programm-dropdown-step-two-selected-step-one-item"
                             class="text-highlight--color"
-                            ></span
-                          >
+                          ></span>
                         </p>
                       </li>
-                      <li id="js-insert-after--step-two" class="inner-dropdown-items__item">
+                      <li
+                        id="js-insert-after--step-two"
+                        class="inner-dropdown-items__item"
+                      >
                         <p>
                           <svg
                             class="inner-dropdown-items-programm__item__icon"
@@ -959,7 +961,7 @@
                     class="container-input-phone-number__input input-style-primary"
                     name="phone-number"
                     id="phone-number"
-                    placeholder="+7 (777)-777-33"
+                    placeholder="Номер телефона"
                   />
                 </div>
               </div>
@@ -977,6 +979,7 @@
                   id="cta-submit-application"
                   href="#!"
                   class="btn-group__btn btn btn-primary"
+                  type="button"
                 >
                   ПОДАТЬ ЗАЯВКУ
                 </a>

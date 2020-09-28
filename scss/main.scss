@@ -234,6 +234,10 @@ main {
   border-bottom: 0.0625rem solid $secondary-color;
 }
 
+.bg-danger {
+  background-color: $dager-color-dimmer;
+}
+
 // Header
 header {
   padding-top: 1.25rem;
@@ -294,6 +298,11 @@ header {
   margin-top: 5.25rem;
 }
 
+// .left-inputs__left-inputs-inner {
+//   height: 100%;
+//   @include easeOut;
+// }
+
 .container-input {
   margin-bottom: $_18px;
   max-width: 100%;
@@ -322,17 +331,24 @@ header {
 
 .container-input__inner-dropdown {
   height: 0;
-  visibility: hidden;
+  // visibility: hidden;
+  // opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
   width: 100%;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
   border-radius: 0.3125rem;
+  // overflow: hidden;
+  @include easeOut;
 
   &.show-dropdown {
     height: 100%;
-    visibility: visible;
+    transform: scaleY(1);
 
-    -webkit-animation: 2s linear 0s infinite normal shine;
-    animation: 2s linear 0s infinite normal shine;
+    // opacity: 1;
+    // visibility: visible;
+    // -webkit-animation: 2s linear 0s infinite normal shine;
+    // animation: 2s linear 0s infinite normal shine;
   }
 }
 
@@ -806,6 +822,11 @@ header {
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  transform: scale(1);
+
+  &:active {
+    transform: scale(0.98);
+  }
 }
 
 .inner__text {
@@ -911,12 +932,10 @@ header {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: rgba(
-      $secondary-color-r,
-      $secondary-color-g,
-      $secondary-color-b,
-      $background-opacity
-    );
+    background-color: rgba($secondary-color-r,
+        $secondary-color-g,
+        $secondary-color-b,
+        $background-opacity);
     height: 100%;
     width: 100%;
     border-top-left-radius: $card-border-radius;
@@ -1057,6 +1076,10 @@ header {
     border: $_1px solid $secondary-color;
     box-shadow: none;
   }
+
+  &.bg-danger:focus {
+    background-color: $dager-color-dimmer;
+  }
 }
 
 .sm-icons {
@@ -1076,6 +1099,7 @@ header {
   max-height: 2.5625rem;
   margin-right: 0.25rem;
   margin-bottom: 0.3rem;
+  border-radius: $_5px;
 }
 
 .sm-icons__link--telegram {
@@ -1165,15 +1189,15 @@ header {
     color: #fff;
   }
 
-  &:checked ~ .square-radio-check {
+  &:checked~.square-radio-check {
     display: block;
   }
 
-  &:checked ~ label {
+  &:checked~label {
     color: $secondary-color;
   }
 
-  & ~ label {
+  &~label {
     min-width: 5.125rem;
   }
 }
@@ -1228,6 +1252,11 @@ header {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  transform: scale(1);
+
+  &:active {
+    transform: scale(0.98);
+  }
 }
 
 .btn-primary {
@@ -1249,11 +1278,9 @@ header {
     // left: -8rem;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      355.79deg,
-      #ffffff 26%,
-      rgba(255, 255, 255, 0) 37.41%
-    );
+    background: linear-gradient(355.79deg,
+        #ffffff 26%,
+        rgba(255, 255, 255, 0) 37.41%);
     opacity: 0.3;
     transform: rotate(-57deg);
     -webkit-animation: 5s linear 0s infinite normal shine;
@@ -1308,6 +1335,7 @@ header {
 // IOS support to prevent it from zooming when User clicks on the inputs
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
+
   select:focus,
   textarea:focus,
   input:focus {
@@ -1317,6 +1345,7 @@ header {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
+
   select,
   textarea,
   input {

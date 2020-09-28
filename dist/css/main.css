@@ -419,6 +419,9 @@ main {
   margin: 0 auto;
   border-bottom: 0.0625rem solid #2874FF; }
 
+.bg-danger {
+  background-color: rgba(221, 86, 86, 0.4); }
+
 header {
   padding-top: 1.25rem; }
 
@@ -481,15 +484,15 @@ header {
 
 .container-input__inner-dropdown {
   height: 0;
-  visibility: hidden;
+  transform: scaleY(0);
+  transform-origin: top;
   width: 100%;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
-  border-radius: 0.3125rem; }
+  border-radius: 0.3125rem;
+  transition: all 0.4s ease-in-out; }
   .container-input__inner-dropdown.show-dropdown {
     height: 100%;
-    visibility: visible;
-    -webkit-animation: 2s linear 0s infinite normal shine;
-    animation: 2s linear 0s infinite normal shine; }
+    transform: scaleY(1); }
 
 .inner-dropdown__inner-dropdown-items {
   display: flex;
@@ -822,7 +825,10 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 1rem; }
+  padding: 1rem;
+  transform: scale(1); }
+  .section-ask-questions__inner:active {
+    transform: scale(0.98); }
 
 .inner__text {
   padding-right: 0.8125rem; }
@@ -1020,6 +1026,8 @@ header {
     outline: none !important;
     border: 0.0625rem solid #2874FF;
     box-shadow: none; }
+  .step-one-row__input-ask-anything.bg-danger:focus {
+    background-color: rgba(221, 86, 86, 0.4); }
 
 .sm-icons {
   display: flex;
@@ -1036,7 +1044,8 @@ header {
   min-height: 2.5625rem;
   max-height: 2.5625rem;
   margin-right: 0.25rem;
-  margin-bottom: 0.3rem; }
+  margin-bottom: 0.3rem;
+  border-radius: 0.3125rem; }
 
 .sm-icons__link--telegram {
   background-color: #00A3FF; }
@@ -1154,7 +1163,10 @@ header {
   color: #000;
   cursor: pointer;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  transform: scale(1); }
+  .btn:active {
+    transform: scale(0.98); }
 
 .btn-primary {
   padding-top: 1.6875rem;
