@@ -6,7 +6,8 @@
   "homepage": "",
   "scripts": {
     "sass": "node-sass -w scss/ -o dist/css/ --recursive",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "start": "node dist/server.js"
   },
   "author": "Novailoveyou",
   "license": "MIT",
@@ -18,5 +19,9 @@
     "nodemailer": "^6.4.11",
     "nodemailer-mailgun-transport": "^2.0.0",
     "nodemon": "^2.0.4"
+  },
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x"
   }
 }
