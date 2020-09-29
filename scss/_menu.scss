@@ -46,15 +46,15 @@
     position: fixed;
   }
 
-  &:checked~.menu-mobile__menu-panel {
+  &:checked ~ .menu-mobile__menu-panel {
     transform: translateX(0);
   }
 
-  &:checked~.area-outside-of-menu {
+  &:checked ~ .area-outside-of-menu {
     visibility: visible;
   }
 
-  &:checked~.area-at-the-right-edge {
+  &:checked ~ .area-at-the-right-edge {
     visibility: hidden;
   }
 }
@@ -76,7 +76,7 @@
   }
 
   &::before {
-    content: '\00d7';
+    content: "\00d7";
     display: block;
     margin: 0 auto;
     padding-right: 0.4rem;
