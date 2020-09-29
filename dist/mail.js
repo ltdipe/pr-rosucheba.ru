@@ -16,7 +16,7 @@ const sendMail = (field, uni, number, cb) => {
     from: process.env.FROMEMAIL,
     to: process.env.TOEMAIL,
     subject: "Новая заявка с РосУчеба",
-    text: `1. Направлеине: ${field},\n2. Университет: ${uni},\n3. Номер: ${number}`,
+    text: `1. Направление: ${field},\n2. Университет: ${uni},\n3. Номер: ${number}`,
   };
 
   transporter.sendMail(mailOptions, function (err, data) {
