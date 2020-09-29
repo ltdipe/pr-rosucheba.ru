@@ -35,7 +35,7 @@ app.post("/email", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/", "index.html"));
+  res.sendFile(path.resolve(__dirname, "/", "index.html"));
 });
 
 app.listen(PORT, () => log("Server is starting on PORT, ", PORT));
