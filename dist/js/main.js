@@ -235,7 +235,7 @@ inputSelectChooseUni.addEventListener("click", (e) => {
 });
 
 // Dropdown Uni
-inputSelectChooseUniDropdown.addEventListener("click", (e) => {
+inputSelectChooseUniDropdown.addEventListener("mousedown", (e) => {
   // Convert Dropdown Uni items into an array
   const dropDownUniItemsArr = Array.from(dropDownUniItems);
   const dropDownUniItemsArrP = Array.from(dropDownUniItemsP);
@@ -670,28 +670,30 @@ inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
 
       // Change the inner text of the select to the selected text
       if (e.target.tagName === "svg") {
-        // Make sure we don't insert a step back btn inner text into the div (kinda like select input)
+        // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
         inputSelectChooseProgrammInnerText.innerText ===
         e.target.parentElement.innerText
           ? inputSelectChooseProgrammInnerText.innerText
-          : (inputSelectChooseProgrammInnerText.innerText = `${selectedItemFromTheFirstStepText.innerHTML}, ${e.target.parentElement.innerText}`);
+          : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerHTML}, ${e.target.parentElement.innerText}`);
 
         e.target.parentElement.classList.add("text-highlight--color");
       } else if (e.target.tagName == "path") {
-        // Make sure we don't insert a step back btn inner text into the div (kinda like select input)
+        // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
         inputSelectChooseProgrammInnerText.innerText ===
         e.target.parentElement.parentElement.innerText
           ? inputSelectChooseProgrammInnerText.innerText
-          : (inputSelectChooseProgrammInnerText.innerText = `${selectedItemFromTheFirstStepText.innerText}, ${e.target.parentElement.parentElement.innerText}`);
+          : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText}, ${e.target.parentElement.parentElement.innerText}`);
 
         e.target.parentElement.parentElement.classList.add(
           "text-highlight--color"
         );
       } else {
-        // Make sure we don't insert a step back btn inner text into the div (kinda like select input)
+        // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
+        console.log(e.target.innerText);
         inputSelectChooseProgrammInnerText.innerText === e.target.innerText
-          ? inputSelectChooseProgrammInnerText.innerText
-          : (inputSelectChooseProgrammInnerText.innerText = `${selectedItemFromTheFirstStepText.innerText}, ${e.target.innerText}`);
+          ? (inputSelectChooseProgrammInnerText.innerText =
+              inputSelectChooseProgrammInnerText.innerText)
+          : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText}, ${e.target.innerText}`);
 
         e.target.classList.add("text-highlight--color");
       }
