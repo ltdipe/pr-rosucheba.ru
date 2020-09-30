@@ -4,9 +4,9 @@ const log = console.log;
 const app = express();
 const path = require("path");
 
-const PORT = 8080;
+const PORT = process.env.PORT || 3000;
 
-app.use(express.static(__dirname + "/"));
+app.use(express.static(__dirname + "/dist"));
 
 // Data parsing
 app.use(
@@ -35,7 +35,7 @@ app.post("/email", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "/", "index.html"));
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
 app.listen(PORT, () => log("Server is starting on PORT, ", PORT));
