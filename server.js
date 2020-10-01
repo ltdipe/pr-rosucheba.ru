@@ -6,6 +6,12 @@ const path = require("path");
 
 const PORT = process.env.PORT || 80;
 
+app.use(function (req, res, next) {
+  if (req.get("X-Forwarded-Proto") !== "https") {
+    res.redirect("https://" + req.get("Host") + req.url);
+  } else next();
+});
+
 app.use(express.static(__dirname + "/dist"));
 
 // Data parsing
