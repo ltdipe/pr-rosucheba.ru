@@ -1,6 +1,7 @@
-Add circles on mobile and add gradienst 
-remote top shadow on the select inputs with animations
 Edit title so it changes depending on location: "Russia" : Высшее образование дистанционно, "UZ": Высшее образование дистанционно без ЕГЭ, "KZ": Высшее образование дистанционно без ЕНТ и ЕГЭ
+
+
+
+bug: on click and drag on the select i get multiple inputs selected
 Make an animation on hover selects
 Make it so that i can only type in a number
-bug: on click and drag on the select i get multiple inputs selected

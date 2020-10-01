@@ -158,6 +158,8 @@ const insertAfterLiStepTwo = document.getElementById(
   "js-insert-after--step-two"
 );
 
+const numValidation = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{5,12}$/;
+
 function insertAfter(referenceNode, newNode) {
   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
@@ -173,6 +175,19 @@ function dropDownStepTwoInsertItem(text = "") {
         </p>
       `;
   insertAfter(insertAfterLiStepTwo, el);
+}
+
+// Send to email
+async function sumbitData(data) {
+  const res = await fetch("/email", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  const content = await res.json();
 }
 
 // Menu
@@ -993,11 +1008,24 @@ btnAskQuestion.addEventListener("click", (e) => {
 
   // Phone button clicked
   phoneBtn.addEventListener("click", (e) => {
-    moduleStepOne.classList.add("hidden");
-    moduleStepThree.classList.remove("hidden");
-    moduleStepThreeTitle.innerHTML = "Позвонить";
-    moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
-    moduleInputContactInfo.focus();
+    if (moduleQuestionTextarea.value === "") {
+      moduleQuestionTextarea.classList.add("bg-danger");
+      moduleQuestionTextarea.focus();
+      moduleQuestionTextarea.addEventListener(
+        "keyup",
+        function highlightBgDanger(e) {
+          e.target.value !== ""
+            ? moduleQuestionTextarea.classList.remove("bg-danger")
+            : moduleQuestionTextarea.classList.add("bg-danger");
+        }
+      );
+    } else {
+      moduleStepOne.classList.add("hidden");
+      moduleStepThree.classList.remove("hidden");
+      moduleStepThreeTitle.innerHTML = "Позвонить";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
+      moduleInputContactInfo.focus();
+    }
 
     // Step 3 -> Arrow Back
     moduleStepThreeArrowBack.addEventListener("click", (e) => {
@@ -1012,13 +1040,26 @@ btnAskQuestion.addEventListener("click", (e) => {
 
   // Email button clicked
   emailBtn.addEventListener("click", (e) => {
-    moduleStepOne.classList.add("hidden");
-    moduleStepThree.classList.remove("hidden");
-    moduleStepThreeTitle.innerHTML = "Написать";
-    moduleLabelEnterContactInfo.innerHTML = "Напишите свой e-mail";
-    moduleInputContactInfo.placeholder = "example@gmail.com";
-    moduleInputContactInfo.type = "email";
-    moduleInputContactInfo.focus();
+    if (moduleQuestionTextarea.value === "") {
+      moduleQuestionTextarea.classList.add("bg-danger");
+      moduleQuestionTextarea.focus();
+      moduleQuestionTextarea.addEventListener(
+        "keyup",
+        function highlightBgDanger(e) {
+          e.target.value !== ""
+            ? moduleQuestionTextarea.classList.remove("bg-danger")
+            : moduleQuestionTextarea.classList.add("bg-danger");
+        }
+      );
+    } else {
+      moduleStepOne.classList.add("hidden");
+      moduleStepThree.classList.remove("hidden");
+      moduleStepThreeTitle.innerHTML = "Написать";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой e-mail";
+      moduleInputContactInfo.placeholder = "example@gmail.com";
+      moduleInputContactInfo.type = "email";
+      moduleInputContactInfo.focus();
+    }
 
     // Step 3 -> Arrow Back
     moduleStepThreeArrowBack.addEventListener("click", (e) => {
@@ -1034,32 +1075,118 @@ btnAskQuestion.addEventListener("click", (e) => {
 
   // Submit btn clicked
   moduleBtnSubmit.addEventListener("click", function submitQuestionModule(e) {
-    if (1) {
+    if (moduleInputContactInfo.type === "email") {
+      // todo: validate email
+      if (moduleInputContactInfo.value === "") {
+        moduleInputContactInfo.classList.add("bg-danger");
+        setTimeout(() => {
+          moduleInputContactInfo.classList.remove("bg-danger");
+        }, 1500);
+      } else {
+        moduleStepThree.classList.add("hidden");
+        moduleStepTwo.classList.add("hidden");
+        moduleStepOne.classList.add("hidden");
+        moduleStepSuccess.classList.remove("hidden");
+
+        // Submit
+        const question = moduleQuestionTextarea.value.trim();
+        const contactWay = moduleStepThreeTitle.innerText.trim();
+        const contact = moduleInputContactInfo.value.trim();
+
+        const data = {
+          question,
+          contactWay,
+          contact,
+        };
+
+        sumbitData(data);
+
+        setTimeout(() => {
+          moduleStepSuccess.classList.add("hidden");
+          btnAskQuestion.classList.remove("hidden");
+
+          // console.log(sectionAskQuestionsInner.innerHTM);
+          oneMoreQuestionText.innerText = "ещё один";
+          const sectionAskQuestionInnerSaver =
+            sectionAskQuestionsInner.innerHTML;
+          // console.log(sectionAskQuestionInnerSaver);
+          sectionAskQuestionsInner.innerHTML = "Спасибо! Мы с вами свяжемся!";
+          setTimeout(() => {
+            sectionAskQuestionsInner.innerHTML = sectionAskQuestionInnerSaver;
+          }, 3000);
+
+          moduleQuestions.classList.add("hidden");
+          document.body.classList.remove("dark-overlay");
+          // document.body.removeEventListener("click", closeQuestionModule);
+          moduleBtnSubmit.removeEventListener("click", submitQuestionModule);
+        }, 3000);
+      }
     } else {
+      if (
+        moduleInputContactInfo.value.trim() !== "" &&
+        moduleInputContactInfo.value.trim().match(numValidation)
+      ) {
+        moduleStepThree.classList.add("hidden");
+        moduleStepTwo.classList.add("hidden");
+        moduleStepOne.classList.add("hidden");
+        moduleStepSuccess.classList.remove("hidden");
+
+        // Submit
+        const question = moduleQuestionTextarea.value.trim();
+        const contactWay = moduleStepThreeTitle.innerText.trim();
+        const contact = moduleInputContactInfo.value.trim();
+
+        const data = {
+          question,
+          contactWay,
+          contact,
+        };
+
+        sumbitData(data);
+
+        setTimeout(() => {
+          moduleStepSuccess.classList.add("hidden");
+          btnAskQuestion.classList.remove("hidden");
+
+          // console.log(sectionAskQuestionsInner.innerHTM);
+          oneMoreQuestionText.innerText = "ещё один";
+          const sectionAskQuestionInnerSaver =
+            sectionAskQuestionsInner.innerHTML;
+          // console.log(sectionAskQuestionInnerSaver);
+          sectionAskQuestionsInner.innerHTML = "Спасибо! Мы с вами свяжемся!";
+          setTimeout(() => {
+            sectionAskQuestionsInner.innerHTML = sectionAskQuestionInnerSaver;
+          }, 3000);
+
+          moduleQuestions.classList.add("hidden");
+          document.body.classList.remove("dark-overlay");
+          // document.body.removeEventListener("click", closeQuestionModule);
+          moduleBtnSubmit.removeEventListener("click", submitQuestionModule);
+        }, 3000);
+      } else {
+        moduleInputContactInfo.classList.add("bg-danger");
+
+        if (moduleInputContactInfo.type === "email") {
+          // todo: validate email
+        } else {
+          moduleInputContactInfo.addEventListener("keyup", (e) => {
+            console.log("event keyup");
+            if (
+              moduleInputContactInfo.value.trim() !== "" &&
+              moduleInputContactInfo.value.trim().match(numValidation)
+            ) {
+              // console.log("correct");
+              moduleInputContactInfo.classList.remove("bg-danger");
+            } else {
+              // console.log("wrong");
+              moduleInputContactInfo.classList.add("bg-danger");
+            }
+
+            e.preventDefault();
+          });
+        }
+      }
     }
-    moduleStepThree.classList.add("hidden");
-    moduleStepTwo.classList.add("hidden");
-    moduleStepOne.classList.add("hidden");
-    moduleStepSuccess.classList.remove("hidden");
-
-    setTimeout(() => {
-      moduleStepSuccess.classList.add("hidden");
-      btnAskQuestion.classList.remove("hidden");
-
-      // console.log(sectionAskQuestionsInner.innerHTM);
-      oneMoreQuestionText.innerText = "ещё один";
-      const sectionAskQuestionInnerSaver = sectionAskQuestionsInner.innerHTML;
-      // console.log(sectionAskQuestionInnerSaver);
-      sectionAskQuestionsInner.innerHTML = "Спасибо! Мы с вами свяжемся!";
-      setTimeout(() => {
-        sectionAskQuestionsInner.innerHTML = sectionAskQuestionInnerSaver;
-      }, 3000);
-
-      moduleQuestions.classList.add("hidden");
-      document.body.classList.remove("dark-overlay");
-      document.body.removeEventListener("click", closeQuestionModule);
-      moduleBtnSubmit.removeEventListener("click", submitQuestionModule);
-    }, 3000);
 
     e.preventDefault();
   });
@@ -1103,8 +1230,6 @@ carouselBtnLeft.addEventListener("click", (e) => {
 
 // On submit
 ctaSubmitBtn.addEventListener("click", (e) => {
-  const numValidation = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{5,12}$/;
-
   const field = inputSelectChooseProgrammInnerText.innerText.trim();
   const uni = inputSelectChooseUniInnerText.innerText.trim();
   const number = phoneInputInnerText.value.trim();
@@ -1120,24 +1245,48 @@ ctaSubmitBtn.addEventListener("click", (e) => {
 
   // Validate input number
   if (number !== "" && number.match(numValidation)) {
-    async function sumbitData(data) {
-      const res = await fetch("/email", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+    // for analitics and adds
+    ctaSubmitBtn.classList.add("cta-submit-application--submited");
+    setTimeout(() => {
+      ctaSubmitBtn.classList.remove("cta-submit-application--submited");
+    }, 1000);
+
+    const appIsSumbitted = document.getElementById("js-app-is-submitted");
+
+    appIsSumbitted.classList.add("showed");
+
+    document
+      .getElementById("step-success-row__back-to-main")
+      .addEventListener("click", (e) => {
+        appIsSumbitted.classList.add("removing");
+        setTimeout(() => {
+          appIsSumbitted.classList.remove("showed");
+          appIsSumbitted.classList.remove("removing");
+        }, 300);
+
+        e.preventDefault();
       });
-      const content = await res.json();
 
-      // console.log(content);
-    }
-
-    sumbitData(data);
-    // console.log('number is correct');
+    console.log("correct");
+    // sumbitData(data);
   } else {
-    console.log("Please validate your number");
+    phoneInputInnerText.classList.add("bg-danger");
+    // console.log("wrong");
+    phoneInputInnerText.addEventListener("keyup", (e) => {
+      console.log("event keyup");
+      if (
+        phoneInputInnerText.value.trim() !== "" &&
+        phoneInputInnerText.value.trim().match(numValidation)
+      ) {
+        // console.log("correct");
+        phoneInputInnerText.classList.remove("bg-danger");
+      } else {
+        // console.log("wrong");
+        phoneInputInnerText.classList.add("bg-danger");
+      }
+
+      e.preventDefault();
+    });
   }
 
   e.preventDefault();

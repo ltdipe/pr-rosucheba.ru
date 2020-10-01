@@ -6,11 +6,11 @@ const path = require("path");
 
 const PORT = process.env.PORT || 80;
 
-app.use(function (req, res, next) {
-  if (req.get("X-Forwarded-Proto") !== "https") {
-    res.redirect("https://" + req.get("Host") + req.url);
-  } else next();
-});
+// app.use(function (req, res, next) {
+//   if (req.get("X-Forwarded-Proto") !== "https") {
+//     res.redirect("https://" + req.get("Host") + req.url);
+//   } else next();
+// });
 
 app.use(express.static(__dirname + "/dist"));
 
@@ -22,12 +22,15 @@ app.use(
 );
 app.use(express.json());
 
-// field, uni, number
+// field, uni, number // question, contactWay, contact //
 app.post("/email", (req, res) => {
-  const { field, uni, number } = req.body;
+  const { field, uni, number, question, contactWay, contact } = req.body;
   console.log("Data: ", req.body);
 
-  sendMail(field, uni, number, function (err, data) {
+  sendMail(field, uni, number, question, contactWay, contact, function (
+    err,
+    data
+  ) {
     if (err) {
       res.status(500).json({
         message: "Sorry ^.^ Internal Error",
