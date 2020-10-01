@@ -1268,7 +1268,7 @@ ctaSubmitBtn.addEventListener("click", (e) => {
       });
 
     console.log("correct");
-    // sumbitData(data);
+    sumbitData(data);
   } else {
     phoneInputInnerText.classList.add("bg-danger");
     // console.log("wrong");
