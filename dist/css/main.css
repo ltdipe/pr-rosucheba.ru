@@ -1101,7 +1101,6 @@ header {
   left: 0;
   animation-name: smoothlyAppear;
   animation-duration: 1s;
-  animation-delay: 2s;
   animation-fill-mode: forwards; }
 
 @keyframes smoothlyAppear {
