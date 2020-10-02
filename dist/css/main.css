@@ -1079,33 +1079,6 @@ header {
   .module-questions__step.hidden {
     display: none; }
 
-.module-questions__step-success {
-  display: none; }
-  .module-questions__step-success.showed {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    min-height: 14.125rem;
-    animation-name: smoothlyAppear;
-    animation-duration: 0.3s; }
-
-@keyframes smoothlyAppear {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
-  .module-questions__step-success.removing {
-    animation-name: smoothlyLeave;
-    animation-duration: 0.3s;
-    opacity: 0; }
-
-@keyframes smoothlyLeave {
-  from {
-    opacity: 1; }
-  to {
-    opacity: 0; } }
-
 .module-questions__step-one {
   padding-top: 1.6875rem; }
 

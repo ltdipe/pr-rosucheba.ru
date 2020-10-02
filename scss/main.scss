@@ -1163,39 +1163,39 @@ header {
   }
 }
 
-.module-questions__step-success {
-  display: none;
-  &.showed {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    min-height: 14.125rem;
-    animation-name: smoothlyAppear;
-    animation-duration: 0.3s;
-    @keyframes smoothlyAppear {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-  }
-  &.removing {
-    animation-name: smoothlyLeave;
-    animation-duration: 0.3s;
-    @keyframes smoothlyLeave {
-      from {
-        opacity: 1;
-      }
-      to {
-        opacity: 0;
-      }
-    }
-    opacity: 0;
-  }
-}
+// .module-questions__step-success {
+//   display: none;
+//   &.showed {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     position: relative;
+//     min-height: 14.125rem;
+//     animation-name: smoothlyAppear;
+//     animation-duration: 0.3s;
+//     @keyframes smoothlyAppear {
+//       from {
+//         opacity: 0;
+//       }
+//       to {
+//         opacity: 1;
+//       }
+//     }
+//   }
+//   &.removing {
+//     animation-name: smoothlyLeave;
+//     animation-duration: 0.3s;
+//     @keyframes smoothlyLeave {
+//       from {
+//         opacity: 1;
+//       }
+//       to {
+//         opacity: 0;
+//       }
+//     }
+//     opacity: 0;
+//   }
+// }
 
 .module-questions__step-one {
   padding-top: $_27px;

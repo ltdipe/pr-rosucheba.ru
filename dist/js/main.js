@@ -173,12 +173,15 @@ const numValidation = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{5,12}$/;
 //     user_location = data;
 //     console.log(user_location);
 //   });
-let userLocation;
-fetch("https://api.ipify.org/?format=json")
-  .then((data) => data.json())
-  .then((data) => {
-    console.log(data);
-  });
+// let userLocation;
+
+// fetch(
+//   ""
+// )
+//   .then((data) => data.json())
+//   .then((data) => {
+//     console.log(data);
+//   });
 
 function insertAfter(referenceNode, newNode) {
   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -1108,8 +1111,6 @@ btnAskQuestion.addEventListener("click", (e) => {
         moduleStepOne.classList.add("hidden");
         moduleStepSuccess.classList.remove("hidden");
 
-        moduleStepSuccess.classList.add("showed");
-
         // Submit
         const question = moduleQuestionTextarea.value.trim();
         const contactWay = moduleStepThreeTitle.innerText.trim();
@@ -1126,8 +1127,6 @@ btnAskQuestion.addEventListener("click", (e) => {
         setTimeout(() => {
           moduleStepSuccess.classList.add("hidden");
           btnAskQuestion.classList.remove("hidden");
-
-          moduleStepSuccess.classList.remove("showed");
 
           // console.log(sectionAskQuestionsInner.innerHTM);
           oneMoreQuestionText.innerText = "ещё один";
