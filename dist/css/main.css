@@ -1104,9 +1104,11 @@ header {
   animation-fill-mode: forwards; }
 
 @keyframes smoothlyAppear {
-  from {
+  0% {
     height: 0; }
-  to {
+  50% {
+    height: 0; }
+  100% {
     height: 226px; } }
 
 .module-questions__step {
