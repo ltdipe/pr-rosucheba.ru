@@ -472,6 +472,18 @@ header {
   border-bottom: $_1px solid #efefef;
   display: flex;
   align-items: center;
+  opacity: 0;
+  animation-name: smoothlyAppear;
+  animation-duration: 1;
+  animation-fill-mode: forwards;
+  @keyframes smoothlyAppear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   // justify-content: center;
 
   & p {
@@ -1187,8 +1199,8 @@ header {
   left: 0;
   opacity: 0;
   animation-name: smoothlyAppear;
-  animation-duration: 0.5s;
-  animation-delay: 0.3s;
+  animation-duration: 0.3s;
+  animation-delay: 0.2s;
   animation-fill-mode: forwards;
   @keyframes smoothlyAppear {
     from {
