@@ -1188,14 +1188,14 @@ header {
   left: 0;
   // opacity: 0;
   animation-name: smoothlyAppear;
-  animation-duration: 1s;
+  animation-duration: 0.8s;
   // animation-delay: 0.2s;
   animation-fill-mode: forwards;
   @keyframes smoothlyAppear {
     0% {
       height: 0;
     }
-    50% {
+    40% {
       height: 0;
     }
     100% {
