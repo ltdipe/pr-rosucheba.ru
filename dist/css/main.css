@@ -925,6 +925,8 @@ header {
   color: #fff;
   z-index: 98;
   box-shadow: 0px 4px 15px 15px rgba(0, 0, 0, 0.08); }
+  .section-ask-questions.hidden {
+    display: none; }
 
 .section-ask-questions__inner {
   display: flex;
@@ -1097,8 +1099,11 @@ header {
   position: fixed;
   bottom: 0;
   left: 0;
+  opacity: 0;
   animation-name: smoothlyAppear;
-  animation-duration: 1.5s; }
+  animation-duration: 1.5s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards; }
 
 @keyframes smoothlyAppear {
   from {
