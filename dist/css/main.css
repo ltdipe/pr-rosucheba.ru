@@ -1103,9 +1103,17 @@ header {
   flex-direction: column;
   align-items: center;
   position: relative;
-  min-height: 14.125rem; }
+  min-height: 14.125rem;
+  animation-name: smoothlyAppear;
+  animation-duration: 0.5s; }
   .module-questions__step.hidden {
     display: none; }
+
+@keyframes smoothlyAppear {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 .module-questions__step-one {
   padding-top: 1.6875rem; }

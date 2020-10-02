@@ -1193,6 +1193,16 @@ header {
   &.hidden {
     display: none;
   }
+  animation-name: smoothlyAppear;
+  animation-duration: 0.5s;
+  @keyframes smoothlyAppear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }
 
 // .module-questions__step-success {

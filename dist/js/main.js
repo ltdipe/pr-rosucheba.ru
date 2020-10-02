@@ -864,7 +864,6 @@ btnAskQuestion.addEventListener("click", (e) => {
       moduleStepOne.classList.add("hidden");
       moduleStepTwo.classList.remove("hidden");
       moduleStepTwoTitle.innerHTML = "Telegram";
-      moduleBtnCall.focus();
     }
 
     // Telegram -> Call clicked
