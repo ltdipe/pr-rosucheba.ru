@@ -1122,7 +1122,7 @@ btnAskQuestion.addEventListener("click", (e) => {
           contact,
         };
 
-        sumbitData(data);
+        // sumbitData(data);
 
         setTimeout(() => {
           moduleStepSuccess.classList.add("hidden");
@@ -1167,7 +1167,7 @@ btnAskQuestion.addEventListener("click", (e) => {
           contact,
         };
 
-        sumbitData(data);
+        // sumbitData(data);
 
         setTimeout(() => {
           moduleStepSuccess.classList.add("hidden");
@@ -1297,7 +1297,7 @@ ctaSubmitBtn.addEventListener("click", (e) => {
       });
 
     console.log("correct");
-    sumbitData(data);
+    // sumbitData(data);
   } else {
     phoneInputInnerText.classList.add("bg-danger");
     // console.log("wrong");
