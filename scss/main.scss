@@ -1182,6 +1182,16 @@ header {
   position: fixed;
   bottom: 0;
   left: 0;
+  animation-name: smoothlyAppear;
+  animation-duration: 1.5s;
+  @keyframes smoothlyAppear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }
 
 .module-questions__step {
@@ -1192,16 +1202,6 @@ header {
   min-height: 14.125rem;
   &.hidden {
     display: none;
-  }
-  animation-name: smoothlyAppear;
-  animation-duration: 0.5s;
-  @keyframes smoothlyAppear {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
   }
 }
 
