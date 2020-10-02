@@ -86,7 +86,7 @@ $_1px: (1 / $root-font-size-num-only) + rem;
 }
 
 @mixin mediaMd {
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 1025px) {
     @content;
   }
 }

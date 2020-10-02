@@ -341,6 +341,7 @@ header {
 // Heading section
 .section-heading {
   padding-top: 2.9375rem;
+  position: relative;
 }
 
 .section-heading__left {
@@ -354,10 +355,41 @@ header {
   margin-top: 4.3125rem;
 }
 
-// .left-inputs__left-inputs-inner {
-//   height: 100%;
-//   @include easeOut;
-// }
+.rectangle-gradient-maker {
+  position: absolute;
+  top: 13.875rem;
+  height: 5.625rem;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    #ffffff 72.7%,
+    rgba(255, 255, 255, 0) 125.29%
+  );
+}
+
+.fill-in-fields-below {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  height: $_33px;
+  padding-top: $_24px;
+  left: 0;
+  top: -3.5rem;
+  font-size: $_12px;
+  line-height: $_14px;
+  color: $danger-color;
+  & svg {
+    margin-top: $_5px;
+    margin-left: $_5px;
+  }
+  &.hidden {
+    display: none;
+  }
+}
+
+.left-inputs__left-inputs-inner {
+  position: relative;
+}
 
 .container-input {
   margin-bottom: $_18px;

@@ -156,6 +156,12 @@ const svgCheckMark = `<svg
       />
     </svg>`;
 
+const scrollToTheApplicationBtn = document.getElementById(
+  "cta-scroll-to-submit-application"
+);
+
+const fillInTheFieldsBelow = document.getElementById("fill-in-fields");
+
 const userNameInput = document.getElementById("container-input--user-name");
 
 const insertAfterLiStepTwo = document.getElementById(
@@ -163,6 +169,10 @@ const insertAfterLiStepTwo = document.getElementById(
 );
 
 const numValidation = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{5,12}$/;
+
+const locationDependedHeading = document.getElementById(
+  "location-depended-heading"
+);
 
 // Track IP
 
@@ -175,13 +185,44 @@ const numValidation = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{5,12}$/;
 //   });
 // let userLocation;
 
-// fetch(
-//   ""
-// )
-//   .then((data) => data.json())
-//   .then((data) => {
-//     console.log(data);
-//   });
+const locationUrlAPI = "http://ip-api.com/json";
+let userCity;
+let userCountry;
+let userCountryCode; // KZ, RU, UZ
+fetch(locationUrlAPI)
+  .then((data) => data.json())
+  .then((data) => {
+    userCity = data.city;
+    userCountry = data.country;
+    userCountryCode = data.countryCode;
+    // console.log(data);
+    // console.log(locationDependedHeading);
+    // console.log(userCountryCode);
+    changeLocationDependedHeading(
+      locationDependedHeading,
+      "дистанционно",
+      "дистанционно без ЕГЭ",
+      "дистанционно без ЕНТ и ЕГЭ"
+    );
+  })
+  .catch(`Can't access ${locationUrlAPI} :(`);
+
+function changeLocationDependedHeading(
+  textBefore,
+  textAfterRU,
+  textAfterKZ,
+  textAfterUZ
+) {
+  if (userCountryCode === "RU") {
+    textBefore.innerText = textAfterRU;
+  } else if (userCountryCode === "KZ") {
+    textBefore.innerText = textAfterKZ;
+  } else if (userCountryCode === "UZ") {
+    textBefore.innerText = textAfterUZ;
+  } else {
+    return;
+  }
+}
 
 function insertAfter(referenceNode, newNode) {
   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -272,6 +313,20 @@ inputSelectChooseUni.addEventListener("click", (e) => {
   e.preventDefault();
 });
 
+scrollToTheApplicationBtn.addEventListener("click", (e) => {
+  fillInTheFieldsBelow.classList.remove("hidden");
+
+  fillInTheFieldsBelow.scrollIntoView({
+    behavior: "smooth",
+  });
+
+  setTimeout(() => {
+    fillInTheFieldsBelow.classList.add("hidden");
+  }, 3000);
+
+  e.preventDefault();
+});
+
 // Dropdown Uni
 inputSelectChooseUniDropdown.addEventListener("mousedown", (e) => {
   // Convert Dropdown Uni items into an array
@@ -325,8 +380,15 @@ inputSelectChooseUniDropdown.addEventListener("mousedown", (e) => {
 
 // Select Dropdown Programm
 inputSelectChooseProgramm.addEventListener("click", (e) => {
-  inputSelectChooseProgrammDropdownStepTwo.classList.remove("show-dropdown");
-  inputSelectChooseProgrammDropdown.classList.toggle("show-dropdown");
+  if (
+    inputSelectChooseProgrammDropdownStepTwo.classList.contains("show-dropdown")
+  ) {
+    inputSelectChooseProgrammDropdownStepTwo.classList.remove("show-dropdown");
+    inputSelectChooseProgrammDropdown.classList.remove("show-dropdown");
+  } else {
+    inputSelectChooseProgrammDropdownStepTwo.classList.remove("show-dropdown");
+    inputSelectChooseProgrammDropdown.classList.toggle("show-dropdown");
+  }
 
   // window.location = '#input-select-choose-uni';
   if (inputSelectChooseProgrammDropdown.classList.contains("show-dropdown")) {
@@ -744,6 +806,10 @@ inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
       inputSelectChooseProgrammDropdownStepTwo.classList.remove(
         "show-dropdown"
       );
+
+      inputSelectChooseProgramm.scrollIntoView({
+        behavior: "smooth",
+      });
     });
   }
 
@@ -797,6 +863,7 @@ btnAskQuestion.addEventListener("click", (e) => {
     } else {
       moduleStepOne.classList.add("hidden");
       moduleStepTwo.classList.remove("hidden");
+      moduleQuestionTextarea.focus();
       moduleStepTwoTitle.innerHTML = "Telegram";
     }
 
@@ -1115,14 +1182,15 @@ btnAskQuestion.addEventListener("click", (e) => {
         const question = moduleQuestionTextarea.value.trim();
         const contactWay = moduleStepThreeTitle.innerText.trim();
         const contact = moduleInputContactInfo.value.trim();
-
         const data = {
           question,
           contactWay,
           contact,
+          userCity,
+          userCountry,
         };
 
-        // sumbitData(data);
+        sumbitData(data);
 
         setTimeout(() => {
           moduleStepSuccess.classList.add("hidden");
@@ -1165,9 +1233,11 @@ btnAskQuestion.addEventListener("click", (e) => {
           question,
           contactWay,
           contact,
+          userCity,
+          userCountry,
         };
 
-        // sumbitData(data);
+        sumbitData(data);
 
         setTimeout(() => {
           moduleStepSuccess.classList.add("hidden");
@@ -1267,6 +1337,8 @@ ctaSubmitBtn.addEventListener("click", (e) => {
     uni,
     number,
     userName,
+    userCity,
+    userCountry,
   };
 
   // console.log(data);
@@ -1297,7 +1369,7 @@ ctaSubmitBtn.addEventListener("click", (e) => {
       });
 
     console.log("correct");
-    // sumbitData(data);
+    sumbitData(data);
   } else {
     phoneInputInnerText.classList.add("bg-danger");
     // console.log("wrong");

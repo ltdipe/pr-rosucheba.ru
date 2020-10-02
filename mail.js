@@ -11,23 +11,43 @@ const auth = {
 
 const transporter = nodemailer.createTransport(mailGun(auth));
 
-// field, uni, number, userName // question, contactWay, contact //
+// field, uni, number, userName // question, contactWay, contact // userCity, userCountry
 const sendMail = (
-  field = "Не указан",
-  uni = "Не указан",
-  number = "Не указан",
-  userName = "Не указан",
-  question = "Не указан",
-  contactWay = "Не указан",
-  contact = "Не указан",
+  field = "Не указано",
+  uni = "Не указано",
+  number = "-",
+  userName = "Не указано",
+  question = "-",
+  contactWay = "-",
+  contact = "-",
+  userCity = "Не определен",
+  userCountry = "Не определена",
   cb
 ) => {
   const mailOptions = {
     from: process.env.FROMEMAIL,
     to: process.env.TOEMAIL,
-    subject: "Новая заявка с РосУчеба",
-    text: `1. Направление: ${field},\n2. Университет: ${uni},\n3. Номер: ${number},\n4. Имя: ${userName},\n5. Вопрос: ${question},\n6. Способ связи: ${contactWay},\n7. Контакт: ${contact}`,
+    subject: `${
+      question === "-" ? "Новая заявка с РосУчеба" : "Новый вопрос с РосУчеба"
+    } `,
+    text: `
+    1. Имя: ${userName},\n
+    2. Телефон: ${number},\n
+    3. Телефон/почта: ${contact},\n
+    4. Способ связи: ${contactWay},\n
+    5. Страница с которой отправлена заявка: test,\n
+    6. Город: ${userCity},\n
+    7. Страна: ${userCountry},\n
+    8. Направление: ${field},\n
+    9. Университет: ${uni},\n
+    10. Вопрос: ${question}
+    `,
   };
+
+  // • Гражданство: заполните вручную,\n
+  //   • Законченное образование: заполните вручную,\n
+  //   • Нужный уровень образования: заполните вручную,\n
+  // • Ставка/сумма оплаты: заполните вручную,\n
 
   transporter.sendMail(mailOptions, function (err, data) {
     if (err) {

@@ -22,40 +22,44 @@ app.use(
 );
 app.use(express.json());
 
-// field, uni, number, userName // question, contactWay, contact //
-// app.post("/email", (req, res) => {
-//   const {
-//     field,
-//     uni,
-//     number,
-//     userName,
-//     question,
-//     contactWay,
-//     contact,
-//   } = req.body;
-//   console.log("Data: ", req.body);
+// field, uni, number, userName // question, contactWay, contact //userCity, userCountry
+app.post("/email", (req, res) => {
+  const {
+    field,
+    uni,
+    number,
+    userName,
+    question,
+    contactWay,
+    contact,
+    userCity,
+    userCountry,
+  } = req.body;
+  console.log("Data: ", req.body);
 
-//   sendMail(
-//     field,
-//     uni,
-//     number,
-//     userName,
-//     question,
-//     contactWay,
-//     contact,
-//     function (err, data) {
-//       if (err) {
-//         res.status(500).json({
-//           message: "Sorry ^.^ Internal Error",
-//         });
-//       } else {
-//         res.json({
-//           message: "Email sent 👍",
-//         });
-//       }
-//     }
-//   );
-// });
+  sendMail(
+    field,
+    uni,
+    number,
+    userName,
+    question,
+    contactWay,
+    contact,
+    userCity,
+    userCountry,
+    function (err, data) {
+      if (err) {
+        res.status(500).json({
+          message: "Sorry ^.^ Internal Error",
+        });
+      } else {
+        res.json({
+          message: "Email sent 👍",
+        });
+      }
+    }
+  );
+});
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
