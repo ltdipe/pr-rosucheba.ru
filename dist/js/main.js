@@ -73,6 +73,8 @@ const selectedItemFromTheFirstStep = document.getElementById(
 
 const phoneInputInnerText = document.getElementById("phone-number");
 
+const userInputNameText = document.getElementById("user-name");
+
 const navItemLinks = document.querySelectorAll(".nav-item__link");
 const navItemLinksArr = Array.from(navItemLinks);
 
@@ -154,11 +156,29 @@ const svgCheckMark = `<svg
       />
     </svg>`;
 
+const userNameInput = document.getElementById("container-input--user-name");
+
 const insertAfterLiStepTwo = document.getElementById(
   "js-insert-after--step-two"
 );
 
 const numValidation = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{5,12}$/;
+
+// Track IP
+
+// let user_location;
+// fetch("https://www.cloudflare.com/cdn-cgi/trace")
+//   .then((data) => data.json())
+//   .then((data) => {
+//     user_location = data;
+//     console.log(user_location);
+//   });
+let userLocation;
+fetch("https://api.ipify.org/?format=json")
+  .then((data) => data.json())
+  .then((data) => {
+    console.log(data);
+  });
 
 function insertAfter(referenceNode, newNode) {
   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -1088,6 +1108,8 @@ btnAskQuestion.addEventListener("click", (e) => {
         moduleStepOne.classList.add("hidden");
         moduleStepSuccess.classList.remove("hidden");
 
+        moduleStepSuccess.classList.add("showed");
+
         // Submit
         const question = moduleQuestionTextarea.value.trim();
         const contactWay = moduleStepThreeTitle.innerText.trim();
@@ -1104,6 +1126,8 @@ btnAskQuestion.addEventListener("click", (e) => {
         setTimeout(() => {
           moduleStepSuccess.classList.add("hidden");
           btnAskQuestion.classList.remove("hidden");
+
+          moduleStepSuccess.classList.remove("showed");
 
           // console.log(sectionAskQuestionsInner.innerHTM);
           oneMoreQuestionText.innerText = "ещё один";
@@ -1131,6 +1155,8 @@ btnAskQuestion.addEventListener("click", (e) => {
         moduleStepOne.classList.add("hidden");
         moduleStepSuccess.classList.remove("hidden");
 
+        moduleStepSuccess.classList.add("showed");
+
         // Submit
         const question = moduleQuestionTextarea.value.trim();
         const contactWay = moduleStepThreeTitle.innerText.trim();
@@ -1147,6 +1173,8 @@ btnAskQuestion.addEventListener("click", (e) => {
         setTimeout(() => {
           moduleStepSuccess.classList.add("hidden");
           btnAskQuestion.classList.remove("hidden");
+
+          moduleStepSuccess.classList.remove("showed");
 
           // console.log(sectionAskQuestionsInner.innerHTM);
           oneMoreQuestionText.innerText = "ещё один";
@@ -1233,11 +1261,13 @@ ctaSubmitBtn.addEventListener("click", (e) => {
   const field = inputSelectChooseProgrammInnerText.innerText.trim();
   const uni = inputSelectChooseUniInnerText.innerText.trim();
   const number = phoneInputInnerText.value.trim();
+  const userName = userInputNameText.value.trim();
 
   const data = {
     field,
     uni,
     number,
+    userName,
   };
 
   // console.log(data);
@@ -1290,6 +1320,14 @@ ctaSubmitBtn.addEventListener("click", (e) => {
   }
 
   e.preventDefault();
+});
+
+phoneInputInnerText.addEventListener("keydown", (e) => {
+  const number = phoneInputInnerText.value.trim();
+  // Validate input number
+  if (number !== "" && number.match(numValidation)) {
+    userNameInput.classList.add("showed");
+  }
 });
 
 // onclick =

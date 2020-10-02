@@ -11,11 +11,12 @@ const auth = {
 
 const transporter = nodemailer.createTransport(mailGun(auth));
 
-// field, uni, number // question, contactWay, contact //
+// field, uni, number, userName // question, contactWay, contact //
 const sendMail = (
   field = "Не указан",
   uni = "Не указан",
   number = "Не указан",
+  userName = "Не указан",
   question = "Не указан",
   contactWay = "Не указан",
   contact = "Не указан",
@@ -25,7 +26,7 @@ const sendMail = (
     from: process.env.FROMEMAIL,
     to: process.env.TOEMAIL,
     subject: "Новая заявка с РосУчеба",
-    text: `1. Направление: ${field},\n2. Университет: ${uni},\n3. Номер: ${number},\n4. Вопрос: ${question},\n5. Способ связи: ${contactWay},\n6. Контакт: ${contact}`,
+    text: `1. Направление: ${field},\n2. Университет: ${uni},\n3. Номер: ${number},\n4. Имя: ${userName},\n5. Вопрос: ${question},\n6. Способ связи: ${contactWay},\n7. Контакт: ${contact}`,
   };
 
   transporter.sendMail(mailOptions, function (err, data) {

@@ -22,25 +22,39 @@ app.use(
 );
 app.use(express.json());
 
-// field, uni, number // question, contactWay, contact //
+// field, uni, number, userName // question, contactWay, contact //
 app.post("/email", (req, res) => {
-  const { field, uni, number, question, contactWay, contact } = req.body;
+  const {
+    field,
+    uni,
+    number,
+    userName,
+    question,
+    contactWay,
+    contact,
+  } = req.body;
   console.log("Data: ", req.body);
 
-  sendMail(field, uni, number, question, contactWay, contact, function (
-    err,
-    data
-  ) {
-    if (err) {
-      res.status(500).json({
-        message: "Sorry ^.^ Internal Error",
-      });
-    } else {
-      res.json({
-        message: "Email sent 👍",
-      });
+  sendMail(
+    field,
+    uni,
+    number,
+    userName,
+    question,
+    contactWay,
+    contact,
+    function (err, data) {
+      if (err) {
+        res.status(500).json({
+          message: "Sorry ^.^ Internal Error",
+        });
+      } else {
+        res.json({
+          message: "Email sent 👍",
+        });
+      }
     }
-  });
+  );
 });
 
 app.get("/", (req, res) => {
