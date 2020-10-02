@@ -578,17 +578,7 @@ header {
   padding-bottom: 0.875rem;
   border-bottom: 0.0625rem solid #efefef;
   display: flex;
-  align-items: center;
-  opacity: 0;
-  animation-name: smoothlyAppear;
-  animation-duration: 1;
-  animation-fill-mode: forwards; }
-
-@keyframes smoothlyAppear {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
+  align-items: center; }
   .inner-dropdown-items__item p {
     padding-left: 1.375rem;
     padding-right: 3.4375rem;
@@ -1109,17 +1099,15 @@ header {
   position: fixed;
   bottom: 0;
   left: 0;
-  opacity: 0;
   animation-name: smoothlyAppear;
-  animation-duration: 0.3s;
-  animation-delay: 0.2s;
+  animation-duration: 1.5s;
   animation-fill-mode: forwards; }
 
 @keyframes smoothlyAppear {
   from {
-    opacity: 0; }
+    height: 0; }
   to {
-    opacity: 1; } }
+    height: 226px; } }
 
 .module-questions__step {
   display: flex;

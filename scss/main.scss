@@ -452,6 +452,7 @@ header {
 
     // opacity: 1;
     visibility: visible;
+
     // -webkit-animation: 2s linear 0s infinite normal shine;
     // animation: 2s linear 0s infinite normal shine;
   }
@@ -472,18 +473,6 @@ header {
   border-bottom: $_1px solid #efefef;
   display: flex;
   align-items: center;
-  opacity: 0;
-  animation-name: smoothlyAppear;
-  animation-duration: 1;
-  animation-fill-mode: forwards;
-  @keyframes smoothlyAppear {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
   // justify-content: center;
 
   & p {
@@ -1197,17 +1186,17 @@ header {
   position: fixed;
   bottom: 0;
   left: 0;
-  opacity: 0;
+  // opacity: 0;
   animation-name: smoothlyAppear;
-  animation-duration: 0.3s;
-  animation-delay: 0.2s;
+  animation-duration: 1.5s;
+  // animation-delay: 0.2s;
   animation-fill-mode: forwards;
   @keyframes smoothlyAppear {
     from {
-      opacity: 0;
+      height: 0;
     }
     to {
-      opacity: 1;
+      height: 226px;
     }
   }
 }
