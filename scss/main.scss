@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-@import "reset";
-@import "config";
-@import "menu";
+@import 'reset';
+@import 'config';
+@import 'menu';
 
 // SASS classes
 .c-fff_bgr-norepeat_bgs-contain {
@@ -71,7 +71,7 @@ body {
 
 body.dark-overlay {
   &:after {
-    content: "";
+    content: '';
     position: fixed;
     top: 0;
     right: 0;
@@ -417,6 +417,7 @@ header {
   position: relative;
 
   // @include easeOut;
+  z-index: 2;
 }
 
 .input-select__arrow-down {
@@ -445,13 +446,47 @@ header {
   border-radius: 0.3125rem;
   // overflow: hidden;
   // @include easeOut;
+  // animation-name: testingAnimation2;
+  // animation-duration: 0.5s;
+  // animation-fill-mode: forwards;
+  // @keyframes testingAnimation2 {
+  //   from {
+  //     height: 100%;
+  //     opacity: 1;
+  //     // transform: translateY(0);
+  //     visibility: visible;
+  //   }
+  //   to {
+  //     opacity: 0;
+  //     height: 0;
+  //     visibility: hidden;
+  //     // transform: translateY(-100%);
+  //   }
+  // }
 
   &.show-dropdown {
-    height: 100%;
+    z-index: -1;
+    // height: 100%;
     // transform: scaleY(1);
 
     // opacity: 1;
     visibility: visible;
+
+    animation-name: testingAnimation;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    @keyframes testingAnimation {
+      from {
+        height: 0;
+        // opacity: 0;
+        transform: translateY(-100%);
+      }
+      to {
+        height: 100%;
+        // opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     // -webkit-animation: 2s linear 0s infinite normal shine;
     // animation: 2s linear 0s infinite normal shine;
@@ -462,6 +497,35 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  // animation-name: smoothlyAppear;
+  // animation-duration: 1s;
+  // @keyframes smoothlyAppear {
+  //   from {
+  //     margin-bottom: 0rem;
+  //   }
+  //   to {
+  //     margin-bottom: 2rem;
+  //   }
+  // }
+}
+
+#inner-dropdown-items--step-two {
+  animation-name: testingAnimation3;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  @keyframes testingAnimation3 {
+    from {
+      // height: 0;
+      // opacity: 0;
+      transform: translateY(-100%);
+    }
+    to {
+      // height: 100%;
+      // opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 .inner-dropdown-items__item {
@@ -474,6 +538,16 @@ header {
   display: flex;
   align-items: center;
   // justify-content: center;
+  // animation-name: smoothlyAppear;
+  // animation-duration: 1s;
+  // @keyframes smoothlyAppear {
+  //   from {
+  //     margin-bottom: 0rem;
+  //   }
+  //   to {
+  //     margin-bottom: 2rem;
+  //   }
+  // }
 
   & p {
     padding-left: $_22px;
@@ -801,7 +875,7 @@ header {
 .img__sinergy {
   @extend .c-fff_bgr-norepeat_bgs-contain;
   background-position: center;
-  background-image: url("../img/partners/sinergy.jpg");
+  background-image: url('../img/partners/sinergy.jpg');
   height: 18px;
   width: 85%;
 }
@@ -809,7 +883,7 @@ header {
 .img__business-academy {
   @extend .c-fff_bgr-norepeat_bgs-contain;
   background-position: center;
-  background-image: url("../img/partners/business-academy.jpg");
+  background-image: url('../img/partners/business-academy.jpg');
   height: 30px;
   width: 85%;
 }
@@ -817,7 +891,7 @@ header {
 .img__tambov {
   @extend .c-fff_bgr-norepeat_bgs-contain;
   background-position: center;
-  background-image: url("../img/partners/tambov.jpg");
+  background-image: url('../img/partners/tambov.jpg');
   height: 35px;
   width: 85%;
 }
@@ -825,7 +899,7 @@ header {
 .img__ipe {
   @extend .c-fff_bgr-norepeat_bgs-contain;
   background-position: center;
-  background-image: url("../img/partners/ipe.jpg");
+  background-image: url('../img/partners/ipe.jpg');
   height: 32px;
   width: 85%;
 }
@@ -833,7 +907,7 @@ header {
 .img__roc-hoy {
   @extend .c-fff_bgr-norepeat_bgs-contain;
   background-position: center;
-  background-image: url("../img/partners/roc-hoy.jpg");
+  background-image: url('../img/partners/roc-hoy.jpg');
   height: 45px;
   width: 85%;
 }
@@ -867,51 +941,51 @@ header {
 }
 
 .img__hh {
-  background-image: url("../img/trusted_by/hh.jpg");
+  background-image: url('../img/trusted_by/hh.jpg');
 }
 
 .img__rosseti {
-  background-image: url("../img/trusted_by/rosseti.jpg");
+  background-image: url('../img/trusted_by/rosseti.jpg');
 }
 
 .img__rzhd {
-  background-image: url("../img/trusted_by/rzhd.jpg");
+  background-image: url('../img/trusted_by/rzhd.jpg');
 }
 
 .img__rosneft {
-  background-image: url("../img/trusted_by/rosneft.jpg");
+  background-image: url('../img/trusted_by/rosneft.jpg');
 }
 
 .img__tomc {
-  background-image: url("../img/trusted_by/tomc.jpg");
+  background-image: url('../img/trusted_by/tomc.jpg');
 }
 
 .img__greenworks {
-  background-image: url("../img/trusted_by/greenworks.jpg");
+  background-image: url('../img/trusted_by/greenworks.jpg');
 }
 
 .img__tatehepro {
-  background-image: url("../img/trusted_by/tatehepro.jpg");
+  background-image: url('../img/trusted_by/tatehepro.jpg');
 }
 
 .img__business-partner {
-  background-image: url("../img/trusted_by/business-partner.jpg");
+  background-image: url('../img/trusted_by/business-partner.jpg');
 }
 
 .img__ramport {
-  background-image: url("../img/trusted_by/ramport.jpg");
+  background-image: url('../img/trusted_by/ramport.jpg');
 }
 
 .img__sberbank {
-  background-image: url("../img/trusted_by/sberbank.jpg");
+  background-image: url('../img/trusted_by/sberbank.jpg');
 }
 
 .img__mtcrob {
-  background-image: url("../img/trusted_by/mtcrob.jpg");
+  background-image: url('../img/trusted_by/mtcrob.jpg');
 }
 
 .img__qayar {
-  background-image: url("../img/trusted_by/qayar.jpg");
+  background-image: url('../img/trusted_by/qayar.jpg');
 }
 
 .section__section-nav {
@@ -1071,7 +1145,7 @@ header {
 
 .card__img {
   background-color: $secondary-color;
-  background-image: url("../img/card-img-1.jpg");
+  background-image: url('../img/card-img-1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 10.875rem;
@@ -1081,7 +1155,7 @@ header {
   position: relative;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
@@ -1099,27 +1173,27 @@ header {
 }
 
 .card__img--construction {
-  background-image: url("../img/learning_programs/construction.jpg");
+  background-image: url('../img/learning_programs/construction.jpg');
 }
 
 .card__img--electrical {
-  background-image: url("../img/learning_programs/electrical_equipment_and_facilities.jpg");
+  background-image: url('../img/learning_programs/electrical_equipment_and_facilities.jpg');
 }
 
 .card__img--heat_engineering {
-  background-image: url("../img/learning_programs/heat_engineering.jpg");
+  background-image: url('../img/learning_programs/heat_engineering.jpg');
 }
 
 .card__img--business_managment {
-  background-image: url("../img/learning_programs/small_business_managment.jpg");
+  background-image: url('../img/learning_programs/small_business_managment.jpg');
 }
 
 .card__img--mining {
-  background-image: url("../img/learning_programs/mining_economics.jpg");
+  background-image: url('../img/learning_programs/mining_economics.jpg');
 }
 
 .card__img--economic_security {
-  background-image: url("../img/learning_programs/economic_security.jpg");
+  background-image: url('../img/learning_programs/economic_security.jpg');
 }
 
 .card__card-content {
@@ -1484,7 +1558,7 @@ header {
   color: #fff;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: -150%;
@@ -1578,7 +1652,7 @@ header {
 .cta-submit-application--submited {
 }
 
-@import "mobile";
+@import 'mobile';
 
 // testing amo
 // #test-field-form {
