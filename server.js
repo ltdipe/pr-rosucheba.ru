@@ -3,15 +3,8 @@ const sendMail = require('./mail');
 const log = console.log;
 const app = express();
 const path = require('path');
-const forceDomain = require('forcedomain');
 
 const PORT = process.env.PORT || 80;
-
-app.use(
-  forceDomain({
-    protocol: 'https',
-  })
-);
 
 app.use(express.static(__dirname + '/dist'));
 
