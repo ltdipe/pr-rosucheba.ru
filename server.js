@@ -10,7 +10,6 @@ const PORT = process.env.PORT || 80;
 app.use(
   forceDomain({
     hostname: 'pr.rosucheba.ru',
-    port: 80,
     protocol: 'https',
   })
 );
