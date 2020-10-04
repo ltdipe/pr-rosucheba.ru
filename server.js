@@ -7,11 +7,13 @@ const forceDomain = require('forcedomain');
 
 const PORT = process.env.PORT || 80;
 
-// app.use(
-//   forceDomain({
-//     protocol: 'https',
-//   })
-// );
+app.use(
+  forceDomain({
+    hostname: 'pr.rosucheba.ru',
+    port: 80,
+    protocol: 'https',
+  })
+);
 
 app.use(express.static(__dirname + '/dist'));
 
