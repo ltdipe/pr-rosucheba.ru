@@ -1,2 +1,1528 @@
-function changeLocationDependedHeading(e="",t="",n="",o="",r=""){e.innerText="RU"===userCountryCode?t:"KZ"===userCountryCode?n:"UZ"===userCountryCode?o:r}function insertAfter(e,t){e.parentNode.insertBefore(t,e.nextSibling)}function dropDownStepTwoInsertItem(e=""){let t;t=document.createElement("li"),t.classList.add("inner-dropdown-items__item"),t.innerHTML=`\n        <p>\n          ${svgCheckMark}\n          ${e}\n        </p>\n      `,insertAfter(insertAfterLiStepTwo,t)}async function sumbitData(e){const t=await fetch("/email",{method:"POST",headers:{Accept:"application/json","Content-Type":"application/json"},body:JSON.stringify(e)});await t.json()}const ctaSubmitBtn=document.getElementById("cta-submit-application"),btnAskQuestion=document.getElementById("section-ask-questions"),moduleQuestions=document.getElementById("module-questions"),moduleQuestionTextarea=document.getElementById("js-text-input-ask-anything"),sectionAskQuestionsInner=document.getElementById("cta-ask-question"),oneMoreQuestionText=document.getElementById("one-more-question"),moduleHorizontalCloseBtn=document.getElementById("js-btn-horizontal-line-close"),menuToggler=document.getElementById("menu-toggle"),inputSelectChooseUni=document.getElementById("input-select-choose-uni"),inputSelectChooseUniInnerText=document.getElementById("input-select-choose-uni-inner-text"),inputSelectChooseProgramm=document.getElementById("input-select-choose-programm"),inputSelectChooseProgrammInnerText=document.getElementById("input-select-choose-programm-inner-text"),inputSelectChooseUniDropdown=document.getElementById("input-select-choose-uni-dropdown"),inputSelectChooseProgrammDropdown=document.getElementById("input-select-choose-programm-dropdown"),inputSelectChooseProgrammDropdownStepTwo=document.getElementById("input-select-choose-programm-dropdown--step-two"),dropDownUniItems=document.querySelectorAll(".input-select-choose-uni-dropdown .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item"),dropDownUniItemsP=document.querySelectorAll(".input-select-choose-uni-dropdown .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item p"),dropDownProgrammItems=document.querySelectorAll(".input-select-choose-programm-dropdown .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item"),dropDownProgrammItemsP=document.querySelectorAll(".input-select-choose-programm-dropdown .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item p"),dropDownProgrammItemsStepTwo=document.querySelectorAll(".input-select-choose-programm-dropdown--step-two .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item"),dropDownProgrammItemsPStepTwo=document.querySelectorAll(".input-select-choose-programm-dropdown--step-two .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item p"),selectedItemFromTheFirstStep=document.getElementById("inner-dropdown-items__item--selected"),phoneInputInnerText=document.getElementById("phone-number"),userInputNameText=document.getElementById("user-name"),navItemLinks=document.querySelectorAll(".nav-item__link"),navItemLinksArr=Array.from(navItemLinks),dropDownItemUniIcons=document.querySelectorAll(".inner-dropdown-items__item-uni__icon"),dropDownItemUniIconsArr=Array.from(dropDownItemUniIcons),dropDownItemProgrammIcons=document.querySelectorAll(".inner-dropdown-items__item-programm__icon"),dropDownItemProgrammIconsArr=Array.from(dropDownItemProgrammIcons),moduleStepOne=document.getElementById("module-questions__step-one"),moduleStepTwo=document.getElementById("module-questions__step-two"),moduleStepThree=document.getElementById("module-questions__step-three"),moduleStepSuccess=document.getElementById("module-questions__step-success"),telegramBtn=document.getElementById("sm-icons__link--telegram"),whatsappBtn=document.getElementById("sm-icons__link--whatsapp"),viberBtn=document.getElementById("sm-icons__link--viber"),vkBtn=document.getElementById("sm-icons__link--vk"),phoneBtn=document.getElementById("sm-icons__link--phone"),emailBtn=document.getElementById("sm-icons__link--email"),moduleBtnCall=document.getElementById("question-module__radio-call"),moduleBtnMessage=document.getElementById("question-module__radio-message"),moduleStepTwoTitle=document.getElementById("module-step-two-title"),moduleStepThreeTitle=document.getElementById("module-step-three-title"),moduleStepTwoArrowBack=document.getElementById("step-two-arrow-step-back"),moduleStepThreeArrowBack=document.getElementById("step-three-arrow-step-back"),moduleLabelEnterContactInfo=document.getElementById("module-label-enter-contact-info"),moduleInputContactInfo=document.getElementById("module-input-contact-info"),moduleBtnSubmit=document.getElementById("module_questions-submit-btn"),carouselBtnLeft=document.getElementById("carrousel-arrow-left-btn"),carouselBtnRight=document.getElementById("carrousel-arrow-right-btn"),carouselImgGroupOne=document.getElementById("content__img-group--1"),carouselImgGroupTwo=document.getElementById("content__img-group--2"),carouselImgGroupThree=document.getElementById("content__img-group--3"),svgCheckMark='<svg\n      class="inner-dropdown-items-programm__item__icon"\n      width="12"\n      height="9"\n      viewBox="0 0 12 9"\n      fill="none"\n      xmlns="http://www.w3.org/2000/svg"\n    >\n      <path\n        fill-rule="evenodd"\n        clip-rule="evenodd"\n        d="M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z"\n        fill="#fff"\n      />\n    </svg>',scrollToTheApplicationBtn=document.getElementById("cta-scroll-to-submit-application"),fillInTheFieldsBelow=document.getElementById("fill-in-fields"),userNameInput=document.getElementById("container-input--user-name"),insertAfterLiStepTwo=document.getElementById("js-insert-after--step-two"),numValidation=/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{5,12}$/,locationDependedHeading=document.getElementById("location-depended-heading"),userDevice=window.navigator.userAgent;queryString=window.location.search;const urlParams=new URLSearchParams(queryString),utmSource=urlParams.get("utm_source"),utmMedium=urlParams.get("utm_medium"),utmCampaign=urlParams.get("utm_campaign"),utmContent=urlParams.get("utm_content"),utmTerm=urlParams.get("utm_term"),locationUrlAPI="https://ipinfo.io?token=b16e76b622236e";let userCity,userCountry,userCountryCode;fetch(locationUrlAPI).then(e=>e.json()).then(e=>{userCity=e.city,userCountry=e.country,userCountryCode=e.country,"RU"===userCountry?userCountry="Russia":"KZ"===userCountry?userCountry="Kazakhstan":"UZ"==userCountry&&(userCountry="Uzbekistan"),changeLocationDependedHeading(locationDependedHeading,"дистанционно","дистанционно без ЕГЭ","дистанционно без ЕНТ и ЕГЭ","дистанционно без ЕНТ и ЕГЭ")}).catch(e=>{changeLocationDependedHeading(locationDependedHeading,"дистанционно","дистанционно без ЕГЭ","дистанционно без ЕНТ и ЕГЭ","дистанционно без ЕНТ и ЕГЭ")}),navItemLinks[0].addEventListener("click",e=>{const t=document.getElementById("about");t.scrollIntoView({behavior:"smooth"}),menuToggler.checked=!1,e.preventDefault()}),navItemLinks[1].addEventListener("click",e=>{const t=document.getElementById("partners");t.scrollIntoView({behavior:"smooth"}),menuToggler.checked=!1,e.preventDefault()}),navItemLinks[2].addEventListener("click",e=>{const t=document.getElementById("trusted-by");t.scrollIntoView({behavior:"smooth"}),menuToggler.checked=!1,e.preventDefault()}),inputSelectChooseUni.addEventListener("click",e=>{inputSelectChooseUniDropdown.classList.toggle("show-dropdown"),inputSelectChooseUniDropdown.classList.contains("show-dropdown")&&inputSelectChooseUni.scrollIntoView({behavior:"smooth"}),document.body.addEventListener("click",function e(t){!inputSelectChooseUniDropdown.classList.contains("show-dropdown")||inputSelectChooseUniDropdown.contains(t.target)||t.target===inputSelectChooseUniDropdown||inputSelectChooseUni.contains(t.target)||t.target===inputSelectChooseUni||(inputSelectChooseUniDropdown.classList.toggle("show-dropdown"),document.body.removeEventListener("click",e))}),e.preventDefault()}),scrollToTheApplicationBtn.addEventListener("click",e=>{fillInTheFieldsBelow.classList.remove("hidden"),fillInTheFieldsBelow.scrollIntoView({behavior:"smooth"}),setTimeout(()=>{fillInTheFieldsBelow.classList.add("hidden")},3e3),e.preventDefault()}),inputSelectChooseUniDropdown.addEventListener("mousedown",e=>{const t=Array.from(dropDownUniItems),n=Array.from(dropDownUniItemsP);t.forEach(e=>{e.classList.remove("text-highlight--color")}),n.forEach(e=>{e.classList.remove("text-highlight--color")}),"svg"===e.target.tagName?(inputSelectChooseUniInnerText.innerText=e.target.parentElement.innerText,inputSelectChooseUniInnerText.innerText=inputSelectChooseUniInnerText.innerText.substring(inputSelectChooseUniInnerText.innerText.indexOf("(")+1).slice(0,-1),e.target.parentElement.classList.add("text-highlight--color")):"path"==e.target.tagName?(inputSelectChooseUniInnerText.innerText=e.target.parentElement.parentElement.innerText,inputSelectChooseUniInnerText.innerText=inputSelectChooseUniInnerText.innerText.substring(inputSelectChooseUniInnerText.innerText.indexOf("(")+1).slice(0,-1),e.target.parentElement.parentElement.classList.add("text-highlight--color")):(inputSelectChooseUniInnerText.innerText=e.target.innerText,inputSelectChooseUniInnerText.innerText=inputSelectChooseUniInnerText.innerText.substring(inputSelectChooseUniInnerText.innerText.indexOf("(")+1).slice(0,-1),e.target.classList.add("text-highlight--color")),inputSelectChooseUniInnerText.classList.add("text-highlight--color"),inputSelectChooseUniDropdown.classList.toggle("show-dropdown"),e.preventDefault()}),inputSelectChooseProgramm.addEventListener("click",e=>{inputSelectChooseProgrammDropdownStepTwo.classList.contains("show-dropdown")?(inputSelectChooseProgrammDropdownStepTwo.classList.remove("show-dropdown"),inputSelectChooseProgrammDropdown.classList.remove("show-dropdown")):(inputSelectChooseProgrammDropdownStepTwo.classList.remove("show-dropdown"),inputSelectChooseProgrammDropdown.classList.toggle("show-dropdown")),inputSelectChooseProgrammDropdown.classList.contains("show-dropdown")&&inputSelectChooseProgramm.scrollIntoView({behavior:"smooth"}),document.body.addEventListener("click",function e(t){!inputSelectChooseProgrammDropdown.classList.contains("show-dropdown")&&!inputSelectChooseProgrammDropdownStepTwo.classList.contains("show-dropdown")||inputSelectChooseProgrammDropdown.contains(t.target)||t.target===inputSelectChooseProgrammDropdown||inputSelectChooseProgramm.contains(t.target)||t.target===inputSelectChooseProgrammDropdownStepTwo||inputSelectChooseProgrammDropdownStepTwo.contains(t.target)||t.target===inputSelectChooseProgramm||selectedItemFromTheFirstStep.contains(t.target)||t.target===selectedItemFromTheFirstStep||(inputSelectChooseProgrammDropdown.classList.remove("show-dropdown"),inputSelectChooseProgrammDropdownStepTwo.classList.remove("show-dropdown"),document.body.removeEventListener("click",e))}),e.preventDefault()}),inputSelectChooseProgrammDropdown.addEventListener("click",e=>{const t=Array.from(dropDownProgrammItems),n=Array.from(dropDownProgrammItemsP);if(t.forEach(e=>{e.classList.remove("text-highlight--color")}),n.forEach(e=>{e.classList.remove("text-highlight--color")}),"svg"===e.target.tagName?(inputSelectChooseProgrammInnerText.innerText=e.target.parentElement.innerText,e.target.parentElement.classList.add("text-highlight--color")):"path"==e.target.tagName?(inputSelectChooseProgrammInnerText.innerText=e.target.parentElement.parentElement.innerText,e.target.parentElement.parentElement.classList.add("text-highlight--color")):(setTimeout(()=>{inputSelectChooseProgrammInnerText.innerText=e.target.innerText},400),e.target.classList.add("text-highlight--color")),inputSelectChooseProgrammInnerText.classList.add("text-highlight--color"),"Определюсь после консультации"===inputSelectChooseProgrammInnerText.innerText)inputSelectChooseProgrammDropdownStepTwo.classList.remove("show-dropdown");else{inputSelectChooseProgrammDropdownStepTwo.classList.add("show-dropdown");const e=document.getElementById("programm-dropdown-step-two-selected-step-one-item"),t=document.getElementById("inner-dropdown-items__item--selected");setTimeout(()=>{e.innerText=inputSelectChooseProgrammInnerText.innerText},400);const n=document.getElementById("inner-dropdown-items--step-two");setTimeout(()=>{if("Колледж"===e.innerText){const e=Array.prototype.slice.call(n.childNodes);e.forEach((e,t)=>{t>3&&e.remove()}),dropDownStepTwoInsertItem("Информационные системы и программирование"),dropDownStepTwoInsertItem("Гостиничное дело​"),dropDownStepTwoInsertItem("Банковское дело​​"),dropDownStepTwoInsertItem("Экономика и бухгалтерский учет по отраслям"),dropDownStepTwoInsertItem("Право и организация социального обеспечения"),dropDownStepTwoInsertItem("Коммерция по отраслям")}if("Бакалавриат"===e.innerText){const e=Array.prototype.slice.call(n.childNodes);e.forEach((e,t)=>{t>3&&e.remove()}),dropDownStepTwoInsertItem("Юриспруденция"),dropDownStepTwoInsertItem("Дизайн​"),dropDownStepTwoInsertItem("Лингвистика"),dropDownStepTwoInsertItem("Информационные системы и технологии"),dropDownStepTwoInsertItem("Прикладная информатика"),dropDownStepTwoInsertItem("Реклама и связи с общественностью"),dropDownStepTwoInsertItem("Бизнес-информатика"),dropDownStepTwoInsertItem("Государственное и муниципальное управление"),dropDownStepTwoInsertItem("Управление персоналом"),dropDownStepTwoInsertItem("Теплоэнергетика и теплотехника"),dropDownStepTwoInsertItem("Электроэнергетика и электротехника"),dropDownStepTwoInsertItem("Строительство"),dropDownStepTwoInsertItem("Психолого-педагогическое образование"),dropDownStepTwoInsertItem("Психология"),dropDownStepTwoInsertItem("Менеджмент"),dropDownStepTwoInsertItem("Экономика")}if("Специалитет"===e.innerText){const e=Array.prototype.slice.call(n.childNodes);e.forEach((e,t)=>{t>3&&e.remove()}),dropDownStepTwoInsertItem("Экономическая безопасность")}if("Магистратура"===e.innerText){const e=Array.prototype.slice.call(n.childNodes);e.forEach((e,t)=>{t>3&&e.remove()}),dropDownStepTwoInsertItem("Юриспруденция"),dropDownStepTwoInsertItem("Реклама и связи с общественностью"),dropDownStepTwoInsertItem("Психология"),dropDownStepTwoInsertItem("Прикладная информатика"),dropDownStepTwoInsertItem("Государственное и муниципальное управление"),dropDownStepTwoInsertItem("Управление персоналом"),dropDownStepTwoInsertItem("Менеджмент"),dropDownStepTwoInsertItem("Финансы и кредит"),dropDownStepTwoInsertItem("Экономика")}if("Профессиональная переподготовка"===e.innerText){const e=Array.prototype.slice.call(n.childNodes);e.forEach((e,t)=>{t>3&&e.remove()}),dropDownStepTwoInsertItem("Гуманитарные науки"),dropDownStepTwoInsertItem("Электроэнергетика"),dropDownStepTwoInsertItem("Строительство"),dropDownStepTwoInsertItem("Теплоэнергетика"),dropDownStepTwoInsertItem("Безопасность дорожного движения"),dropDownStepTwoInsertItem("Продукты питания - технология производства"),dropDownStepTwoInsertItem("Юриспруденция"),dropDownStepTwoInsertItem("Охрана труда"),dropDownStepTwoInsertItem("Информатика и вычислительная техника"),dropDownStepTwoInsertItem("Реклама и PR"),dropDownStepTwoInsertItem("Журналистика"),dropDownStepTwoInsertItem("Дизайн"),dropDownStepTwoInsertItem("Маркетинг"),dropDownStepTwoInsertItem("Туризм"),dropDownStepTwoInsertItem("Государственное и муниципальное управление"),dropDownStepTwoInsertItem("Логистика"),dropDownStepTwoInsertItem("Социальная работа"),dropDownStepTwoInsertItem("Экономика"),dropDownStepTwoInsertItem("Психология"),dropDownStepTwoInsertItem("Педагогика"),dropDownStepTwoInsertItem("Менеджмент")}if("Повышение квалификации"===e.innerText){const e=Array.prototype.slice.call(n.childNodes);e.forEach((e,t)=>{t>3&&e.remove()}),dropDownStepTwoInsertItem("Гуманитарные науки"),dropDownStepTwoInsertItem("Электроэнергетика"),dropDownStepTwoInsertItem("Строительство"),dropDownStepTwoInsertItem("Теплоэнергетика"),dropDownStepTwoInsertItem("Безопасность дорожного движения"),dropDownStepTwoInsertItem("Продукты питания - технология производства"),dropDownStepTwoInsertItem("Юриспруденция"),dropDownStepTwoInsertItem("Охрана труда"),dropDownStepTwoInsertItem("Информатика и вычислительная техника"),dropDownStepTwoInsertItem("Реклама и PR"),dropDownStepTwoInsertItem("Журналистика"),dropDownStepTwoInsertItem("Дизайн"),dropDownStepTwoInsertItem("Маркетинг"),dropDownStepTwoInsertItem("Туризм"),dropDownStepTwoInsertItem("Медицина"),dropDownStepTwoInsertItem("Государственное и муниципальное управление"),dropDownStepTwoInsertItem("Логистика"),dropDownStepTwoInsertItem("Социальная работа​"),dropDownStepTwoInsertItem("Экономика​​"),dropDownStepTwoInsertItem("Психология"),dropDownStepTwoInsertItem("Педагогика"),dropDownStepTwoInsertItem("Менеджмент")}if("Master of Business Administration (МВА)"===e.innerText){const e=Array.prototype.slice.call(n.childNodes);e.forEach((e,t)=>{t>3&&e.remove()}),dropDownStepTwoInsertItem("MBA Industry"),dropDownStepTwoInsertItem("MBA Professional"),dropDownStepTwoInsertItem("MBA Intensive"),dropDownStepTwoInsertItem("Mini-MBA")}},400),t.addEventListener("click",e=>{inputSelectChooseProgrammDropdownStepTwo.classList.remove("show-dropdown"),inputSelectChooseProgrammDropdown.classList.add("show-dropdown"),e.preventDefault()}),inputSelectChooseProgrammDropdownStepTwo.addEventListener("click",e=>{const t=Array.from(dropDownProgrammItemsStepTwo),n=Array.from(dropDownProgrammItemsPStepTwo);t.forEach(e=>{e.classList.remove("text-highlight--color")}),n.forEach(e=>{e.classList.remove("text-highlight--color")}),"svg"===e.target.tagName?(inputSelectChooseProgrammInnerText.innerText===e.target.parentElement.innerText?inputSelectChooseProgrammInnerText.innerText:inputSelectChooseProgrammInnerText.innerText=`${inputSelectChooseProgrammInnerText.innerHTML}, ${e.target.parentElement.innerText}`,e.target.parentElement.classList.add("text-highlight--color")):"path"==e.target.tagName?(inputSelectChooseProgrammInnerText.innerText===e.target.parentElement.parentElement.innerText?inputSelectChooseProgrammInnerText.innerText:inputSelectChooseProgrammInnerText.innerText=`${inputSelectChooseProgrammInnerText.innerText}, ${e.target.parentElement.parentElement.innerText}`,e.target.parentElement.parentElement.classList.add("text-highlight--color")):(inputSelectChooseProgrammInnerText.innerText===e.target.innerText?inputSelectChooseProgrammInnerText.innerText=inputSelectChooseProgrammInnerText.innerText:inputSelectChooseProgrammInnerText.innerText=`${inputSelectChooseProgrammInnerText.innerText}, ${e.target.innerText}`,e.target.classList.add("text-highlight--color")),inputSelectChooseProgrammInnerText.innerHTML=inputSelectChooseProgrammInnerText.innerHTML.replace(/,\s*$/,""),inputSelectChooseProgrammDropdownStepTwo.classList.remove("show-dropdown"),inputSelectChooseProgramm.scrollIntoView({behavior:"smooth"})})}inputSelectChooseProgrammDropdown.classList.toggle("show-dropdown"),e.preventDefault()}),btnAskQuestion.addEventListener("click",e=>{btnAskQuestion.classList.add("hidden"),moduleQuestions.classList.remove("hidden"),moduleStepOne.classList.remove("hidden"),document.body.classList.add("dark-overlay"),moduleQuestionTextarea.focus(),document.body.addEventListener("click",function e(t){(!btnAskQuestion.contains(t.target)&&t.target!==btnAskQuestion&&!moduleQuestions.contains(t.target)&&t.target!==moduleQuestions||t.target===btnAskQuestion&&btnAskQuestion.contains(t.target))&&(btnAskQuestion.classList.remove("hidden"),moduleQuestions.classList.add("hidden"),moduleStepOne.classList.add("hidden"),document.body.classList.remove("dark-overlay"),document.body.removeEventListener("click",e)),t.preventDefault()}),telegramBtn.addEventListener("click",e=>{""===moduleQuestionTextarea.value?(moduleQuestionTextarea.classList.add("bg-danger"),moduleQuestionTextarea.focus(),moduleQuestionTextarea.addEventListener("keyup",function(e){""!==e.target.value?moduleQuestionTextarea.classList.remove("bg-danger"):moduleQuestionTextarea.classList.add("bg-danger")})):(moduleStepOne.classList.add("hidden"),moduleStepTwo.classList.remove("hidden"),moduleStepTwoTitle.innerHTML="Telegram"),moduleBtnCall.addEventListener("click",e=>{moduleStepThree.classList.remove("hidden"),moduleStepTwo.classList.add("hidden"),moduleStepThreeTitle.innerHTML="Telegram / Позвонить",moduleLabelEnterContactInfo.innerHTML="Напишите свой номер",moduleInputContactInfo.focus(),e.preventDefault()}),moduleBtnMessage.addEventListener("click",e=>{moduleStepThree.classList.remove("hidden"),moduleStepTwo.classList.add("hidden"),moduleStepThreeTitle.innerHTML="Telegram / Написать",moduleLabelEnterContactInfo.innerHTML="Напишите свой номер",moduleInputContactInfo.focus(),e.preventDefault()}),moduleStepTwoArrowBack.addEventListener("click",e=>{moduleStepOne.classList.remove("hidden"),moduleStepTwo.classList.add("hidden"),e.preventDefault()}),moduleStepThreeArrowBack.addEventListener("click",e=>{moduleStepTwo.classList.remove("hidden"),moduleStepOne.classList.add("hidden"),moduleStepThree.classList.add("hidden"),e.preventDefault()}),e.preventDefault()}),whatsappBtn.addEventListener("click",e=>{""===moduleQuestionTextarea.value?(moduleQuestionTextarea.classList.add("bg-danger"),moduleQuestionTextarea.focus(),moduleQuestionTextarea.addEventListener("keyup",function(e){""!==e.target.value?moduleQuestionTextarea.classList.remove("bg-danger"):moduleQuestionTextarea.classList.add("bg-danger")})):(moduleStepOne.classList.add("hidden"),moduleStepTwo.classList.remove("hidden"),moduleStepTwoTitle.innerHTML="Whats App"),moduleBtnCall.addEventListener("click",e=>{moduleStepThree.classList.remove("hidden"),moduleStepTwo.classList.add("hidden"),moduleStepThreeTitle.innerHTML="Whatsapp / Позвонить",moduleLabelEnterContactInfo.innerHTML="Напишите свой номер",moduleInputContactInfo.focus(),e.preventDefault()}),moduleBtnMessage.addEventListener("click",e=>{moduleStepThree.classList.remove("hidden"),moduleStepTwo.classList.add("hidden"),moduleStepThreeTitle.innerHTML="Whatsapp / Написать",moduleLabelEnterContactInfo.innerHTML="Напишите свой номер",moduleInputContactInfo.focus(),e.preventDefault()}),moduleStepTwoArrowBack.addEventListener("click",e=>{moduleStepOne.classList.remove("hidden"),moduleStepTwo.classList.add("hidden"),e.preventDefault()}),moduleStepThreeArrowBack.addEventListener("click",e=>{moduleStepTwo.classList.remove("hidden"),moduleStepOne.classList.add("hidden"),moduleStepThree.classList.add("hidden"),e.preventDefault()}),e.preventDefault()}),viberBtn.addEventListener("click",e=>{""===moduleQuestionTextarea.value?(moduleQuestionTextarea.classList.add("bg-danger"),moduleQuestionTextarea.focus(),moduleQuestionTextarea.addEventListener("keyup",function(e){""!==e.target.value?moduleQuestionTextarea.classList.remove("bg-danger"):moduleQuestionTextarea.classList.add("bg-danger")})):(moduleStepOne.classList.add("hidden"),moduleStepTwo.classList.remove("hidden"),moduleStepTwoTitle.innerHTML="Viber"),moduleBtnCall.addEventListener("click",e=>{moduleStepThree.classList.remove("hidden"),moduleStepTwo.classList.add("hidden"),moduleStepThreeTitle.innerHTML="Viber / Позвонить",moduleLabelEnterContactInfo.innerHTML="Напишите свой номер",moduleInputContactInfo.focus(),e.preventDefault()}),moduleBtnMessage.addEventListener("click",e=>{moduleStepThree.classList.remove("hidden"),moduleStepTwo.classList.add("hidden"),moduleStepThreeTitle.innerHTML="Viber / Написать",moduleLabelEnterContactInfo.innerHTML="Напишите свой номер",moduleInputContactInfo.focus(),e.preventDefault()}),moduleStepTwoArrowBack.addEventListener("click",e=>{moduleStepOne.classList.remove("hidden"),moduleStepTwo.classList.add("hidden"),e.preventDefault()}),moduleStepThreeArrowBack.addEventListener("click",e=>{moduleStepTwo.classList.remove("hidden"),moduleStepOne.classList.add("hidden"),moduleStepThree.classList.add("hidden"),e.preventDefault()}),e.preventDefault()}),vkBtn.addEventListener("click",e=>{""===moduleQuestionTextarea.value?(moduleQuestionTextarea.classList.add("bg-danger"),moduleQuestionTextarea.focus(),moduleQuestionTextarea.addEventListener("keyup",function(e){""!==e.target.value?moduleQuestionTextarea.classList.remove("bg-danger"):moduleQuestionTextarea.classList.add("bg-danger")})):(moduleStepOne.classList.add("hidden"),moduleStepTwo.classList.remove("hidden"),moduleStepTwoTitle.innerHTML="VK"),moduleBtnCall.addEventListener("click",e=>{moduleStepThree.classList.remove("hidden"),moduleStepTwo.classList.add("hidden"),moduleStepThreeTitle.innerHTML="VK / Позвонить",moduleLabelEnterContactInfo.innerHTML="Напишите свой номер",moduleInputContactInfo.focus(),e.preventDefault()}),moduleBtnMessage.addEventListener("click",e=>{moduleStepThree.classList.remove("hidden"),moduleStepTwo.classList.add("hidden"),moduleStepThreeTitle.innerHTML="VK / Написать",moduleLabelEnterContactInfo.innerHTML="Напишите свой номер",moduleInputContactInfo.focus(),e.preventDefault()}),moduleStepTwoArrowBack.addEventListener("click",e=>{moduleStepOne.classList.remove("hidden"),moduleStepTwo.classList.add("hidden"),e.preventDefault()}),moduleStepThreeArrowBack.addEventListener("click",e=>{moduleStepTwo.classList.remove("hidden"),moduleStepOne.classList.add("hidden"),moduleStepThree.classList.add("hidden"),e.preventDefault()}),e.preventDefault()}),phoneBtn.addEventListener("click",e=>{""===moduleQuestionTextarea.value?(moduleQuestionTextarea.classList.add("bg-danger"),moduleQuestionTextarea.focus(),moduleQuestionTextarea.addEventListener("keyup",function(e){""!==e.target.value?moduleQuestionTextarea.classList.remove("bg-danger"):moduleQuestionTextarea.classList.add("bg-danger")})):(moduleStepOne.classList.add("hidden"),moduleStepThree.classList.remove("hidden"),moduleStepThreeTitle.innerHTML="Позвонить",moduleLabelEnterContactInfo.innerHTML="Напишите свой номер",moduleInputContactInfo.focus()),moduleStepThreeArrowBack.addEventListener("click",e=>{moduleStepOne.classList.remove("hidden"),moduleStepTwo.classList.add("hidden"),moduleStepThree.classList.add("hidden"),e.preventDefault()}),e.preventDefault()}),emailBtn.addEventListener("click",e=>{""===moduleQuestionTextarea.value?(moduleQuestionTextarea.classList.add("bg-danger"),moduleQuestionTextarea.focus(),moduleQuestionTextarea.addEventListener("keyup",function(e){""!==e.target.value?moduleQuestionTextarea.classList.remove("bg-danger"):moduleQuestionTextarea.classList.add("bg-danger")})):(moduleStepOne.classList.add("hidden"),moduleStepThree.classList.remove("hidden"),moduleStepThreeTitle.innerHTML="Написать",moduleLabelEnterContactInfo.innerHTML="Напишите свой e-mail",moduleInputContactInfo.placeholder="example@gmail.com",moduleInputContactInfo.type="email",moduleInputContactInfo.focus()),moduleStepThreeArrowBack.addEventListener("click",e=>{moduleStepOne.classList.remove("hidden"),moduleStepTwo.classList.add("hidden"),moduleStepThree.classList.add("hidden"),e.preventDefault()}),e.preventDefault()}),moduleBtnSubmit.addEventListener("click",function e(t){if("email"===moduleInputContactInfo.type)if(""===moduleInputContactInfo.value)moduleInputContactInfo.classList.add("bg-danger"),setTimeout(()=>{moduleInputContactInfo.classList.remove("bg-danger")},1500);else{moduleStepThree.classList.add("hidden"),moduleStepTwo.classList.add("hidden"),moduleStepOne.classList.add("hidden"),moduleStepSuccess.classList.remove("hidden");const t=moduleQuestionTextarea.value.trim(),n=moduleStepThreeTitle.innerText.trim(),o=moduleInputContactInfo.value.trim(),r=ga.getAll()[0].get("clientId"),s={question:t,contactWay:n,contact:o,userCity:userCity,userCountry:userCountry,googleClientId:r,userDevice:userDevice,utmSource:utmSource,utmMedium:utmMedium,utmCampaign:utmCampaign,utmContent:utmContent,utmTerm:utmTerm};sumbitData(s),setTimeout(()=>{moduleStepSuccess.classList.add("hidden"),btnAskQuestion.classList.remove("hidden"),oneMoreQuestionText.innerText="ещё один";const t=sectionAskQuestionsInner.innerHTML;sectionAskQuestionsInner.innerHTML="Спасибо! Мы с вами свяжемся!",setTimeout(()=>{sectionAskQuestionsInner.innerHTML=t},3e3),moduleQuestions.classList.add("hidden"),document.body.classList.remove("dark-overlay"),moduleBtnSubmit.removeEventListener("click",e)},3e3)}else if(""!==moduleInputContactInfo.value.trim()&&moduleInputContactInfo.value.trim().match(numValidation)){moduleStepThree.classList.add("hidden"),moduleStepTwo.classList.add("hidden"),moduleStepOne.classList.add("hidden"),moduleStepSuccess.classList.remove("hidden"),moduleStepSuccess.classList.add("showed");const t=moduleQuestionTextarea.value.trim(),n=moduleStepThreeTitle.innerText.trim(),o=moduleInputContactInfo.value.trim(),r=ga.getAll()[0].get("clientId"),s={question:t,contactWay:n,contact:o,userCity:userCity,userCountry:userCountry,googleClientId:r,userDevice:userDevice,utmSource:utmSource,utmMedium:utmMedium,utmCampaign:utmCampaign,utmContent:utmContent,utmTerm:utmTerm};sumbitData(s),setTimeout(()=>{moduleStepSuccess.classList.add("hidden"),btnAskQuestion.classList.remove("hidden"),moduleStepSuccess.classList.remove("showed"),oneMoreQuestionText.innerText="ещё один";const t=sectionAskQuestionsInner.innerHTML;sectionAskQuestionsInner.innerHTML="Спасибо! Мы с вами свяжемся!",setTimeout(()=>{sectionAskQuestionsInner.innerHTML=t},3e3),moduleQuestions.classList.add("hidden"),document.body.classList.remove("dark-overlay"),moduleBtnSubmit.removeEventListener("click",e)},3e3)}else moduleInputContactInfo.classList.add("bg-danger"),"email"===moduleInputContactInfo.type||moduleInputContactInfo.addEventListener("keyup",e=>{""!==moduleInputContactInfo.value.trim()&&moduleInputContactInfo.value.trim().match(numValidation)?moduleInputContactInfo.classList.remove("bg-danger"):moduleInputContactInfo.classList.add("bg-danger"),e.preventDefault()});t.preventDefault()}),e.preventDefault()});const carouselItems=[carouselImgGroupOne,carouselImgGroupTwo,carouselImgGroupThree];let i=0;carouselBtnRight.addEventListener("click",e=>{i>2&&(i=0),i<0&&(i=2),carouselItems[i].classList.add("hidden"),carouselItems[i+1>2?0:i+1].classList.remove("hidden"),carouselItems[i-1<0?2:i-1].classList.add("hidden"),i++,e.preventDefault()}),carouselBtnLeft.addEventListener("click",e=>{i<0&&(i=2),i>2&&(i=0),carouselItems[i].classList.add("hidden"),carouselItems[i+1>2?0:i+1].classList.add("hidden"),carouselItems[i-1<0?2:i-1].classList.remove("hidden"),i--,e.preventDefault()}),ctaSubmitBtn.addEventListener("click",e=>{const t=inputSelectChooseProgrammInnerText.innerText.trim(),n=inputSelectChooseUniInnerText.innerText.trim(),o=phoneInputInnerText.value.trim(),r=userInputNameText.value.trim(),s=ga.getAll()[0].get("clientId"),d={field:t,uni:n,number:o,userName:r,userCity:userCity,userCountry:userCountry,googleClientId:s,userDevice:userDevice,utmSource:utmSource,utmMedium:utmMedium,utmCampaign:utmCampaign,utmContent:utmContent,utmTerm:utmTerm};if(""!==o&&o.match(numValidation)){const e=document.getElementById("js-app-is-submitted");e.classList.add("showed"),document.getElementById("step-success-row__back-to-main").addEventListener("click",t=>{e.classList.add("removing"),setTimeout(()=>{e.classList.remove("showed"),e.classList.remove("removing")},300),t.preventDefault()}),sumbitData(d)}else phoneInputInnerText.classList.add("bg-danger"),phoneInputInnerText.addEventListener("keyup",e=>{""!==phoneInputInnerText.value.trim()&&phoneInputInnerText.value.trim().match(numValidation)?phoneInputInnerText.classList.remove("bg-danger"):phoneInputInnerText.classList.add("bg-danger"),e.preventDefault()});e.preventDefault()}),phoneInputInnerText.addEventListener("keydown",e=>{const t=phoneInputInnerText.value.trim()
-;""!==t&&t.match(numValidation)&&userNameInput.classList.add("showed")});
+// CTA btns
+const ctaSubmitBtn = document.getElementById("cta-submit-application");
+
+const btnAskQuestion = document.getElementById("section-ask-questions");
+const moduleQuestions = document.getElementById("module-questions");
+const moduleQuestionTextarea = document.getElementById(
+  "js-text-input-ask-anything"
+);
+
+const sectionAskQuestionsInner = document.getElementById("cta-ask-question");
+
+const oneMoreQuestionText = document.getElementById("one-more-question");
+
+const moduleHorizontalCloseBtn = document.getElementById(
+  "js-btn-horizontal-line-close"
+);
+
+const menuToggler = document.getElementById("menu-toggle");
+
+const inputSelectChooseUni = document.getElementById("input-select-choose-uni");
+
+const inputSelectChooseUniInnerText = document.getElementById(
+  "input-select-choose-uni-inner-text"
+);
+
+const inputSelectChooseProgramm = document.getElementById(
+  "input-select-choose-programm"
+);
+
+const inputSelectChooseProgrammInnerText = document.getElementById(
+  "input-select-choose-programm-inner-text"
+);
+
+const inputSelectChooseUniDropdown = document.getElementById(
+  "input-select-choose-uni-dropdown"
+);
+
+const inputSelectChooseProgrammDropdown = document.getElementById(
+  "input-select-choose-programm-dropdown"
+);
+
+const inputSelectChooseProgrammDropdownStepTwo = document.getElementById(
+  "input-select-choose-programm-dropdown--step-two"
+);
+
+const dropDownUniItems = document.querySelectorAll(
+  ".input-select-choose-uni-dropdown .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item"
+);
+
+const dropDownUniItemsP = document.querySelectorAll(
+  ".input-select-choose-uni-dropdown .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item p"
+);
+
+const dropDownProgrammItems = document.querySelectorAll(
+  ".input-select-choose-programm-dropdown .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item"
+);
+
+const dropDownProgrammItemsP = document.querySelectorAll(
+  ".input-select-choose-programm-dropdown .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item p"
+);
+
+const dropDownProgrammItemsStepTwo = document.querySelectorAll(
+  ".input-select-choose-programm-dropdown--step-two .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item"
+);
+
+const dropDownProgrammItemsPStepTwo = document.querySelectorAll(
+  ".input-select-choose-programm-dropdown--step-two .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item p"
+);
+
+const selectedItemFromTheFirstStep = document.getElementById(
+  "inner-dropdown-items__item--selected"
+);
+
+const phoneInputInnerText = document.getElementById("phone-number");
+
+const userInputNameText = document.getElementById("user-name");
+
+const navItemLinks = document.querySelectorAll(".nav-item__link");
+const navItemLinksArr = Array.from(navItemLinks);
+
+const dropDownItemUniIcons = document.querySelectorAll(
+  ".inner-dropdown-items__item-uni__icon"
+);
+const dropDownItemUniIconsArr = Array.from(dropDownItemUniIcons);
+
+const dropDownItemProgrammIcons = document.querySelectorAll(
+  ".inner-dropdown-items__item-programm__icon"
+);
+const dropDownItemProgrammIconsArr = Array.from(dropDownItemProgrammIcons);
+
+// Module Ask Question -> Steps
+const moduleStepOne = document.getElementById("module-questions__step-one");
+const moduleStepTwo = document.getElementById("module-questions__step-two");
+const moduleStepThree = document.getElementById("module-questions__step-three");
+const moduleStepSuccess = document.getElementById(
+  "module-questions__step-success"
+);
+
+// Module Ask Question -> Step 1 -> SM Buttons
+const telegramBtn = document.getElementById("sm-icons__link--telegram");
+const whatsappBtn = document.getElementById("sm-icons__link--whatsapp");
+const viberBtn = document.getElementById("sm-icons__link--viber");
+const vkBtn = document.getElementById("sm-icons__link--vk");
+const phoneBtn = document.getElementById("sm-icons__link--phone");
+const emailBtn = document.getElementById("sm-icons__link--email");
+
+// Module Ask Question -> Step 2 -> Btns
+const moduleBtnCall = document.getElementById("question-module__radio-call");
+const moduleBtnMessage = document.getElementById(
+  "question-module__radio-message"
+);
+
+// Module Ask Question -> Step 2, Step 3 -> Titles
+const moduleStepTwoTitle = document.getElementById("module-step-two-title");
+const moduleStepThreeTitle = document.getElementById("module-step-three-title");
+
+// Module Ask Question -> Step 2, Step 3 -> Arrows Back
+const moduleStepTwoArrowBack = document.getElementById(
+  "step-two-arrow-step-back"
+);
+const moduleStepThreeArrowBack = document.getElementById(
+  "step-three-arrow-step-back"
+);
+
+// Module Ask Question -> Step 3 -> Contact input
+const moduleLabelEnterContactInfo = document.getElementById(
+  "module-label-enter-contact-info"
+);
+const moduleInputContactInfo = document.getElementById(
+  "module-input-contact-info"
+);
+
+// Module Ask Question -> Step Success -> Submit
+const moduleBtnSubmit = document.getElementById("module_questions-submit-btn");
+
+const carouselBtnLeft = document.getElementById("carrousel-arrow-left-btn");
+const carouselBtnRight = document.getElementById("carrousel-arrow-right-btn");
+
+const carouselImgGroupOne = document.getElementById("content__img-group--1");
+const carouselImgGroupTwo = document.getElementById("content__img-group--2");
+const carouselImgGroupThree = document.getElementById("content__img-group--3");
+
+const svgCheckMark = `<svg
+      class="inner-dropdown-items-programm__item__icon"
+      width="12"
+      height="9"
+      viewBox="0 0 12 9"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z"
+        fill="#fff"
+      />
+    </svg>`;
+
+const scrollToTheApplicationBtn = document.getElementById(
+  "cta-scroll-to-submit-application"
+);
+
+const fillInTheFieldsBelow = document.getElementById("fill-in-fields");
+
+const userNameInput = document.getElementById("container-input--user-name");
+
+const insertAfterLiStepTwo = document.getElementById(
+  "js-insert-after--step-two"
+);
+
+const numValidation = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{5,12}$/;
+
+const locationDependedHeading = document.getElementById(
+  "location-depended-heading"
+);
+
+const customizedCountryText = document.getElementById("customizedCountryText");
+
+const userDevice = window.navigator.userAgent;
+
+// UTM PARAMS
+queryString = window.location.search;
+
+const urlParams = new URLSearchParams(queryString);
+
+const utmSource = urlParams.get("utm_source");
+const utmMedium = urlParams.get("utm_medium");
+const utmCampaign = urlParams.get("utm_campaign");
+const utmContent = urlParams.get("utm_content");
+const utmTerm = urlParams.get("utm_term");
+
+// Track IP
+
+// let user_location;
+// fetch("https://www.cloudflare.com/cdn-cgi/trace")
+//   .then((data) => data.json())
+//   .then((data) => {
+//     user_location = data;
+//     console.log(user_location);
+//   });
+// let userLocation;
+
+const locationUrlAPI = "https://ipinfo.io?token=b16e76b622236e";
+// http://ip-api.com/json
+let userCity;
+let userCountry;
+let userCountryCode; // KZ, RU, UZ
+fetch(locationUrlAPI)
+  .then((data) => data.json())
+  .then((data) => {
+    userCity = data.city;
+    userCountry = data.country;
+    userCountryCode = data.country;
+    if (userCountry === "RU") {
+      userCountry = "Russia";
+    } else if (userCountry === "KZ") {
+      userCountry = "Kazakhstan";
+    } else if (userCountry == "UZ") {
+      userCountry = "Uzbekistan";
+    }
+
+    // console.log(data);
+    // // console.log(locationDependedHeading);
+    // // console.log(userCountryCode);
+    changeLocationDependedHeading(
+      locationDependedHeading,
+      "дистанционно",
+      "дистанционно без ЕГЭ",
+      "дистанционно без ЕНТ и ЕГЭ",
+      "дистанционно без ЕНТ и ЕГЭ"
+    );
+
+    changeCustomizedCountryText(
+      "— мы помогаем абитуриентам выбирать образование, а Московским учебным заведениям — находить своих студентов!",
+      "— мы помогаем абитуриентам из Казахстана выбирать образование, а Московским учебным заведениям — находить своих студентов!",
+      "— мы помогаем абитуриентам из Узбекистана выбирать образование, а Московским учебным заведениям — находить своих студентов!",
+      "— мы помогаем абитуриентам выбирать образование, а Московским учебным заведениям — находить своих студентов!"
+    );
+  })
+  .catch((error) => {
+    // `Can't access ${locationUrlAPI} :(`;
+    changeLocationDependedHeading(
+      locationDependedHeading,
+      "дистанционно",
+      "дистанционно без ЕГЭ",
+      "дистанционно без ЕНТ и ЕГЭ",
+      "дистанционно без ЕНТ и ЕГЭ"
+    );
+
+    changeCustomizedCountryText(
+      "— мы помогаем абитуриентам выбирать образование, а Московским учебным заведениям — находить своих студентов!",
+      "— мы помогаем абитуриентам из Казахстана выбирать образование, а Московским учебным заведениям — находить своих студентов!",
+      "— мы помогаем абитуриентам из Узбекистана выбирать образование, а Московским учебным заведениям — находить своих студентов!",
+      "— мы помогаем абитуриентам выбирать образование, а Московским учебным заведениям — находить своих студентов!"
+    );
+    return;
+  });
+
+function changeLocationDependedHeading(
+  textBefore = "",
+  textAfterRU = "",
+  textAfterKZ = "",
+  textAfterUZ = "",
+  textFallback = ""
+) {
+  if (userCountryCode === "RU") {
+    textBefore.innerText = textAfterRU;
+  } else if (userCountryCode === "KZ") {
+    textBefore.innerText = textAfterKZ;
+  } else if (userCountryCode === "UZ") {
+    textBefore.innerText = textAfterUZ;
+  } else {
+    textBefore.innerText = textFallback;
+  }
+}
+
+function changeCustomizedCountryText(
+  textAfterRU = "",
+  textAfterKZ = "",
+  textAfterUZ = "",
+  textFallback = ""
+) {
+  if (userCountryCode === "RU") {
+    customizedCountryText.innerText = textAfterRU;
+  } else if (userCountryCode === "KZ") {
+    customizedCountryText.innerText = textAfterKZ;
+  } else if (userCountryCode === "UZ") {
+    customizedCountryText.innerText = textAfterUZ;
+  } else {
+    customizedCountryText.innerText = textFallback;
+  }
+}
+
+function insertAfter(referenceNode, newNode) {
+  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
+function dropDownStepTwoInsertItem(text = "") {
+  let el;
+  el = document.createElement("li");
+  el.classList.add("inner-dropdown-items__item");
+  el.innerHTML = `
+        <p>
+          ${svgCheckMark}
+          ${text}
+        </p>
+      `;
+  insertAfter(insertAfterLiStepTwo, el);
+}
+
+// Send to email
+async function sumbitData(data) {
+  const res = await fetch("/email", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  const content = await res.json();
+}
+
+// Menu
+navItemLinks[0].addEventListener("click", (e) => {
+  // window.location = "#about";
+  const aboutSection = document.getElementById("about");
+  aboutSection.scrollIntoView({
+    behavior: "smooth",
+  });
+  menuToggler.checked = false;
+  e.preventDefault();
+});
+
+navItemLinks[1].addEventListener("click", (e) => {
+  // window.location = "#partners";
+  const partnersSection = document.getElementById("partners");
+  partnersSection.scrollIntoView({
+    behavior: "smooth",
+  });
+  menuToggler.checked = false;
+  e.preventDefault();
+});
+
+navItemLinks[2].addEventListener("click", (e) => {
+  // window.location = "#trusted-by";
+  const trustedBySection = document.getElementById("trusted-by");
+  trustedBySection.scrollIntoView({
+    behavior: "smooth",
+  });
+  menuToggler.checked = false;
+  e.preventDefault();
+});
+
+// Select Dropdown Uni
+inputSelectChooseUni.addEventListener("click", (e) => {
+  inputSelectChooseUniDropdown.classList.toggle("show-dropdown");
+
+  // window.location = '#input-select-choose-uni';
+  if (inputSelectChooseUniDropdown.classList.contains("show-dropdown")) {
+    inputSelectChooseUni.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+
+  document.body.addEventListener("click", function closeInputUniDropDown(e) {
+    if (
+      inputSelectChooseUniDropdown.classList.contains("show-dropdown") &&
+      !inputSelectChooseUniDropdown.contains(e.target) &&
+      e.target !== inputSelectChooseUniDropdown &&
+      !inputSelectChooseUni.contains(e.target) &&
+      e.target !== inputSelectChooseUni
+    ) {
+      // Close question module
+      inputSelectChooseUniDropdown.classList.toggle("show-dropdown");
+      document.body.removeEventListener("click", closeInputUniDropDown);
+    }
+  });
+
+  e.preventDefault();
+});
+
+scrollToTheApplicationBtn.addEventListener("click", (e) => {
+  fillInTheFieldsBelow.classList.remove("hidden");
+
+  fillInTheFieldsBelow.scrollIntoView({
+    behavior: "smooth",
+  });
+
+  setTimeout(() => {
+    fillInTheFieldsBelow.classList.add("hidden");
+  }, 3000);
+
+  e.preventDefault();
+});
+
+// Dropdown Uni
+inputSelectChooseUniDropdown.addEventListener("mousedown", (e) => {
+  // Convert Dropdown Uni items into an array
+  const dropDownUniItemsArr = Array.from(dropDownUniItems);
+  const dropDownUniItemsArrP = Array.from(dropDownUniItemsP);
+
+  // Add the color to the selected text in the dropdown and clean the colors from other elements
+  dropDownUniItemsArr.forEach((item) => {
+    item.classList.remove("text-highlight--color");
+  });
+  dropDownUniItemsArrP.forEach((item) => {
+    item.classList.remove("text-highlight--color");
+  });
+
+  // Change the inner text of the select to the selected text
+  if (e.target.tagName === "svg") {
+    inputSelectChooseUniInnerText.innerText = e.target.parentElement.innerText;
+
+    inputSelectChooseUniInnerText.innerText = inputSelectChooseUniInnerText.innerText
+      .substring(inputSelectChooseUniInnerText.innerText.indexOf("(") + 1)
+      .slice(0, -1);
+
+    e.target.parentElement.classList.add("text-highlight--color");
+  } else if (e.target.tagName == "path") {
+    inputSelectChooseUniInnerText.innerText =
+      e.target.parentElement.parentElement.innerText;
+
+    inputSelectChooseUniInnerText.innerText = inputSelectChooseUniInnerText.innerText
+      .substring(inputSelectChooseUniInnerText.innerText.indexOf("(") + 1)
+      .slice(0, -1);
+
+    e.target.parentElement.parentElement.classList.add("text-highlight--color");
+  } else {
+    inputSelectChooseUniInnerText.innerText = e.target.innerText;
+
+    inputSelectChooseUniInnerText.innerText = inputSelectChooseUniInnerText.innerText
+      .substring(inputSelectChooseUniInnerText.innerText.indexOf("(") + 1)
+      .slice(0, -1);
+
+    e.target.classList.add("text-highlight--color");
+  }
+
+  // Add the color to the selected text in the input
+  inputSelectChooseUniInnerText.classList.add("text-highlight--color");
+
+  // On select hide the module
+  inputSelectChooseUniDropdown.classList.toggle("show-dropdown");
+
+  e.preventDefault();
+});
+
+// Select Dropdown Programm
+inputSelectChooseProgramm.addEventListener("click", (e) => {
+  if (
+    inputSelectChooseProgrammDropdownStepTwo.classList.contains("show-dropdown")
+  ) {
+    inputSelectChooseProgrammDropdownStepTwo.classList.remove("show-dropdown");
+    inputSelectChooseProgrammDropdown.classList.remove("show-dropdown");
+  } else {
+    inputSelectChooseProgrammDropdownStepTwo.classList.remove("show-dropdown");
+    inputSelectChooseProgrammDropdown.classList.toggle("show-dropdown");
+  }
+
+  // window.location = '#input-select-choose-uni';
+  if (inputSelectChooseProgrammDropdown.classList.contains("show-dropdown")) {
+    inputSelectChooseProgramm.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+
+  document.body.addEventListener("click", function closeInputProgrammDropDown(
+    e
+  ) {
+    if (
+      (inputSelectChooseProgrammDropdown.classList.contains("show-dropdown") ||
+        inputSelectChooseProgrammDropdownStepTwo.classList.contains(
+          "show-dropdown"
+        )) &&
+      !inputSelectChooseProgrammDropdown.contains(e.target) &&
+      e.target !== inputSelectChooseProgrammDropdown &&
+      !inputSelectChooseProgramm.contains(e.target) &&
+      e.target !== inputSelectChooseProgrammDropdownStepTwo &&
+      !inputSelectChooseProgrammDropdownStepTwo.contains(e.target) &&
+      e.target !== inputSelectChooseProgramm &&
+      !selectedItemFromTheFirstStep.contains(e.target) &&
+      e.target !== selectedItemFromTheFirstStep
+    ) {
+      // Close question module
+      inputSelectChooseProgrammDropdown.classList.remove("show-dropdown");
+      inputSelectChooseProgrammDropdownStepTwo.classList.remove(
+        "show-dropdown"
+      );
+      document.body.removeEventListener("click", closeInputProgrammDropDown);
+    }
+  });
+
+  e.preventDefault();
+});
+
+// Dropdown Programm
+inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
+  const dropDownProgrammItemsArr = Array.from(dropDownProgrammItems);
+  const dropDownProgrammItemsArrP = Array.from(dropDownProgrammItemsP);
+
+  dropDownProgrammItemsArr.forEach((item) => {
+    item.classList.remove("text-highlight--color");
+  });
+  dropDownProgrammItemsArrP.forEach((item) => {
+    item.classList.remove("text-highlight--color");
+  });
+
+  // Change the inner text of the select to the selected text
+  if (e.target.tagName === "svg") {
+    inputSelectChooseProgrammInnerText.innerText =
+      e.target.parentElement.innerText;
+
+    e.target.parentElement.classList.add("text-highlight--color");
+  } else if (e.target.tagName == "path") {
+    inputSelectChooseProgrammInnerText.innerText =
+      e.target.parentElement.parentElement.innerText;
+
+    e.target.parentElement.parentElement.classList.add("text-highlight--color");
+  } else {
+    // for (opacity = 0; opacity < 1.1; opacity = opacity + 0.1) {
+    //   setTimeout(function () {
+    //     document.getElementById("about").style.opacity = opacity;
+    //   }, 100);
+    // }
+
+    setTimeout(() => {
+      inputSelectChooseProgrammInnerText.innerText = e.target.innerText;
+    }, 400);
+
+    e.target.classList.add("text-highlight--color");
+  }
+
+  // Add the color to the selected text in the input
+  inputSelectChooseProgrammInnerText.classList.add("text-highlight--color");
+
+  // Dropdown Programm Step 2
+
+  if (
+    inputSelectChooseProgrammInnerText.innerText ===
+    "Определюсь после консультации"
+  ) {
+    inputSelectChooseProgrammDropdownStepTwo.classList.remove("show-dropdown");
+  } else {
+    inputSelectChooseProgrammDropdownStepTwo.classList.add("show-dropdown");
+
+    const selectedItemFromTheFirstStepText = document.getElementById(
+      "programm-dropdown-step-two-selected-step-one-item"
+    );
+
+    const selectedItemFromTheFirstStep = document.getElementById(
+      "inner-dropdown-items__item--selected"
+    );
+
+    setTimeout(() => {
+      selectedItemFromTheFirstStepText.innerText =
+        inputSelectChooseProgrammInnerText.innerText;
+    }, 400);
+
+    const listItemsStepTwo = document.getElementById(
+      "inner-dropdown-items--step-two"
+    );
+
+    const svgArrowBack = `<svg
+    width="9"
+    height="15"
+    viewBox="0 0 9 15"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M8.20471 13.2882L2.41412 7.49765L8.20471 1.70706C8.5953 1.31647 8.5953 0.683529 8.20471 0.292941C7.81412 -0.097647 7.18118 -0.097647 6.79059 0.292941L0.292941 6.79059C-0.0976471 7.18118 -0.0976471 7.81412 0.292941 8.2047L6.79059 14.7024C7.18118 15.0929 7.81412 15.0929 8.20471 14.7024C8.5953 14.3118 8.5953 13.6788 8.20471 13.2882Z"
+      fill="#2874FF"
+    />
+  </svg>`;
+
+    setTimeout(() => {
+      if (selectedItemFromTheFirstStepText.innerText === "Колледж") {
+        const listItemsStepTwoArr = Array.prototype.slice.call(
+          listItemsStepTwo.childNodes
+        );
+
+        listItemsStepTwoArr.forEach((item, index) => {
+          if (index > 3) {
+            item.remove();
+          }
+        });
+
+        dropDownStepTwoInsertItem("Информационные системы и программирование");
+
+        dropDownStepTwoInsertItem("Гостиничное дело​");
+
+        dropDownStepTwoInsertItem("Банковское дело​​");
+
+        dropDownStepTwoInsertItem("Экономика и бухгалтерский учет по отраслям");
+
+        dropDownStepTwoInsertItem(
+          "Право и организация социального обеспечения"
+        );
+
+        dropDownStepTwoInsertItem("Коммерция по отраслям");
+      }
+
+      if (selectedItemFromTheFirstStepText.innerText === "Бакалавриат") {
+        const listItemsStepTwoArr = Array.prototype.slice.call(
+          listItemsStepTwo.childNodes
+        );
+
+        listItemsStepTwoArr.forEach((item, index) => {
+          if (index > 3) {
+            item.remove();
+          }
+        });
+
+        dropDownStepTwoInsertItem("Юриспруденция");
+
+        dropDownStepTwoInsertItem("Дизайн​");
+
+        dropDownStepTwoInsertItem("Лингвистика");
+
+        dropDownStepTwoInsertItem("Информационные системы и технологии");
+
+        dropDownStepTwoInsertItem("Прикладная информатика");
+
+        dropDownStepTwoInsertItem("Реклама и связи с общественностью");
+
+        dropDownStepTwoInsertItem("Бизнес-информатика");
+
+        dropDownStepTwoInsertItem("Государственное и муниципальное управление");
+
+        dropDownStepTwoInsertItem("Управление персоналом");
+
+        dropDownStepTwoInsertItem("Теплоэнергетика и теплотехника");
+
+        dropDownStepTwoInsertItem("Электроэнергетика и электротехника");
+
+        dropDownStepTwoInsertItem("Строительство");
+
+        dropDownStepTwoInsertItem("Психолого-педагогическое образование");
+
+        dropDownStepTwoInsertItem("Психология");
+
+        dropDownStepTwoInsertItem("Менеджмент");
+
+        dropDownStepTwoInsertItem("Экономика");
+      }
+
+      if (selectedItemFromTheFirstStepText.innerText === "Специалитет") {
+        const listItemsStepTwoArr = Array.prototype.slice.call(
+          listItemsStepTwo.childNodes
+        );
+
+        listItemsStepTwoArr.forEach((item, index) => {
+          if (index > 3) {
+            item.remove();
+          }
+        });
+
+        dropDownStepTwoInsertItem("Экономическая безопасность");
+      }
+
+      if (selectedItemFromTheFirstStepText.innerText === "Магистратура") {
+        const listItemsStepTwoArr = Array.prototype.slice.call(
+          listItemsStepTwo.childNodes
+        );
+
+        listItemsStepTwoArr.forEach((item, index) => {
+          if (index > 3) {
+            item.remove();
+          }
+        });
+
+        dropDownStepTwoInsertItem("Юриспруденция");
+
+        dropDownStepTwoInsertItem("Реклама и связи с общественностью");
+
+        dropDownStepTwoInsertItem("Психология");
+
+        dropDownStepTwoInsertItem("Прикладная информатика");
+
+        dropDownStepTwoInsertItem("Государственное и муниципальное управление");
+
+        dropDownStepTwoInsertItem("Управление персоналом");
+
+        dropDownStepTwoInsertItem("Менеджмент");
+
+        dropDownStepTwoInsertItem("Финансы и кредит");
+
+        dropDownStepTwoInsertItem("Экономика");
+      }
+
+      if (
+        selectedItemFromTheFirstStepText.innerText ===
+        "Профессиональная переподготовка"
+      ) {
+        const listItemsStepTwoArr = Array.prototype.slice.call(
+          listItemsStepTwo.childNodes
+        );
+
+        listItemsStepTwoArr.forEach((item, index) => {
+          if (index > 3) {
+            item.remove();
+          }
+        });
+
+        dropDownStepTwoInsertItem("Гуманитарные науки");
+
+        dropDownStepTwoInsertItem("Электроэнергетика");
+
+        dropDownStepTwoInsertItem("Строительство");
+
+        dropDownStepTwoInsertItem("Теплоэнергетика");
+
+        dropDownStepTwoInsertItem("Безопасность дорожного движения");
+
+        dropDownStepTwoInsertItem("Продукты питания - технология производства");
+
+        dropDownStepTwoInsertItem("Юриспруденция");
+
+        dropDownStepTwoInsertItem("Охрана труда");
+
+        dropDownStepTwoInsertItem("Информатика и вычислительная техника");
+
+        dropDownStepTwoInsertItem("Реклама и PR");
+
+        dropDownStepTwoInsertItem("Журналистика");
+
+        dropDownStepTwoInsertItem("Дизайн");
+
+        dropDownStepTwoInsertItem("Маркетинг");
+
+        dropDownStepTwoInsertItem("Туризм");
+
+        dropDownStepTwoInsertItem("Государственное и муниципальное управление");
+
+        dropDownStepTwoInsertItem("Логистика");
+
+        dropDownStepTwoInsertItem("Социальная работа");
+
+        dropDownStepTwoInsertItem("Экономика");
+
+        dropDownStepTwoInsertItem("Психология");
+
+        dropDownStepTwoInsertItem("Педагогика");
+
+        dropDownStepTwoInsertItem("Менеджмент");
+      }
+
+      if (
+        selectedItemFromTheFirstStepText.innerText === "Повышение квалификации"
+      ) {
+        const listItemsStepTwoArr = Array.prototype.slice.call(
+          listItemsStepTwo.childNodes
+        );
+
+        listItemsStepTwoArr.forEach((item, index) => {
+          if (index > 3) {
+            item.remove();
+          }
+        });
+
+        dropDownStepTwoInsertItem("Гуманитарные науки");
+
+        dropDownStepTwoInsertItem("Электроэнергетика");
+
+        dropDownStepTwoInsertItem("Строительство");
+
+        dropDownStepTwoInsertItem("Теплоэнергетика");
+
+        dropDownStepTwoInsertItem("Безопасность дорожного движения");
+
+        dropDownStepTwoInsertItem("Продукты питания - технология производства");
+
+        dropDownStepTwoInsertItem("Юриспруденция");
+
+        dropDownStepTwoInsertItem("Охрана труда");
+
+        dropDownStepTwoInsertItem("Информатика и вычислительная техника");
+
+        dropDownStepTwoInsertItem("Реклама и PR");
+
+        dropDownStepTwoInsertItem("Журналистика");
+
+        dropDownStepTwoInsertItem("Дизайн");
+
+        dropDownStepTwoInsertItem("Маркетинг");
+
+        dropDownStepTwoInsertItem("Туризм");
+
+        dropDownStepTwoInsertItem("Медицина");
+
+        dropDownStepTwoInsertItem("Государственное и муниципальное управление");
+
+        dropDownStepTwoInsertItem("Логистика");
+
+        dropDownStepTwoInsertItem("Социальная работа​");
+
+        dropDownStepTwoInsertItem("Экономика​​");
+
+        dropDownStepTwoInsertItem("Психология");
+
+        dropDownStepTwoInsertItem("Педагогика");
+
+        dropDownStepTwoInsertItem("Менеджмент");
+      }
+
+      if (
+        selectedItemFromTheFirstStepText.innerText ===
+        "Master of Business Administration (МВА)"
+      ) {
+        const listItemsStepTwoArr = Array.prototype.slice.call(
+          listItemsStepTwo.childNodes
+        );
+
+        listItemsStepTwoArr.forEach((item, index) => {
+          if (index > 3) {
+            item.remove();
+          }
+        });
+
+        dropDownStepTwoInsertItem("MBA Industry");
+
+        dropDownStepTwoInsertItem("MBA Professional");
+
+        dropDownStepTwoInsertItem("MBA Intensive");
+
+        dropDownStepTwoInsertItem("Mini-MBA");
+      }
+    }, 400);
+
+    // Step back
+    selectedItemFromTheFirstStep.addEventListener("click", (e) => {
+      inputSelectChooseProgrammDropdownStepTwo.classList.remove(
+        "show-dropdown"
+      );
+      inputSelectChooseProgrammDropdown.classList.add("show-dropdown");
+
+      e.preventDefault();
+    });
+
+    inputSelectChooseProgrammDropdownStepTwo.addEventListener("click", (e) => {
+      const dropDownProgrammItemsStepTwoArr = Array.from(
+        dropDownProgrammItemsStepTwo
+      );
+      const dropDownProgrammItemsPStepTwoArr = Array.from(
+        dropDownProgrammItemsPStepTwo
+      );
+
+      dropDownProgrammItemsStepTwoArr.forEach((item) => {
+        item.classList.remove("text-highlight--color");
+      });
+      dropDownProgrammItemsPStepTwoArr.forEach((item) => {
+        item.classList.remove("text-highlight--color");
+      });
+
+      // Change the inner text of the select to the selected text
+      if (e.target.tagName === "svg") {
+        // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
+        inputSelectChooseProgrammInnerText.innerText ===
+        e.target.parentElement.innerText
+          ? inputSelectChooseProgrammInnerText.innerText
+          : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerHTML}, ${e.target.parentElement.innerText}`);
+
+        e.target.parentElement.classList.add("text-highlight--color");
+      } else if (e.target.tagName == "path") {
+        // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
+        inputSelectChooseProgrammInnerText.innerText ===
+        e.target.parentElement.parentElement.innerText
+          ? inputSelectChooseProgrammInnerText.innerText
+          : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText}, ${e.target.parentElement.parentElement.innerText}`);
+
+        e.target.parentElement.parentElement.classList.add(
+          "text-highlight--color"
+        );
+      } else {
+        // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
+        // console.log(e.target.innerText);
+        inputSelectChooseProgrammInnerText.innerText === e.target.innerText
+          ? (inputSelectChooseProgrammInnerText.innerText =
+              inputSelectChooseProgrammInnerText.innerText)
+          : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText}, ${e.target.innerText}`);
+
+        e.target.classList.add("text-highlight--color");
+      }
+
+      inputSelectChooseProgrammInnerText.innerHTML = inputSelectChooseProgrammInnerText.innerHTML.replace(
+        /,\s*$/,
+        ""
+      );
+
+      inputSelectChooseProgrammDropdownStepTwo.classList.remove(
+        "show-dropdown"
+      );
+
+      inputSelectChooseProgramm.scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  }
+
+  // On select hide the module
+  inputSelectChooseProgrammDropdown.classList.toggle("show-dropdown");
+
+  e.preventDefault();
+});
+
+// Ask question clicked
+btnAskQuestion.addEventListener("click", (e) => {
+  btnAskQuestion.classList.add("hidden");
+  moduleQuestions.classList.remove("hidden");
+  moduleStepOne.classList.remove("hidden");
+  document.body.classList.add("dark-overlay");
+  moduleQuestionTextarea.focus();
+
+  document.body.addEventListener("click", function closeQuestionModule(e) {
+    // moduleHorizontalCloseBtn
+    if (
+      (!btnAskQuestion.contains(e.target) &&
+        e.target !== btnAskQuestion &&
+        !moduleQuestions.contains(e.target) &&
+        e.target !== moduleQuestions) ||
+      (e.target === btnAskQuestion && btnAskQuestion.contains(e.target))
+    ) {
+      // Close question module
+      btnAskQuestion.classList.remove("hidden");
+      moduleQuestions.classList.add("hidden");
+      moduleStepOne.classList.add("hidden");
+      document.body.classList.remove("dark-overlay");
+      document.body.removeEventListener("click", closeQuestionModule);
+    }
+
+    e.preventDefault();
+  });
+
+  // Telegram clicked
+  telegramBtn.addEventListener("click", (e) => {
+    if (moduleQuestionTextarea.value === "") {
+      moduleQuestionTextarea.classList.add("bg-danger");
+      moduleQuestionTextarea.focus();
+      moduleQuestionTextarea.addEventListener(
+        "keyup",
+        function highlightBgDanger(e) {
+          e.target.value !== ""
+            ? moduleQuestionTextarea.classList.remove("bg-danger")
+            : moduleQuestionTextarea.classList.add("bg-danger");
+        }
+      );
+    } else {
+      moduleStepOne.classList.add("hidden");
+      moduleStepTwo.classList.remove("hidden");
+
+      moduleStepTwoTitle.innerHTML = "Telegram";
+    }
+
+    // Telegram -> Call clicked
+    moduleBtnCall.addEventListener("click", (e) => {
+      moduleStepThree.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
+
+      moduleStepThreeTitle.innerHTML = "Telegram / Позвонить";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
+      moduleInputContactInfo.focus();
+
+      e.preventDefault();
+    });
+
+    // Telegram -> Message clicked
+    moduleBtnMessage.addEventListener("click", (e) => {
+      moduleStepThree.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
+
+      moduleStepThreeTitle.innerHTML = "Telegram / Написать";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
+      moduleInputContactInfo.focus();
+
+      e.preventDefault();
+    });
+
+    // Step 2 -> Arrow back
+    moduleStepTwoArrowBack.addEventListener("click", (e) => {
+      moduleStepOne.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
+
+      e.preventDefault();
+    });
+
+    // Step 3 -> Arrow Back
+    moduleStepThreeArrowBack.addEventListener("click", (e) => {
+      moduleStepTwo.classList.remove("hidden");
+      moduleStepOne.classList.add("hidden");
+      moduleStepThree.classList.add("hidden");
+      e.preventDefault();
+    });
+
+    e.preventDefault();
+  });
+
+  // Whatsapp clicked
+  whatsappBtn.addEventListener("click", (e) => {
+    if (moduleQuestionTextarea.value === "") {
+      moduleQuestionTextarea.classList.add("bg-danger");
+      moduleQuestionTextarea.focus();
+      moduleQuestionTextarea.addEventListener(
+        "keyup",
+        function highlightBgDanger(e) {
+          e.target.value !== ""
+            ? moduleQuestionTextarea.classList.remove("bg-danger")
+            : moduleQuestionTextarea.classList.add("bg-danger");
+        }
+      );
+    } else {
+      moduleStepOne.classList.add("hidden");
+      moduleStepTwo.classList.remove("hidden");
+      moduleStepTwoTitle.innerHTML = "Whats App";
+    }
+
+    // Whatsapp -> Call clicked
+    moduleBtnCall.addEventListener("click", (e) => {
+      moduleStepThree.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
+
+      moduleStepThreeTitle.innerHTML = "Whatsapp / Позвонить";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
+      moduleInputContactInfo.focus();
+
+      e.preventDefault();
+    });
+
+    // Whatsapp -> Message clicked
+    moduleBtnMessage.addEventListener("click", (e) => {
+      moduleStepThree.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
+
+      moduleStepThreeTitle.innerHTML = "Whatsapp / Написать";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
+      moduleInputContactInfo.focus();
+
+      e.preventDefault();
+    });
+
+    // Step 2 -> Arrow back
+    moduleStepTwoArrowBack.addEventListener("click", (e) => {
+      moduleStepOne.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
+
+      e.preventDefault();
+    });
+
+    // Step 3 -> Arrow Back
+    moduleStepThreeArrowBack.addEventListener("click", (e) => {
+      moduleStepTwo.classList.remove("hidden");
+      moduleStepOne.classList.add("hidden");
+      moduleStepThree.classList.add("hidden");
+      e.preventDefault();
+    });
+
+    e.preventDefault();
+  });
+
+  // Viber clicked
+  viberBtn.addEventListener("click", (e) => {
+    if (moduleQuestionTextarea.value === "") {
+      moduleQuestionTextarea.classList.add("bg-danger");
+      moduleQuestionTextarea.focus();
+      moduleQuestionTextarea.addEventListener(
+        "keyup",
+        function highlightBgDanger(e) {
+          e.target.value !== ""
+            ? moduleQuestionTextarea.classList.remove("bg-danger")
+            : moduleQuestionTextarea.classList.add("bg-danger");
+        }
+      );
+    } else {
+      moduleStepOne.classList.add("hidden");
+      moduleStepTwo.classList.remove("hidden");
+      moduleStepTwoTitle.innerHTML = "Viber";
+    }
+
+    // Viber -> Call clicked
+    moduleBtnCall.addEventListener("click", (e) => {
+      moduleStepThree.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
+
+      moduleStepThreeTitle.innerHTML = "Viber / Позвонить";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
+      moduleInputContactInfo.focus();
+
+      e.preventDefault();
+    });
+
+    // Viber -> Message clicked
+    moduleBtnMessage.addEventListener("click", (e) => {
+      moduleStepThree.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
+
+      moduleStepThreeTitle.innerHTML = "Viber / Написать";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
+      moduleInputContactInfo.focus();
+
+      e.preventDefault();
+    });
+
+    // Step 2 -> Arrow back
+    moduleStepTwoArrowBack.addEventListener("click", (e) => {
+      moduleStepOne.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
+
+      e.preventDefault();
+    });
+
+    // Step 3 -> Arrow Back
+    moduleStepThreeArrowBack.addEventListener("click", (e) => {
+      moduleStepTwo.classList.remove("hidden");
+      moduleStepOne.classList.add("hidden");
+      moduleStepThree.classList.add("hidden");
+      e.preventDefault();
+    });
+
+    e.preventDefault();
+  });
+
+  // Vk clicked
+  vkBtn.addEventListener("click", (e) => {
+    if (moduleQuestionTextarea.value === "") {
+      moduleQuestionTextarea.classList.add("bg-danger");
+      moduleQuestionTextarea.focus();
+      moduleQuestionTextarea.addEventListener(
+        "keyup",
+        function highlightBgDanger(e) {
+          e.target.value !== ""
+            ? moduleQuestionTextarea.classList.remove("bg-danger")
+            : moduleQuestionTextarea.classList.add("bg-danger");
+        }
+      );
+    } else {
+      moduleStepOne.classList.add("hidden");
+      moduleStepTwo.classList.remove("hidden");
+      moduleStepTwoTitle.innerHTML = "VK";
+    }
+
+    // VK -> Call clicked
+    moduleBtnCall.addEventListener("click", (e) => {
+      moduleStepThree.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
+
+      moduleStepThreeTitle.innerHTML = "VK / Позвонить";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
+      moduleInputContactInfo.focus();
+
+      e.preventDefault();
+    });
+
+    // VK -> Message clicked
+    moduleBtnMessage.addEventListener("click", (e) => {
+      moduleStepThree.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
+
+      moduleStepThreeTitle.innerHTML = "VK / Написать";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
+      moduleInputContactInfo.focus();
+
+      e.preventDefault();
+    });
+
+    // Step 2 -> Arrow back
+    moduleStepTwoArrowBack.addEventListener("click", (e) => {
+      moduleStepOne.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
+
+      e.preventDefault();
+    });
+
+    // Step 3 -> Arrow Back
+    moduleStepThreeArrowBack.addEventListener("click", (e) => {
+      moduleStepTwo.classList.remove("hidden");
+      moduleStepOne.classList.add("hidden");
+      moduleStepThree.classList.add("hidden");
+      e.preventDefault();
+    });
+
+    e.preventDefault();
+  });
+
+  // Phone button clicked
+  phoneBtn.addEventListener("click", (e) => {
+    if (moduleQuestionTextarea.value === "") {
+      moduleQuestionTextarea.classList.add("bg-danger");
+      moduleQuestionTextarea.focus();
+      moduleQuestionTextarea.addEventListener(
+        "keyup",
+        function highlightBgDanger(e) {
+          e.target.value !== ""
+            ? moduleQuestionTextarea.classList.remove("bg-danger")
+            : moduleQuestionTextarea.classList.add("bg-danger");
+        }
+      );
+    } else {
+      moduleStepOne.classList.add("hidden");
+      moduleStepThree.classList.remove("hidden");
+      moduleStepThreeTitle.innerHTML = "Позвонить";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
+      moduleInputContactInfo.focus();
+    }
+
+    // Step 3 -> Arrow Back
+    moduleStepThreeArrowBack.addEventListener("click", (e) => {
+      moduleStepOne.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
+      moduleStepThree.classList.add("hidden");
+      e.preventDefault();
+    });
+
+    e.preventDefault();
+  });
+
+  // Email button clicked
+  emailBtn.addEventListener("click", (e) => {
+    if (moduleQuestionTextarea.value === "") {
+      moduleQuestionTextarea.classList.add("bg-danger");
+      moduleQuestionTextarea.focus();
+      moduleQuestionTextarea.addEventListener(
+        "keyup",
+        function highlightBgDanger(e) {
+          e.target.value !== ""
+            ? moduleQuestionTextarea.classList.remove("bg-danger")
+            : moduleQuestionTextarea.classList.add("bg-danger");
+        }
+      );
+    } else {
+      moduleStepOne.classList.add("hidden");
+      moduleStepThree.classList.remove("hidden");
+      moduleStepThreeTitle.innerHTML = "Написать";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой e-mail";
+      moduleInputContactInfo.placeholder = "example@gmail.com";
+      moduleInputContactInfo.type = "email";
+      moduleInputContactInfo.focus();
+    }
+
+    // Step 3 -> Arrow Back
+    moduleStepThreeArrowBack.addEventListener("click", (e) => {
+      moduleStepOne.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
+      moduleStepThree.classList.add("hidden");
+
+      e.preventDefault();
+    });
+
+    e.preventDefault();
+  });
+
+  // Submit btn clicked
+  moduleBtnSubmit.addEventListener("click", function submitQuestionModule(e) {
+    if (moduleInputContactInfo.type === "email") {
+      // todo: validate email
+      if (moduleInputContactInfo.value === "") {
+        moduleInputContactInfo.classList.add("bg-danger");
+        setTimeout(() => {
+          moduleInputContactInfo.classList.remove("bg-danger");
+        }, 1500);
+      } else {
+        moduleStepThree.classList.add("hidden");
+        moduleStepTwo.classList.add("hidden");
+        moduleStepOne.classList.add("hidden");
+        moduleStepSuccess.classList.remove("hidden");
+
+        // Submit
+        const question = moduleQuestionTextarea.value.trim();
+        const contactWay = moduleStepThreeTitle.innerText.trim();
+        const contact = moduleInputContactInfo.value.trim();
+
+        const googleClientId = ga.getAll()[0].get("clientId");
+
+        const data = {
+          question,
+          contactWay,
+          contact,
+          userCity,
+          userCountry,
+          googleClientId,
+          userDevice,
+          utmSource,
+          utmMedium,
+          utmCampaign,
+          utmContent,
+          utmTerm,
+        };
+
+        sumbitData(data);
+
+        setTimeout(() => {
+          moduleStepSuccess.classList.add("hidden");
+          btnAskQuestion.classList.remove("hidden");
+
+          // console.log(sectionAskQuestionsInner.innerHTM);
+          oneMoreQuestionText.innerText = "ещё один";
+          const sectionAskQuestionInnerSaver =
+            sectionAskQuestionsInner.innerHTML;
+          // console.log(sectionAskQuestionInnerSaver);
+          sectionAskQuestionsInner.innerHTML = "Спасибо! Мы с вами свяжемся!";
+          setTimeout(() => {
+            sectionAskQuestionsInner.innerHTML = sectionAskQuestionInnerSaver;
+          }, 3000);
+
+          moduleQuestions.classList.add("hidden");
+          document.body.classList.remove("dark-overlay");
+          // document.body.removeEventListener("click", closeQuestionModule);
+          moduleBtnSubmit.removeEventListener("click", submitQuestionModule);
+        }, 3000);
+      }
+    } else {
+      if (
+        moduleInputContactInfo.value.trim() !== "" &&
+        moduleInputContactInfo.value.trim().match(numValidation)
+      ) {
+        moduleStepThree.classList.add("hidden");
+        moduleStepTwo.classList.add("hidden");
+        moduleStepOne.classList.add("hidden");
+        moduleStepSuccess.classList.remove("hidden");
+
+        moduleStepSuccess.classList.add("showed");
+
+        // Submit
+        const question = moduleQuestionTextarea.value.trim();
+        const contactWay = moduleStepThreeTitle.innerText.trim();
+        const contact = moduleInputContactInfo.value.trim();
+
+        const googleClientId = ga.getAll()[0].get("clientId");
+
+        const data = {
+          question,
+          contactWay,
+          contact,
+          userCity,
+          userCountry,
+          googleClientId,
+          userDevice,
+          utmSource,
+          utmMedium,
+          utmCampaign,
+          utmContent,
+          utmTerm,
+        };
+
+        sumbitData(data);
+
+        setTimeout(() => {
+          moduleStepSuccess.classList.add("hidden");
+          btnAskQuestion.classList.remove("hidden");
+
+          moduleStepSuccess.classList.remove("showed");
+
+          // console.log(sectionAskQuestionsInner.innerHTM);
+          oneMoreQuestionText.innerText = "ещё один";
+          const sectionAskQuestionInnerSaver =
+            sectionAskQuestionsInner.innerHTML;
+          // console.log(sectionAskQuestionInnerSaver);
+          sectionAskQuestionsInner.innerHTML = "Спасибо! Мы с вами свяжемся!";
+          setTimeout(() => {
+            sectionAskQuestionsInner.innerHTML = sectionAskQuestionInnerSaver;
+          }, 3000);
+
+          moduleQuestions.classList.add("hidden");
+          document.body.classList.remove("dark-overlay");
+          // document.body.removeEventListener("click", closeQuestionModule);
+          moduleBtnSubmit.removeEventListener("click", submitQuestionModule);
+        }, 3000);
+      } else {
+        moduleInputContactInfo.classList.add("bg-danger");
+
+        if (moduleInputContactInfo.type === "email") {
+          // todo: validate email
+        } else {
+          moduleInputContactInfo.addEventListener("keyup", (e) => {
+            // console.log("event keyup");
+            if (
+              moduleInputContactInfo.value.trim() !== "" &&
+              moduleInputContactInfo.value.trim().match(numValidation)
+            ) {
+              // console.log("correct");
+              moduleInputContactInfo.classList.remove("bg-danger");
+            } else {
+              // console.log("wrong");
+              moduleInputContactInfo.classList.add("bg-danger");
+            }
+
+            e.preventDefault();
+          });
+        }
+      }
+    }
+
+    e.preventDefault();
+  });
+
+  e.preventDefault();
+});
+
+// Carousel
+const carouselItems = [
+  carouselImgGroupOne,
+  carouselImgGroupTwo,
+  carouselImgGroupThree,
+];
+
+// Terrible solution for carousel, it works tho
+let i = 0;
+carouselBtnRight.addEventListener("click", (e) => {
+  i > 2 ? (i = 0) : i;
+  i < 0 ? (i = 2) : i;
+
+  carouselItems[i].classList.add("hidden");
+  carouselItems[i + 1 > 2 ? 0 : i + 1].classList.remove("hidden");
+  carouselItems[i - 1 < 0 ? 2 : i - 1].classList.add("hidden");
+
+  i++;
+
+  e.preventDefault();
+});
+
+// Don't look below
+carouselBtnLeft.addEventListener("click", (e) => {
+  i < 0 ? (i = 2) : i;
+  i > 2 ? (i = 0) : i;
+  carouselItems[i].classList.add("hidden");
+  carouselItems[i + 1 > 2 ? 0 : i + 1].classList.add("hidden");
+  carouselItems[i - 1 < 0 ? 2 : i - 1].classList.remove("hidden");
+  i--;
+
+  e.preventDefault();
+});
+
+// On submit
+ctaSubmitBtn.addEventListener("click", (e) => {
+  const field = inputSelectChooseProgrammInnerText.innerText.trim();
+  const uni = inputSelectChooseUniInnerText.innerText.trim();
+  const number = phoneInputInnerText.value.trim();
+  const userName = userInputNameText.value.trim();
+
+  const googleClientId = ga.getAll()[0].get("clientId");
+
+  const data = {
+    field,
+    uni,
+    number,
+    userName,
+    userCity,
+    userCountry,
+    googleClientId,
+    userDevice,
+    utmSource,
+    utmMedium,
+    utmCampaign,
+    utmContent,
+    utmTerm,
+  };
+
+  // console.log(data);
+  // console.log(JSON.stringify(data));
+
+  // Validate input number
+  if (number !== "" && number.match(numValidation)) {
+    const appIsSumbitted = document.getElementById("js-app-is-submitted");
+
+    appIsSumbitted.classList.add("showed");
+
+    document
+      .getElementById("step-success-row__back-to-main")
+      .addEventListener("click", (e) => {
+        appIsSumbitted.classList.add("removing");
+        setTimeout(() => {
+          appIsSumbitted.classList.remove("showed");
+          appIsSumbitted.classList.remove("removing");
+        }, 300);
+
+        e.preventDefault();
+      });
+
+    // console.log("correct");
+    sumbitData(data);
+  } else {
+    phoneInputInnerText.classList.add("bg-danger");
+    // console.log("wrong");
+    phoneInputInnerText.addEventListener("keyup", (e) => {
+      // console.log("event keyup");
+      if (
+        phoneInputInnerText.value.trim() !== "" &&
+        phoneInputInnerText.value.trim().match(numValidation)
+      ) {
+        // console.log("correct");
+        phoneInputInnerText.classList.remove("bg-danger");
+      } else {
+        // console.log("wrong");
+        phoneInputInnerText.classList.add("bg-danger");
+      }
+
+      e.preventDefault();
+    });
+  }
+
+  e.preventDefault();
+});
+
+phoneInputInnerText.addEventListener("keydown", (e) => {
+  const number = phoneInputInnerText.value.trim();
+  // Validate input number
+  if (number !== "" && number.match(numValidation)) {
+    userNameInput.classList.add("showed");
+  }
+});
+
+// onclick =
+//   "gtag('event','offerprogks',{'event_category':'all-page','event_action':'click-all-page-button-button','event_label':'all-page-button','value':'3900'});yaCounter42094189.reachGoal('allpagebutton');return true;";
+
+// onsubmit =
+//   "gtag('event','offerprogks',{'event_category':'quest-send','event_action':'click-quest-send-button-button','event_label':'quest-send','value':'3900'});yaCounter42094189.reachGoal('quest-send');return true;";
+
+// document
+//   .getElementById("cta-submit-application")
+//   .addEventListener("click", (e) => {
+//     console.log("test");
+//   });
+
+// yaCounter42094189.reachGoal('callback_ipomsk_click');gtag('event','click',{'event_category':'callback_ipomsk'});return true;
+
+// onclick="yaCounter42094189.reachGoal('callback_ipomsk_click');gtag('event','click',{'event_category':'callback_ipomsk'});"
+
+// onclick="yaCounter42094189.reachGoal('phone1_ipomsk_click'); gtag('event', 'click',{'event_category': 'phone1_ipomsk'});"
+
+// onclick="yaCounter42094189.reachGoal('phone1_ipomsk_click'); gtag('event', 'click',{'event_category': 'phone1_ipomsk'});return true;"
