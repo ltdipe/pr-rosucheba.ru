@@ -1163,11 +1163,11 @@ header {
   position: fixed;
   bottom: 0;
   left: 0;
-  animation-name: smoothlyAppear;
+  animation-name: smoothlyAppearModule;
   animation-duration: 0.8s;
   animation-fill-mode: forwards; }
 
-@keyframes smoothlyAppear {
+@keyframes smoothlyAppearModule {
   0% {
     height: 0; }
   40% {

@@ -194,8 +194,16 @@ fetch(locationUrlAPI)
   .then((data) => data.json())
   .then((data) => {
     userCity = data.city;
-    userCountry = data.region;
+    userCountry = data.country;
     userCountryCode = data.country;
+    if (userCountry === "RU") {
+      userCountry = "Russia";
+    } else if (userCountry === "KZ") {
+      userCountry = "Kazakhstan";
+    } else if (userCountry == "UZ") {
+      userCountry = "Uzbekistan";
+    }
+
     // console.log(data);
     // // console.log(locationDependedHeading);
     // // console.log(userCountryCode);
