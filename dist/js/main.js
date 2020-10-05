@@ -1,144 +1,144 @@
 // CTA btns
-const ctaSubmitBtn = document.getElementById('cta-submit-application');
+const ctaSubmitBtn = document.getElementById("cta-submit-application");
 
-const btnAskQuestion = document.getElementById('section-ask-questions');
-const moduleQuestions = document.getElementById('module-questions');
+const btnAskQuestion = document.getElementById("section-ask-questions");
+const moduleQuestions = document.getElementById("module-questions");
 const moduleQuestionTextarea = document.getElementById(
-  'js-text-input-ask-anything'
+  "js-text-input-ask-anything"
 );
 
-const sectionAskQuestionsInner = document.getElementById('cta-ask-question');
+const sectionAskQuestionsInner = document.getElementById("cta-ask-question");
 
-const oneMoreQuestionText = document.getElementById('one-more-question');
+const oneMoreQuestionText = document.getElementById("one-more-question");
 
 const moduleHorizontalCloseBtn = document.getElementById(
-  'js-btn-horizontal-line-close'
+  "js-btn-horizontal-line-close"
 );
 
-const menuToggler = document.getElementById('menu-toggle');
+const menuToggler = document.getElementById("menu-toggle");
 
-const inputSelectChooseUni = document.getElementById('input-select-choose-uni');
+const inputSelectChooseUni = document.getElementById("input-select-choose-uni");
 
 const inputSelectChooseUniInnerText = document.getElementById(
-  'input-select-choose-uni-inner-text'
+  "input-select-choose-uni-inner-text"
 );
 
 const inputSelectChooseProgramm = document.getElementById(
-  'input-select-choose-programm'
+  "input-select-choose-programm"
 );
 
 const inputSelectChooseProgrammInnerText = document.getElementById(
-  'input-select-choose-programm-inner-text'
+  "input-select-choose-programm-inner-text"
 );
 
 const inputSelectChooseUniDropdown = document.getElementById(
-  'input-select-choose-uni-dropdown'
+  "input-select-choose-uni-dropdown"
 );
 
 const inputSelectChooseProgrammDropdown = document.getElementById(
-  'input-select-choose-programm-dropdown'
+  "input-select-choose-programm-dropdown"
 );
 
 const inputSelectChooseProgrammDropdownStepTwo = document.getElementById(
-  'input-select-choose-programm-dropdown--step-two'
+  "input-select-choose-programm-dropdown--step-two"
 );
 
 const dropDownUniItems = document.querySelectorAll(
-  '.input-select-choose-uni-dropdown .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item'
+  ".input-select-choose-uni-dropdown .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item"
 );
 
 const dropDownUniItemsP = document.querySelectorAll(
-  '.input-select-choose-uni-dropdown .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item p'
+  ".input-select-choose-uni-dropdown .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item p"
 );
 
 const dropDownProgrammItems = document.querySelectorAll(
-  '.input-select-choose-programm-dropdown .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item'
+  ".input-select-choose-programm-dropdown .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item"
 );
 
 const dropDownProgrammItemsP = document.querySelectorAll(
-  '.input-select-choose-programm-dropdown .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item p'
+  ".input-select-choose-programm-dropdown .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item p"
 );
 
 const dropDownProgrammItemsStepTwo = document.querySelectorAll(
-  '.input-select-choose-programm-dropdown--step-two .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item'
+  ".input-select-choose-programm-dropdown--step-two .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item"
 );
 
 const dropDownProgrammItemsPStepTwo = document.querySelectorAll(
-  '.input-select-choose-programm-dropdown--step-two .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item p'
+  ".input-select-choose-programm-dropdown--step-two .inner-dropdown__inner-dropdown-items .inner-dropdown-items__item p"
 );
 
 const selectedItemFromTheFirstStep = document.getElementById(
-  'inner-dropdown-items__item--selected'
+  "inner-dropdown-items__item--selected"
 );
 
-const phoneInputInnerText = document.getElementById('phone-number');
+const phoneInputInnerText = document.getElementById("phone-number");
 
-const userInputNameText = document.getElementById('user-name');
+const userInputNameText = document.getElementById("user-name");
 
-const navItemLinks = document.querySelectorAll('.nav-item__link');
+const navItemLinks = document.querySelectorAll(".nav-item__link");
 const navItemLinksArr = Array.from(navItemLinks);
 
 const dropDownItemUniIcons = document.querySelectorAll(
-  '.inner-dropdown-items__item-uni__icon'
+  ".inner-dropdown-items__item-uni__icon"
 );
 const dropDownItemUniIconsArr = Array.from(dropDownItemUniIcons);
 
 const dropDownItemProgrammIcons = document.querySelectorAll(
-  '.inner-dropdown-items__item-programm__icon'
+  ".inner-dropdown-items__item-programm__icon"
 );
 const dropDownItemProgrammIconsArr = Array.from(dropDownItemProgrammIcons);
 
 // Module Ask Question -> Steps
-const moduleStepOne = document.getElementById('module-questions__step-one');
-const moduleStepTwo = document.getElementById('module-questions__step-two');
-const moduleStepThree = document.getElementById('module-questions__step-three');
+const moduleStepOne = document.getElementById("module-questions__step-one");
+const moduleStepTwo = document.getElementById("module-questions__step-two");
+const moduleStepThree = document.getElementById("module-questions__step-three");
 const moduleStepSuccess = document.getElementById(
-  'module-questions__step-success'
+  "module-questions__step-success"
 );
 
 // Module Ask Question -> Step 1 -> SM Buttons
-const telegramBtn = document.getElementById('sm-icons__link--telegram');
-const whatsappBtn = document.getElementById('sm-icons__link--whatsapp');
-const viberBtn = document.getElementById('sm-icons__link--viber');
-const vkBtn = document.getElementById('sm-icons__link--vk');
-const phoneBtn = document.getElementById('sm-icons__link--phone');
-const emailBtn = document.getElementById('sm-icons__link--email');
+const telegramBtn = document.getElementById("sm-icons__link--telegram");
+const whatsappBtn = document.getElementById("sm-icons__link--whatsapp");
+const viberBtn = document.getElementById("sm-icons__link--viber");
+const vkBtn = document.getElementById("sm-icons__link--vk");
+const phoneBtn = document.getElementById("sm-icons__link--phone");
+const emailBtn = document.getElementById("sm-icons__link--email");
 
 // Module Ask Question -> Step 2 -> Btns
-const moduleBtnCall = document.getElementById('question-module__radio-call');
+const moduleBtnCall = document.getElementById("question-module__radio-call");
 const moduleBtnMessage = document.getElementById(
-  'question-module__radio-message'
+  "question-module__radio-message"
 );
 
 // Module Ask Question -> Step 2, Step 3 -> Titles
-const moduleStepTwoTitle = document.getElementById('module-step-two-title');
-const moduleStepThreeTitle = document.getElementById('module-step-three-title');
+const moduleStepTwoTitle = document.getElementById("module-step-two-title");
+const moduleStepThreeTitle = document.getElementById("module-step-three-title");
 
 // Module Ask Question -> Step 2, Step 3 -> Arrows Back
 const moduleStepTwoArrowBack = document.getElementById(
-  'step-two-arrow-step-back'
+  "step-two-arrow-step-back"
 );
 const moduleStepThreeArrowBack = document.getElementById(
-  'step-three-arrow-step-back'
+  "step-three-arrow-step-back"
 );
 
 // Module Ask Question -> Step 3 -> Contact input
 const moduleLabelEnterContactInfo = document.getElementById(
-  'module-label-enter-contact-info'
+  "module-label-enter-contact-info"
 );
 const moduleInputContactInfo = document.getElementById(
-  'module-input-contact-info'
+  "module-input-contact-info"
 );
 
 // Module Ask Question -> Step Success -> Submit
-const moduleBtnSubmit = document.getElementById('module_questions-submit-btn');
+const moduleBtnSubmit = document.getElementById("module_questions-submit-btn");
 
-const carouselBtnLeft = document.getElementById('carrousel-arrow-left-btn');
-const carouselBtnRight = document.getElementById('carrousel-arrow-right-btn');
+const carouselBtnLeft = document.getElementById("carrousel-arrow-left-btn");
+const carouselBtnRight = document.getElementById("carrousel-arrow-right-btn");
 
-const carouselImgGroupOne = document.getElementById('content__img-group--1');
-const carouselImgGroupTwo = document.getElementById('content__img-group--2');
-const carouselImgGroupThree = document.getElementById('content__img-group--3');
+const carouselImgGroupOne = document.getElementById("content__img-group--1");
+const carouselImgGroupTwo = document.getElementById("content__img-group--2");
+const carouselImgGroupThree = document.getElementById("content__img-group--3");
 
 const svgCheckMark = `<svg
       class="inner-dropdown-items-programm__item__icon"
@@ -157,21 +157,21 @@ const svgCheckMark = `<svg
     </svg>`;
 
 const scrollToTheApplicationBtn = document.getElementById(
-  'cta-scroll-to-submit-application'
+  "cta-scroll-to-submit-application"
 );
 
-const fillInTheFieldsBelow = document.getElementById('fill-in-fields');
+const fillInTheFieldsBelow = document.getElementById("fill-in-fields");
 
-const userNameInput = document.getElementById('container-input--user-name');
+const userNameInput = document.getElementById("container-input--user-name");
 
 const insertAfterLiStepTwo = document.getElementById(
-  'js-insert-after--step-two'
+  "js-insert-after--step-two"
 );
 
 const numValidation = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{5,12}$/;
 
 const locationDependedHeading = document.getElementById(
-  'location-depended-heading'
+  "location-depended-heading"
 );
 
 // Track IP
@@ -185,42 +185,53 @@ const locationDependedHeading = document.getElementById(
 //   });
 // let userLocation;
 
-const locationUrlAPI = 'http://ip-api.com/json';
+// const locationUrlAPI = "http://ip-api.com/json";
+// https://ipinfo.io?token=b16e76b622236e
 let userCity;
-let userCountry;
-let userCountryCode; // KZ, RU, UZ
-fetch(locationUrlAPI)
+let userCountry; // KZ, RU, UZ
+fetch((locationUrlAPI = ""))
   .then((data) => data.json())
   .then((data) => {
     userCity = data.city;
     userCountry = data.country;
-    userCountryCode = data.countryCode;
     // console.log(data);
-    // console.log(locationDependedHeading);
-    // console.log(userCountryCode);
+    // // console.log(locationDependedHeading);
+    // // console.log(userCountryCode);
     changeLocationDependedHeading(
       locationDependedHeading,
-      'дистанционно',
-      'дистанционно без ЕГЭ',
-      'дистанционно без ЕНТ и ЕГЭ'
+      "дистанционно",
+      "дистанционно без ЕГЭ",
+      "дистанционно без ЕНТ и ЕГЭ",
+      "дистанционно без ЕНТ и ЕГЭ"
     );
   })
-  .catch(`Can't access ${locationUrlAPI} :(`);
+  .catch((error) => {
+    // `Can't access ${locationUrlAPI} :(`;
+    changeLocationDependedHeading(
+      locationDependedHeading,
+      "дистанционно",
+      "дистанционно без ЕГЭ",
+      "дистанционно без ЕНТ и ЕГЭ",
+      "дистанционно без ЕНТ и ЕГЭ"
+    );
+    return;
+  });
 
 function changeLocationDependedHeading(
-  textBefore,
-  textAfterRU,
-  textAfterKZ,
-  textAfterUZ
+  textBefore = "",
+  textAfterRU = "",
+  textAfterKZ = "",
+  textAfterUZ = "",
+  textFallback = ""
 ) {
-  if (userCountryCode === 'RU') {
+  if (userCountry === "RU") {
     textBefore.innerText = textAfterRU;
-  } else if (userCountryCode === 'KZ') {
+  } else if (userCountry === "KZ") {
     textBefore.innerText = textAfterKZ;
-  } else if (userCountryCode === 'UZ') {
+  } else if (userCountry === "UZ") {
     textBefore.innerText = textAfterUZ;
   } else {
-    return;
+    textBefore.innerText = textFallback;
   }
 }
 
@@ -228,10 +239,10 @@ function insertAfter(referenceNode, newNode) {
   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
 
-function dropDownStepTwoInsertItem(text = '') {
+function dropDownStepTwoInsertItem(text = "") {
   let el;
-  el = document.createElement('li');
-  el.classList.add('inner-dropdown-items__item');
+  el = document.createElement("li");
+  el.classList.add("inner-dropdown-items__item");
   el.innerHTML = `
         <p>
           ${svgCheckMark}
@@ -243,11 +254,11 @@ function dropDownStepTwoInsertItem(text = '') {
 
 // Send to email
 async function sumbitData(data) {
-  const res = await fetch('/email', {
-    method: 'POST',
+  const res = await fetch("/email", {
+    method: "POST",
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      Accept: "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
   });
@@ -255,155 +266,155 @@ async function sumbitData(data) {
 }
 
 // Menu
-navItemLinks[0].addEventListener('click', (e) => {
+navItemLinks[0].addEventListener("click", (e) => {
   // window.location = "#about";
-  const aboutSection = document.getElementById('about');
+  const aboutSection = document.getElementById("about");
   aboutSection.scrollIntoView({
-    behavior: 'smooth',
+    behavior: "smooth",
   });
   menuToggler.checked = false;
   e.preventDefault();
 });
 
-navItemLinks[1].addEventListener('click', (e) => {
+navItemLinks[1].addEventListener("click", (e) => {
   // window.location = "#partners";
-  const partnersSection = document.getElementById('partners');
+  const partnersSection = document.getElementById("partners");
   partnersSection.scrollIntoView({
-    behavior: 'smooth',
+    behavior: "smooth",
   });
   menuToggler.checked = false;
   e.preventDefault();
 });
 
-navItemLinks[2].addEventListener('click', (e) => {
+navItemLinks[2].addEventListener("click", (e) => {
   // window.location = "#trusted-by";
-  const trustedBySection = document.getElementById('trusted-by');
+  const trustedBySection = document.getElementById("trusted-by");
   trustedBySection.scrollIntoView({
-    behavior: 'smooth',
+    behavior: "smooth",
   });
   menuToggler.checked = false;
   e.preventDefault();
 });
 
 // Select Dropdown Uni
-inputSelectChooseUni.addEventListener('click', (e) => {
-  inputSelectChooseUniDropdown.classList.toggle('show-dropdown');
+inputSelectChooseUni.addEventListener("click", (e) => {
+  inputSelectChooseUniDropdown.classList.toggle("show-dropdown");
 
   // window.location = '#input-select-choose-uni';
-  if (inputSelectChooseUniDropdown.classList.contains('show-dropdown')) {
+  if (inputSelectChooseUniDropdown.classList.contains("show-dropdown")) {
     inputSelectChooseUni.scrollIntoView({
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }
 
-  document.body.addEventListener('click', function closeInputUniDropDown(e) {
+  document.body.addEventListener("click", function closeInputUniDropDown(e) {
     if (
-      inputSelectChooseUniDropdown.classList.contains('show-dropdown') &&
+      inputSelectChooseUniDropdown.classList.contains("show-dropdown") &&
       !inputSelectChooseUniDropdown.contains(e.target) &&
       e.target !== inputSelectChooseUniDropdown &&
       !inputSelectChooseUni.contains(e.target) &&
       e.target !== inputSelectChooseUni
     ) {
       // Close question module
-      inputSelectChooseUniDropdown.classList.toggle('show-dropdown');
-      document.body.removeEventListener('click', closeInputUniDropDown);
+      inputSelectChooseUniDropdown.classList.toggle("show-dropdown");
+      document.body.removeEventListener("click", closeInputUniDropDown);
     }
   });
 
   e.preventDefault();
 });
 
-scrollToTheApplicationBtn.addEventListener('click', (e) => {
-  fillInTheFieldsBelow.classList.remove('hidden');
+scrollToTheApplicationBtn.addEventListener("click", (e) => {
+  fillInTheFieldsBelow.classList.remove("hidden");
 
   fillInTheFieldsBelow.scrollIntoView({
-    behavior: 'smooth',
+    behavior: "smooth",
   });
 
   setTimeout(() => {
-    fillInTheFieldsBelow.classList.add('hidden');
+    fillInTheFieldsBelow.classList.add("hidden");
   }, 3000);
 
   e.preventDefault();
 });
 
 // Dropdown Uni
-inputSelectChooseUniDropdown.addEventListener('mousedown', (e) => {
+inputSelectChooseUniDropdown.addEventListener("mousedown", (e) => {
   // Convert Dropdown Uni items into an array
   const dropDownUniItemsArr = Array.from(dropDownUniItems);
   const dropDownUniItemsArrP = Array.from(dropDownUniItemsP);
 
   // Add the color to the selected text in the dropdown and clean the colors from other elements
   dropDownUniItemsArr.forEach((item) => {
-    item.classList.remove('text-highlight--color');
+    item.classList.remove("text-highlight--color");
   });
   dropDownUniItemsArrP.forEach((item) => {
-    item.classList.remove('text-highlight--color');
+    item.classList.remove("text-highlight--color");
   });
 
   // Change the inner text of the select to the selected text
-  if (e.target.tagName === 'svg') {
+  if (e.target.tagName === "svg") {
     inputSelectChooseUniInnerText.innerText = e.target.parentElement.innerText;
 
     inputSelectChooseUniInnerText.innerText = inputSelectChooseUniInnerText.innerText
-      .substring(inputSelectChooseUniInnerText.innerText.indexOf('(') + 1)
+      .substring(inputSelectChooseUniInnerText.innerText.indexOf("(") + 1)
       .slice(0, -1);
 
-    e.target.parentElement.classList.add('text-highlight--color');
-  } else if (e.target.tagName == 'path') {
+    e.target.parentElement.classList.add("text-highlight--color");
+  } else if (e.target.tagName == "path") {
     inputSelectChooseUniInnerText.innerText =
       e.target.parentElement.parentElement.innerText;
 
     inputSelectChooseUniInnerText.innerText = inputSelectChooseUniInnerText.innerText
-      .substring(inputSelectChooseUniInnerText.innerText.indexOf('(') + 1)
+      .substring(inputSelectChooseUniInnerText.innerText.indexOf("(") + 1)
       .slice(0, -1);
 
-    e.target.parentElement.parentElement.classList.add('text-highlight--color');
+    e.target.parentElement.parentElement.classList.add("text-highlight--color");
   } else {
     inputSelectChooseUniInnerText.innerText = e.target.innerText;
 
     inputSelectChooseUniInnerText.innerText = inputSelectChooseUniInnerText.innerText
-      .substring(inputSelectChooseUniInnerText.innerText.indexOf('(') + 1)
+      .substring(inputSelectChooseUniInnerText.innerText.indexOf("(") + 1)
       .slice(0, -1);
 
-    e.target.classList.add('text-highlight--color');
+    e.target.classList.add("text-highlight--color");
   }
 
   // Add the color to the selected text in the input
-  inputSelectChooseUniInnerText.classList.add('text-highlight--color');
+  inputSelectChooseUniInnerText.classList.add("text-highlight--color");
 
   // On select hide the module
-  inputSelectChooseUniDropdown.classList.toggle('show-dropdown');
+  inputSelectChooseUniDropdown.classList.toggle("show-dropdown");
 
   e.preventDefault();
 });
 
 // Select Dropdown Programm
-inputSelectChooseProgramm.addEventListener('click', (e) => {
+inputSelectChooseProgramm.addEventListener("click", (e) => {
   if (
-    inputSelectChooseProgrammDropdownStepTwo.classList.contains('show-dropdown')
+    inputSelectChooseProgrammDropdownStepTwo.classList.contains("show-dropdown")
   ) {
-    inputSelectChooseProgrammDropdownStepTwo.classList.remove('show-dropdown');
-    inputSelectChooseProgrammDropdown.classList.remove('show-dropdown');
+    inputSelectChooseProgrammDropdownStepTwo.classList.remove("show-dropdown");
+    inputSelectChooseProgrammDropdown.classList.remove("show-dropdown");
   } else {
-    inputSelectChooseProgrammDropdownStepTwo.classList.remove('show-dropdown');
-    inputSelectChooseProgrammDropdown.classList.toggle('show-dropdown');
+    inputSelectChooseProgrammDropdownStepTwo.classList.remove("show-dropdown");
+    inputSelectChooseProgrammDropdown.classList.toggle("show-dropdown");
   }
 
   // window.location = '#input-select-choose-uni';
-  if (inputSelectChooseProgrammDropdown.classList.contains('show-dropdown')) {
+  if (inputSelectChooseProgrammDropdown.classList.contains("show-dropdown")) {
     inputSelectChooseProgramm.scrollIntoView({
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }
 
-  document.body.addEventListener('click', function closeInputProgrammDropDown(
+  document.body.addEventListener("click", function closeInputProgrammDropDown(
     e
   ) {
     if (
-      (inputSelectChooseProgrammDropdown.classList.contains('show-dropdown') ||
+      (inputSelectChooseProgrammDropdown.classList.contains("show-dropdown") ||
         inputSelectChooseProgrammDropdownStepTwo.classList.contains(
-          'show-dropdown'
+          "show-dropdown"
         )) &&
       !inputSelectChooseProgrammDropdown.contains(e.target) &&
       e.target !== inputSelectChooseProgrammDropdown &&
@@ -415,11 +426,11 @@ inputSelectChooseProgramm.addEventListener('click', (e) => {
       e.target !== selectedItemFromTheFirstStep
     ) {
       // Close question module
-      inputSelectChooseProgrammDropdown.classList.remove('show-dropdown');
+      inputSelectChooseProgrammDropdown.classList.remove("show-dropdown");
       inputSelectChooseProgrammDropdownStepTwo.classList.remove(
-        'show-dropdown'
+        "show-dropdown"
       );
-      document.body.removeEventListener('click', closeInputProgrammDropDown);
+      document.body.removeEventListener("click", closeInputProgrammDropDown);
     }
   });
 
@@ -427,57 +438,57 @@ inputSelectChooseProgramm.addEventListener('click', (e) => {
 });
 
 // Dropdown Programm
-inputSelectChooseProgrammDropdown.addEventListener('click', (e) => {
+inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
   const dropDownProgrammItemsArr = Array.from(dropDownProgrammItems);
   const dropDownProgrammItemsArrP = Array.from(dropDownProgrammItemsP);
 
   dropDownProgrammItemsArr.forEach((item) => {
-    item.classList.remove('text-highlight--color');
+    item.classList.remove("text-highlight--color");
   });
   dropDownProgrammItemsArrP.forEach((item) => {
-    item.classList.remove('text-highlight--color');
+    item.classList.remove("text-highlight--color");
   });
 
   // Change the inner text of the select to the selected text
-  if (e.target.tagName === 'svg') {
+  if (e.target.tagName === "svg") {
     inputSelectChooseProgrammInnerText.innerText =
       e.target.parentElement.innerText;
-    e.target.parentElement.classList.add('text-highlight--color');
-  } else if (e.target.tagName == 'path') {
+    e.target.parentElement.classList.add("text-highlight--color");
+  } else if (e.target.tagName == "path") {
     inputSelectChooseProgrammInnerText.innerText =
       e.target.parentElement.parentElement.innerText;
-    e.target.parentElement.parentElement.classList.add('text-highlight--color');
+    e.target.parentElement.parentElement.classList.add("text-highlight--color");
   } else {
     inputSelectChooseProgrammInnerText.innerText = e.target.innerText;
-    e.target.classList.add('text-highlight--color');
+    e.target.classList.add("text-highlight--color");
   }
 
   // Add the color to the selected text in the input
-  inputSelectChooseProgrammInnerText.classList.add('text-highlight--color');
+  inputSelectChooseProgrammInnerText.classList.add("text-highlight--color");
 
   // Dropdown Programm Step 2
 
   if (
     inputSelectChooseProgrammInnerText.innerText ===
-    'Определюсь после консультации'
+    "Определюсь после консультации"
   ) {
-    inputSelectChooseProgrammDropdownStepTwo.classList.remove('show-dropdown');
+    inputSelectChooseProgrammDropdownStepTwo.classList.remove("show-dropdown");
   } else {
-    inputSelectChooseProgrammDropdownStepTwo.classList.add('show-dropdown');
+    inputSelectChooseProgrammDropdownStepTwo.classList.add("show-dropdown");
 
     const selectedItemFromTheFirstStepText = document.getElementById(
-      'programm-dropdown-step-two-selected-step-one-item'
+      "programm-dropdown-step-two-selected-step-one-item"
     );
 
     const selectedItemFromTheFirstStep = document.getElementById(
-      'inner-dropdown-items__item--selected'
+      "inner-dropdown-items__item--selected"
     );
 
     selectedItemFromTheFirstStepText.innerText =
       inputSelectChooseProgrammInnerText.innerText;
 
     const listItemsStepTwo = document.getElementById(
-      'inner-dropdown-items--step-two'
+      "inner-dropdown-items--step-two"
     );
 
     const svgArrowBack = `<svg
@@ -493,7 +504,7 @@ inputSelectChooseProgrammDropdown.addEventListener('click', (e) => {
     />
   </svg>`;
 
-    if (selectedItemFromTheFirstStepText.innerText === 'Колледж') {
+    if (selectedItemFromTheFirstStepText.innerText === "Колледж") {
       const listItemsStepTwoArr = Array.prototype.slice.call(
         listItemsStepTwo.childNodes
       );
@@ -504,20 +515,20 @@ inputSelectChooseProgrammDropdown.addEventListener('click', (e) => {
         }
       });
 
-      dropDownStepTwoInsertItem('Информационные системы и программирование');
+      dropDownStepTwoInsertItem("Информационные системы и программирование");
 
-      dropDownStepTwoInsertItem('Гостиничное дело​');
+      dropDownStepTwoInsertItem("Гостиничное дело​");
 
-      dropDownStepTwoInsertItem('Банковское дело​​');
+      dropDownStepTwoInsertItem("Банковское дело​​");
 
-      dropDownStepTwoInsertItem('Экономика и бухгалтерский учет по отраслям');
+      dropDownStepTwoInsertItem("Экономика и бухгалтерский учет по отраслям");
 
-      dropDownStepTwoInsertItem('Право и организация социального обеспечения');
+      dropDownStepTwoInsertItem("Право и организация социального обеспечения");
 
-      dropDownStepTwoInsertItem('Коммерция по отраслям');
+      dropDownStepTwoInsertItem("Коммерция по отраслям");
     }
 
-    if (selectedItemFromTheFirstStepText.innerText === 'Бакалавриат') {
+    if (selectedItemFromTheFirstStepText.innerText === "Бакалавриат") {
       const listItemsStepTwoArr = Array.prototype.slice.call(
         listItemsStepTwo.childNodes
       );
@@ -528,40 +539,40 @@ inputSelectChooseProgrammDropdown.addEventListener('click', (e) => {
         }
       });
 
-      dropDownStepTwoInsertItem('Юриспруденция');
+      dropDownStepTwoInsertItem("Юриспруденция");
 
-      dropDownStepTwoInsertItem('Дизайн​');
+      dropDownStepTwoInsertItem("Дизайн​");
 
-      dropDownStepTwoInsertItem('Лингвистика');
+      dropDownStepTwoInsertItem("Лингвистика");
 
-      dropDownStepTwoInsertItem('Информационные системы и технологии');
+      dropDownStepTwoInsertItem("Информационные системы и технологии");
 
-      dropDownStepTwoInsertItem('Прикладная информатика');
+      dropDownStepTwoInsertItem("Прикладная информатика");
 
-      dropDownStepTwoInsertItem('Реклама и связи с общественностью');
+      dropDownStepTwoInsertItem("Реклама и связи с общественностью");
 
-      dropDownStepTwoInsertItem('Бизнес-информатика');
+      dropDownStepTwoInsertItem("Бизнес-информатика");
 
-      dropDownStepTwoInsertItem('Государственное и муниципальное управление');
+      dropDownStepTwoInsertItem("Государственное и муниципальное управление");
 
-      dropDownStepTwoInsertItem('Управление персоналом');
+      dropDownStepTwoInsertItem("Управление персоналом");
 
-      dropDownStepTwoInsertItem('Теплоэнергетика и теплотехника');
+      dropDownStepTwoInsertItem("Теплоэнергетика и теплотехника");
 
-      dropDownStepTwoInsertItem('Электроэнергетика и электротехника');
+      dropDownStepTwoInsertItem("Электроэнергетика и электротехника");
 
-      dropDownStepTwoInsertItem('Строительство');
+      dropDownStepTwoInsertItem("Строительство");
 
-      dropDownStepTwoInsertItem('Психолого-педагогическое образование');
+      dropDownStepTwoInsertItem("Психолого-педагогическое образование");
 
-      dropDownStepTwoInsertItem('Психология');
+      dropDownStepTwoInsertItem("Психология");
 
-      dropDownStepTwoInsertItem('Менеджмент');
+      dropDownStepTwoInsertItem("Менеджмент");
 
-      dropDownStepTwoInsertItem('Экономика');
+      dropDownStepTwoInsertItem("Экономика");
     }
 
-    if (selectedItemFromTheFirstStepText.innerText === 'Специалитет') {
+    if (selectedItemFromTheFirstStepText.innerText === "Специалитет") {
       const listItemsStepTwoArr = Array.prototype.slice.call(
         listItemsStepTwo.childNodes
       );
@@ -572,10 +583,10 @@ inputSelectChooseProgrammDropdown.addEventListener('click', (e) => {
         }
       });
 
-      dropDownStepTwoInsertItem('Экономическая безопасность (Аккредитована)');
+      dropDownStepTwoInsertItem("Экономическая безопасность (Аккредитована)");
     }
 
-    if (selectedItemFromTheFirstStepText.innerText === 'Магистратура') {
+    if (selectedItemFromTheFirstStepText.innerText === "Магистратура") {
       const listItemsStepTwoArr = Array.prototype.slice.call(
         listItemsStepTwo.childNodes
       );
@@ -586,143 +597,28 @@ inputSelectChooseProgrammDropdown.addEventListener('click', (e) => {
         }
       });
 
-      dropDownStepTwoInsertItem('Юриспруденция');
+      dropDownStepTwoInsertItem("Юриспруденция");
 
-      dropDownStepTwoInsertItem('Реклама и связи с общественностью');
+      dropDownStepTwoInsertItem("Реклама и связи с общественностью");
 
-      dropDownStepTwoInsertItem('Психология');
+      dropDownStepTwoInsertItem("Психология");
 
-      dropDownStepTwoInsertItem('Прикладная информатика');
+      dropDownStepTwoInsertItem("Прикладная информатика");
 
-      dropDownStepTwoInsertItem('Государственное и муниципальное управление');
+      dropDownStepTwoInsertItem("Государственное и муниципальное управление");
 
-      dropDownStepTwoInsertItem('Управление персоналом');
+      dropDownStepTwoInsertItem("Управление персоналом");
 
-      dropDownStepTwoInsertItem('Менеджмент');
+      dropDownStepTwoInsertItem("Менеджмент");
 
-      dropDownStepTwoInsertItem('Финансы и кредит');
+      dropDownStepTwoInsertItem("Финансы и кредит");
 
-      dropDownStepTwoInsertItem('Экономика');
-    }
-
-    if (
-      selectedItemFromTheFirstStepText.innerText ===
-      'Профессиональная переподготовка'
-    ) {
-      const listItemsStepTwoArr = Array.prototype.slice.call(
-        listItemsStepTwo.childNodes
-      );
-
-      listItemsStepTwoArr.forEach((item, index) => {
-        if (index > 3) {
-          item.remove();
-        }
-      });
-
-      dropDownStepTwoInsertItem('Гуманитарные науки');
-
-      dropDownStepTwoInsertItem('Электроэнергетика');
-
-      dropDownStepTwoInsertItem('Строительство');
-
-      dropDownStepTwoInsertItem('Теплоэнергетика');
-
-      dropDownStepTwoInsertItem('Безопасность дорожного движения');
-
-      dropDownStepTwoInsertItem('Продукты питания - технология производства');
-
-      dropDownStepTwoInsertItem('Юриспруденция');
-
-      dropDownStepTwoInsertItem('Охрана труда');
-
-      dropDownStepTwoInsertItem('Информатика и вычислительная техника');
-
-      dropDownStepTwoInsertItem('Реклама и PR');
-
-      dropDownStepTwoInsertItem('Журналистика');
-
-      dropDownStepTwoInsertItem('Дизайн');
-
-      dropDownStepTwoInsertItem('Маркетинг');
-
-      dropDownStepTwoInsertItem('Туризм');
-
-      dropDownStepTwoInsertItem('Государственное и муниципальное управление');
-
-      dropDownStepTwoInsertItem('Логистика');
-
-      dropDownStepTwoInsertItem('Социальная работа');
-
-      dropDownStepTwoInsertItem('Экономика');
-
-      dropDownStepTwoInsertItem('Психология');
-
-      dropDownStepTwoInsertItem('Педагогика');
-
-      dropDownStepTwoInsertItem('Менеджмент');
-    }
-
-    if (
-      selectedItemFromTheFirstStepText.innerText === 'Повышение квалификации'
-    ) {
-      const listItemsStepTwoArr = Array.prototype.slice.call(
-        listItemsStepTwo.childNodes
-      );
-
-      listItemsStepTwoArr.forEach((item, index) => {
-        if (index > 3) {
-          item.remove();
-        }
-      });
-
-      dropDownStepTwoInsertItem('Гуманитарные науки');
-
-      dropDownStepTwoInsertItem('Электроэнергетика');
-
-      dropDownStepTwoInsertItem('Строительство');
-
-      dropDownStepTwoInsertItem('Теплоэнергетика');
-
-      dropDownStepTwoInsertItem('Безопасность дорожного движения');
-
-      dropDownStepTwoInsertItem('Продукты питания - технология производства');
-
-      dropDownStepTwoInsertItem('Юриспруденция');
-
-      dropDownStepTwoInsertItem('Охрана труда');
-
-      dropDownStepTwoInsertItem('Информатика и вычислительная техника');
-
-      dropDownStepTwoInsertItem('Реклама и PR');
-
-      dropDownStepTwoInsertItem('Журналистика');
-
-      dropDownStepTwoInsertItem('Дизайн');
-
-      dropDownStepTwoInsertItem('Маркетинг');
-
-      dropDownStepTwoInsertItem('Туризм');
-
-      dropDownStepTwoInsertItem('Медицина');
-
-      dropDownStepTwoInsertItem('Государственное и муниципальное управление');
-
-      dropDownStepTwoInsertItem('Логистика');
-
-      dropDownStepTwoInsertItem('Социальная работа​');
-
-      dropDownStepTwoInsertItem('Экономика​​');
-
-      dropDownStepTwoInsertItem('Психология');
-
-      dropDownStepTwoInsertItem('Педагогика');
-
-      dropDownStepTwoInsertItem('Менеджмент');
+      dropDownStepTwoInsertItem("Экономика");
     }
 
     if (
       selectedItemFromTheFirstStepText.innerText ===
-      'Master of Business Administration (МВА)'
+      "Профессиональная переподготовка"
     ) {
       const listItemsStepTwoArr = Array.prototype.slice.call(
         listItemsStepTwo.childNodes
@@ -734,26 +630,141 @@ inputSelectChooseProgrammDropdown.addEventListener('click', (e) => {
         }
       });
 
-      dropDownStepTwoInsertItem('MBA Industry');
+      dropDownStepTwoInsertItem("Гуманитарные науки");
 
-      dropDownStepTwoInsertItem('MBA Professional');
+      dropDownStepTwoInsertItem("Электроэнергетика");
 
-      dropDownStepTwoInsertItem('MBA Intensive');
+      dropDownStepTwoInsertItem("Строительство");
 
-      dropDownStepTwoInsertItem('Mini-MBA');
+      dropDownStepTwoInsertItem("Теплоэнергетика");
+
+      dropDownStepTwoInsertItem("Безопасность дорожного движения");
+
+      dropDownStepTwoInsertItem("Продукты питания - технология производства");
+
+      dropDownStepTwoInsertItem("Юриспруденция");
+
+      dropDownStepTwoInsertItem("Охрана труда");
+
+      dropDownStepTwoInsertItem("Информатика и вычислительная техника");
+
+      dropDownStepTwoInsertItem("Реклама и PR");
+
+      dropDownStepTwoInsertItem("Журналистика");
+
+      dropDownStepTwoInsertItem("Дизайн");
+
+      dropDownStepTwoInsertItem("Маркетинг");
+
+      dropDownStepTwoInsertItem("Туризм");
+
+      dropDownStepTwoInsertItem("Государственное и муниципальное управление");
+
+      dropDownStepTwoInsertItem("Логистика");
+
+      dropDownStepTwoInsertItem("Социальная работа");
+
+      dropDownStepTwoInsertItem("Экономика");
+
+      dropDownStepTwoInsertItem("Психология");
+
+      dropDownStepTwoInsertItem("Педагогика");
+
+      dropDownStepTwoInsertItem("Менеджмент");
+    }
+
+    if (
+      selectedItemFromTheFirstStepText.innerText === "Повышение квалификации"
+    ) {
+      const listItemsStepTwoArr = Array.prototype.slice.call(
+        listItemsStepTwo.childNodes
+      );
+
+      listItemsStepTwoArr.forEach((item, index) => {
+        if (index > 3) {
+          item.remove();
+        }
+      });
+
+      dropDownStepTwoInsertItem("Гуманитарные науки");
+
+      dropDownStepTwoInsertItem("Электроэнергетика");
+
+      dropDownStepTwoInsertItem("Строительство");
+
+      dropDownStepTwoInsertItem("Теплоэнергетика");
+
+      dropDownStepTwoInsertItem("Безопасность дорожного движения");
+
+      dropDownStepTwoInsertItem("Продукты питания - технология производства");
+
+      dropDownStepTwoInsertItem("Юриспруденция");
+
+      dropDownStepTwoInsertItem("Охрана труда");
+
+      dropDownStepTwoInsertItem("Информатика и вычислительная техника");
+
+      dropDownStepTwoInsertItem("Реклама и PR");
+
+      dropDownStepTwoInsertItem("Журналистика");
+
+      dropDownStepTwoInsertItem("Дизайн");
+
+      dropDownStepTwoInsertItem("Маркетинг");
+
+      dropDownStepTwoInsertItem("Туризм");
+
+      dropDownStepTwoInsertItem("Медицина");
+
+      dropDownStepTwoInsertItem("Государственное и муниципальное управление");
+
+      dropDownStepTwoInsertItem("Логистика");
+
+      dropDownStepTwoInsertItem("Социальная работа​");
+
+      dropDownStepTwoInsertItem("Экономика​​");
+
+      dropDownStepTwoInsertItem("Психология");
+
+      dropDownStepTwoInsertItem("Педагогика");
+
+      dropDownStepTwoInsertItem("Менеджмент");
+    }
+
+    if (
+      selectedItemFromTheFirstStepText.innerText ===
+      "Master of Business Administration (МВА)"
+    ) {
+      const listItemsStepTwoArr = Array.prototype.slice.call(
+        listItemsStepTwo.childNodes
+      );
+
+      listItemsStepTwoArr.forEach((item, index) => {
+        if (index > 3) {
+          item.remove();
+        }
+      });
+
+      dropDownStepTwoInsertItem("MBA Industry");
+
+      dropDownStepTwoInsertItem("MBA Professional");
+
+      dropDownStepTwoInsertItem("MBA Intensive");
+
+      dropDownStepTwoInsertItem("Mini-MBA");
     }
 
     // Step back
-    selectedItemFromTheFirstStep.addEventListener('click', (e) => {
+    selectedItemFromTheFirstStep.addEventListener("click", (e) => {
       inputSelectChooseProgrammDropdownStepTwo.classList.remove(
-        'show-dropdown'
+        "show-dropdown"
       );
-      inputSelectChooseProgrammDropdown.classList.add('show-dropdown');
+      inputSelectChooseProgrammDropdown.classList.add("show-dropdown");
 
       e.preventDefault();
     });
 
-    inputSelectChooseProgrammDropdownStepTwo.addEventListener('click', (e) => {
+    inputSelectChooseProgrammDropdownStepTwo.addEventListener("click", (e) => {
       const dropDownProgrammItemsStepTwoArr = Array.from(
         dropDownProgrammItemsStepTwo
       );
@@ -762,22 +773,22 @@ inputSelectChooseProgrammDropdown.addEventListener('click', (e) => {
       );
 
       dropDownProgrammItemsStepTwoArr.forEach((item) => {
-        item.classList.remove('text-highlight--color');
+        item.classList.remove("text-highlight--color");
       });
       dropDownProgrammItemsPStepTwoArr.forEach((item) => {
-        item.classList.remove('text-highlight--color');
+        item.classList.remove("text-highlight--color");
       });
 
       // Change the inner text of the select to the selected text
-      if (e.target.tagName === 'svg') {
+      if (e.target.tagName === "svg") {
         // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
         inputSelectChooseProgrammInnerText.innerText ===
         e.target.parentElement.innerText
           ? inputSelectChooseProgrammInnerText.innerText
           : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerHTML}, ${e.target.parentElement.innerText}`);
 
-        e.target.parentElement.classList.add('text-highlight--color');
-      } else if (e.target.tagName == 'path') {
+        e.target.parentElement.classList.add("text-highlight--color");
+      } else if (e.target.tagName == "path") {
         // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
         inputSelectChooseProgrammInnerText.innerText ===
         e.target.parentElement.parentElement.innerText
@@ -785,7 +796,7 @@ inputSelectChooseProgrammDropdown.addEventListener('click', (e) => {
           : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText}, ${e.target.parentElement.parentElement.innerText}`);
 
         e.target.parentElement.parentElement.classList.add(
-          'text-highlight--color'
+          "text-highlight--color"
         );
       } else {
         // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
@@ -795,39 +806,39 @@ inputSelectChooseProgrammDropdown.addEventListener('click', (e) => {
               inputSelectChooseProgrammInnerText.innerText)
           : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText}, ${e.target.innerText}`);
 
-        e.target.classList.add('text-highlight--color');
+        e.target.classList.add("text-highlight--color");
       }
 
       inputSelectChooseProgrammInnerText.innerHTML = inputSelectChooseProgrammInnerText.innerHTML.replace(
         /,\s*$/,
-        ''
+        ""
       );
 
       inputSelectChooseProgrammDropdownStepTwo.classList.remove(
-        'show-dropdown'
+        "show-dropdown"
       );
 
       inputSelectChooseProgramm.scrollIntoView({
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     });
   }
 
   // On select hide the module
-  inputSelectChooseProgrammDropdown.classList.toggle('show-dropdown');
+  inputSelectChooseProgrammDropdown.classList.toggle("show-dropdown");
 
   e.preventDefault();
 });
 
 // Ask question clicked
-btnAskQuestion.addEventListener('click', (e) => {
-  btnAskQuestion.classList.add('hidden');
-  moduleQuestions.classList.remove('hidden');
-  moduleStepOne.classList.remove('hidden');
-  document.body.classList.add('dark-overlay');
+btnAskQuestion.addEventListener("click", (e) => {
+  btnAskQuestion.classList.add("hidden");
+  moduleQuestions.classList.remove("hidden");
+  moduleStepOne.classList.remove("hidden");
+  document.body.classList.add("dark-overlay");
   moduleQuestionTextarea.focus();
 
-  document.body.addEventListener('click', function closeQuestionModule(e) {
+  document.body.addEventListener("click", function closeQuestionModule(e) {
     // moduleHorizontalCloseBtn
     if (
       (!btnAskQuestion.contains(e.target) &&
@@ -837,72 +848,72 @@ btnAskQuestion.addEventListener('click', (e) => {
       (e.target === btnAskQuestion && btnAskQuestion.contains(e.target))
     ) {
       // Close question module
-      btnAskQuestion.classList.remove('hidden');
-      moduleQuestions.classList.add('hidden');
-      moduleStepOne.classList.add('hidden');
-      document.body.classList.remove('dark-overlay');
-      document.body.removeEventListener('click', closeQuestionModule);
+      btnAskQuestion.classList.remove("hidden");
+      moduleQuestions.classList.add("hidden");
+      moduleStepOne.classList.add("hidden");
+      document.body.classList.remove("dark-overlay");
+      document.body.removeEventListener("click", closeQuestionModule);
     }
 
     e.preventDefault();
   });
 
   // Telegram clicked
-  telegramBtn.addEventListener('click', (e) => {
-    if (moduleQuestionTextarea.value === '') {
-      moduleQuestionTextarea.classList.add('bg-danger');
+  telegramBtn.addEventListener("click", (e) => {
+    if (moduleQuestionTextarea.value === "") {
+      moduleQuestionTextarea.classList.add("bg-danger");
       moduleQuestionTextarea.focus();
       moduleQuestionTextarea.addEventListener(
-        'keyup',
+        "keyup",
         function highlightBgDanger(e) {
-          e.target.value !== ''
-            ? moduleQuestionTextarea.classList.remove('bg-danger')
-            : moduleQuestionTextarea.classList.add('bg-danger');
+          e.target.value !== ""
+            ? moduleQuestionTextarea.classList.remove("bg-danger")
+            : moduleQuestionTextarea.classList.add("bg-danger");
         }
       );
     } else {
-      moduleStepOne.classList.add('hidden');
-      moduleStepTwo.classList.remove('hidden');
-      moduleStepTwoTitle.innerHTML = 'Telegram';
+      moduleStepOne.classList.add("hidden");
+      moduleStepTwo.classList.remove("hidden");
+      moduleStepTwoTitle.innerHTML = "Telegram";
     }
 
     // Telegram -> Call clicked
-    moduleBtnCall.addEventListener('click', (e) => {
-      moduleStepThree.classList.remove('hidden');
-      moduleStepTwo.classList.add('hidden');
+    moduleBtnCall.addEventListener("click", (e) => {
+      moduleStepThree.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
 
-      moduleStepThreeTitle.innerHTML = 'Telegram / Позвонить';
-      moduleLabelEnterContactInfo.innerHTML = 'Напишите свой номер';
+      moduleStepThreeTitle.innerHTML = "Telegram / Позвонить";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
       moduleInputContactInfo.focus();
 
       e.preventDefault();
     });
 
     // Telegram -> Message clicked
-    moduleBtnMessage.addEventListener('click', (e) => {
-      moduleStepThree.classList.remove('hidden');
-      moduleStepTwo.classList.add('hidden');
+    moduleBtnMessage.addEventListener("click", (e) => {
+      moduleStepThree.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
 
-      moduleStepThreeTitle.innerHTML = 'Telegram / Написать';
-      moduleLabelEnterContactInfo.innerHTML = 'Напишите свой номер';
+      moduleStepThreeTitle.innerHTML = "Telegram / Написать";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
       moduleInputContactInfo.focus();
 
       e.preventDefault();
     });
 
     // Step 2 -> Arrow back
-    moduleStepTwoArrowBack.addEventListener('click', (e) => {
-      moduleStepOne.classList.remove('hidden');
-      moduleStepTwo.classList.add('hidden');
+    moduleStepTwoArrowBack.addEventListener("click", (e) => {
+      moduleStepOne.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
 
       e.preventDefault();
     });
 
     // Step 3 -> Arrow Back
-    moduleStepThreeArrowBack.addEventListener('click', (e) => {
-      moduleStepTwo.classList.remove('hidden');
-      moduleStepOne.classList.add('hidden');
-      moduleStepThree.classList.add('hidden');
+    moduleStepThreeArrowBack.addEventListener("click", (e) => {
+      moduleStepTwo.classList.remove("hidden");
+      moduleStepOne.classList.add("hidden");
+      moduleStepThree.classList.add("hidden");
       e.preventDefault();
     });
 
@@ -910,61 +921,61 @@ btnAskQuestion.addEventListener('click', (e) => {
   });
 
   // Whatsapp clicked
-  whatsappBtn.addEventListener('click', (e) => {
-    if (moduleQuestionTextarea.value === '') {
-      moduleQuestionTextarea.classList.add('bg-danger');
+  whatsappBtn.addEventListener("click", (e) => {
+    if (moduleQuestionTextarea.value === "") {
+      moduleQuestionTextarea.classList.add("bg-danger");
       moduleQuestionTextarea.focus();
       moduleQuestionTextarea.addEventListener(
-        'keyup',
+        "keyup",
         function highlightBgDanger(e) {
-          e.target.value !== ''
-            ? moduleQuestionTextarea.classList.remove('bg-danger')
-            : moduleQuestionTextarea.classList.add('bg-danger');
+          e.target.value !== ""
+            ? moduleQuestionTextarea.classList.remove("bg-danger")
+            : moduleQuestionTextarea.classList.add("bg-danger");
         }
       );
     } else {
-      moduleStepOne.classList.add('hidden');
-      moduleStepTwo.classList.remove('hidden');
-      moduleStepTwoTitle.innerHTML = 'Whats App';
+      moduleStepOne.classList.add("hidden");
+      moduleStepTwo.classList.remove("hidden");
+      moduleStepTwoTitle.innerHTML = "Whats App";
     }
 
     // Whatsapp -> Call clicked
-    moduleBtnCall.addEventListener('click', (e) => {
-      moduleStepThree.classList.remove('hidden');
-      moduleStepTwo.classList.add('hidden');
+    moduleBtnCall.addEventListener("click", (e) => {
+      moduleStepThree.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
 
-      moduleStepThreeTitle.innerHTML = 'Whatsapp / Позвонить';
-      moduleLabelEnterContactInfo.innerHTML = 'Напишите свой номер';
+      moduleStepThreeTitle.innerHTML = "Whatsapp / Позвонить";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
       moduleInputContactInfo.focus();
 
       e.preventDefault();
     });
 
     // Whatsapp -> Message clicked
-    moduleBtnMessage.addEventListener('click', (e) => {
-      moduleStepThree.classList.remove('hidden');
-      moduleStepTwo.classList.add('hidden');
+    moduleBtnMessage.addEventListener("click", (e) => {
+      moduleStepThree.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
 
-      moduleStepThreeTitle.innerHTML = 'Whatsapp / Написать';
-      moduleLabelEnterContactInfo.innerHTML = 'Напишите свой номер';
+      moduleStepThreeTitle.innerHTML = "Whatsapp / Написать";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
       moduleInputContactInfo.focus();
 
       e.preventDefault();
     });
 
     // Step 2 -> Arrow back
-    moduleStepTwoArrowBack.addEventListener('click', (e) => {
-      moduleStepOne.classList.remove('hidden');
-      moduleStepTwo.classList.add('hidden');
+    moduleStepTwoArrowBack.addEventListener("click", (e) => {
+      moduleStepOne.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
 
       e.preventDefault();
     });
 
     // Step 3 -> Arrow Back
-    moduleStepThreeArrowBack.addEventListener('click', (e) => {
-      moduleStepTwo.classList.remove('hidden');
-      moduleStepOne.classList.add('hidden');
-      moduleStepThree.classList.add('hidden');
+    moduleStepThreeArrowBack.addEventListener("click", (e) => {
+      moduleStepTwo.classList.remove("hidden");
+      moduleStepOne.classList.add("hidden");
+      moduleStepThree.classList.add("hidden");
       e.preventDefault();
     });
 
@@ -972,61 +983,61 @@ btnAskQuestion.addEventListener('click', (e) => {
   });
 
   // Viber clicked
-  viberBtn.addEventListener('click', (e) => {
-    if (moduleQuestionTextarea.value === '') {
-      moduleQuestionTextarea.classList.add('bg-danger');
+  viberBtn.addEventListener("click", (e) => {
+    if (moduleQuestionTextarea.value === "") {
+      moduleQuestionTextarea.classList.add("bg-danger");
       moduleQuestionTextarea.focus();
       moduleQuestionTextarea.addEventListener(
-        'keyup',
+        "keyup",
         function highlightBgDanger(e) {
-          e.target.value !== ''
-            ? moduleQuestionTextarea.classList.remove('bg-danger')
-            : moduleQuestionTextarea.classList.add('bg-danger');
+          e.target.value !== ""
+            ? moduleQuestionTextarea.classList.remove("bg-danger")
+            : moduleQuestionTextarea.classList.add("bg-danger");
         }
       );
     } else {
-      moduleStepOne.classList.add('hidden');
-      moduleStepTwo.classList.remove('hidden');
-      moduleStepTwoTitle.innerHTML = 'Viber';
+      moduleStepOne.classList.add("hidden");
+      moduleStepTwo.classList.remove("hidden");
+      moduleStepTwoTitle.innerHTML = "Viber";
     }
 
     // Viber -> Call clicked
-    moduleBtnCall.addEventListener('click', (e) => {
-      moduleStepThree.classList.remove('hidden');
-      moduleStepTwo.classList.add('hidden');
+    moduleBtnCall.addEventListener("click", (e) => {
+      moduleStepThree.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
 
-      moduleStepThreeTitle.innerHTML = 'Viber / Позвонить';
-      moduleLabelEnterContactInfo.innerHTML = 'Напишите свой номер';
+      moduleStepThreeTitle.innerHTML = "Viber / Позвонить";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
       moduleInputContactInfo.focus();
 
       e.preventDefault();
     });
 
     // Viber -> Message clicked
-    moduleBtnMessage.addEventListener('click', (e) => {
-      moduleStepThree.classList.remove('hidden');
-      moduleStepTwo.classList.add('hidden');
+    moduleBtnMessage.addEventListener("click", (e) => {
+      moduleStepThree.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
 
-      moduleStepThreeTitle.innerHTML = 'Viber / Написать';
-      moduleLabelEnterContactInfo.innerHTML = 'Напишите свой номер';
+      moduleStepThreeTitle.innerHTML = "Viber / Написать";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
       moduleInputContactInfo.focus();
 
       e.preventDefault();
     });
 
     // Step 2 -> Arrow back
-    moduleStepTwoArrowBack.addEventListener('click', (e) => {
-      moduleStepOne.classList.remove('hidden');
-      moduleStepTwo.classList.add('hidden');
+    moduleStepTwoArrowBack.addEventListener("click", (e) => {
+      moduleStepOne.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
 
       e.preventDefault();
     });
 
     // Step 3 -> Arrow Back
-    moduleStepThreeArrowBack.addEventListener('click', (e) => {
-      moduleStepTwo.classList.remove('hidden');
-      moduleStepOne.classList.add('hidden');
-      moduleStepThree.classList.add('hidden');
+    moduleStepThreeArrowBack.addEventListener("click", (e) => {
+      moduleStepTwo.classList.remove("hidden");
+      moduleStepOne.classList.add("hidden");
+      moduleStepThree.classList.add("hidden");
       e.preventDefault();
     });
 
@@ -1034,61 +1045,61 @@ btnAskQuestion.addEventListener('click', (e) => {
   });
 
   // Vk clicked
-  vkBtn.addEventListener('click', (e) => {
-    if (moduleQuestionTextarea.value === '') {
-      moduleQuestionTextarea.classList.add('bg-danger');
+  vkBtn.addEventListener("click", (e) => {
+    if (moduleQuestionTextarea.value === "") {
+      moduleQuestionTextarea.classList.add("bg-danger");
       moduleQuestionTextarea.focus();
       moduleQuestionTextarea.addEventListener(
-        'keyup',
+        "keyup",
         function highlightBgDanger(e) {
-          e.target.value !== ''
-            ? moduleQuestionTextarea.classList.remove('bg-danger')
-            : moduleQuestionTextarea.classList.add('bg-danger');
+          e.target.value !== ""
+            ? moduleQuestionTextarea.classList.remove("bg-danger")
+            : moduleQuestionTextarea.classList.add("bg-danger");
         }
       );
     } else {
-      moduleStepOne.classList.add('hidden');
-      moduleStepTwo.classList.remove('hidden');
-      moduleStepTwoTitle.innerHTML = 'VK';
+      moduleStepOne.classList.add("hidden");
+      moduleStepTwo.classList.remove("hidden");
+      moduleStepTwoTitle.innerHTML = "VK";
     }
 
     // VK -> Call clicked
-    moduleBtnCall.addEventListener('click', (e) => {
-      moduleStepThree.classList.remove('hidden');
-      moduleStepTwo.classList.add('hidden');
+    moduleBtnCall.addEventListener("click", (e) => {
+      moduleStepThree.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
 
-      moduleStepThreeTitle.innerHTML = 'VK / Позвонить';
-      moduleLabelEnterContactInfo.innerHTML = 'Напишите свой номер';
+      moduleStepThreeTitle.innerHTML = "VK / Позвонить";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
       moduleInputContactInfo.focus();
 
       e.preventDefault();
     });
 
     // VK -> Message clicked
-    moduleBtnMessage.addEventListener('click', (e) => {
-      moduleStepThree.classList.remove('hidden');
-      moduleStepTwo.classList.add('hidden');
+    moduleBtnMessage.addEventListener("click", (e) => {
+      moduleStepThree.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
 
-      moduleStepThreeTitle.innerHTML = 'VK / Написать';
-      moduleLabelEnterContactInfo.innerHTML = 'Напишите свой номер';
+      moduleStepThreeTitle.innerHTML = "VK / Написать";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
       moduleInputContactInfo.focus();
 
       e.preventDefault();
     });
 
     // Step 2 -> Arrow back
-    moduleStepTwoArrowBack.addEventListener('click', (e) => {
-      moduleStepOne.classList.remove('hidden');
-      moduleStepTwo.classList.add('hidden');
+    moduleStepTwoArrowBack.addEventListener("click", (e) => {
+      moduleStepOne.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
 
       e.preventDefault();
     });
 
     // Step 3 -> Arrow Back
-    moduleStepThreeArrowBack.addEventListener('click', (e) => {
-      moduleStepTwo.classList.remove('hidden');
-      moduleStepOne.classList.add('hidden');
-      moduleStepThree.classList.add('hidden');
+    moduleStepThreeArrowBack.addEventListener("click", (e) => {
+      moduleStepTwo.classList.remove("hidden");
+      moduleStepOne.classList.add("hidden");
+      moduleStepThree.classList.add("hidden");
       e.preventDefault();
     });
 
@@ -1096,31 +1107,31 @@ btnAskQuestion.addEventListener('click', (e) => {
   });
 
   // Phone button clicked
-  phoneBtn.addEventListener('click', (e) => {
-    if (moduleQuestionTextarea.value === '') {
-      moduleQuestionTextarea.classList.add('bg-danger');
+  phoneBtn.addEventListener("click", (e) => {
+    if (moduleQuestionTextarea.value === "") {
+      moduleQuestionTextarea.classList.add("bg-danger");
       moduleQuestionTextarea.focus();
       moduleQuestionTextarea.addEventListener(
-        'keyup',
+        "keyup",
         function highlightBgDanger(e) {
-          e.target.value !== ''
-            ? moduleQuestionTextarea.classList.remove('bg-danger')
-            : moduleQuestionTextarea.classList.add('bg-danger');
+          e.target.value !== ""
+            ? moduleQuestionTextarea.classList.remove("bg-danger")
+            : moduleQuestionTextarea.classList.add("bg-danger");
         }
       );
     } else {
-      moduleStepOne.classList.add('hidden');
-      moduleStepThree.classList.remove('hidden');
-      moduleStepThreeTitle.innerHTML = 'Позвонить';
-      moduleLabelEnterContactInfo.innerHTML = 'Напишите свой номер';
+      moduleStepOne.classList.add("hidden");
+      moduleStepThree.classList.remove("hidden");
+      moduleStepThreeTitle.innerHTML = "Позвонить";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой номер";
       moduleInputContactInfo.focus();
     }
 
     // Step 3 -> Arrow Back
-    moduleStepThreeArrowBack.addEventListener('click', (e) => {
-      moduleStepOne.classList.remove('hidden');
-      moduleStepTwo.classList.add('hidden');
-      moduleStepThree.classList.add('hidden');
+    moduleStepThreeArrowBack.addEventListener("click", (e) => {
+      moduleStepOne.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
+      moduleStepThree.classList.add("hidden");
       e.preventDefault();
     });
 
@@ -1128,33 +1139,33 @@ btnAskQuestion.addEventListener('click', (e) => {
   });
 
   // Email button clicked
-  emailBtn.addEventListener('click', (e) => {
-    if (moduleQuestionTextarea.value === '') {
-      moduleQuestionTextarea.classList.add('bg-danger');
+  emailBtn.addEventListener("click", (e) => {
+    if (moduleQuestionTextarea.value === "") {
+      moduleQuestionTextarea.classList.add("bg-danger");
       moduleQuestionTextarea.focus();
       moduleQuestionTextarea.addEventListener(
-        'keyup',
+        "keyup",
         function highlightBgDanger(e) {
-          e.target.value !== ''
-            ? moduleQuestionTextarea.classList.remove('bg-danger')
-            : moduleQuestionTextarea.classList.add('bg-danger');
+          e.target.value !== ""
+            ? moduleQuestionTextarea.classList.remove("bg-danger")
+            : moduleQuestionTextarea.classList.add("bg-danger");
         }
       );
     } else {
-      moduleStepOne.classList.add('hidden');
-      moduleStepThree.classList.remove('hidden');
-      moduleStepThreeTitle.innerHTML = 'Написать';
-      moduleLabelEnterContactInfo.innerHTML = 'Напишите свой e-mail';
-      moduleInputContactInfo.placeholder = 'example@gmail.com';
-      moduleInputContactInfo.type = 'email';
+      moduleStepOne.classList.add("hidden");
+      moduleStepThree.classList.remove("hidden");
+      moduleStepThreeTitle.innerHTML = "Написать";
+      moduleLabelEnterContactInfo.innerHTML = "Напишите свой e-mail";
+      moduleInputContactInfo.placeholder = "example@gmail.com";
+      moduleInputContactInfo.type = "email";
       moduleInputContactInfo.focus();
     }
 
     // Step 3 -> Arrow Back
-    moduleStepThreeArrowBack.addEventListener('click', (e) => {
-      moduleStepOne.classList.remove('hidden');
-      moduleStepTwo.classList.add('hidden');
-      moduleStepThree.classList.add('hidden');
+    moduleStepThreeArrowBack.addEventListener("click", (e) => {
+      moduleStepOne.classList.remove("hidden");
+      moduleStepTwo.classList.add("hidden");
+      moduleStepThree.classList.add("hidden");
 
       e.preventDefault();
     });
@@ -1163,19 +1174,19 @@ btnAskQuestion.addEventListener('click', (e) => {
   });
 
   // Submit btn clicked
-  moduleBtnSubmit.addEventListener('click', function submitQuestionModule(e) {
-    if (moduleInputContactInfo.type === 'email') {
+  moduleBtnSubmit.addEventListener("click", function submitQuestionModule(e) {
+    if (moduleInputContactInfo.type === "email") {
       // todo: validate email
-      if (moduleInputContactInfo.value === '') {
-        moduleInputContactInfo.classList.add('bg-danger');
+      if (moduleInputContactInfo.value === "") {
+        moduleInputContactInfo.classList.add("bg-danger");
         setTimeout(() => {
-          moduleInputContactInfo.classList.remove('bg-danger');
+          moduleInputContactInfo.classList.remove("bg-danger");
         }, 1500);
       } else {
-        moduleStepThree.classList.add('hidden');
-        moduleStepTwo.classList.add('hidden');
-        moduleStepOne.classList.add('hidden');
-        moduleStepSuccess.classList.remove('hidden');
+        moduleStepThree.classList.add("hidden");
+        moduleStepTwo.classList.add("hidden");
+        moduleStepOne.classList.add("hidden");
+        moduleStepSuccess.classList.remove("hidden");
 
         // Submit
         const question = moduleQuestionTextarea.value.trim();
@@ -1192,36 +1203,36 @@ btnAskQuestion.addEventListener('click', (e) => {
         sumbitData(data);
 
         setTimeout(() => {
-          moduleStepSuccess.classList.add('hidden');
-          btnAskQuestion.classList.remove('hidden');
+          moduleStepSuccess.classList.add("hidden");
+          btnAskQuestion.classList.remove("hidden");
 
           // console.log(sectionAskQuestionsInner.innerHTM);
-          oneMoreQuestionText.innerText = 'ещё один';
+          oneMoreQuestionText.innerText = "ещё один";
           const sectionAskQuestionInnerSaver =
             sectionAskQuestionsInner.innerHTML;
           // console.log(sectionAskQuestionInnerSaver);
-          sectionAskQuestionsInner.innerHTML = 'Спасибо! Мы с вами свяжемся!';
+          sectionAskQuestionsInner.innerHTML = "Спасибо! Мы с вами свяжемся!";
           setTimeout(() => {
             sectionAskQuestionsInner.innerHTML = sectionAskQuestionInnerSaver;
           }, 3000);
 
-          moduleQuestions.classList.add('hidden');
-          document.body.classList.remove('dark-overlay');
+          moduleQuestions.classList.add("hidden");
+          document.body.classList.remove("dark-overlay");
           // document.body.removeEventListener("click", closeQuestionModule);
-          moduleBtnSubmit.removeEventListener('click', submitQuestionModule);
+          moduleBtnSubmit.removeEventListener("click", submitQuestionModule);
         }, 3000);
       }
     } else {
       if (
-        moduleInputContactInfo.value.trim() !== '' &&
+        moduleInputContactInfo.value.trim() !== "" &&
         moduleInputContactInfo.value.trim().match(numValidation)
       ) {
-        moduleStepThree.classList.add('hidden');
-        moduleStepTwo.classList.add('hidden');
-        moduleStepOne.classList.add('hidden');
-        moduleStepSuccess.classList.remove('hidden');
+        moduleStepThree.classList.add("hidden");
+        moduleStepTwo.classList.add("hidden");
+        moduleStepOne.classList.add("hidden");
+        moduleStepSuccess.classList.remove("hidden");
 
-        moduleStepSuccess.classList.add('showed');
+        moduleStepSuccess.classList.add("showed");
 
         // Submit
         const question = moduleQuestionTextarea.value.trim();
@@ -1239,43 +1250,43 @@ btnAskQuestion.addEventListener('click', (e) => {
         sumbitData(data);
 
         setTimeout(() => {
-          moduleStepSuccess.classList.add('hidden');
-          btnAskQuestion.classList.remove('hidden');
+          moduleStepSuccess.classList.add("hidden");
+          btnAskQuestion.classList.remove("hidden");
 
-          moduleStepSuccess.classList.remove('showed');
+          moduleStepSuccess.classList.remove("showed");
 
           // console.log(sectionAskQuestionsInner.innerHTM);
-          oneMoreQuestionText.innerText = 'ещё один';
+          oneMoreQuestionText.innerText = "ещё один";
           const sectionAskQuestionInnerSaver =
             sectionAskQuestionsInner.innerHTML;
           // console.log(sectionAskQuestionInnerSaver);
-          sectionAskQuestionsInner.innerHTML = 'Спасибо! Мы с вами свяжемся!';
+          sectionAskQuestionsInner.innerHTML = "Спасибо! Мы с вами свяжемся!";
           setTimeout(() => {
             sectionAskQuestionsInner.innerHTML = sectionAskQuestionInnerSaver;
           }, 3000);
 
-          moduleQuestions.classList.add('hidden');
-          document.body.classList.remove('dark-overlay');
+          moduleQuestions.classList.add("hidden");
+          document.body.classList.remove("dark-overlay");
           // document.body.removeEventListener("click", closeQuestionModule);
-          moduleBtnSubmit.removeEventListener('click', submitQuestionModule);
+          moduleBtnSubmit.removeEventListener("click", submitQuestionModule);
         }, 3000);
       } else {
-        moduleInputContactInfo.classList.add('bg-danger');
+        moduleInputContactInfo.classList.add("bg-danger");
 
-        if (moduleInputContactInfo.type === 'email') {
+        if (moduleInputContactInfo.type === "email") {
           // todo: validate email
         } else {
-          moduleInputContactInfo.addEventListener('keyup', (e) => {
-            console.log('event keyup');
+          moduleInputContactInfo.addEventListener("keyup", (e) => {
+            console.log("event keyup");
             if (
-              moduleInputContactInfo.value.trim() !== '' &&
+              moduleInputContactInfo.value.trim() !== "" &&
               moduleInputContactInfo.value.trim().match(numValidation)
             ) {
               // console.log("correct");
-              moduleInputContactInfo.classList.remove('bg-danger');
+              moduleInputContactInfo.classList.remove("bg-danger");
             } else {
               // console.log("wrong");
-              moduleInputContactInfo.classList.add('bg-danger');
+              moduleInputContactInfo.classList.add("bg-danger");
             }
 
             e.preventDefault();
@@ -1299,13 +1310,13 @@ const carouselItems = [
 
 // Terrible solution for carousel, it works tho
 let i = 0;
-carouselBtnRight.addEventListener('click', (e) => {
+carouselBtnRight.addEventListener("click", (e) => {
   i > 2 ? (i = 0) : i;
   i < 0 ? (i = 2) : i;
 
-  carouselItems[i].classList.add('hidden');
-  carouselItems[i + 1 > 2 ? 0 : i + 1].classList.remove('hidden');
-  carouselItems[i - 1 < 0 ? 2 : i - 1].classList.add('hidden');
+  carouselItems[i].classList.add("hidden");
+  carouselItems[i + 1 > 2 ? 0 : i + 1].classList.remove("hidden");
+  carouselItems[i - 1 < 0 ? 2 : i - 1].classList.add("hidden");
 
   i++;
 
@@ -1313,23 +1324,25 @@ carouselBtnRight.addEventListener('click', (e) => {
 });
 
 // Don't look below
-carouselBtnLeft.addEventListener('click', (e) => {
+carouselBtnLeft.addEventListener("click", (e) => {
   i < 0 ? (i = 2) : i;
   i > 2 ? (i = 0) : i;
-  carouselItems[i].classList.add('hidden');
-  carouselItems[i + 1 > 2 ? 0 : i + 1].classList.add('hidden');
-  carouselItems[i - 1 < 0 ? 2 : i - 1].classList.remove('hidden');
+  carouselItems[i].classList.add("hidden");
+  carouselItems[i + 1 > 2 ? 0 : i + 1].classList.add("hidden");
+  carouselItems[i - 1 < 0 ? 2 : i - 1].classList.remove("hidden");
   i--;
 
   e.preventDefault();
 });
 
 // On submit
-ctaSubmitBtn.addEventListener('click', (e) => {
+ctaSubmitBtn.addEventListener("click", (e) => {
   const field = inputSelectChooseProgrammInnerText.innerText.trim();
   const uni = inputSelectChooseUniInnerText.innerText.trim();
   const number = phoneInputInnerText.value.trim();
   const userName = userInputNameText.value.trim();
+
+  const googleClientId = ga.getAll()[0].get("clientId");
 
   const data = {
     field,
@@ -1338,45 +1351,46 @@ ctaSubmitBtn.addEventListener('click', (e) => {
     userName,
     userCity,
     userCountry,
+    googleClientId,
   };
 
   // console.log(data);
   // console.log(JSON.stringify(data));
 
   // Validate input number
-  if (number !== '' && number.match(numValidation)) {
-    const appIsSumbitted = document.getElementById('js-app-is-submitted');
+  if (number !== "" && number.match(numValidation)) {
+    const appIsSumbitted = document.getElementById("js-app-is-submitted");
 
-    appIsSumbitted.classList.add('showed');
+    appIsSumbitted.classList.add("showed");
 
     document
-      .getElementById('step-success-row__back-to-main')
-      .addEventListener('click', (e) => {
-        appIsSumbitted.classList.add('removing');
+      .getElementById("step-success-row__back-to-main")
+      .addEventListener("click", (e) => {
+        appIsSumbitted.classList.add("removing");
         setTimeout(() => {
-          appIsSumbitted.classList.remove('showed');
-          appIsSumbitted.classList.remove('removing');
+          appIsSumbitted.classList.remove("showed");
+          appIsSumbitted.classList.remove("removing");
         }, 300);
 
         e.preventDefault();
       });
 
-    console.log('correct');
+    console.log("correct");
     sumbitData(data);
   } else {
-    phoneInputInnerText.classList.add('bg-danger');
+    phoneInputInnerText.classList.add("bg-danger");
     // console.log("wrong");
-    phoneInputInnerText.addEventListener('keyup', (e) => {
-      console.log('event keyup');
+    phoneInputInnerText.addEventListener("keyup", (e) => {
+      console.log("event keyup");
       if (
-        phoneInputInnerText.value.trim() !== '' &&
+        phoneInputInnerText.value.trim() !== "" &&
         phoneInputInnerText.value.trim().match(numValidation)
       ) {
         // console.log("correct");
-        phoneInputInnerText.classList.remove('bg-danger');
+        phoneInputInnerText.classList.remove("bg-danger");
       } else {
         // console.log("wrong");
-        phoneInputInnerText.classList.add('bg-danger');
+        phoneInputInnerText.classList.add("bg-danger");
       }
 
       e.preventDefault();
@@ -1386,11 +1400,11 @@ ctaSubmitBtn.addEventListener('click', (e) => {
   e.preventDefault();
 });
 
-phoneInputInnerText.addEventListener('keydown', (e) => {
+phoneInputInnerText.addEventListener("keydown", (e) => {
   const number = phoneInputInnerText.value.trim();
   // Validate input number
-  if (number !== '' && number.match(numValidation)) {
-    userNameInput.classList.add('showed');
+  if (number !== "" && number.match(numValidation)) {
+    userNameInput.classList.add("showed");
   }
 });
 

@@ -11,7 +11,7 @@ const auth = {
 
 const transporter = nodemailer.createTransport(mailGun(auth));
 
-// field, uni, number, userName // question, contactWay, contact // userCity, userCountry
+// field, uni, number, userName // question, contactWay, contact // userCity, userCountry // googleClientId
 const sendMail = (
   field = "Не указано",
   uni = "Не указано",
@@ -22,6 +22,7 @@ const sendMail = (
   contact = "-",
   userCity = "Не определен",
   userCountry = "Не определена",
+  googleClientId = "-",
   cb
 ) => {
   const mailOptions = {
@@ -35,12 +36,13 @@ const sendMail = (
     2. Телефон: ${number},\n
     3. Телефон/почта: ${contact},\n
     4. Способ связи: ${contactWay},\n
-    5. Страница с которой отправлена заявка: test,\n
+    5. Страница с которой отправлена заявка: pr.rosucheba.ru,\n
     6. Город: ${userCity},\n
     7. Страна: ${userCountry},\n
     8. Направление: ${field},\n
     9. Университет: ${uni},\n
-    10. Вопрос: ${question}
+    10. Вопрос: ${question},\n
+    11. Google Client ID: ${googleClientId}
     `,
   };
 

@@ -299,7 +299,7 @@ body {
   overflow-x: hidden; }
 
 body.dark-overlay:after {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   right: 0;
@@ -524,7 +524,8 @@ header {
 
 .container-input {
   margin-bottom: 1.125rem;
-  max-width: 100%; }
+  max-width: 100%;
+  position: relative; }
 
 .container-input--user-name {
   display: none; }
@@ -559,11 +560,14 @@ header {
 .container-input__inner-dropdown {
   height: 0;
   visibility: hidden;
+  opacity: 0;
   width: 100%;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
   border-radius: 0.3125rem; }
   .container-input__inner-dropdown.show-dropdown {
     z-index: -1;
+    height: 100%;
+    opacity: 1;
     visibility: visible;
     animation-name: testingAnimation;
     animation-duration: 0.5s;
@@ -572,27 +576,40 @@ header {
 @keyframes testingAnimation {
   from {
     height: 0;
+    opacity: 0;
     transform: translateY(-100%); }
   to {
     height: 100%;
+    opacity: 1;
     transform: translateY(0); } }
+
+.input-select-choose-programm-dropdown--step-two {
+  height: 0;
+  visibility: hidden;
+  width: 100%;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 0.3125rem; }
+  .input-select-choose-programm-dropdown--step-two.show-dropdown {
+    z-index: -1;
+    visibility: visible;
+    animation-name: testingAnimation22;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards; }
+
+@keyframes testingAnimation22 {
+  from {
+    height: 0;
+    opacity: 0;
+    transform: translateX(100%); }
+  to {
+    height: 100%;
+    opacity: 1;
+    transform: translateX(0); } }
 
 .inner-dropdown__inner-dropdown-items {
   display: flex;
   flex-direction: column;
   justify-content: center; }
-
-#inner-dropdown-items--step-two {
-  animation-name: testingAnimation3;
-  animation-duration: 0.5s;
-  animation-delay: 0.5s;
-  animation-fill-mode: forwards; }
-
-@keyframes testingAnimation3 {
-  from {
-    transform: translateY(-100%); }
-  to {
-    transform: translateY(0); } }
 
 .inner-dropdown-items__item {
   text-align: left;
@@ -1043,7 +1060,7 @@ header {
   border-top-right-radius: 0.3125rem;
   position: relative; }
   .card__img::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -1325,7 +1342,7 @@ header {
   background-color: #2874ff;
   color: #fff; }
   .btn-primary::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -150%;
