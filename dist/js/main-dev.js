@@ -463,15 +463,15 @@ inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
 
     e.target.parentElement.parentElement.classList.add("text-highlight--color");
   } else {
-    for (opacity = 0; opacity < 1.1; opacity = opacity + 0.1) {
-      setTimeout(function () {
-        document.getElementById("about").style.opacity = opacity;
-      }, 100);
-    }
+    // for (opacity = 0; opacity < 1.1; opacity = opacity + 0.1) {
+    //   setTimeout(function () {
+    //     document.getElementById("about").style.opacity = opacity;
+    //   }, 100);
+    // }
 
     setTimeout(() => {
       inputSelectChooseProgrammInnerText.innerText = e.target.innerText;
-    }, 300);
+    }, 400);
 
     e.target.classList.add("text-highlight--color");
   }
@@ -500,7 +500,7 @@ inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
     setTimeout(() => {
       selectedItemFromTheFirstStepText.innerText =
         inputSelectChooseProgrammInnerText.innerText;
-    }, 300);
+    }, 400);
 
     const listItemsStepTwo = document.getElementById(
       "inner-dropdown-items--step-two"
@@ -771,7 +771,7 @@ inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
 
         dropDownStepTwoInsertItem("Mini-MBA");
       }
-    }, 300);
+    }, 400);
 
     // Step back
     selectedItemFromTheFirstStep.addEventListener("click", (e) => {
