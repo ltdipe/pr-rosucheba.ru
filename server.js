@@ -16,7 +16,7 @@ app.use(
 );
 app.use(express.json());
 
-// field, uni, number, userName // question, contactWay, contact // userCity, userCountry // googleClientId
+// field, uni, number, userName // question, contactWay, contact // userCity, userCountry // googleClientId // userDevice // utmSource, utmMedium, utmCampaign, utmContent, utmTerm
 app.post("/email", (req, res) => {
   const {
     field,
@@ -29,6 +29,12 @@ app.post("/email", (req, res) => {
     userCity,
     userCountry,
     googleClientId,
+    userDevice,
+    utmSource,
+    utmMedium,
+    utmCampaign,
+    utmContent,
+    utmTerm,
   } = req.body;
   console.log("Data: ", req.body);
 
@@ -43,6 +49,12 @@ app.post("/email", (req, res) => {
     userCity,
     userCountry,
     googleClientId,
+    userDevice,
+    utmSource,
+    utmMedium,
+    utmCampaign,
+    utmContent,
+    utmTerm,
     function (err, data) {
       if (err) {
         res.status(500).json({

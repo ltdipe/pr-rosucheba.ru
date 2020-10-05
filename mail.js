@@ -11,7 +11,7 @@ const auth = {
 
 const transporter = nodemailer.createTransport(mailGun(auth));
 
-// field, uni, number, userName // question, contactWay, contact // userCity, userCountry // googleClientId
+// field, uni, number, userName // question, contactWay, contact // userCity, userCountry // googleClientId // userDevice // userDevice, utmSource, utmMedium, utmCampaign, utmContent, utmTerm
 const sendMail = (
   field = "Не указано",
   uni = "Не указано",
@@ -23,6 +23,12 @@ const sendMail = (
   userCity = "Не определен",
   userCountry = "Не определена",
   googleClientId = "-",
+  userDevice = "Не определён",
+  utmSource = "-",
+  utmMedium = "-",
+  utmCampaign = "-",
+  utmContent = "-",
+  utmTerm = "-",
   cb
 ) => {
   const mailOptions = {
@@ -42,7 +48,13 @@ const sendMail = (
     8. Направление: ${field},\n
     9. Университет: ${uni},\n
     10. Вопрос: ${question},\n
-    11. Google Client ID: ${googleClientId}
+    11. Google Client ID: ${googleClientId},\n
+    12. Устройство пользователя: ${userDevice},\n
+    13. Источник рекламы: ${utmSource},\n
+    14. Тип трафика: ${utmMedium},\n
+    15. Название РК: ${utmCampaign},\n
+    16. Объявление: ${utmContent},\n
+    17. Ключевое слово: ${utmTerm}
     `,
   };
 
