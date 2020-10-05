@@ -1173,6 +1173,7 @@ header {
   min-width: 100%;
   max-width: 100%;
   max-height: 226px;
+  border-radius: 10px 10px 0px 0px;
   z-index: 99;
   position: fixed;
   bottom: 0;
@@ -1196,16 +1197,7 @@ header {
   position: relative;
   min-height: 14.125rem;
   background-color: #fff;
-  border-radius: 10px 10px 0px 0px;
-  animation-name: questionModuleSwipe;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards; }
-
-@keyframes questionModuleSwipe {
-  0% {
-    transform: translateX(100%); }
-  100% {
-    transform: translateX(0); } }
+  border-radius: 10px 10px 0px 0px; }
   .module-questions__step.hidden {
     display: none; }
 
