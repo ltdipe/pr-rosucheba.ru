@@ -869,6 +869,10 @@ inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
         ""
       );
 
+      inputSelectChooseProgrammInnerText.scrollIntoView({
+        behavior: "smooth",
+      });
+
       inputSelectChooseProgrammDropdownStepTwo.classList.remove(
         "show-dropdown"
       );
