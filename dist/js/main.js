@@ -639,7 +639,7 @@ inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
         }
       });
 
-      dropDownStepTwoInsertItem("Экономическая безопасность (Аккредитована)");
+      dropDownStepTwoInsertItem("Экономическая безопасность");
     }
 
     if (selectedItemFromTheFirstStepText.innerText === "Магистратура") {
