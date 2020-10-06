@@ -168,7 +168,7 @@ const insertAfterLiStepTwo = document.getElementById(
   "js-insert-after--step-two"
 );
 
-const numValidation = /^[0-9]+$/;
+const numValidation = /^[0-9()-.+ ]+$/;
 
 const locationDependedHeading = document.getElementById(
   "location-depended-heading"
@@ -886,16 +886,16 @@ inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
 });
 
 // Show ask question btn on the scroll position
-// window.addEventListener("scroll", function showQuestionBtn(e) {
-//   // console.log(window.scrollY);
-//   if (window.scrollY >= 720 && window.scrollY <= 2000) {
-//     btnAskQuestion.classList.remove("hidden");
-//   } else {
-//     btnAskQuestion.classList.add("hidden");
-//   }
+window.addEventListener("scroll", function showQuestionBtn(e) {
+  // console.log(window.scrollY);
+  if (window.scrollY >= 720 && window.scrollY <= 2000) {
+    btnAskQuestion.classList.remove("hidden");
+  } else {
+    btnAskQuestion.classList.add("hidden");
+  }
 
-//   e.preventDefault();
-// });
+  e.preventDefault();
+});
 
 // Ask question clicked
 btnAskQuestion.addEventListener("click", (e) => {
