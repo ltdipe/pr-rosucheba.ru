@@ -507,25 +507,20 @@ inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
 
   // Change the inner text of the select to the selected text
   if (e.target.tagName === "svg") {
+    // console.log("svg");
     inputSelectChooseProgrammInnerText.innerText =
       e.target.parentElement.innerText;
 
     e.target.parentElement.classList.add("text-highlight--color");
   } else if (e.target.tagName == "path") {
+    // console.log("path");
     inputSelectChooseProgrammInnerText.innerText =
       e.target.parentElement.parentElement.innerText;
 
     e.target.parentElement.parentElement.classList.add("text-highlight--color");
   } else {
-    // for (opacity = 0; opacity < 1.1; opacity = opacity + 0.1) {
-    //   setTimeout(function () {
-    //     document.getElementById("about").style.opacity = opacity;
-    //   }, 100);
-    // }
-
-    // setTimeout(() => {
+    // console.log("click");
     inputSelectChooseProgrammInnerText.innerText = e.target.innerText;
-    // }, 400);
 
     e.target.classList.add("text-highlight--color");
   }
@@ -545,10 +540,6 @@ inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
 
     const selectedItemFromTheFirstStepText = document.getElementById(
       "programm-dropdown-step-two-selected-step-one-item"
-    );
-
-    const selectedItemFromTheFirstStep = document.getElementById(
-      "inner-dropdown-items__item--selected"
     );
 
     selectedItemFromTheFirstStepText.innerText =
@@ -849,29 +840,37 @@ inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
       // Change the inner text of the select to the selected text
       if (e.target.tagName === "svg") {
         // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
-        inputSelectChooseProgrammInnerText.innerText ===
-        e.target.parentElement.innerText
-          ? inputSelectChooseProgrammInnerText.innerText
-          : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerHTML}, ${e.target.parentElement.innerText}`);
+        console.log("svg");
+        // inputSelectChooseProgrammInnerText.innerText.trim() ===
+        // e.target.parentElement.innerText.trim()
+        //   ? (inputSelectChooseProgrammInnerText.innerText = inputSelectChooseProgrammInnerText.innerText.trim())
+        //   : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerHTML.trim()}, ${e.target.parentElement.innerText.trim()}`);
+
+        inputSelectChooseProgrammInnerText.innerText = e.target.parentElement.innerText.trim();
 
         e.target.parentElement.classList.add("text-highlight--color");
       } else if (e.target.tagName == "path") {
+        console.log("path");
         // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
-        inputSelectChooseProgrammInnerText.innerText ===
-        e.target.parentElement.parentElement.innerText
-          ? inputSelectChooseProgrammInnerText.innerText
-          : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText}, ${e.target.parentElement.parentElement.innerText}`);
+        // inputSelectChooseProgrammInnerText.innerText.trim() ===
+        // e.target.parentElement.parentElement.innerText.trim()
+        //   ? (inputSelectChooseProgrammInnerText.innerText = inputSelectChooseProgrammInnerText.innerText.trim())
+        //   : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText.trim()}, ${e.target.parentElement.parentElement.innerText.trim()}`);
+
+        inputSelectChooseProgrammInnerText.innerText = e.target.parentElement.parentElement.innerText.trim();
 
         e.target.parentElement.parentElement.classList.add(
           "text-highlight--color"
         );
       } else {
+        console.log(e.target.innerText);
         // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
         // console.log(e.target.innerText);
-        inputSelectChooseProgrammInnerText.innerText === e.target.innerText
-          ? (inputSelectChooseProgrammInnerText.innerText =
-              inputSelectChooseProgrammInnerText.innerText)
-          : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText}, ${e.target.innerText}`);
+        // inputSelectChooseProgrammInnerText.innerText.trim() ===
+        // e.target.innerText.trim()
+        //   ? (inputSelectChooseProgrammInnerText.innerText = inputSelectChooseProgrammInnerText.innerText.trim())
+        //   : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText.trim()}, ${e.target.innerText.trim()}`);
+        inputSelectChooseProgrammInnerText.innerText = e.target.innerText.trim();
 
         e.target.classList.add("text-highlight--color");
       }
@@ -885,9 +884,9 @@ inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
         "show-dropdown"
       );
 
-      inputSelectChooseProgramm.scrollIntoView({
-        behavior: "smooth",
-      });
+      // inputSelectChooseProgramm.scrollIntoView({
+      //   behavior: "smooth",
+      // });
     });
   }
 
@@ -1522,23 +1521,3 @@ phoneInputInnerText.addEventListener("click", (e) => {
     behavior: "smooth",
   });
 });
-
-// onclick =
-//   "gtag('event','offerprogks',{'event_category':'all-page','event_action':'click-all-page-button-button','event_label':'all-page-button','value':'3900'});yaCounter42094189.reachGoal('allpagebutton');return true;";
-
-// onsubmit =
-//   "gtag('event','offerprogks',{'event_category':'quest-send','event_action':'click-quest-send-button-button','event_label':'quest-send','value':'3900'});yaCounter42094189.reachGoal('quest-send');return true;";
-
-// document
-//   .getElementById("cta-submit-application")
-//   .addEventListener("click", (e) => {
-//     console.log("test");
-//   });
-
-// yaCounter42094189.reachGoal('callback_ipomsk_click');gtag('event','click',{'event_category':'callback_ipomsk'});return true;
-
-// onclick="yaCounter42094189.reachGoal('callback_ipomsk_click');gtag('event','click',{'event_category':'callback_ipomsk'});"
-
-// onclick="yaCounter42094189.reachGoal('phone1_ipomsk_click'); gtag('event', 'click',{'event_category': 'phone1_ipomsk'});"
-
-// onclick="yaCounter42094189.reachGoal('phone1_ipomsk_click'); gtag('event', 'click',{'event_category': 'phone1_ipomsk'});return true;"
