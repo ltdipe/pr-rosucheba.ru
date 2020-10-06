@@ -106,78 +106,18 @@
 }
 
 .container-input__inner-dropdown {
-  // height: 0;
-  // visibility: hidden;
-  // opacity: 0;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
   // transform: scaleY(0);
   // transform-origin: top;
   width: 100%;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
   border-radius: 0.3125rem;
 
-  animation-name: testingAnimation23;
-  animation-duration: 0.5s;
-  // animation-delay: 0.5;
-  animation-fill-mode: forwards;
-  @keyframes testingAnimation23 {
-    from {
-      height: 100%;
-      opacity: 1;
-      transform: scaleY(1);
-      transform-origin: top;
-      // transform: translateY(0);
-    }
-    to {
-      height: 0;
-      opacity: 0;
-      transform: scaleY(0);
-      transform-origin: top;
-      // transform: translateY(-100%);
-      visibility: hidden;
-    }
-  }
-
-  &.show-dropdown {
-    z-index: -1;
-    height: 100%;
-    // transform: scaleY(1);
-
-    opacity: 1;
-    visibility: visible;
-
-    animation-name: testingAnimation;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-    @keyframes testingAnimation {
-      from {
-        height: 0;
-        opacity: 0;
-        transform: scaleY(0);
-        transform-origin: top;
-      }
-      to {
-        height: 100%;
-        transform: scaleY(1);
-        transform-origin: top;
-      }
-    }
-
-    // -webkit-animation: 2s linear 0s infinite normal shine;
-    // animation: 2s linear 0s infinite normal shine;
-  }
-}
-
-#input-select-choose-programm-dropdown--step-two {
-  height: 0;
-  opacity: 0;
-  visibility: hidden;
-  width: 100%;
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
-  border-radius: 0.3125rem;
-
   // animation-name: testingAnimation23;
   // animation-duration: 0.5s;
-  // animation-delay: 0.4s;
+  // // animation-delay: 0.5;
   // animation-fill-mode: forwards;
   // @keyframes testingAnimation23 {
   //   from {
@@ -199,28 +139,88 @@
 
   &.show-dropdown {
     z-index: -1;
+    height: 100%;
+    // transform: scaleY(1);
+
+    opacity: 1;
     visibility: visible;
 
-    animation-name: testingAnimation22;
-    animation-duration: 0.4s;
-    animation-delay: 0.4s;
-    animation-fill-mode: forwards;
-    @keyframes testingAnimation22 {
-      from {
-        height: 0;
-        opacity: 0;
-        transform: scaleY(0);
-        transform-origin: top;
-      }
-      to {
-        height: 100%;
-        opacity: 1;
-        transform: scaleY(1);
-        transform-origin: top;
-      }
-    }
+    // animation-name: testingAnimation;
+    // animation-duration: 0.4s;
+    // animation-fill-mode: forwards;
+    // @keyframes testingAnimation {
+    //   from {
+    //     height: 0;
+    //     opacity: 0;
+    //     transform: scaleY(0);
+    //     transform-origin: top;
+    //   }
+    //   to {
+    //     height: 100%;
+    //     transform: scaleY(1);
+    //     transform-origin: top;
+    //   }
+    // }
+
+    // -webkit-animation: 2s linear 0s infinite normal shine;
+    // animation: 2s linear 0s infinite normal shine;
   }
 }
+
+// #input-select-choose-programm-dropdown--step-two {
+//   height: 0;
+//   opacity: 0;
+//   visibility: hidden;
+//   width: 100%;
+//   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+//   border-radius: 0.3125rem;
+
+//   // animation-name: testingAnimation23;
+//   // animation-duration: 0.5s;
+//   // animation-delay: 0.4s;
+//   // animation-fill-mode: forwards;
+//   // @keyframes testingAnimation23 {
+//   //   from {
+//   //     height: 100%;
+//   //     opacity: 1;
+//   //     transform: scaleY(1);
+//   //     transform-origin: top;
+//   //     // transform: translateY(0);
+//   //   }
+//   //   to {
+//   //     height: 0;
+//   //     opacity: 0;
+//   //     transform: scaleY(0);
+//   //     transform-origin: top;
+//   //     // transform: translateY(-100%);
+//   //     visibility: hidden;
+//   //   }
+//   // }
+
+//   &.show-dropdown {
+//     z-index: -1;
+//     visibility: visible;
+
+//     animation-name: testingAnimation22;
+//     animation-duration: 0.4s;
+//     animation-delay: 0.4s;
+//     animation-fill-mode: forwards;
+//     @keyframes testingAnimation22 {
+//       from {
+//         height: 0;
+//         opacity: 0;
+//         transform: scaleY(0);
+//         transform-origin: top;
+//       }
+//       to {
+//         height: 100%;
+//         opacity: 1;
+//         transform: scaleY(1);
+//         transform-origin: top;
+//       }
+//     }
+//   }
+// }
 
 .inner-dropdown__inner-dropdown-items {
   @include d-flex;
