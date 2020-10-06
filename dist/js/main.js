@@ -200,12 +200,12 @@ const utmTerm = urlParams.get("utm_term");
 //   });
 // let userLocation;
 
-const locationUrlAPI = "https://ipinfo.io?token=b16e76b622236e";
+// const locationUrlAPI = "https://ipinfo.io?token=b16e76b622236e";
 // http://ip-api.com/json
 let userCity;
 let userCountry;
 let userCountryCode; // KZ, RU, UZ
-fetch(locationUrlAPI)
+fetch((locationUrlAPI = ""))
   .then((data) => data.json())
   .then((data) => {
     userCity = data.city;
@@ -507,21 +507,15 @@ inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
 
   // Change the inner text of the select to the selected text
   if (e.target.tagName === "svg") {
-    // console.log("svg");
     inputSelectChooseProgrammInnerText.innerText =
       e.target.parentElement.innerText;
-
     e.target.parentElement.classList.add("text-highlight--color");
   } else if (e.target.tagName == "path") {
-    // console.log("path");
     inputSelectChooseProgrammInnerText.innerText =
       e.target.parentElement.parentElement.innerText;
-
     e.target.parentElement.parentElement.classList.add("text-highlight--color");
   } else {
-    // console.log("click");
     inputSelectChooseProgrammInnerText.innerText = e.target.innerText;
-
     e.target.classList.add("text-highlight--color");
   }
 
@@ -540,6 +534,10 @@ inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
 
     const selectedItemFromTheFirstStepText = document.getElementById(
       "programm-dropdown-step-two-selected-step-one-item"
+    );
+
+    const selectedItemFromTheFirstStep = document.getElementById(
+      "inner-dropdown-items__item--selected"
     );
 
     selectedItemFromTheFirstStepText.innerText =
@@ -641,7 +639,7 @@ inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
         }
       });
 
-      dropDownStepTwoInsertItem("Экономическая безопасность");
+      dropDownStepTwoInsertItem("Экономическая безопасность (Аккредитована)");
     }
 
     if (selectedItemFromTheFirstStepText.innerText === "Магистратура") {
@@ -840,37 +838,28 @@ inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
       // Change the inner text of the select to the selected text
       if (e.target.tagName === "svg") {
         // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
-        console.log("svg");
-        // inputSelectChooseProgrammInnerText.innerText.trim() ===
-        // e.target.parentElement.innerText.trim()
-        //   ? (inputSelectChooseProgrammInnerText.innerText = inputSelectChooseProgrammInnerText.innerText.trim())
-        //   : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerHTML.trim()}, ${e.target.parentElement.innerText.trim()}`);
-
-        inputSelectChooseProgrammInnerText.innerText = e.target.parentElement.innerText.trim();
+        inputSelectChooseProgrammInnerText.innerText ===
+        e.target.parentElement.innerText
+          ? inputSelectChooseProgrammInnerText.innerText
+          : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerHTML}, ${e.target.parentElement.innerText}`);
 
         e.target.parentElement.classList.add("text-highlight--color");
       } else if (e.target.tagName == "path") {
-        console.log("path");
         // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
-        // inputSelectChooseProgrammInnerText.innerText.trim() ===
-        // e.target.parentElement.parentElement.innerText.trim()
-        //   ? (inputSelectChooseProgrammInnerText.innerText = inputSelectChooseProgrammInnerText.innerText.trim())
-        //   : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText.trim()}, ${e.target.parentElement.parentElement.innerText.trim()}`);
-
-        inputSelectChooseProgrammInnerText.innerText = e.target.parentElement.parentElement.innerText.trim();
+        inputSelectChooseProgrammInnerText.innerText ===
+        e.target.parentElement.parentElement.innerText
+          ? inputSelectChooseProgrammInnerText.innerText
+          : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText}, ${e.target.parentElement.parentElement.innerText}`);
 
         e.target.parentElement.parentElement.classList.add(
           "text-highlight--color"
         );
       } else {
-        console.log(e.target.innerText);
         // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
-        // console.log(e.target.innerText);
-        // inputSelectChooseProgrammInnerText.innerText.trim() ===
-        // e.target.innerText.trim()
-        //   ? (inputSelectChooseProgrammInnerText.innerText = inputSelectChooseProgrammInnerText.innerText.trim())
-        //   : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText.trim()}, ${e.target.innerText.trim()}`);
-        inputSelectChooseProgrammInnerText.innerText = e.target.innerText.trim();
+        inputSelectChooseProgrammInnerText.innerText === e.target.innerText
+          ? (inputSelectChooseProgrammInnerText.innerText =
+              inputSelectChooseProgrammInnerText.innerText)
+          : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText}, ${e.target.innerText}`);
 
         e.target.classList.add("text-highlight--color");
       }
@@ -883,10 +872,6 @@ inputSelectChooseProgrammDropdown.addEventListener("click", (e) => {
       inputSelectChooseProgrammDropdownStepTwo.classList.remove(
         "show-dropdown"
       );
-
-      // inputSelectChooseProgramm.scrollIntoView({
-      //   behavior: "smooth",
-      // });
     });
   }
 

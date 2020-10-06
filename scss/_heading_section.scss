@@ -106,9 +106,8 @@
 }
 
 .container-input__inner-dropdown {
-  // height: 0;
-  // visibility: hidden;
-  display: none;
+  height: 0;
+  visibility: hidden;
   // opacity: 0;
   // transform: scaleY(0);
   // transform-origin: top;
@@ -142,7 +141,8 @@
     // z-index: -1;
     // height: 100%;
     // transform: scaleY(1);
-    display: block;
+    visibility: visible;
+    height: 100%;
     // opacity: 1;
     // visibility: visible;
 
