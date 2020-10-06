@@ -1125,8 +1125,36 @@ header {
   color: #fff;
   z-index: 98;
   box-shadow: 0px 4px 15px 15px rgba(0, 0, 0, 0.08);
+  animation-name: showQuestionModuleBtn;
+  animation-duration: 0.4s;
+  // animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+  @keyframes showQuestionModuleBtn {
+    0% {
+      opacity: 0;
+      transform: translateY(50%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   &.hidden {
-    display: none;
+    animation-name: hideQuestionModuleBtn;
+    animation-duration: 0.4s;
+    // animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+    @keyframes hideQuestionModuleBtn {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(50%);
+      }
+    }
+    // display: none;
   }
 }
 
