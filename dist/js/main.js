@@ -200,12 +200,12 @@ const utmTerm = urlParams.get("utm_term");
 //   });
 // let userLocation;
 
-// const locationUrlAPI = "https://ipinfo.io?token=b16e76b622236e";
+const locationUrlAPI = "https://ipinfo.io?token=b16e76b622236e";
 // http://ip-api.com/json
 let userCity;
 let userCountry;
 let userCountryCode; // KZ, RU, UZ
-fetch((locationUrlAPI = ""))
+fetch(locationUrlAPI)
   .then((data) => data.json())
   .then((data) => {
     userCity = data.city;
