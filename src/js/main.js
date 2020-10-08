@@ -200,25 +200,20 @@ const utmTerm = urlParams.get('utm_term');
 //   });
 // let userLocation;
 
-// const locationUrlAPI = 'https://ipinfo.io?token=b16e76b622236e';
+// const locationUrlAPI = "https://ipinfo.io?token=b16e76b622236e";
 // let locationUrlAPI = 'https://ipapi.co/8.8.8.8/json/';
-let locationUrlAPI = 'http://ip-api.com/json';
-// let locationUrlAPI = 'https://api.ipify.org/?format=json';
-// let locationUrlAPI;
+// let locationUrlAPI = 'http://ip-api.com/json';
+let locationUrlAPI = 'https://api.ipify.org/?format=json';
 let userCity;
 let userCountry;
 let userCountryCode; // KZ, RU, UZ
 fetch(locationUrlAPI)
   .then((data) => data.json())
   .then((data) => {
-    // console.log(data);
+    console.log(data);
     userCity = data.city;
-    // console.log(data.city);
     userCountry = data.country;
-    // console.log(data.country);
-    // userCountryCode = data.country;
-    userCountryCode = data.countryCode;
-    // console.log(data.countryCode);
+    userCountryCode = data.country;
     if (userCountry === 'RU') {
       userCountry = 'Russia';
     } else if (userCountry === 'KZ') {

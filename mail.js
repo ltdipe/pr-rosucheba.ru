@@ -1,6 +1,6 @@
-const nodemailer = require("nodemailer");
-const mailGun = require("nodemailer-mailgun-transport");
-require("dotenv").config();
+const nodemailer = require('nodemailer');
+const mailGun = require('nodemailer-mailgun-transport');
+require('dotenv').config();
 
 const auth = {
   auth: {
@@ -13,29 +13,29 @@ const transporter = nodemailer.createTransport(mailGun(auth));
 
 // field, uni, number, userName // question, contactWay, contact // userCity, userCountry // googleClientId // userDevice // userDevice, utmSource, utmMedium, utmCampaign, utmContent, utmTerm
 const sendMail = (
-  field = "Не указано",
-  uni = "Не указано",
-  number = "-",
-  userName = "Не указано",
-  question = "-",
-  contactWay = "-",
-  contact = "-",
-  userCity = "Не определен",
-  userCountry = "Не определена",
-  googleClientId = "-",
-  userDevice = "Не определён",
-  utmSource = "-",
-  utmMedium = "-",
-  utmCampaign = "-",
-  utmContent = "-",
-  utmTerm = "-",
+  field = 'Не указано',
+  uni = 'Не указано',
+  number = '-',
+  userName = 'Не указано',
+  question = '-',
+  contactWay = '-',
+  contact = '-',
+  userCity = 'Не определен',
+  userCountry = 'Не определена',
+  googleClientId = '-',
+  userDevice = 'Не определён',
+  utmSource = '-',
+  utmMedium = '-',
+  utmCampaign = '-',
+  utmContent = '-',
+  utmTerm = '-',
   cb
 ) => {
   const mailOptions = {
     from: process.env.FROMEMAIL,
     to: process.env.TOEMAIL,
     subject: `${
-      question === "-" ? "Новая заявка с РосУчеба" : "Новый вопрос с РосУчеба"
+      question === '-' ? 'Новая заявка с РосУчеба' : 'Новый вопрос с РосУчеба'
     } `,
     text: `
     1. Имя: ${userName},\n

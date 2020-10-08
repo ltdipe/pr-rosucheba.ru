@@ -1,12 +1,17 @@
-const express = require("express");
-const sendMail = require("./mail");
+const express = require('express');
+const sendMail = require('./mail');
 const log = console.log;
 const app = express();
-const path = require("path");
+const path = require('path');
+// const geoip = require('geoip-lite');
+// const http = require('http');
+
+// console.log(http.request);
+// console.log(geoip.lookup);
 
 const PORT = process.env.PORT || 80;
 
-app.use(express.static(__dirname + "/dist"));
+app.use(express.static(__dirname + '/dist'));
 
 // Data parsing
 app.use(
@@ -17,7 +22,8 @@ app.use(
 app.use(express.json());
 
 // field, uni, number, userName // question, contactWay, contact // userCity, userCountry // googleClientId // userDevice // utmSource, utmMedium, utmCampaign, utmContent, utmTerm
-app.post("/email", (req, res) => {
+app.post('/email', (req, res) => {
+  // console.log(req.connection.remoteAddress);
   const {
     field,
     uni,
@@ -36,7 +42,7 @@ app.post("/email", (req, res) => {
     utmContent,
     utmTerm,
   } = req.body;
-  console.log("Data: ", req.body);
+  console.log('Data: ', req.body);
 
   sendMail(
     field,
@@ -58,19 +64,19 @@ app.post("/email", (req, res) => {
     function (err, data) {
       if (err) {
         res.status(500).json({
-          message: "Sorry ^.^ Internal Error",
+          message: 'Sorry ^.^ Internal Error',
         });
       } else {
         res.json({
-          message: "Email sent 👍",
+          message: 'Email sent 👍',
         });
       }
     }
   );
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-app.listen(PORT, () => log("Server is starting on PORT, ", PORT));
+app.listen(PORT, () => log('Server is starting on PORT, ', PORT));
