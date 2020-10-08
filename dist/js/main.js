@@ -211,7 +211,7 @@ let userCountryCode; // KZ, RU, UZ
 fetch(locationUrlAPI)
   .then((data) => data.json())
   .then((data) => {
-    console.log(data);
+    // console.log(data);
     userCity = data.city;
     userCountry = data.country;
     userCountryCode = data.country;
