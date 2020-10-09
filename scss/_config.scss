@@ -20,7 +20,7 @@ $sections-bottom-padding: 4.25rem;
 $card-border-radius: 0.3125rem;
 
 $root-font-size-num-only: 16;
-$root-font-size: $root-font-size-num-only + "px";
+$root-font-size: $root-font-size-num-only + 'px';
 
 // Bacgkground colors for SM icons
 $bg-color-telegram: #00a3ff;
@@ -31,6 +31,12 @@ $bg-color-phone: #0050e3;
 $bg-color-email: #ff6600;
 
 // Rem and px for font sizes
+$_39px: 39 / $root-font-size-num-only + rem;
+$_38px: 38 / $root-font-size-num-only + rem;
+$_37px: 37 / $root-font-size-num-only + rem;
+$_36px: 36 / $root-font-size-num-only + rem;
+$_35px: 35 / $root-font-size-num-only + rem;
+$_34px: 34 / $root-font-size-num-only + rem;
 $_33px: 33 / $root-font-size-num-only + rem;
 $_32px: 32 / $root-font-size-num-only + rem;
 $_31px: 31 / $root-font-size-num-only + rem;
@@ -86,7 +92,7 @@ $_1px: (1 / $root-font-size-num-only) + rem;
 }
 
 @mixin mediaMd {
-  @media only screen and (min-width: 1025px) {
+  @media only screen and (min-width: 768px) {
     @content;
   }
 }

@@ -179,7 +179,7 @@ const customizedCountryText = document.getElementById('customizedCountryText');
 const userDevice = window.navigator.userAgent;
 
 // UTM PARAMS
-queryString = window.location.search;
+const queryString = window.location.search;
 
 const urlParams = new URLSearchParams(queryString);
 
@@ -200,15 +200,15 @@ const utmTerm = urlParams.get('utm_term');
 //   });
 // let userLocation;
 
-const locationUrlAPI = 'https://ipinfo.io?token=b16e76b622236e';
+// const locationUrlAPI = 'https://ipinfo.io?token=b16e76b622236e';
 // let locationUrlAPI = 'https://ipapi.co/8.8.8.8/json/';
-// let locationUrlAPI = 'http://ip-api.com/json';
+// let locationUrlAPI = 'http://ip-api.com/json'; // no https
 // let locationUrlAPI = 'https://api.ipify.org/?format=json';
 // let locationUrlAPI;
 let userCity;
 let userCountry;
 let userCountryCode; // KZ, RU, UZ
-fetch(locationUrlAPI)
+fetch((locationUrlAPI = ''))
   .then((data) => data.json())
   .then((data) => {
     // console.log(data);
@@ -228,10 +228,10 @@ fetch(locationUrlAPI)
     // // console.log(userCountryCode);
     changeLocationDependedHeading(
       locationDependedHeading,
-      'дистанционно',
-      'дистанционно без ЕГЭ',
-      'дистанционно без ЕНТ и ЕГЭ',
-      'дистанционно без ЕНТ и ЕГЭ'
+      'дистанционно в вузах Москвы',
+      'дистанционно в вузах Москвы без ЕГЭ',
+      'дистанционно в вузах Москвы без ЕНТ и ЕГЭ',
+      'дистанционно в вузах Москвы без ЕНТ и ЕГЭ'
     );
 
     changeCustomizedCountryText(
@@ -245,10 +245,10 @@ fetch(locationUrlAPI)
     // `Can't access ${locationUrlAPI} :(`;
     changeLocationDependedHeading(
       locationDependedHeading,
-      'дистанционно',
-      'дистанционно без ЕГЭ',
-      'дистанционно без ЕНТ и ЕГЭ',
-      'дистанционно без ЕНТ и ЕГЭ'
+      'дистанционно в вузах Москвы',
+      'дистанционно в вузах Москвы без ЕГЭ',
+      'дистанционно в вузах Москвы без ЕНТ и ЕГЭ',
+      'дистанционно в вузах Москвы без ЕНТ и ЕГЭ'
     );
 
     changeCustomizedCountryText(
@@ -361,7 +361,10 @@ inputSelectChooseUni.addEventListener('click', (e) => {
   inputSelectChooseUniDropdown.classList.toggle('show-dropdown');
 
   // window.location = '#input-select-choose-uni';
-  if (inputSelectChooseUniDropdown.classList.contains('show-dropdown')) {
+  if (
+    inputSelectChooseUniDropdown.classList.contains('show-dropdown') &&
+    document.body.clientWidth < 768
+  ) {
     inputSelectChooseUni.scrollIntoView({
       behavior: 'smooth',
     });
@@ -387,9 +390,16 @@ inputSelectChooseUni.addEventListener('click', (e) => {
 scrollToTheApplicationBtn.addEventListener('click', (e) => {
   fillInTheFieldsBelow.classList.remove('hidden');
 
-  fillInTheFieldsBelow.scrollIntoView({
-    behavior: 'smooth',
-  });
+  if (document.body.clientWidth < 768) {
+    fillInTheFieldsBelow.scrollIntoView({
+      behavior: 'smooth',
+    });
+  } else {
+    const mainHeading = document.getElementById('js-section-heading');
+    mainHeading.scrollIntoView({
+      behavior: 'smooth',
+    });
+  }
 
   setTimeout(() => {
     fillInTheFieldsBelow.classList.add('hidden');
@@ -462,7 +472,10 @@ inputSelectChooseProgramm.addEventListener('click', (e) => {
   }
 
   // window.location = '#input-select-choose-uni';
-  if (inputSelectChooseProgrammDropdown.classList.contains('show-dropdown')) {
+  if (
+    inputSelectChooseProgrammDropdown.classList.contains('show-dropdown') &&
+    document.body.clientWidth < 768
+  ) {
     inputSelectChooseProgrammInnerText.scrollIntoView({
       behavior: 'smooth',
     });
@@ -873,9 +886,11 @@ inputSelectChooseProgrammDropdown.addEventListener('click', (e) => {
         ''
       );
 
-      inputSelectChooseProgrammInnerText.scrollIntoView({
-        behavior: 'smooth',
-      });
+      if (document.body.clientWidth < 768) {
+        inputSelectChooseProgrammInnerText.scrollIntoView({
+          behavior: 'smooth',
+        });
+      }
 
       inputSelectChooseProgrammDropdownStepTwo.classList.remove(
         'show-dropdown'
@@ -1510,7 +1525,9 @@ phoneInputInnerText.addEventListener('click', (e) => {
   const containerInputPhoneNum = document.getElementById(
     'container-input-phone-num'
   );
-  containerInputPhoneNum.scrollIntoView({
-    behavior: 'smooth',
-  });
+  if (document.body.clientWidth < 768) {
+    containerInputPhoneNum.scrollIntoView({
+      behavior: 'smooth',
+    });
+  }
 });

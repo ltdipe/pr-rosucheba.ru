@@ -4,12 +4,19 @@ const log = console.log;
 const app = express();
 const path = require('path');
 // const geoip = require('geoip-lite');
+const expressip = require('express-ip');
 // const http = require('http');
+// const ngrok = require('ngrok');
 
+// var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+//   console.log(ip);
 // console.log(http.request);
-// console.log(geoip.lookup);
+
+// console.log(geoip.lookup(req.connection.remoteAddress));
 
 const PORT = process.env.PORT || 80;
+
+app.use(expressip().getIpInfoMiddleware);
 
 app.use(express.static(__dirname + '/dist'));
 
@@ -23,7 +30,10 @@ app.use(express.json());
 
 // field, uni, number, userName // question, contactWay, contact // userCity, userCountry // googleClientId // userDevice // utmSource, utmMedium, utmCampaign, utmContent, utmTerm
 app.post('/email', (req, res) => {
-  // console.log(req.connection.remoteAddress);
+  const ipInfo = req.ipInfo;
+  console.log(ipInfo);
+  // userCity = ipInfo.city;
+  // userCountry = ipInfo.country;
   const {
     field,
     uni,
@@ -79,4 +89,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-app.listen(PORT, () => log('Server is starting on PORT, ', PORT));
+app.listen(PORT, () => {
+  log('Server is starting on PORT, ', PORT);
+});
