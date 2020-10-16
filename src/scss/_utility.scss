@@ -18,6 +18,18 @@
   display: none;
 }
 
+.mobile-only {
+  display: block;
+}
+
+.text-highlight--bold-mobile {
+  font-weight: bold;
+}
+
+.desktop-only-initial {
+  display: none;
+}
+
 .bg-transparent {
   background-color: transparent;
 }

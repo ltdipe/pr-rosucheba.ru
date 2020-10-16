@@ -2453,10 +2453,10 @@ var utmTerm = urlParams.get('utm_term'); // Track IP
 //   });
 // let userLocation;
 
-var locationUrlAPI = 'https://ipinfo.io?token=b16e76b622236e'; // let locationUrlAPI = 'https://ipapi.co/8.8.8.8/json/';
+var locationUrlAPI = 'https://ipinfo.io?token=b16e76b622236e'; // const locationUrlAPI = '';
+// let locationUrlAPI = 'https://ipapi.co/8.8.8.8/json/';
 // let locationUrlAPI = 'http://ip-api.com/json'; // no https
 // let locationUrlAPI = 'https://api.ipify.org/?format=json';
-// let locationUrlAPI;
 
 var userCity;
 var userCountry;
@@ -2536,8 +2536,9 @@ function dropDownStepTwoInsertItem() {
   el.classList.add('inner-dropdown-items__item');
   el.innerHTML = "\n        <p>\n          ".concat(svgCheckMark, "\n          ").concat(text, "\n        </p>\n      ");
   insertAfter(insertAfterLiStepTwo, el);
-} // Send to email
+}
 
+var isSumbitted = false; // Send to email
 
 function sumbitData(_x) {
   return _sumbitData.apply(this, arguments);
@@ -2551,7 +2552,12 @@ function _sumbitData() {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _context.next = 2;
+            if (!(isSumbitted === false)) {
+              _context.next = 11;
+              break;
+            }
+
+            _context.next = 3;
             return fetch('/email', {
               method: 'POST',
               headers: {
@@ -2561,15 +2567,25 @@ function _sumbitData() {
               body: (0, _stringify.default)(data)
             });
 
-          case 2:
+          case 3:
             res = _context.sent;
-            _context.next = 5;
+            _context.next = 6;
             return res.json();
 
-          case 5:
-            content = _context.sent;
-
           case 6:
+            content = _context.sent;
+            isSumbitted = true; // Prevent spamming 
+
+            setTimeout(function () {
+              isSumbitted = false;
+            }, 5000);
+            _context.next = 12;
+            break;
+
+          case 11:
+            return _context.abrupt("return");
+
+          case 12:
           case "end":
             return _context.stop();
         }
@@ -3232,7 +3248,9 @@ btnAskQuestion.addEventListener('click', function (e) {
         var contactWay = moduleStepThreeTitle.innerText.trim();
         var contact = moduleInputContactInfo.value.trim();
         var googleClientId = ga.getAll()[0].get('clientId');
+        var number;
         var data = {
+          number: number,
           question: question,
           contactWay: contactWay,
           contact: contact,
@@ -3246,6 +3264,12 @@ btnAskQuestion.addEventListener('click', function (e) {
           utmContent: utmContent,
           utmTerm: utmTerm
         };
+
+        if (data.contact !== '' && data.contact !== null && !data.contact.includes('@')) {
+          data.number = data.contact;
+          data.contact = '-';
+        }
+
         sumbitData(data);
         setTimeout(function () {
           moduleStepSuccess.classList.add('hidden');
@@ -3280,7 +3304,10 @@ btnAskQuestion.addEventListener('click', function (e) {
 
         var _googleClientId = ga.getAll()[0].get('clientId');
 
+        var _number;
+
         var _data = {
+          number: _number,
           question: _question,
           contactWay: _contactWay,
           contact: _contact,
@@ -3294,6 +3321,12 @@ btnAskQuestion.addEventListener('click', function (e) {
           utmContent: utmContent,
           utmTerm: utmTerm
         };
+
+        if (_data.contact !== '' && _data.contact !== null && !_data.contact.includes('@')) {
+          _data.number = _data.contact;
+          _data.contact = '-';
+        }
+
         sumbitData(_data);
         setTimeout(function () {
           moduleStepSuccess.classList.add('hidden');
@@ -3461,7 +3494,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63083" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63959" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -201,10 +201,11 @@ const utmTerm = urlParams.get('utm_term');
 // let userLocation;
 
 const locationUrlAPI = 'https://ipinfo.io?token=b16e76b622236e';
+// const locationUrlAPI = '';
 // let locationUrlAPI = 'https://ipapi.co/8.8.8.8/json/';
 // let locationUrlAPI = 'http://ip-api.com/json'; // no https
 // let locationUrlAPI = 'https://api.ipify.org/?format=json';
-// let locationUrlAPI;
+
 let userCity;
 let userCountry;
 let userCountryCode; // KZ, RU, UZ
@@ -312,17 +313,30 @@ function dropDownStepTwoInsertItem(text = '') {
   insertAfter(insertAfterLiStepTwo, el);
 }
 
+let isSumbitted = false;
+
 // Send to email
 async function sumbitData(data) {
-  const res = await fetch('/email', {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  });
-  const content = await res.json();
+  if(isSumbitted === false){
+    const res = await fetch('/email', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    const content = await res.json();
+    isSumbitted = true;
+
+    // Prevent spamming 
+    setTimeout(() => {
+      isSumbitted = false;
+    }, 5000);
+
+  }else{
+    return;
+  }
 }
 
 // Menu
@@ -1283,7 +1297,10 @@ btnAskQuestion.addEventListener('click', (e) => {
 
         const googleClientId = ga.getAll()[0].get('clientId');
 
+        let number;
+
         const data = {
+          number,
           question,
           contactWay,
           contact,
@@ -1297,6 +1314,11 @@ btnAskQuestion.addEventListener('click', (e) => {
           utmContent,
           utmTerm,
         };
+
+        if(data.contact !== '' && data.contact !== null && !data.contact.includes('@')){
+          data.number = data.contact;
+          data.contact = '-';
+        }
 
         sumbitData(data);
 
@@ -1339,7 +1361,10 @@ btnAskQuestion.addEventListener('click', (e) => {
 
         const googleClientId = ga.getAll()[0].get('clientId');
 
+        let number;
+
         const data = {
+          number,
           question,
           contactWay,
           contact,
@@ -1353,6 +1378,11 @@ btnAskQuestion.addEventListener('click', (e) => {
           utmContent,
           utmTerm,
         };
+
+        if(data.contact !== '' && data.contact !== null && !data.contact.includes('@')){
+          data.number = data.contact;
+          data.contact = '-';
+        }
 
         sumbitData(data);
 
