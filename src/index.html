@@ -20,7 +20,7 @@
     <link rel="manifest" type="style/css" href="/manifest.webmanifest" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
     integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" /> -->
-    <link rel="stylesheet" href="/css/main.css" />
+    <!-- <link rel="stylesheet" href="/css/main.css" /> -->
     <!-- <link rel="stylesheet" href="/css/main.css" /> -->
 
     <!-- Google Tag Manager -->
@@ -186,7 +186,7 @@
                 </div>
               </div>
             </div>
-            <div class="header-items__item-group-container">
+            <!-- <div class="header-items__item-group-container">
               <div class="item-group-container__row-wrapper">
                 <div class="row-wrapper__text row-wrapper__text--bigger mr-0">
                   <p>Свяжитесь с нами:</p>
@@ -260,27 +260,12 @@
                   </a>
                 </div>
               </div>
-            </div>
+            </div> -->
             <div class="header-items__item-group-container">
-              <div class="item-group-container__row-wrapper">
-                <div class="row-wrapper__text row-wrapper__text--bigger">
-                  <p class="text-highlight--color text-highlight--bold mr-4">
-                    +7 (495) 648-62-26
-                  </p>
-                </div>
-                <div class="row-wrapper__text row-wrapper__text--bigger">
-                  <p class="text-highlight--color-dimmer">Россия</p>
-                </div>
-              </div>
               <div class="item-group-container__row-wrapper mb-0">
-                <div class="row-wrapper__text row-wrapper__text--bigger">
+                <div class="row-wrapper__text row-wrapper__text--bigger big-number">
                   <p class="text-highlight--color text-highlight--bold mr-4">
                     +7 (499) 490-29-60
-                  </p>
-                </div>
-                <div class="row-wrapper__text row-wrapper__text--bigger">
-                  <p class="text-highlight--color-dimmer">
-                    Казахстан, Узбекистан
                   </p>
                 </div>
               </div>
@@ -352,7 +337,7 @@
                 <li
                   class="menu-items__menu-item menu-items__menu-item--highlight"
                 >
-                  <a href="!#" class="menu-item__link text-highlight--color"
+                  <a href="#js-section-heading" class="menu-item__link text-highlight--color"
                     >Программы</a
                   >
                 </li>
@@ -1091,76 +1076,13 @@
             <div class="right__img">
               <div class="img__img-container">
                 <div class="img-container__circles">
-                  <svg
-                    class="circles__circle"
-                    width="407"
-                    height="407"
-                    viewBox="0 0 407 407"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      class="icon_path__counter"
-                      cx="203.5"
-                      cy="203.5"
-                      r="203.5"
-                      fill="#00A3FF"
-                    />
-                  </svg>
-
-                  <svg
-                    class="circles__circle"
-                    width="581"
-                    height="581"
-                    viewBox="0 0 581 581"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      class="icon_path__stroke-1"
-                      opacity="0.3"
-                      cx="290.5"
-                      cy="290.5"
-                      r="290"
-                      stroke="#00A3FF"
-                    />
-                  </svg>
-
-                  <svg
-                    class="circles__circle"
-                    width="760"
-                    height="786"
-                    viewBox="0 0 760 786"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      class="icon_path__stroke-1"
-                      opacity="0.2"
-                      cx="393"
-                      cy="393"
-                      r="392.5"
-                      stroke="#00A3FF"
-                    />
-                  </svg>
-
-                  <svg
-                    class="circles__circle"
-                    width="832"
-                    height="923"
-                    viewBox="0 0 832 923"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      class="icon_path__stroke-1"
-                      opacity="0.1"
-                      cx="465"
-                      cy="458"
-                      r="464.5"
-                      stroke="#00A3FF"
-                    />
-                  </svg>
+                  <svg class="circles__circle" width="1185" height="1185" viewBox="0 0 1185 1185" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle opacity="0.07" cx="592.5" cy="592.5" r="592" stroke="#2874FF"/>
+                    <circle opacity="0.3" cx="592.5" cy="592.5" r="290" stroke="#2874FF"/>
+                    <circle opacity="0.2" cx="592.5" cy="592.5" r="386" stroke="#2874FF"/>
+                    <circle opacity="0.1" cx="592.5" cy="592.5" r="484" stroke="#2874FF"/>
+                    <circle cx="592.5" cy="592.5" r="203.5" fill="#2874FF"/>
+                    </svg>
                 </div>
                 <div class="img-container__person"></div>
               </div>
@@ -1243,8 +1165,8 @@
               </div>
               <div class="testimonial__text-container">
                 <p>
-                  <span class="text-highlight--crossed">35 000 р.</span>
-                  <span class="text-highlight--color">16 700 р.</span> за
+                  <span class="text-highlight--crossed">От 35 000 р.</span>
+                  <span class="text-highlight--color">От 16 700 р.</span> за
                   семестр и дополнительные скидки при оплате за год!
                 </p>
               </div>
@@ -3177,41 +3099,13 @@
               <p class="learn-more-text__p">Узнайте подробнее о вузах</p>
             </div>
 
-            <a href="#!" class="learn-more-btn btn btn-primary">УЗНАТЬ</a>
+            <a id="learn-more-btn" class="learn-more-btn btn btn-primary">УЗНАТЬ</a>
           </div>
           <div class="section__section-steps">
             <div class="section-steps__title">
               <p>Для поступления нужно минимум документов</p>
             </div>
             <div class="section-steps__steps">
-              <div class="steps__steps-step">
-                <svg
-                  width="94"
-                  height="85"
-                  viewBox="0 0 94 85"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M91.5751 50.1886C90.01 48.6234 87.929 47.7615 85.7149 47.7615C85.6994 47.7615 85.6839 47.7615 85.6683 47.7626C85.5907 47.7593 78.6489 47.8591 75.3455 40.0987C74.4016 37.8802 74.0998 35.3832 74.0055 34.2207C76.0155 31.9689 77.1126 29.0982 77.1126 26.0577C77.1126 19.7781 72.3749 14.5935 66.2862 13.868V1.66389C66.2862 0.744315 65.5408 0 64.6223 0H1.66389C0.744315 0 0 0.744315 0 1.66389V83.0272C0 83.9456 0.744315 84.6911 1.66389 84.6911H64.6223C65.5408 84.6911 66.2862 83.9456 66.2862 83.0272V70.8519H89.5629C90.4814 70.8519 91.2268 70.1065 91.2268 69.188V64.173H92.3361C93.2546 64.173 94 63.4276 94 62.5091V56.0477C94.0022 53.8347 93.1403 51.7548 91.5751 50.1886ZM73.7848 26.0577C73.7848 28.4626 72.8419 30.7221 71.1303 32.4182C70.8053 32.741 70.6267 33.1814 70.6378 33.6395C70.6423 33.807 70.7532 37.8014 72.284 41.401C76.3893 51.0505 85.0837 51.0871 85.7293 51.0882C87.0482 51.0926 88.2895 51.6084 89.2213 52.5413C90.1575 53.4775 90.6733 54.7221 90.6722 56.0455V60.8441H89.9257C89.8092 60.8186 89.6883 60.802 89.5629 60.802C89.4376 60.802 89.3178 60.8186 89.2002 60.8441H38.9773V56.0455C38.9773 53.3278 41.1758 51.1126 43.888 51.0871C44.8663 51.1414 52.9262 51.2568 57.1814 41.6628C58.64 38.376 58.9429 33.8403 58.9551 33.6484C58.985 33.1736 58.8098 32.7077 58.4736 32.3705C56.7931 30.6811 55.868 28.4382 55.868 26.0566C55.868 21.117 59.8857 17.0993 64.8242 17.0993C69.7659 17.1004 73.7848 21.1181 73.7848 26.0577ZM62.9584 81.3633H3.32779V3.32779H62.9584V13.9301C57.0693 14.8342 52.5402 19.9201 52.5402 26.0577C52.5402 29.0582 53.6106 31.8979 55.5707 34.1364C55.4365 35.4276 55.056 38.2485 54.1387 40.3139C50.6855 48.1009 44.3217 47.7815 44.0632 47.7648C44.02 47.7615 43.9756 47.7593 43.9323 47.7593C39.3644 47.7593 35.6473 51.4764 35.6473 56.0455V62.508C35.6473 63.4265 36.3916 64.1719 37.3111 64.1719H38.6223L38.6633 69.2002C38.6711 70.1143 39.4132 70.8508 40.3272 70.8508H62.9562V81.3633H62.9584ZM87.9002 67.5241H65.0305C64.8996 67.4908 64.7643 67.4675 64.6223 67.4675C64.4803 67.4675 64.3461 67.4908 64.2141 67.5241H41.98L41.9523 64.173H87.9002V67.5241Z"
-                    fill="#2874FF"
-                  />
-                  <path
-                    d="M31.5606 17.2424H10.4036C9.48406 17.2424 8.73975 17.9867 8.73975 18.9063C8.73975 19.8259 9.48406 20.5702 10.4036 20.5702H31.5606C32.4802 20.5702 33.2245 19.8259 33.2245 18.9063C33.2245 17.9867 32.4802 17.2424 31.5606 17.2424Z"
-                    fill="black"
-                  />
-                  <path
-                    d="M31.5606 25.7659H10.4036C9.48406 25.7659 8.73975 26.5102 8.73975 27.4298C8.73975 28.3493 9.48406 29.0937 10.4036 29.0937H31.5606C32.4802 29.0937 33.2245 28.3493 33.2245 27.4298C33.2245 26.5102 32.4802 25.7659 31.5606 25.7659Z"
-                    fill="black"
-                  />
-                  <path
-                    d="M31.5606 34.5935H10.4036C9.48406 34.5935 8.73975 35.3378 8.73975 36.2574C8.73975 37.177 9.48406 37.9213 10.4036 37.9213H31.5606C32.4802 37.9213 33.2245 37.177 33.2245 36.2574C33.2245 35.3378 32.4802 34.5935 31.5606 34.5935Z"
-                    fill="black"
-                  />
-                </svg>
-
-                <p>ЕГЭ</p>
-              </div>
               <div class="steps__steps-step">
                 <svg
                   width="79"
@@ -3328,7 +3222,7 @@
               </div>
               <p class="card__title text-highlight--color text-highlight--bold">Почему дешевле?</p>
               <p class="card__subtitle">
-                За счет дистанционного формата обучения, поэтому Вы можете получить диплом московского вуза от <span class="text-highlight--bold">15990</span> рублей за семестр
+                За счет дистанционного формата обучения, поэтому Вы можете получить диплом московского вуза от <span class="text-highlight--bold">16700</span> рублей за семестр
               </p>
             </div>
           </div>
@@ -4037,6 +3931,17 @@
         
       </div>
     </footer>
+
+    <div id="module-popup-form" class="module-popup-form">
+      <form id="pop-up-form" class="contact-form">
+        <h4 class="contact-form__title">Узнать подробнее о вузах</h4>
+        <input type="text" class="input-style-primary" name="user-name-footer-popup" id="user-name-footer-popup" placeholder="Имя" />
+
+        <input type="tel" class="input-style-primary" name="phone-footer-popup" id="phone-footer-popup" placeholder="Номер телефона" />
+
+        <input type="submit" class="btn btn-primary btn-input" value="Отправить">
+      </form>
+    </div>
 
     <!-- <script src="/js/main.js" async></script> -->
     <script src="js/main.js" async></script>

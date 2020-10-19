@@ -1,3 +1,5 @@
+import '../scss/main.scss';
+
 // CTA btns
 const ctaSubmitBtn = document.getElementById('cta-submit-application');
 
@@ -1561,3 +1563,32 @@ phoneInputInnerText.addEventListener('click', (e) => {
     });
   }
 });
+
+
+// Learn more btn
+const learnMoreBtn = document.getElementById('learn-more-btn');
+learnMoreBtn.addEventListener('click', (e) => {
+
+  showPopUpContant();
+
+  closePopUpContant();
+
+  e.preventDefault();
+})
+
+function showPopUpContant(){
+  const moduleForm = document.getElementById('module-popup-form');
+  moduleForm.classList.add('show');
+}
+
+function closePopUpContant(){
+  const moduleForm = document.getElementById('module-popup-form');
+  const popUpForm = document.getElementById('pop-up-form');
+  document.body.addEventListener('click', function closePopUpContactEvent(e){
+    if(moduleForm.classList.contains('show') && e.target === popUpForm && e.target.contains(popUpForm)){
+      console.log('true');
+    }else{
+      console.log('false');
+    }
+  })
+}

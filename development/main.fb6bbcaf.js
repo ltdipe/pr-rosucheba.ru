@@ -2352,7 +2352,79 @@ module.exports = require('../../modules/_core').Array.from;
 
 },{"../../modules/es6.string.iterator":"../node_modules/core-js/library/modules/es6.string.iterator.js","../../modules/es6.array.from":"../node_modules/core-js/library/modules/es6.array.from.js","../../modules/_core":"../node_modules/core-js/library/modules/_core.js"}],"../node_modules/@babel/runtime-corejs2/core-js/array/from.js":[function(require,module,exports) {
 module.exports = require("core-js/library/fn/array/from");
-},{"core-js/library/fn/array/from":"../node_modules/core-js/library/fn/array/from.js"}],"js/main.js":[function(require,module,exports) {
+},{"core-js/library/fn/array/from":"../node_modules/core-js/library/fn/array/from.js"}],"../node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../node_modules/parcel/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"../node_modules/parcel/src/builtins/bundle-url.js"}],"scss/main.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./..\\img\\partners\\sinergy.jpg":[["sinergy.47ab2eed.jpg","img/partners/sinergy.jpg"],"img/partners/sinergy.jpg"],"./..\\img\\partners\\business-academy.jpg":[["business-academy.77f9e9ab.jpg","img/partners/business-academy.jpg"],"img/partners/business-academy.jpg"],"./..\\img\\partners\\tambov.jpg":[["tambov.ee86e65f.jpg","img/partners/tambov.jpg"],"img/partners/tambov.jpg"],"./..\\img\\partners\\ipe.jpg":[["ipe.2097cc5c.jpg","img/partners/ipe.jpg"],"img/partners/ipe.jpg"],"./..\\img\\partners\\roc-hoy.jpg":[["roc-hoy.dfc01d0c.jpg","img/partners/roc-hoy.jpg"],"img/partners/roc-hoy.jpg"],"./..\\img\\trusted_by\\hh.jpg":[["hh.bbfd7cda.jpg","img/trusted_by/hh.jpg"],"img/trusted_by/hh.jpg"],"./..\\img\\trusted_by\\rosseti.jpg":[["rosseti.263da7e4.jpg","img/trusted_by/rosseti.jpg"],"img/trusted_by/rosseti.jpg"],"./..\\img\\trusted_by\\rzhd.jpg":[["rzhd.fe64d6a5.jpg","img/trusted_by/rzhd.jpg"],"img/trusted_by/rzhd.jpg"],"./..\\img\\trusted_by\\rosneft.jpg":[["rosneft.afdbc676.jpg","img/trusted_by/rosneft.jpg"],"img/trusted_by/rosneft.jpg"],"./..\\img\\trusted_by\\tomc.jpg":[["tomc.d8e8b077.jpg","img/trusted_by/tomc.jpg"],"img/trusted_by/tomc.jpg"],"./..\\img\\trusted_by\\greenworks.jpg":[["greenworks.5ab122ce.jpg","img/trusted_by/greenworks.jpg"],"img/trusted_by/greenworks.jpg"],"./..\\img\\trusted_by\\tatehepro.jpg":[["tatehepro.7336df25.jpg","img/trusted_by/tatehepro.jpg"],"img/trusted_by/tatehepro.jpg"],"./..\\img\\trusted_by\\business-partner.jpg":[["business-partner.72800be2.jpg","img/trusted_by/business-partner.jpg"],"img/trusted_by/business-partner.jpg"],"./..\\img\\trusted_by\\ramport.jpg":[["ramport.43482636.jpg","img/trusted_by/ramport.jpg"],"img/trusted_by/ramport.jpg"],"./..\\img\\trusted_by\\sberbank.jpg":[["sberbank.0b6d4888.jpg","img/trusted_by/sberbank.jpg"],"img/trusted_by/sberbank.jpg"],"./..\\img\\trusted_by\\mtcrob.jpg":[["mtcrob.74a840a3.jpg","img/trusted_by/mtcrob.jpg"],"img/trusted_by/mtcrob.jpg"],"./..\\img\\trusted_by\\qayar.jpg":[["qayar.619a5c5e.jpg","img/trusted_by/qayar.jpg"],"img/trusted_by/qayar.jpg"],"./..\\img\\person-smiling_compressed.png":[["person-smiling_compressed.3fa47e1d.png","img/person-smiling_compressed.png"],"img/person-smiling_compressed.png"],"_css_loader":"../node_modules/parcel/src/builtins/css-loader.js"}],"js/main.js":[function(require,module,exports) {
 "use strict";
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime-corejs2/regenerator"));
@@ -2362,6 +2434,8 @@ var _stringify = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime-corejs2/helpers/asyncToGenerator"));
 
 var _from = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/array/from"));
+
+require("../scss/main.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3465,8 +3539,32 @@ phoneInputInnerText.addEventListener('click', function (e) {
       behavior: 'smooth'
     });
   }
+}); // Learn more btn
+
+var learnMoreBtn = document.getElementById('learn-more-btn');
+learnMoreBtn.addEventListener('click', function (e) {
+  showPopUpContant();
+  closePopUpContant();
+  e.preventDefault();
 });
-},{"@babel/runtime-corejs2/regenerator":"../node_modules/@babel/runtime-corejs2/regenerator/index.js","@babel/runtime-corejs2/core-js/json/stringify":"../node_modules/@babel/runtime-corejs2/core-js/json/stringify.js","@babel/runtime-corejs2/helpers/asyncToGenerator":"../node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js","@babel/runtime-corejs2/core-js/array/from":"../node_modules/@babel/runtime-corejs2/core-js/array/from.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+function showPopUpContant() {
+  var moduleForm = document.getElementById('module-popup-form');
+  moduleForm.classList.add('show');
+}
+
+function closePopUpContant() {
+  var moduleForm = document.getElementById('module-popup-form');
+  var popUpForm = document.getElementById('pop-up-form');
+  document.body.addEventListener('click', function closePopUpContactEvent(e) {
+    if (moduleForm.classList.contains('show') && e.target === popUpForm && e.target.contains(popUpForm)) {
+      console.log('true');
+    } else {
+      console.log('false');
+    }
+  });
+}
+},{"@babel/runtime-corejs2/regenerator":"../node_modules/@babel/runtime-corejs2/regenerator/index.js","@babel/runtime-corejs2/core-js/json/stringify":"../node_modules/@babel/runtime-corejs2/core-js/json/stringify.js","@babel/runtime-corejs2/helpers/asyncToGenerator":"../node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js","@babel/runtime-corejs2/core-js/array/from":"../node_modules/@babel/runtime-corejs2/core-js/array/from.js","../scss/main.scss":"scss/main.scss"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -3494,7 +3592,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63959" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52271" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
