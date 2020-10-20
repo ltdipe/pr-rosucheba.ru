@@ -907,15 +907,21 @@
     }
     & .contact-form {
       background-color: #fff;
-      padding: 3rem;
+      padding: 59px;
       min-width: 427px;
       max-width: 33%;
       border-radius: 10px;
       & .contact-form__title {
         font-weight: bold;
-        font-size: 25px;
-        line-height: 29px;
+        font-size: 16px;
+        line-height: 19px;
         color: $secondary-color;
+        text-align: center;
+        margin-bottom: $_15px;
+      }
+      & .contact-form__subtilte {
+        font-size: 14px;
+        line-height: 16px;
         text-align: center;
         margin-bottom: 2rem;
       }

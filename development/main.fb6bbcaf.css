@@ -2081,15 +2081,20 @@ header {
       display: flex; }
     .module-popup-form .contact-form {
       background-color: #fff;
-      padding: 3rem;
+      padding: 59px;
       min-width: 427px;
       max-width: 33%;
       border-radius: 10px; }
       .module-popup-form .contact-form .contact-form__title {
         font-weight: bold;
-        font-size: 25px;
-        line-height: 29px;
+        font-size: 16px;
+        line-height: 19px;
         color: #2874ff;
+        text-align: center;
+        margin-bottom: 0.9375rem; }
+      .module-popup-form .contact-form .contact-form__subtilte {
+        font-size: 14px;
+        line-height: 16px;
         text-align: center;
         margin-bottom: 2rem; } }
 
