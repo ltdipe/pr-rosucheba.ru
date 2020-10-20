@@ -3586,7 +3586,62 @@ function showMorePartnersDesktop() {
   });
 }
 
-showMorePartnersDesktop();
+showMorePartnersDesktop(); // Submit Data from Forms
+
+function submitPopUpForm() {
+  var popUpFormSubmit = document.getElementById('pop-up-form-submit');
+  var moduleForm = document.getElementById('module-popup-form');
+  popUpFormSubmit.addEventListener('click', function (e) {
+    // Submit
+    var userName = document.getElementById('pop-up-form-name').value.trim();
+    var number = document.getElementById('pop-up-form-number').value.trim();
+    var googleClientId = ga.getAll()[0].get('clientId');
+    var data = {
+      number: number,
+      userName: userName,
+      userCity: userCity,
+      userCountry: userCountry,
+      googleClientId: googleClientId,
+      userDevice: userDevice,
+      utmSource: utmSource,
+      utmMedium: utmMedium,
+      utmCampaign: utmCampaign,
+      utmContent: utmContent,
+      utmTerm: utmTerm
+    };
+    sumbitData(data);
+    moduleForm.classList.remove('show');
+    e.preventDefault();
+  });
+}
+
+function submitContactForm() {
+  var popUpFormSubmit = document.getElementById('submit-btn-contact-form');
+  popUpFormSubmit.addEventListener('click', function (e) {
+    // Submit
+    var userName = document.getElementById('user-name-contact-from').value.trim();
+    var number = document.getElementById('number-contact-form').value.trim();
+    var googleClientId = ga.getAll()[0].get('clientId');
+    var data = {
+      number: number,
+      userName: userName,
+      userCity: userCity,
+      userCountry: userCountry,
+      googleClientId: googleClientId,
+      userDevice: userDevice,
+      utmSource: utmSource,
+      utmMedium: utmMedium,
+      utmCampaign: utmCampaign,
+      utmContent: utmContent,
+      utmTerm: utmTerm
+    };
+    sumbitData(data);
+    e.preventDefault();
+  });
+}
+
+submitPopUpForm();
+submitContactForm();
 },{"@babel/runtime-corejs2/regenerator":"../node_modules/@babel/runtime-corejs2/regenerator/index.js","@babel/runtime-corejs2/core-js/json/stringify":"../node_modules/@babel/runtime-corejs2/core-js/json/stringify.js","@babel/runtime-corejs2/helpers/asyncToGenerator":"../node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js","@babel/runtime-corejs2/core-js/array/from":"../node_modules/@babel/runtime-corejs2/core-js/array/from.js","../scss/main.scss":"scss/main.scss"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

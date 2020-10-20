@@ -1610,3 +1610,71 @@ function showMorePartnersDesktop(){
 }
 
 showMorePartnersDesktop();
+
+
+// Submit Data from Forms
+function submitPopUpForm(){
+  const popUpFormSubmit = document.getElementById('pop-up-form-submit');
+  const moduleForm = document.getElementById('module-popup-form');
+  popUpFormSubmit.addEventListener('click', (e) => {
+    
+  // Submit
+  const userName = document.getElementById('pop-up-form-name').value.trim();
+  const number = document.getElementById('pop-up-form-number').value.trim();
+
+  const googleClientId = ga.getAll()[0].get('clientId');
+
+  const data = {
+    number,
+    userName,
+    userCity,
+    userCountry,
+    googleClientId,
+    userDevice,
+    utmSource,
+    utmMedium,
+    utmCampaign,
+    utmContent,
+    utmTerm,
+  };
+
+    sumbitData(data);
+
+    moduleForm.classList.remove('show');
+    
+    e.preventDefault();
+  })
+}
+
+function submitContactForm(){
+  const popUpFormSubmit = document.getElementById('submit-btn-contact-form');
+  popUpFormSubmit.addEventListener('click', (e) => {
+    
+  // Submit
+  const userName = document.getElementById('user-name-contact-from').value.trim();
+  const number = document.getElementById('number-contact-form').value.trim();
+
+  const googleClientId = ga.getAll()[0].get('clientId');
+
+  const data = {
+    number,
+    userName,
+    userCity,
+    userCountry,
+    googleClientId,
+    userDevice,
+    utmSource,
+    utmMedium,
+    utmCampaign,
+    utmContent,
+    utmTerm,
+  };
+
+    sumbitData(data);
+    
+    e.preventDefault();
+  })
+}
+
+submitPopUpForm();
+submitContactForm();

@@ -1694,6 +1694,18 @@ header {
   .circles__circle {
     position: absolute;
     z-index: -1; }
+  .circles__circle--line {
+    position: absolute;
+    z-index: -2; }
+  .rectangle-gradient-maker-desktop {
+    position: absolute;
+    top: 27rem;
+    left: 0;
+    height: 374px;
+    width: 100%;
+    background: linear-gradient(180deg, #ffffff 25.45%, rgba(255, 255, 255, 0) 125.29%);
+    transform: matrix(1, 0, 0, -1, 0, 0);
+    z-index: -1; }
   .img-container__person {
     width: 25.3125rem;
     min-height: 527px;
@@ -1734,11 +1746,14 @@ header {
       margin-right: 0; }
   .testimonial__icon {
     height: 100%;
-    text-align: left; }
+    text-align: left;
+    margin-bottom: 3rem; }
   .testimonial__title {
-    text-align: left; }
+    text-align: left;
+    padding-top: 0; }
   .testimonial__text-container {
-    text-align: left; }
+    text-align: left;
+    min-height: 6rem; }
   .inserted-text-1::before {
     content: ', зачисляем круглый год!'; }
   .testimonial__icon svg {

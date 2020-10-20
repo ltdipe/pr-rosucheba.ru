@@ -276,6 +276,7 @@
       </div>
       <section id="js-section-heading" class="section-heading">
         <div class="rectangle-gradient-maker"></div>
+        <div class="rectangle-gradient-maker-desktop desktop-only"></div>
         <div class="container container-flex container-flex--jc-start container-flex--row">
           <div class="section-heading__left">
             <div class="left__text-headings">
@@ -548,12 +549,14 @@
             <div class="right__img">
               <div class="img__img-container">
                 <div class="img-container__circles">
-                  <svg class="circles__circle" width="1185" height="1185" viewBox="0 0 1185 1185" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg class="circles__circle" width="407" height="407" viewBox="0 0 407 407" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="203.5" cy="203.5" r="203.5" fill="#2874FF"></circle>
+                  </svg>                    
+                  <svg class="circles__circle--line" width="1185" height="1185" viewBox="0 0 1185 1185" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle opacity="0.07" cx="592.5" cy="592.5" r="592" stroke="#2874FF"></circle>
                     <circle opacity="0.3" cx="592.5" cy="592.5" r="290" stroke="#2874FF"></circle>
                     <circle opacity="0.2" cx="592.5" cy="592.5" r="386" stroke="#2874FF"></circle>
                     <circle opacity="0.1" cx="592.5" cy="592.5" r="484" stroke="#2874FF"></circle>
-                    <circle cx="592.5" cy="592.5" r="203.5" fill="#2874FF"></circle>
                     </svg>
                 </div>
                 <div class="img-container__person"></div>
@@ -599,8 +602,9 @@
               </div>
               <div class="testimonial__text-container">
                 <p>
-                  <span class="text-highlight--crossed">От 35 000 р.</span>
-                  <span class="text-highlight--color">От 16 700 р.</span> за
+                  От
+                  <span class="text-highlight--crossed">35 000 р.</span>
+                  <span class="text-highlight--color">16 700 р.</span> за
                   семестр и дополнительные скидки при оплате за год!
                 </p>
               </div>
@@ -1955,11 +1959,11 @@
             Оставьте свои контакты, менеджер перезвонит и проведет консультацию
           </p>
           <form class="contact-form">
-            <input type="text" class="input-style-primary" name="user-name-footer" id="user-name-footer" placeholder="Имя">
+            <input id="user-name-contact-from" type="text" class="input-style-primary" name="user-name-footer" placeholder="Имя">
 
-            <input type="tel" class="input-style-primary" name="phone-footer" id="phone-footer" placeholder="Номер телефона">
+            <input id="number-contact-form" type="tel" class="input-style-primary" name="phone-footer" placeholder="Номер телефона">
 
-            <input type="submit" class="btn btn-primary btn-input" value="Отправить">
+            <input id="submit-btn-contact-form" type="submit" class="btn btn-primary btn-input" value="Отправить">
           </form>
         </div>
         
@@ -1969,11 +1973,11 @@
     <div id="module-popup-form" class="module-popup-form desktop-only">
       <form id="pop-up-form" class="contact-form">
         <h4 class="contact-form__title">Узнать подробнее о вузах</h4>
-        <input type="text" class="input-style-primary" name="user-name-footer-popup" id="user-name-footer-popup" placeholder="Имя">
+        <input id="pop-up-form-name" type="text" class="input-style-primary" name="user-name-footer-popup" placeholder="Имя">
 
-        <input type="tel" class="input-style-primary" name="phone-footer-popup" id="phone-footer-popup" placeholder="Номер телефона">
+        <input id="pop-up-form-number" type="tel" class="input-style-primary" name="phone-footer-popup" placeholder="Номер телефона">
 
-        <input type="submit" class="btn btn-primary btn-input" value="Отправить">
+        <input id="pop-up-form-submit" type="submit" class="btn btn-primary btn-input" value="Отправить">
       </form>
     </div>
 
