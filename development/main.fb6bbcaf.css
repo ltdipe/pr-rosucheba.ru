@@ -1619,12 +1619,12 @@ header {
     display: flex;
     justify-content: center;
     align-items: center; }
-    .row-wrapper__text p {
-      font-style: normal;
-      font-weight: normal;
-      font-size: 20px;
-      line-height: 30px;
-      text-align: center; }
+  .footer__left .row-wrapper__text p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center; }
   .row-wrapper__text--bigger {
     font-weight: 500;
     font-size: 0.875rem;
@@ -2011,6 +2011,8 @@ header {
       padding-bottom: 6.625rem; }
     .section-trust-boost .section__section-nav {
       display: none; }
+    .section-trust-boost .content__img-group:nth-child(2) {
+      margin-top: 76px; }
   .footer {
     background-color: #2874ff;
     display: flex;

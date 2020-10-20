@@ -3556,14 +3556,37 @@ function showPopUpContant() {
 function closePopUpContant() {
   var moduleForm = document.getElementById('module-popup-form');
   var popUpForm = document.getElementById('pop-up-form');
+  var learnMoreBtn = document.getElementById('learn-more-btn');
   document.body.addEventListener('click', function closePopUpContactEvent(e) {
-    if (moduleForm.classList.contains('show') && e.target === popUpForm && e.target.contains(popUpForm)) {
-      console.log('true');
-    } else {
-      console.log('false');
+    if (moduleForm.classList.contains('show') && e.target !== popUpForm && !popUpForm.contains(e.target) && e.target !== learnMoreBtn && !learnMoreBtn.contains(e.target)) {
+      moduleForm.classList.remove('show');
+      document.body.removeEventListener('click', closePopUpContactEvent);
     }
   });
 }
+
+function showMorePartnersDesktop() {
+  var partnersSecondRow = document.querySelector('.section-trust-boost .content__img-group:nth-child(2)');
+
+  if (document.body.clientWidth > 768) {
+    partnersSecondRow.classList.remove('hidden');
+  } else {
+    partnersSecondRow.classList.add('hidden');
+  }
+
+  ;
+  window.addEventListener('resize', function () {
+    if (document.body.clientWidth > 768) {
+      partnersSecondRow.classList.remove('hidden');
+    } else {
+      partnersSecondRow.classList.add('hidden');
+    }
+
+    ;
+  });
+}
+
+showMorePartnersDesktop();
 },{"@babel/runtime-corejs2/regenerator":"../node_modules/@babel/runtime-corejs2/regenerator/index.js","@babel/runtime-corejs2/core-js/json/stringify":"../node_modules/@babel/runtime-corejs2/core-js/json/stringify.js","@babel/runtime-corejs2/helpers/asyncToGenerator":"../node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js","@babel/runtime-corejs2/core-js/array/from":"../node_modules/@babel/runtime-corejs2/core-js/array/from.js","../scss/main.scss":"scss/main.scss"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -3592,7 +3615,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52271" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53789" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

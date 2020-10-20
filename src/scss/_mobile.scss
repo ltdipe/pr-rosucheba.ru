@@ -205,12 +205,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    & p {
-      font-style: normal;
-      font-weight: normal;
-      font-size: 20px;
-      line-height: 30px;
-      text-align: center;
+  }
+
+  .footer__left {
+    & .row-wrapper__text {
+      & p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+      }
     }
   }
 
@@ -809,6 +814,9 @@
     }
     & .section__section-nav {
       display: none;
+    }
+    & .content__img-group:nth-child(2) {
+      margin-top: 76px;
     }
   }
 

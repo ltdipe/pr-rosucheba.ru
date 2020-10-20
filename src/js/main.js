@@ -1584,11 +1584,29 @@ function showPopUpContant(){
 function closePopUpContant(){
   const moduleForm = document.getElementById('module-popup-form');
   const popUpForm = document.getElementById('pop-up-form');
+  const learnMoreBtn = document.getElementById('learn-more-btn');
   document.body.addEventListener('click', function closePopUpContactEvent(e){
-    if(moduleForm.classList.contains('show') && e.target === popUpForm && e.target.contains(popUpForm)){
-      console.log('true');
-    }else{
-      console.log('false');
+    if(moduleForm.classList.contains('show') && e.target !== popUpForm && !popUpForm.contains(e.target) && e.target !== learnMoreBtn && !learnMoreBtn.contains(e.target)){
+      moduleForm.classList.remove('show');
+      document.body.removeEventListener('click', closePopUpContactEvent);
     }
   })
 }
+
+function showMorePartnersDesktop(){
+  const partnersSecondRow = document.querySelector('.section-trust-boost .content__img-group:nth-child(2)')
+  if(document.body.clientWidth > 768){
+    partnersSecondRow.classList.remove('hidden');
+  }else{
+    partnersSecondRow.classList.add('hidden');
+  };
+  window.addEventListener('resize', () => {
+    if(document.body.clientWidth > 768){
+      partnersSecondRow.classList.remove('hidden');
+    }else{
+      partnersSecondRow.classList.add('hidden');
+    };
+  })
+}
+
+showMorePartnersDesktop();
