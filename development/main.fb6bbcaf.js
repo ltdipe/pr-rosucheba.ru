@@ -3544,6 +3544,7 @@ phoneInputInnerText.addEventListener('click', function (e) {
 var learnMoreBtn = document.getElementById('learn-more-btn');
 learnMoreBtn.addEventListener('click', function (e) {
   showPopUpContant();
+  submitPopUpForm();
   closePopUpContant();
   e.preventDefault();
 });
@@ -3589,12 +3590,16 @@ function showMorePartnersDesktop() {
 showMorePartnersDesktop(); // Submit Data from Forms
 
 function submitPopUpForm() {
+  console.log('test');
   var popUpFormSubmit = document.getElementById('pop-up-form-submit');
   var moduleForm = document.getElementById('module-popup-form');
   popUpFormSubmit.addEventListener('click', function (e) {
-    // Submit
+    e.preventDefault(); // Submit
+
     var userName = document.getElementById('pop-up-form-name').value.trim();
+    var userNameEl = document.getElementById('pop-up-form-name');
     var number = document.getElementById('pop-up-form-number').value.trim();
+    var numberEl = document.getElementById('pop-up-form-number');
     var googleClientId = ga.getAll()[0].get('clientId');
     var data = {
       number: number,
@@ -3609,18 +3614,43 @@ function submitPopUpForm() {
       utmContent: utmContent,
       utmTerm: utmTerm
     };
-    sumbitData(data);
-    moduleForm.classList.remove('show');
-    e.preventDefault();
+
+    if (number !== '' && number !== null && number !== undefined && number.match(numValidation)) {
+      var appIsSumbitted = document.getElementById('js-app-is-submitted--learn-more');
+      appIsSumbitted.classList.add('showed');
+      document.getElementById('step-success-row__back-to-main--form-popup').addEventListener('click', function (e) {
+        appIsSumbitted.classList.add('removing');
+        setTimeout(function () {
+          appIsSumbitted.classList.remove('showed');
+          appIsSumbitted.classList.remove('removing');
+        }, 300);
+        e.preventDefault();
+      });
+      var success = document.getElementById('module-popup-is-submitted');
+      success.classList.remove('hidden');
+      sumbitData(data);
+      moduleForm.classList.remove('show');
+      userNameEl.value = '';
+      numberEl.value = '';
+    } else {
+      numberEl.classList.add('bg-danger');
+      numberEl.focus();
+      numberEl.addEventListener('keyup', function (e) {
+        e.target.value !== '' ? numberEl.classList.remove('bg-danger') : numberEl.classList.add('bg-danger');
+      });
+    }
   });
 }
 
 function submitContactForm() {
   var popUpFormSubmit = document.getElementById('submit-btn-contact-form');
   popUpFormSubmit.addEventListener('click', function (e) {
-    // Submit
+    e.preventDefault(); // Submit
+
     var userName = document.getElementById('user-name-contact-from').value.trim();
+    var userNameEl = document.getElementById('user-name-contact-from');
     var number = document.getElementById('number-contact-form').value.trim();
+    var numberEl = document.getElementById('number-contact-form');
     var googleClientId = ga.getAll()[0].get('clientId');
     var data = {
       number: number,
@@ -3635,12 +3665,23 @@ function submitContactForm() {
       utmContent: utmContent,
       utmTerm: utmTerm
     };
-    sumbitData(data);
-    e.preventDefault();
+
+    if (number !== '' && number !== null && number !== undefined && number.match(numValidation)) {
+      var success = document.getElementById('footer-form-is-submitted');
+      success.classList.remove('hidden');
+      sumbitData(data);
+      numberEl.value = '';
+      userNameEl.value = '';
+    } else {
+      numberEl.classList.add('bg-danger');
+      numberEl.focus();
+      numberEl.addEventListener('keyup', function (e) {
+        e.target.value !== '' ? numberEl.classList.remove('bg-danger') : numberEl.classList.add('bg-danger');
+      });
+    }
   });
 }
 
-submitPopUpForm();
 submitContactForm();
 },{"@babel/runtime-corejs2/regenerator":"../node_modules/@babel/runtime-corejs2/regenerator/index.js","@babel/runtime-corejs2/core-js/json/stringify":"../node_modules/@babel/runtime-corejs2/core-js/json/stringify.js","@babel/runtime-corejs2/helpers/asyncToGenerator":"../node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js","@babel/runtime-corejs2/core-js/array/from":"../node_modules/@babel/runtime-corejs2/core-js/array/from.js","../scss/main.scss":"scss/main.scss"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -3670,7 +3711,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51073" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56484" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

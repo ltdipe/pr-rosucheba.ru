@@ -1571,6 +1571,8 @@ learnMoreBtn.addEventListener('click', (e) => {
 
   showPopUpContant();
 
+  submitPopUpForm();
+
   closePopUpContant();
 
   e.preventDefault();
@@ -1614,13 +1616,17 @@ showMorePartnersDesktop();
 
 // Submit Data from Forms
 function submitPopUpForm(){
+  console.log('test');
   const popUpFormSubmit = document.getElementById('pop-up-form-submit');
   const moduleForm = document.getElementById('module-popup-form');
   popUpFormSubmit.addEventListener('click', (e) => {
+    e.preventDefault();
     
   // Submit
   const userName = document.getElementById('pop-up-form-name').value.trim();
+  const userNameEl = document.getElementById('pop-up-form-name');
   const number = document.getElementById('pop-up-form-number').value.trim();
+  const numberEl = document.getElementById('pop-up-form-number');
 
   const googleClientId = ga.getAll()[0].get('clientId');
 
@@ -1638,21 +1644,51 @@ function submitPopUpForm(){
     utmTerm,
   };
 
-    sumbitData(data);
+    if(number !== '' && number !== null && number !== undefined && number.match(numValidation)){
 
-    moduleForm.classList.remove('show');
-    
-    e.preventDefault();
+      const appIsSumbitted = document.getElementById('js-app-is-submitted--learn-more');
+
+    appIsSumbitted.classList.add('showed');
+
+    document
+      .getElementById('step-success-row__back-to-main--form-popup')
+      .addEventListener('click', (e) => {
+        appIsSumbitted.classList.add('removing');
+        setTimeout(() => {
+          appIsSumbitted.classList.remove('showed');
+          appIsSumbitted.classList.remove('removing');
+        }, 300);
+
+        e.preventDefault();
+      });
+
+      const success = document.getElementById('module-popup-is-submitted');
+      success.classList.remove('hidden');
+      sumbitData(data);
+      moduleForm.classList.remove('show');
+      userNameEl.value = '';
+      numberEl.value = '';
+    }else{
+
+      numberEl.classList.add('bg-danger');
+      numberEl.focus();
+      numberEl.addEventListener('keyup', (e) =>{
+        e.target.value !== '' ? numberEl.classList.remove('bg-danger') : numberEl.classList.add('bg-danger');
+      })
+    }
   })
 }
 
 function submitContactForm(){
   const popUpFormSubmit = document.getElementById('submit-btn-contact-form');
   popUpFormSubmit.addEventListener('click', (e) => {
+    e.preventDefault();
     
   // Submit
   const userName = document.getElementById('user-name-contact-from').value.trim();
+  const userNameEl = document.getElementById('user-name-contact-from');
   const number = document.getElementById('number-contact-form').value.trim();
+  const numberEl = document.getElementById('number-contact-form');
 
   const googleClientId = ga.getAll()[0].get('clientId');
 
@@ -1670,11 +1706,20 @@ function submitContactForm(){
     utmTerm,
   };
 
+  if(number !== '' && number !== null && number !== undefined && number.match(numValidation)){
+    const success = document.getElementById('footer-form-is-submitted');
+    success.classList.remove('hidden');
     sumbitData(data);
-    
-    e.preventDefault();
+    numberEl.value = '';
+    userNameEl.value = '';
+  }else{
+    numberEl.classList.add('bg-danger');
+    numberEl.focus();
+    numberEl.addEventListener('keyup', (e) =>{
+      e.target.value !== '' ? numberEl.classList.remove('bg-danger') : numberEl.classList.add('bg-danger');
+    })
+  }
   })
 }
 
-submitPopUpForm();
 submitContactForm();

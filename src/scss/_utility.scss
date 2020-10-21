@@ -172,6 +172,10 @@
   color: $danger-color;
 }
 
+.text-highlight--color-success{
+  color: $btn-color-primary;
+}
+
 .text-highlight--crossed {
   text-decoration: line-through;
   text-decoration-color: $secondary-color;
