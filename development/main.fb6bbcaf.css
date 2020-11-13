@@ -754,6 +754,8 @@ header {
 
 .container-input-phone-number__input {
   margin-top: 0.6875rem; }
+  .container-input-phone-number__input::placeholder {
+    font-weight: 500; }
   .container-input-phone-number__input:focus {
     color: #2874ff;
     background-color: #fff; }

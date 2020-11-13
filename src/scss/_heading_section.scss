@@ -387,6 +387,9 @@
 .container-input-phone-number__input {
   margin-top: $_11px;
 
+  &::placeholder {
+    font-weight: 500;
+  }
   &:focus {
     color: $secondary-color;
     background-color: #fff;
