@@ -40,7 +40,7 @@ const sendMail = (
     text: `
     1. Имя: ${userName},\n
     2. Телефон: ${number},\n
-    3. Телефон/почта: ${contact},\n
+    3. Почта: ${contact},\n
     4. Способ связи: ${contactWay},\n
     5. Страница с которой отправлена заявка: pr.rosucheba.ru,\n
     6. Город: ${userCity},\n
