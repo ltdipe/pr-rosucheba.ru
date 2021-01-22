@@ -29,6 +29,7 @@ const sendMail = (
   utmCampaign = '-',
   utmContent = '-',
   utmTerm = '-',
+  double = 'Нет',
   cb
 ) => {
   const mailOptions = {
@@ -54,7 +55,8 @@ const sendMail = (
     14. Тип трафика: ${utmMedium},\n
     15. Название РК: ${utmCampaign},\n
     16. Объявление: ${utmContent},\n
-    17. Ключевое слово: ${utmTerm}
+    17. Ключевое слово: ${utmTerm},\n
+    18. Дубль: ${double}
     `,
   };
 
