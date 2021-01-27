@@ -871,20 +871,7 @@ try {
 },{}],"../node_modules/@babel/runtime-corejs2/regenerator/index.js":[function(require,module,exports) {
 module.exports = require("regenerator-runtime");
 
-},{"regenerator-runtime":"../node_modules/regenerator-runtime/runtime.js"}],"../node_modules/core-js/library/modules/_core.js":[function(require,module,exports) {
-var core = module.exports = { version: '2.6.11' };
-if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
-
-},{}],"../node_modules/core-js/library/fn/json/stringify.js":[function(require,module,exports) {
-var core = require('../../modules/_core');
-var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
-module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
-  return $JSON.stringify.apply($JSON, arguments);
-};
-
-},{"../../modules/_core":"../node_modules/core-js/library/modules/_core.js"}],"../node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":[function(require,module,exports) {
-module.exports = require("core-js/library/fn/json/stringify");
-},{"core-js/library/fn/json/stringify":"../node_modules/core-js/library/fn/json/stringify.js"}],"../node_modules/core-js/library/modules/es6.object.to-string.js":[function(require,module,exports) {
+},{"regenerator-runtime":"../node_modules/regenerator-runtime/runtime.js"}],"../node_modules/core-js/library/modules/es6.object.to-string.js":[function(require,module,exports) {
 
 },{}],"../node_modules/core-js/library/modules/_to-integer.js":[function(require,module,exports) {
 // 7.1.4 ToInteger
@@ -931,6 +918,10 @@ var global = module.exports = typeof window != 'undefined' && window.Math == Mat
   // eslint-disable-next-line no-new-func
   : Function('return this')();
 if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
+
+},{}],"../node_modules/core-js/library/modules/_core.js":[function(require,module,exports) {
+var core = module.exports = { version: '2.6.11' };
+if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 },{}],"../node_modules/core-js/library/modules/_a-function.js":[function(require,module,exports) {
 module.exports = function (it) {
@@ -2296,7 +2287,16 @@ function _asyncToGenerator(fn) {
 }
 
 module.exports = _asyncToGenerator;
-},{"../core-js/promise":"../node_modules/@babel/runtime-corejs2/core-js/promise.js"}],"../node_modules/core-js/library/modules/_create-property.js":[function(require,module,exports) {
+},{"../core-js/promise":"../node_modules/@babel/runtime-corejs2/core-js/promise.js"}],"../node_modules/core-js/library/fn/json/stringify.js":[function(require,module,exports) {
+var core = require('../../modules/_core');
+var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
+module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
+  return $JSON.stringify.apply($JSON, arguments);
+};
+
+},{"../../modules/_core":"../node_modules/core-js/library/modules/_core.js"}],"../node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":[function(require,module,exports) {
+module.exports = require("core-js/library/fn/json/stringify");
+},{"core-js/library/fn/json/stringify":"../node_modules/core-js/library/fn/json/stringify.js"}],"../node_modules/core-js/library/modules/_create-property.js":[function(require,module,exports) {
 'use strict';
 var $defineProperty = require('./_object-dp');
 var createDesc = require('./_property-desc');
@@ -2352,7 +2352,7 @@ module.exports = require('../../modules/_core').Array.from;
 
 },{"../../modules/es6.string.iterator":"../node_modules/core-js/library/modules/es6.string.iterator.js","../../modules/es6.array.from":"../node_modules/core-js/library/modules/es6.array.from.js","../../modules/_core":"../node_modules/core-js/library/modules/_core.js"}],"../node_modules/@babel/runtime-corejs2/core-js/array/from.js":[function(require,module,exports) {
 module.exports = require("core-js/library/fn/array/from");
-},{"core-js/library/fn/array/from":"../node_modules/core-js/library/fn/array/from.js"}],"../node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"core-js/library/fn/array/from":"../node_modules/core-js/library/fn/array/from.js"}],"../../../Users/Nover/AppData/Roaming/npm/node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -2384,7 +2384,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../../../Users/Nover/AppData/Roaming/npm/node_modules/parcel/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -2419,19 +2419,19 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel/src/builtins/bundle-url.js"}],"scss/main.scss":[function(require,module,exports) {
+},{"./bundle-url":"../../../Users/Nover/AppData/Roaming/npm/node_modules/parcel/src/builtins/bundle-url.js"}],"scss/main.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./..\\img\\partners\\sinergy.jpg":[["sinergy.47ab2eed.jpg","img/partners/sinergy.jpg"],"img/partners/sinergy.jpg"],"./..\\img\\partners\\business-academy.jpg":[["business-academy.77f9e9ab.jpg","img/partners/business-academy.jpg"],"img/partners/business-academy.jpg"],"./..\\img\\partners\\tambov.jpg":[["tambov.ee86e65f.jpg","img/partners/tambov.jpg"],"img/partners/tambov.jpg"],"./..\\img\\partners\\ipe.jpg":[["ipe.2097cc5c.jpg","img/partners/ipe.jpg"],"img/partners/ipe.jpg"],"./..\\img\\partners\\roc-hoy.jpg":[["roc-hoy.dfc01d0c.jpg","img/partners/roc-hoy.jpg"],"img/partners/roc-hoy.jpg"],"./..\\img\\trusted_by\\hh.jpg":[["hh.bbfd7cda.jpg","img/trusted_by/hh.jpg"],"img/trusted_by/hh.jpg"],"./..\\img\\trusted_by\\rosseti.jpg":[["rosseti.263da7e4.jpg","img/trusted_by/rosseti.jpg"],"img/trusted_by/rosseti.jpg"],"./..\\img\\trusted_by\\rzhd.jpg":[["rzhd.fe64d6a5.jpg","img/trusted_by/rzhd.jpg"],"img/trusted_by/rzhd.jpg"],"./..\\img\\trusted_by\\rosneft.jpg":[["rosneft.afdbc676.jpg","img/trusted_by/rosneft.jpg"],"img/trusted_by/rosneft.jpg"],"./..\\img\\trusted_by\\tomc.jpg":[["tomc.d8e8b077.jpg","img/trusted_by/tomc.jpg"],"img/trusted_by/tomc.jpg"],"./..\\img\\trusted_by\\greenworks.jpg":[["greenworks.5ab122ce.jpg","img/trusted_by/greenworks.jpg"],"img/trusted_by/greenworks.jpg"],"./..\\img\\trusted_by\\tatehepro.jpg":[["tatehepro.7336df25.jpg","img/trusted_by/tatehepro.jpg"],"img/trusted_by/tatehepro.jpg"],"./..\\img\\trusted_by\\business-partner.jpg":[["business-partner.72800be2.jpg","img/trusted_by/business-partner.jpg"],"img/trusted_by/business-partner.jpg"],"./..\\img\\trusted_by\\ramport.jpg":[["ramport.43482636.jpg","img/trusted_by/ramport.jpg"],"img/trusted_by/ramport.jpg"],"./..\\img\\trusted_by\\sberbank.jpg":[["sberbank.0b6d4888.jpg","img/trusted_by/sberbank.jpg"],"img/trusted_by/sberbank.jpg"],"./..\\img\\trusted_by\\mtcrob.jpg":[["mtcrob.74a840a3.jpg","img/trusted_by/mtcrob.jpg"],"img/trusted_by/mtcrob.jpg"],"./..\\img\\trusted_by\\qayar.jpg":[["qayar.619a5c5e.jpg","img/trusted_by/qayar.jpg"],"img/trusted_by/qayar.jpg"],"./..\\img\\person-smiling_compressed.png":[["person-smiling_compressed.3fa47e1d.png","img/person-smiling_compressed.png"],"img/person-smiling_compressed.png"],"_css_loader":"../node_modules/parcel/src/builtins/css-loader.js"}],"js/main.js":[function(require,module,exports) {
+},{"./..\\img\\partners\\sinergy.jpg":[["sinergy.47ab2eed.jpg","img/partners/sinergy.jpg"],"img/partners/sinergy.jpg"],"./..\\img\\partners\\business-academy.jpg":[["business-academy.77f9e9ab.jpg","img/partners/business-academy.jpg"],"img/partners/business-academy.jpg"],"./..\\img\\partners\\tambov.jpg":[["tambov.ee86e65f.jpg","img/partners/tambov.jpg"],"img/partners/tambov.jpg"],"./..\\img\\partners\\ipe.jpg":[["ipe.2097cc5c.jpg","img/partners/ipe.jpg"],"img/partners/ipe.jpg"],"./..\\img\\partners\\roc-hoy.jpg":[["roc-hoy.dfc01d0c.jpg","img/partners/roc-hoy.jpg"],"img/partners/roc-hoy.jpg"],"./..\\img\\trusted_by\\hh.jpg":[["hh.bbfd7cda.jpg","img/trusted_by/hh.jpg"],"img/trusted_by/hh.jpg"],"./..\\img\\trusted_by\\rosseti.jpg":[["rosseti.263da7e4.jpg","img/trusted_by/rosseti.jpg"],"img/trusted_by/rosseti.jpg"],"./..\\img\\trusted_by\\rzhd.jpg":[["rzhd.fe64d6a5.jpg","img/trusted_by/rzhd.jpg"],"img/trusted_by/rzhd.jpg"],"./..\\img\\trusted_by\\rosneft.jpg":[["rosneft.afdbc676.jpg","img/trusted_by/rosneft.jpg"],"img/trusted_by/rosneft.jpg"],"./..\\img\\trusted_by\\tomc.jpg":[["tomc.d8e8b077.jpg","img/trusted_by/tomc.jpg"],"img/trusted_by/tomc.jpg"],"./..\\img\\trusted_by\\greenworks.jpg":[["greenworks.5ab122ce.jpg","img/trusted_by/greenworks.jpg"],"img/trusted_by/greenworks.jpg"],"./..\\img\\trusted_by\\tatehepro.jpg":[["tatehepro.7336df25.jpg","img/trusted_by/tatehepro.jpg"],"img/trusted_by/tatehepro.jpg"],"./..\\img\\trusted_by\\business-partner.jpg":[["business-partner.72800be2.jpg","img/trusted_by/business-partner.jpg"],"img/trusted_by/business-partner.jpg"],"./..\\img\\trusted_by\\ramport.jpg":[["ramport.43482636.jpg","img/trusted_by/ramport.jpg"],"img/trusted_by/ramport.jpg"],"./..\\img\\trusted_by\\sberbank.jpg":[["sberbank.0b6d4888.jpg","img/trusted_by/sberbank.jpg"],"img/trusted_by/sberbank.jpg"],"./..\\img\\trusted_by\\mtcrob.jpg":[["mtcrob.74a840a3.jpg","img/trusted_by/mtcrob.jpg"],"img/trusted_by/mtcrob.jpg"],"./..\\img\\trusted_by\\qayar.jpg":[["qayar.619a5c5e.jpg","img/trusted_by/qayar.jpg"],"img/trusted_by/qayar.jpg"],"./..\\img\\person-smiling_compressed.png":[["person-smiling_compressed.3fa47e1d.png","img/person-smiling_compressed.png"],"img/person-smiling_compressed.png"],"_css_loader":"../../../Users/Nover/AppData/Roaming/npm/node_modules/parcel/src/builtins/css-loader.js"}],"js/main.js":[function(require,module,exports) {
 "use strict";
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime-corejs2/regenerator"));
 
-var _stringify = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/json/stringify"));
-
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime-corejs2/helpers/asyncToGenerator"));
+
+var _stringify = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/json/stringify"));
 
 var _from = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/array/from"));
 
@@ -2612,7 +2612,37 @@ function dropDownStepTwoInsertItem() {
   insertAfter(insertAfterLiStepTwo, el);
 }
 
-var isSumbitted = false; // Send to email
+var isSumbitted = false;
+
+function checkForUniqueUserNum() {
+  var userNum = document.getElementById('pop-up-form-number').value; //
+
+  var userNum2 = document.getElementById('phone-number').value;
+  var userNum3 = document.getElementById('number-contact-form').value; //
+
+  var userNum4 = document.getElementById('module-input-contact-info').value; //
+
+  var numArr = [userNum, userNum2, userNum3, userNum4];
+  var localStorageNum = JSON.parse(localStorage.getItem('userNum'));
+  var userNumCur;
+  var output;
+  numArr.forEach(function (num) {
+    if (num !== '') {
+      userNumCur = num;
+    }
+  });
+
+  if (localStorageNum === null || localStorageNum.toString() !== userNumCur.toString()) {
+    localStorage.setItem('userNum', (0, _stringify.default)(userNumCur)); // console.log(userNumCur)
+
+    output = 'Нет';
+  } else if (localStorageNum.toString() === userNumCur.toString()) {
+    output = 'Да';
+  }
+
+  return output;
+} // Send to email
+
 
 function sumbitData(_x) {
   return _sumbitData.apply(this, arguments);
@@ -2648,7 +2678,7 @@ function _sumbitData() {
 
           case 6:
             content = _context.sent;
-            isSumbitted = true; // Prevent spamming 
+            isSumbitted = true; // Prevent spamming
 
             setTimeout(function () {
               isSumbitted = false;
@@ -3323,6 +3353,7 @@ btnAskQuestion.addEventListener('click', function (e) {
         var contact = moduleInputContactInfo.value.trim();
         var googleClientId = ga.getAll()[0].get('clientId');
         var number;
+        var double = checkForUniqueUserNum();
         var data = {
           number: number,
           question: question,
@@ -3336,7 +3367,8 @@ btnAskQuestion.addEventListener('click', function (e) {
           utmMedium: utmMedium,
           utmCampaign: utmCampaign,
           utmContent: utmContent,
-          utmTerm: utmTerm
+          utmTerm: utmTerm,
+          double: double
         };
 
         if (data.contact !== '' && data.contact !== null && !data.contact.includes('@')) {
@@ -3380,6 +3412,8 @@ btnAskQuestion.addEventListener('click', function (e) {
 
         var _number;
 
+        var _double = checkForUniqueUserNum();
+
         var _data = {
           number: _number,
           question: _question,
@@ -3393,7 +3427,8 @@ btnAskQuestion.addEventListener('click', function (e) {
           utmMedium: utmMedium,
           utmCampaign: utmCampaign,
           utmContent: utmContent,
-          utmTerm: utmTerm
+          utmTerm: utmTerm,
+          double: _double
         };
 
         if (_data.contact !== '' && _data.contact !== null && !_data.contact.includes('@')) {
@@ -3474,6 +3509,7 @@ ctaSubmitBtn.addEventListener('click', function (e) {
   var number = phoneInputInnerText.value.trim();
   var userName = userInputNameText.value.trim();
   var googleClientId = ga.getAll()[0].get('clientId');
+  var double = checkForUniqueUserNum();
   var data = {
     field: field,
     uni: uni,
@@ -3487,7 +3523,8 @@ ctaSubmitBtn.addEventListener('click', function (e) {
     utmMedium: utmMedium,
     utmCampaign: utmCampaign,
     utmContent: utmContent,
-    utmTerm: utmTerm
+    utmTerm: utmTerm,
+    double: double
   }; // console.log(data);
   // console.log(JSON.stringify(data));
   // Validate input number
@@ -3575,15 +3612,12 @@ function showMorePartnersDesktop() {
     partnersSecondRow.classList.add('hidden');
   }
 
-  ;
   window.addEventListener('resize', function () {
     if (document.body.clientWidth > 768) {
       partnersSecondRow.classList.remove('hidden');
     } else {
       partnersSecondRow.classList.add('hidden');
     }
-
-    ;
   });
 }
 
@@ -3601,6 +3635,7 @@ function submitPopUpForm() {
     var number = document.getElementById('pop-up-form-number').value.trim();
     var numberEl = document.getElementById('pop-up-form-number');
     var googleClientId = ga.getAll()[0].get('clientId');
+    var double = checkForUniqueUserNum();
     var data = {
       number: number,
       userName: userName,
@@ -3612,7 +3647,8 @@ function submitPopUpForm() {
       utmMedium: utmMedium,
       utmCampaign: utmCampaign,
       utmContent: utmContent,
-      utmTerm: utmTerm
+      utmTerm: utmTerm,
+      double: double
     };
 
     if (number !== '' && number !== null && number !== undefined && number.match(numValidation)) {
@@ -3652,6 +3688,7 @@ function submitContactForm() {
     var number = document.getElementById('number-contact-form').value.trim();
     var numberEl = document.getElementById('number-contact-form');
     var googleClientId = ga.getAll()[0].get('clientId');
+    var double = checkForUniqueUserNum();
     var data = {
       number: number,
       userName: userName,
@@ -3663,7 +3700,8 @@ function submitContactForm() {
       utmMedium: utmMedium,
       utmCampaign: utmCampaign,
       utmContent: utmContent,
-      utmTerm: utmTerm
+      utmTerm: utmTerm,
+      double: double
     };
 
     if (number !== '' && number !== null && number !== undefined && number.match(numValidation)) {
@@ -3683,7 +3721,7 @@ function submitContactForm() {
 }
 
 submitContactForm();
-},{"@babel/runtime-corejs2/regenerator":"../node_modules/@babel/runtime-corejs2/regenerator/index.js","@babel/runtime-corejs2/core-js/json/stringify":"../node_modules/@babel/runtime-corejs2/core-js/json/stringify.js","@babel/runtime-corejs2/helpers/asyncToGenerator":"../node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js","@babel/runtime-corejs2/core-js/array/from":"../node_modules/@babel/runtime-corejs2/core-js/array/from.js","../scss/main.scss":"scss/main.scss"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"@babel/runtime-corejs2/regenerator":"../node_modules/@babel/runtime-corejs2/regenerator/index.js","@babel/runtime-corejs2/helpers/asyncToGenerator":"../node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js","@babel/runtime-corejs2/core-js/json/stringify":"../node_modules/@babel/runtime-corejs2/core-js/json/stringify.js","@babel/runtime-corejs2/core-js/array/from":"../node_modules/@babel/runtime-corejs2/core-js/array/from.js","../scss/main.scss":"scss/main.scss"}],"../../../Users/Nover/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -3711,7 +3749,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57863" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58068" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -3887,5 +3925,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel/src/builtins/hmr-runtime.js","js/main.js"], null)
+},{}]},{},["../../../Users/Nover/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js","js/main.js"], null)
 //# sourceMappingURL=/main.fb6bbcaf.js.map

@@ -319,7 +319,7 @@ let isSumbitted = false
 
 function checkForUniqueUserNum() {
   const userNum = document.getElementById('pop-up-form-number').value
-  const userNum2 = document.getElementById('phone-are-there-questions').value
+  const userNum2 = document.getElementById('phone-number').value
   const userNum3 = document.getElementById('number-contact-form').value
   const userNum4 = document.getElementById('module-input-contact-info').value
   const numArr = [userNum, userNum2, userNum3, userNum4]
