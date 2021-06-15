@@ -33,7 +33,7 @@ const sendMail = (
   cb
 ) => {
   const mailOptions = {
-    from: process.env.FROMEMAIL,
+    from: 'contact@pr-rosucheba.ru',
     to: 'rosuchebaa@yandex.ru, marketing@rosucheba.ru',
     subject: `${
       question === '-' ? 'Новая заявка с РосУчеба' : 'Новый вопрос с РосУчеба'
