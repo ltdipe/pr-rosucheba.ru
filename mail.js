@@ -1,15 +1,15 @@
-const nodemailer = require('nodemailer');
-const mailGun = require('nodemailer-mailgun-transport');
-require('dotenv').config();
+const nodemailer = require('nodemailer')
+const mailGun = require('nodemailer-mailgun-transport')
+require('dotenv').config()
 
 const auth = {
   auth: {
     api_key: process.env.APIKEY,
-    domain: process.env.DOMAIN,
-  },
-};
+    domain: process.env.DOMAIN
+  }
+}
 
-const transporter = nodemailer.createTransport(mailGun(auth));
+const transporter = nodemailer.createTransport(mailGun(auth))
 
 // field, uni, number, userName // question, contactWay, contact // userCity, userCountry // googleClientId // userDevice // userDevice, utmSource, utmMedium, utmCampaign, utmContent, utmTerm
 const sendMail = (
@@ -34,7 +34,7 @@ const sendMail = (
 ) => {
   const mailOptions = {
     from: process.env.FROMEMAIL,
-    to: process.env.TOEMAIL,
+    to: 'rosuchebaa@yandex.ru, marketing@rosucheba.ru',
     subject: `${
       question === '-' ? 'Новая заявка с РосУчеба' : 'Новый вопрос с РосУчеба'
     } `,
@@ -57,8 +57,8 @@ const sendMail = (
     16. Объявление: ${utmContent},\n
     17. Ключевое слово: ${utmTerm},\n
     18. Дубль: ${double}
-    `,
-  };
+    `
+  }
 
   // • Гражданство: заполните вручную,\n
   //   • Законченное образование: заполните вручную,\n
@@ -67,11 +67,11 @@ const sendMail = (
 
   transporter.sendMail(mailOptions, function (err, data) {
     if (err) {
-      cb(err, null);
+      cb(err, null)
     } else {
-      cb(null, data);
+      cb(null, data)
     }
-  });
-};
+  })
+}
 
-module.exports = sendMail;
+module.exports = sendMail
