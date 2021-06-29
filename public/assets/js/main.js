@@ -348,7 +348,7 @@ function checkForUniqueUserNum() {
 // Send to email
 async function sumbitData(data) {
   if (isSumbitted === false) {
-    const res = await fetch('/email', {
+    const res = await fetch('/api/contact', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
