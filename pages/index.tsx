@@ -185,7 +185,7 @@ const Home = ({ data }) => {
                   loading='lazy'
                 />
               </div>
-              {/* <!-- <div className="header-items__item-group-container">
+              {/*  <div className="header-items__item-group-container">
               <div className="item-group-container__row-wrapper">
                 <div className="row-wrapper__text row-wrapper__text--bigger mr-0">
                   <p>Свяжитесь с нами:</p>
@@ -259,7 +259,7 @@ const Home = ({ data }) => {
                   </a>
                 </div>
               </div>
-            </div> --> */}
+            </div>  */}
               <div className='header-items__item-group-container'>
                 <div className='item-group-container__row-wrapper mb-0'>
                   <div
@@ -341,11 +341,11 @@ const Home = ({ data }) => {
                     </nav>
                   </div>
                 </div>
-                {/* <!-- This is area outside of menu is used to close the menu by click outside of it --> */}
+                {/*  This is area outside of menu is used to close the menu by click outside of it  */}
                 <label
                   htmlFor='menu-toggle'
                   className='area-outside-of-menu'></label>
-                {/* <!-- <label htmlFor="menu-toggle" className="area-at-the-right-edge"></label> --> */}
+                {/*  <label htmlFor="menu-toggle" className="area-at-the-right-edge"></label>  */}
               </div>
               <hr className='header-wrapper__menu__line border-highlight--color' />
               <nav className='menu__menu-items-container'>
@@ -360,11 +360,11 @@ const Home = ({ data }) => {
                       Вузы-партнеры
                     </a>
                   </li>
-                  {/* <!-- <li className="menu-items__menu-item">
+                  {/*  <li className="menu-items__menu-item">
                   <a href="#how-it-works" className="menu-item__link"
                     >Как работаем</a
                   >
-                </li> --> */}
+                </li>  */}
                   <li className='menu-items__menu-item'>
                     <a href='#needed-docs' className='menu-item__link'>
                       Документы для поступления
@@ -385,7 +385,7 @@ const Home = ({ data }) => {
                       Стоимость обучения
                     </a>
                   </li>
-                  {/* <!-- <li
+                  {/*  <li
                   className="menu-items__menu-item menu-items__menu-item--highlight"
                 >
                   <a
@@ -393,7 +393,7 @@ const Home = ({ data }) => {
                     className="menu-item__link text-highlight--color"
                     >Программы</a
                   >
-                </li> --> */}
+                </li>  */}
                 </ul>
               </nav>
             </div>
@@ -601,7 +601,7 @@ const Home = ({ data }) => {
                 </h2>
               </div>
 
-              {/* <!-- <div id="submit-app" className="left__left-inputs">
+              {/*  <div id="submit-app" className="left__left-inputs">
               <div className="left-inputs__left-inputs-inner">
                 <div id="fill-in-fields" className="fill-in-fields-below hidden">
                   <p>Заполните поля ниже</p>
@@ -624,7 +624,7 @@ const Home = ({ data }) => {
                     />
                   </svg>
                 </div>
-                <!- Input one ->
+                 Input one
                 <div className="container-input">
                   <div
                     id="input-select-choose-uni"
@@ -804,7 +804,7 @@ const Home = ({ data }) => {
                   </div>
                 </div>
 
-                <!- Input two ->
+                 Input two
                 <div className="container-input">
                   <div
                     id="input-select-choose-programm"
@@ -832,7 +832,7 @@ const Home = ({ data }) => {
                     </div>
                   </div>
 
-                  <!- Programm dropdown step 1 ->
+                   Programm dropdown step 1
                   <div
                     id="input-select-choose-programm-dropdown"
                     className="container-input__inner-dropdown input-select-choose-programm-dropdown"
@@ -1001,7 +1001,7 @@ const Home = ({ data }) => {
                     </ul>
                   </div>
 
-                  <!- Programm dropdown step 2 ->
+                   Programm dropdown step 2
                   <div
                     id="input-select-choose-programm-dropdown--step-two"
                     className="container-input__inner-dropdown input-select-choose-programm-dropdown--step-two"
@@ -1060,7 +1060,7 @@ const Home = ({ data }) => {
                   </div>
                 </div>
 
-                <!- Input three ->
+                 Input three
                 <div id="container-input-phone-num" className="container-input">
                   <label htmlFor="phone-number">
                     <p className="text-highlight--font-12 text-highlight--bold">
@@ -1077,7 +1077,7 @@ const Home = ({ data }) => {
                   />
                 </div>
 
-                <!- Input four ->
+                 Input four
                 <div
                   id="container-input--user-name"
                   className="container-input container-input--user-name"
@@ -1096,7 +1096,7 @@ const Home = ({ data }) => {
                   />
                 </div>
               </div>
-            </div> --> */}
+            </div>  */}
 
               <div className='left__call-to-action'>
                 <div className='call-to-action__btn-group'>
@@ -1106,7 +1106,7 @@ const Home = ({ data }) => {
                     </span>
                   </p>
 
-                  {/* <!-- id="cta-submit-application" --> */}
+                  {/*  id="cta-submit-application"  */}
                   <a
                     id='main-popup-btn'
                     href='#!'
@@ -1527,16 +1527,16 @@ const Home = ({ data }) => {
                   <p>
                     Можете начать учиться уже в следующем месяце, зачисляем
                     круглый год!
-                    {/* <!-- <span
+                    {/*  <span
                     className="inserted-text-1"
-                  ></span> --> */}
+                  ></span>  */}
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        {/* <!-- <section className="section-sm">
+        {/*  <section className="section-sm">
         <div className="section-sm__blocks">
           <div className="blocks__sm-block sm-block--teal">
             <div className="sm-block__icon">
@@ -1580,8 +1580,8 @@ const Home = ({ data }) => {
             </div>
           </div>
         </div>
-      </section> --> */}
-        {/* <!-- <section className="section-cards">
+      </section>  */}
+        {/*  <section className="section-cards">
         <div className="container">
           <div className="section-cards__title">
             <div className="title__title-wrapper">
@@ -1832,18 +1832,18 @@ const Home = ({ data }) => {
             </div>
           </div>
         </div>
-      </section> --> */}
+      </section>  */}
 
-        {/* <!-- <hr className="hr-between-sections" /> --> */}
+        {/*  <hr className="hr-between-sections" />  */}
         <section id='about' className='section-about'>
           <div className='container container--about'>
-            {/* <!-- <div className="section__title">
+            {/*  <div className="section__title">
             <h2
               className="h1 h1--padding-bottom text-highlight--color text-highlight--bold-mobile"
             >
               О проекте
             </h2>
-          </div> --> */}
+          </div>  */}
             <div className='section__content'>
               <div className='content__info h1--padding-bottom'>
                 <p>
@@ -2447,7 +2447,7 @@ const Home = ({ data }) => {
                   <span className='img__promo desktop-only'>
                     -30% с ROSUCHEBA
                   </span>
-                  {/* <!-- <div className="img__sinergy"></div> --> */}
+                  {/*  <div className="img__sinergy"></div>  */}
                   <svg
                     width='96'
                     height='17'
@@ -2539,7 +2539,7 @@ const Home = ({ data }) => {
               </div>
               <div className='content__img-wrapper'>
                 <div className='img-wrapper__img'>
-                  {/* <!-- <div className="img__business-academy"></div> --> */}
+                  {/*  <div className="img__business-academy"></div>  */}
                   <svg
                     width='106'
                     height='48'
@@ -2663,7 +2663,7 @@ const Home = ({ data }) => {
               </div>
               <div className='content__img-wrapper'>
                 <div className='img-wrapper__img'>
-                  {/* <!-- <div className="img__tambov"></div> --> */}
+                  {/*  <div className="img__tambov"></div>  */}
                   <svg
                     width='143'
                     height='51'
@@ -3038,7 +3038,7 @@ const Home = ({ data }) => {
                   <span className='img__promo desktop-only'>
                     -30% с ROSUCHEBA
                   </span>
-                  {/* <!-- <div className="img__ipe"></div> --> */}
+                  {/*  <div className="img__ipe"></div>  */}
                   <svg
                     width='134'
                     height='44'
@@ -3378,7 +3378,7 @@ const Home = ({ data }) => {
               </div>
               <div className='content__img-wrapper'>
                 <div className='img-wrapper__img'>
-                  {/* <!-- <div className="img__roc-hoy"></div> --> */}
+                  {/*  <div className="img__roc-hoy"></div>  */}
                   <svg
                     width='72'
                     height='45'
@@ -4240,7 +4240,7 @@ const Home = ({ data }) => {
                 сотрудничают
               </h2>
             </div>
-            {/* <!-- <div className="glide">
+            {/*  <div className="glide">
             <div className="glide__track" data-glide-el="track">
               <ul className="glide__slides">
                 <li className="glide__slide">0</li>
@@ -4248,7 +4248,7 @@ const Home = ({ data }) => {
                 <li className="glide__slide">2</li>
               </ul>
             </div>
-          </div> --> */}
+          </div>  */}
             <div className='section__content'>
               <div id='content__img-group--1' className='content__img-group'>
                 <div className='img-group__img-wrapper'>
@@ -4340,7 +4340,7 @@ const Home = ({ data }) => {
                   </span>
                 </p>
 
-                {/* <!-- id="cta-scroll-to-submit-application" --> */}
+                {/*  id="cta-scroll-to-submit-application"  */}
                 <a
                   id='show-pop-up-bottom-mobile'
                   href='#!'
@@ -4504,7 +4504,7 @@ const Home = ({ data }) => {
           </div>
         </section>
 
-        {/* <!-- Question module --> */}
+        {/*  Question module  */}
         <section
           id='module-questions'
           className='module module-questions hidden'>
@@ -4981,7 +4981,7 @@ const Home = ({ data }) => {
                 </div>
               </div>
               <p className='h2'>+7 (499) 490-29-60</p>
-              {/* <!-- <div className="header-items__item-group-container">
+              {/*  <div className="header-items__item-group-container">
               <div className="item-group-container__row-wrapper">
                 <div className="row-wrapper__text row-wrapper__text--bigger mr-0">
                   <p>Свяжитесь с нами:</p>
@@ -5013,7 +5013,7 @@ const Home = ({ data }) => {
                   </a>
                 </div>
               </div>
-            </div> --> */}
+            </div>  */}
             </div>
           </div>
           <div className='footer__right'>

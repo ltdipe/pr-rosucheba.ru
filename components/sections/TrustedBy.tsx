@@ -10,7 +10,7 @@ const TrustedBy = () => {
         </div>
         <div className='section__content'>
           <div id='content__img-group--1' className='content__img-group'>
-            {/* <!-- Block of 4 logos one --> */}
+            {/*  Block of 4 logos one  */}
             <div className='img-group__img-wrapper'>
               <div className='img-wrapper__img--trust-boost img__hh'></div>
             </div>
@@ -25,7 +25,7 @@ const TrustedBy = () => {
             </div>
           </div>
 
-          {/* <!-- Block of 4 logos two --> */}
+          {/*  Block of 4 logos two  */}
           <div id='content__img-group--2' className='content__img-group hidden'>
             <div className='img-group__img-wrapper'>
               <div className='img-wrapper__img--trust-boost img__tomc'></div>
@@ -44,7 +44,7 @@ const TrustedBy = () => {
             </div>
           </div>
 
-          {/* <!-- Block of 4 logos three --> */}
+          {/*  Block of 4 logos three  */}
           <div id='content__img-group--3' className='content__img-group hidden'>
             <div className='img-group__img-wrapper'>
               <div className='img-wrapper__img--trust-boost img__ramport'></div>

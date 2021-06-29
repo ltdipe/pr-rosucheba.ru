@@ -98,7 +98,7 @@ const Header = () => {
                   </nav>
                 </div>
               </div>
-              {/* <!-- This is area outside of menu is used to close the menu by click outside of it --> */}
+              {/*  This is area outside of menu is used to close the menu by click outside of it  */}
               <label
                 htmlFor='menu-toggle'
                 className='area-outside-of-menu'></label>

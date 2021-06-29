@@ -45,7 +45,7 @@ const First = () => {
                   />
                 </svg>
               </div>
-              {/* <!-- Input one --> */}
+              {/*  Input one  */}
               <div className='container-input'>
                 <div
                   id='input-select-choose-uni'
@@ -216,7 +216,7 @@ const First = () => {
                 </div>
               </div>
 
-              {/* <!-- Input two --> */}
+              {/*  Input two  */}
               <div className='container-input'>
                 <div
                   id='input-select-choose-programm'
@@ -241,7 +241,7 @@ const First = () => {
                   </div>
                 </div>
 
-                {/* <!-- Programm dropdown step 1 --> */}
+                {/*  Programm dropdown step 1  */}
                 <div
                   id='input-select-choose-programm-dropdown'
                   className='container-input__inner-dropdown input-select-choose-programm-dropdown'>
@@ -401,7 +401,7 @@ const First = () => {
                   </ul>
                 </div>
 
-                {/* <!-- Programm dropdown step 2 --> */}
+                {/*  Programm dropdown step 2  */}
                 <div
                   id='input-select-choose-programm-dropdown--step-two'
                   className='container-input__inner-dropdown input-select-choose-programm-dropdown--step-two'>
@@ -453,7 +453,7 @@ const First = () => {
                 </div>
               </div>
 
-              {/* <!-- Input three --> */}
+              {/*  Input three  */}
               <div id='container-input-phone-num' className='container-input'>
                 <label htmlFor='phone-number'>
                   <p className='text-highlight--font-12 text-highlight--bold'>
@@ -470,7 +470,7 @@ const First = () => {
                 />
               </div>
 
-              {/* <!-- Input four --> */}
+              {/*  Input four  */}
               <div
                 id='container-input--user-name'
                 className='container-input container-input--user-name'>
