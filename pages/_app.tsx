@@ -8,6 +8,7 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { motion, AnimatePresence } from 'framer-motion'
 import { prod, gtmId } from '@/config/index'
+import GtmNoScript from '@/components/general/GtmNoScript'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 
@@ -44,6 +45,8 @@ function MyApp({ Component, pageProps, router }) {
   return (
     <>
       <DefaultSeo {...SEO} />
+      <Script src='/assets/js/gtm.js' />
+      <GtmNoScript />
       <Header />
       <AnimatePresence>
         <motion.div

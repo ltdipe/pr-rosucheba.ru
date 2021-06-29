@@ -301,23 +301,23 @@ const email = async (req, res) => {
     // ]
 
     const output = /* html */ `
-      1. Имя: ${data.name},\n
-      2. Телефон: ${data.phone},\n
-      3. Почта: ${data.email},\n
-      4. Способ связи: ${data.contactWay},\n
-      5. Страница с которой отправлена заявка: ${data.root},\n
-      6. Город: ${data.cityEn},\n
-      7. Страна: ${data.countryRu},\n
-      8. Направление: ${data.field},\n
-      9. Университет: ${data.uni},\n
-      10. Вопрос: ${data.question},\n
-      11. Google Client ID: ${data.googleClientId},\n
-      12. Устройство пользователя: ${data.userDevice},\n
-      13. Источник рекламы: ${data.utmSource},\n
-      14. Тип трафика: ${data.utmMedium},\n
-      15. Название РК: ${data.utmCampaign},\n
-      16. Объявление: ${data.utmContent},\n
-      17. Ключевое слово: ${data.utmTerm},\n
+      1. Имя: ${data.name}, <br /><br />
+      2. Телефон: ${data.phone}, <br /><br />
+      3. Почта: ${data.email}, <br /><br />
+      4. Способ связи: ${data.contactWay}, <br /><br />
+      5. Страница с которой отправлена заявка: ${data.root}, <br /><br />
+      6. Город: ${data.cityEn}, <br /><br />
+      7. Страна: ${data.countryRu}, <br /><br />
+      8. Направление: ${data.field}, <br /><br />
+      9. Университет: ${data.uni}, <br /><br />
+      10. Вопрос: ${data.question}, <br /><br />
+      11. Google Client ID: ${data.googleClientId}, <br /><br />
+      12. Устройство пользователя: ${data.userDevice}, <br /><br />
+      13. Источник рекламы: ${data.utmSource}, <br /><br />
+      14. Тип трафика: ${data.utmMedium}, <br /><br />
+      15. Название РК: ${data.utmCampaign}, <br /><br />
+      16. Объявление: ${data.utmContent}, <br /><br />
+      17. Ключевое слово: ${data.utmTerm}, <br /><br />
       18. Дубль: ${data.double}
     `
     return output
