@@ -1,3 +1,10 @@
+// import { Materialbox } from 'materialize-css';
+import '../scss/main.scss'
+
+// import Glide from '@glidejs/glide'
+
+// new Glide('.glide').mount()
+
 // CTA btns
 const ctaSubmitBtn = document.getElementById('cta-submit-application')
 
@@ -189,6 +196,23 @@ const utmCampaign = urlParams.get('utm_campaign')
 const utmContent = urlParams.get('utm_content')
 const utmTerm = urlParams.get('utm_term')
 
+// Convert price
+const convertPriceTo = cntr => {
+  const regularPrices = document.querySelectorAll('.price-regular')
+  const discountPrices = document.querySelectorAll('.price-discount')
+  let currencySign = 'р.'
+
+  if (cntr === 'kz') {
+    currencySign = '₸'
+    regularPrices.forEach(price => {
+      price.innerHTML = `205 000 ${currencySign}`
+    })
+    discountPrices.forEach(price => {
+      price.innerHTML = `110 000 ${currencySign}`
+    })
+  }
+}
+
 // Track IP
 
 // let user_location;
@@ -220,6 +244,7 @@ fetch(locationUrlAPI)
       userCountry = 'Russia'
     } else if (userCountry === 'KZ') {
       userCountry = 'Kazakhstan'
+      convertPriceTo('kz')
     } else if (userCountry == 'UZ') {
       userCountry = 'Uzbekistan'
     }
@@ -230,34 +255,97 @@ fetch(locationUrlAPI)
     changeLocationDependedHeading(
       locationDependedHeading,
       'дистанционно в вузах Москвы',
+      'дистанционно в вузах Москвы без ЕГЭ и ЕНТ',
       'дистанционно в вузах Москвы без ЕГЭ',
-      'дистанционно в вузах Москвы без ЕНТ и ЕГЭ',
-      'дистанционно в вузах Москвы без ЕНТ и ЕГЭ'
+      'дистанционно в вузах Москвы'
     )
 
-    changeCustomizedCountryText(
-      '— мы помогаем абитуриентам выбирать образование, а Московским учебным заведениям — находить своих студентов!',
-      '— мы помогаем абитуриентам из Казахстана выбирать образование, а Московским учебным заведениям — находить своих студентов!',
-      '— мы помогаем абитуриентам из Узбекистана выбирать образование, а Московским учебным заведениям — находить своих студентов!',
-      '— мы помогаем абитуриентам выбирать образование, а Московским учебным заведениям — находить своих студентов!'
-    )
+    changeCustomizedCountryText('', 'из Казахстана', 'из Узбекистана', '')
+
+    // Docs steps
+    const kzUzEls = document.querySelectorAll('.kz-uz-only')
+    const kzUzElsArr = Array.from(kzUzEls)
+    const ruEls = document.querySelectorAll('.ru-only')
+    const ruElsArr = Array.from(ruEls)
+    if (userCountryCode === 'RU') {
+      ruElsArr.forEach(el => {
+        el.classList.add('show')
+      })
+      kzUzElsArr.forEach(el => {
+        el.classList.remove('show')
+      })
+    } else if (userCountryCode === 'KZ') {
+      ruElsArr.forEach(el => {
+        el.classList.remove('show')
+      })
+      kzUzElsArr.forEach(el => {
+        el.classList.show('show')
+      })
+    } else if (userCountryCode === 'UZ') {
+      ruElsArr.forEach(el => {
+        el.classList.remove('show')
+      })
+      kzUzElsArr.forEach(el => {
+        el.classList.show('show')
+      })
+    } else {
+      ruElsArr.forEach(el => {
+        el.classList.add('show')
+      })
+      kzUzElsArr.forEach(el => {
+        el.classList.remove('show')
+      })
+    }
+    // /Docs needed
   })
   .catch(error => {
     // `Can't access ${locationUrlAPI} :(`;
     changeLocationDependedHeading(
       locationDependedHeading,
       'дистанционно в вузах Москвы',
+      'дистанционно в вузах Москвы без ЕГЭ и ЕНТ',
       'дистанционно в вузах Москвы без ЕГЭ',
-      'дистанционно в вузах Москвы без ЕНТ и ЕГЭ',
-      'дистанционно в вузах Москвы без ЕНТ и ЕГЭ'
+      'дистанционно в вузах Москвы'
     )
 
-    changeCustomizedCountryText(
-      '— мы помогаем абитуриентам выбирать образование, а Московским учебным заведениям — находить своих студентов!',
-      '— мы помогаем абитуриентам из Казахстана выбирать образование, а Московским учебным заведениям — находить своих студентов!',
-      '— мы помогаем абитуриентам из Узбекистана выбирать образование, а Московским учебным заведениям — находить своих студентов!',
-      '— мы помогаем абитуриентам выбирать образование, а Московским учебным заведениям — находить своих студентов!'
-    )
+    changeCustomizedCountryText('', 'из Казахстана', 'из Узбекистана', '')
+
+    // Docs steps
+    const kzUzEls = document.querySelectorAll('.kz-uz-only')
+    const kzUzElsArr = Array.from(kzUzEls)
+    const ruEls = document.querySelectorAll('.ru-only')
+    const ruElsArr = Array.from(ruEls)
+    if (userCountryCode === 'RU') {
+      ruElsArr.forEach(el => {
+        el.classList.add('show')
+      })
+      kzUzElsArr.forEach(el => {
+        el.classList.remove('show')
+      })
+    } else if (userCountryCode === 'KZ') {
+      ruElsArr.forEach(el => {
+        el.classList.remove('show')
+      })
+      kzUzElsArr.forEach(el => {
+        el.classList.show('show')
+      })
+    } else if (userCountryCode === 'UZ') {
+      ruElsArr.forEach(el => {
+        el.classList.remove('show')
+      })
+      kzUzElsArr.forEach(el => {
+        el.classList.show('show')
+      })
+    } else {
+      ruElsArr.forEach(el => {
+        el.classList.add('show')
+      })
+      kzUzElsArr.forEach(el => {
+        el.classList.remove('show')
+      })
+    }
+    // /Docs needed
+
     return
   })
 
@@ -300,24 +388,24 @@ function insertAfter(referenceNode, newNode) {
   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling)
 }
 
-function dropDownStepTwoInsertItem(text = '') {
-  let el
-  el = document.createElement('li')
-  el.classList.add('inner-dropdown-items__item')
-  el.innerHTML = `
-        <p>
-          ${svgCheckMark}
-          ${text}
-        </p>
-      `
-  insertAfter(insertAfterLiStepTwo, el)
-}
+// function dropDownStepTwoInsertItem(text = '') {
+//   let el;
+//   el = document.createElement('li');
+//   el.classList.add('inner-dropdown-items__item');
+//   el.innerHTML = `
+//         <p>
+//           ${svgCheckMark}
+//           ${text}
+//         </p>
+//       `;
+//   insertAfter(insertAfterLiStepTwo, el);
+// }
 
 let isSumbitted = false
 
 function checkForUniqueUserNum() {
   const userNum = document.getElementById('pop-up-form-number').value
-  const userNum2 = document.getElementById('phone-number').value
+  const userNum2 = document.getElementById('phone-are-there-questions').value
   const userNum3 = document.getElementById('number-contact-form').value
   const userNum4 = document.getElementById('module-input-contact-info').value
   const numArr = [userNum, userNum2, userNum3, userNum4]
@@ -348,7 +436,7 @@ function checkForUniqueUserNum() {
 // Send to email
 async function sumbitData(data) {
   if (isSumbitted === false) {
-    const res = await fetch('/api/contact', {
+    const res = await fetch('/email', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -369,6 +457,14 @@ async function sumbitData(data) {
 }
 
 // Menu
+menuToggler.addEventListener('click', () => {
+  if (menuToggler.checked === true) {
+    btnAskQuestion.classList.add('hidden')
+  } else {
+    btnAskQuestion.classList.remove('hidden')
+  }
+})
+
 navItemLinks[0].addEventListener('click', e => {
   // window.location = "#about";
   const aboutSection = document.getElementById('about')
@@ -391,8 +487,18 @@ navItemLinks[1].addEventListener('click', e => {
 
 navItemLinks[2].addEventListener('click', e => {
   // window.location = "#trusted-by";
-  const trustedBySection = document.getElementById('trusted-by')
-  trustedBySection.scrollIntoView({
+  const chooseFromMany = document.getElementById('choose-from-many')
+  chooseFromMany.scrollIntoView({
+    behavior: 'smooth'
+  })
+  menuToggler.checked = false
+  e.preventDefault()
+})
+
+navItemLinks[3].addEventListener('click', e => {
+  // window.location = "#trusted-by";
+  const whatToDo = document.getElementById('what-to-do')
+  whatToDo.scrollIntoView({
     behavior: 'smooth'
   })
   menuToggler.checked = false
@@ -400,552 +506,573 @@ navItemLinks[2].addEventListener('click', e => {
 })
 
 // Select Dropdown Uni
-inputSelectChooseUni.addEventListener('click', e => {
-  inputSelectChooseUniDropdown.classList.toggle('show-dropdown')
+// inputSelectChooseUni.addEventListener('click', (e) => {
+//   inputSelectChooseUniDropdown.classList.toggle('show-dropdown');
 
-  // window.location = '#input-select-choose-uni';
-  if (
-    inputSelectChooseUniDropdown.classList.contains('show-dropdown') &&
-    document.body.clientWidth < 768
-  ) {
-    inputSelectChooseUni.scrollIntoView({
-      behavior: 'smooth'
-    })
-  }
+//   // window.location = '#input-select-choose-uni';
+//   if (
+//     inputSelectChooseUniDropdown.classList.contains('show-dropdown') &&
+//     document.body.clientWidth < 768
+//   ) {
+//     inputSelectChooseUni.scrollIntoView({
+//       behavior: 'smooth',
+//     });
+//   }
 
-  document.body.addEventListener('click', function closeInputUniDropDown(e) {
-    if (
-      inputSelectChooseUniDropdown.classList.contains('show-dropdown') &&
-      !inputSelectChooseUniDropdown.contains(e.target) &&
-      e.target !== inputSelectChooseUniDropdown &&
-      !inputSelectChooseUni.contains(e.target) &&
-      e.target !== inputSelectChooseUni
-    ) {
-      // Close question module
-      inputSelectChooseUniDropdown.classList.toggle('show-dropdown')
-      document.body.removeEventListener('click', closeInputUniDropDown)
-    }
-  })
+//   document.body.addEventListener('click', function closeInputUniDropDown(e) {
+//     if (
+//       inputSelectChooseUniDropdown.classList.contains('show-dropdown') &&
+//       !inputSelectChooseUniDropdown.contains(e.target) &&
+//       e.target !== inputSelectChooseUniDropdown &&
+//       !inputSelectChooseUni.contains(e.target) &&
+//       e.target !== inputSelectChooseUni
+//     ) {
+//       // Close question module
+//       inputSelectChooseUniDropdown.classList.toggle('show-dropdown');
+//       document.body.removeEventListener('click', closeInputUniDropDown);
+//     }
+//   });
 
-  e.preventDefault()
-})
+//   e.preventDefault();
+// });
 
-scrollToTheApplicationBtn.addEventListener('click', e => {
-  fillInTheFieldsBelow.classList.remove('hidden')
+// scrollToTheApplicationBtn.addEventListener('click', (e) => {
+//   fillInTheFieldsBelow.classList.remove('hidden');
 
-  if (document.body.clientWidth < 768) {
-    fillInTheFieldsBelow.scrollIntoView({
-      behavior: 'smooth'
-    })
-  } else {
-    const mainHeading = document.getElementById('js-section-heading')
-    mainHeading.scrollIntoView({
-      behavior: 'smooth'
-    })
-  }
+//   if (document.body.clientWidth < 768) {
+//     fillInTheFieldsBelow.scrollIntoView({
+//       behavior: 'smooth',
+//     });
+//   } else {
+//     const mainHeading = document.getElementById('js-section-heading');
+//     mainHeading.scrollIntoView({
+//       behavior: 'smooth',
+//     });
+//   }
 
-  setTimeout(() => {
-    fillInTheFieldsBelow.classList.add('hidden')
-  }, 3000)
+//   setTimeout(() => {
+//     fillInTheFieldsBelow.classList.add('hidden');
+//   }, 3000);
 
-  e.preventDefault()
-})
+//   e.preventDefault();
+// });
 
 // Dropdown Uni
-inputSelectChooseUniDropdown.addEventListener('mousedown', e => {
-  // Convert Dropdown Uni items into an array
-  const dropDownUniItemsArr = Array.from(dropDownUniItems)
-  const dropDownUniItemsArrP = Array.from(dropDownUniItemsP)
-
-  // Add the color to the selected text in the dropdown and clean the colors from other elements
-  dropDownUniItemsArr.forEach(item => {
-    item.classList.remove('text-highlight--color')
-  })
-  dropDownUniItemsArrP.forEach(item => {
-    item.classList.remove('text-highlight--color')
-  })
-
-  // Change the inner text of the select to the selected text
-  if (e.target.tagName === 'svg') {
-    inputSelectChooseUniInnerText.innerText = e.target.parentElement.innerText
-
-    inputSelectChooseUniInnerText.innerText =
-      inputSelectChooseUniInnerText.innerText
-        .substring(inputSelectChooseUniInnerText.innerText.indexOf('(') + 1)
-        .slice(0, -1)
-
-    e.target.parentElement.classList.add('text-highlight--color')
-  } else if (e.target.tagName == 'path') {
-    inputSelectChooseUniInnerText.innerText =
-      e.target.parentElement.parentElement.innerText
-
-    inputSelectChooseUniInnerText.innerText =
-      inputSelectChooseUniInnerText.innerText
-        .substring(inputSelectChooseUniInnerText.innerText.indexOf('(') + 1)
-        .slice(0, -1)
-
-    e.target.parentElement.parentElement.classList.add('text-highlight--color')
-  } else {
-    inputSelectChooseUniInnerText.innerText = e.target.innerText
-
-    inputSelectChooseUniInnerText.innerText =
-      inputSelectChooseUniInnerText.innerText
-        .substring(inputSelectChooseUniInnerText.innerText.indexOf('(') + 1)
-        .slice(0, -1)
-
-    e.target.classList.add('text-highlight--color')
-  }
-
-  // Add the color to the selected text in the input
-  inputSelectChooseUniInnerText.classList.add('text-highlight--color')
-
-  // On select hide the module
-  inputSelectChooseUniDropdown.classList.toggle('show-dropdown')
-
-  e.preventDefault()
-})
-
-// Select Dropdown Programm
-inputSelectChooseProgramm.addEventListener('click', e => {
-  if (
-    inputSelectChooseProgrammDropdownStepTwo.classList.contains('show-dropdown')
-  ) {
-    inputSelectChooseProgrammDropdownStepTwo.classList.remove('show-dropdown')
-    inputSelectChooseProgrammDropdown.classList.remove('show-dropdown')
-  } else {
-    inputSelectChooseProgrammDropdownStepTwo.classList.remove('show-dropdown')
-    inputSelectChooseProgrammDropdown.classList.toggle('show-dropdown')
-  }
-
-  // window.location = '#input-select-choose-uni';
-  if (
-    inputSelectChooseProgrammDropdown.classList.contains('show-dropdown') &&
-    document.body.clientWidth < 768
-  ) {
-    inputSelectChooseProgrammInnerText.scrollIntoView({
-      behavior: 'smooth'
-    })
-  }
-
-  document.body.addEventListener(
-    'click',
-    function closeInputProgrammDropDown(e) {
-      if (
-        (inputSelectChooseProgrammDropdown.classList.contains(
-          'show-dropdown'
-        ) ||
-          inputSelectChooseProgrammDropdownStepTwo.classList.contains(
-            'show-dropdown'
-          )) &&
-        !inputSelectChooseProgrammDropdown.contains(e.target) &&
-        e.target !== inputSelectChooseProgrammDropdown &&
-        !inputSelectChooseProgramm.contains(e.target) &&
-        e.target !== inputSelectChooseProgrammDropdownStepTwo &&
-        !inputSelectChooseProgrammDropdownStepTwo.contains(e.target) &&
-        e.target !== inputSelectChooseProgramm &&
-        !selectedItemFromTheFirstStep.contains(e.target) &&
-        e.target !== selectedItemFromTheFirstStep
-      ) {
-        // Close question module
-        inputSelectChooseProgrammDropdown.classList.remove('show-dropdown')
-        inputSelectChooseProgrammDropdownStepTwo.classList.remove(
-          'show-dropdown'
-        )
-        document.body.removeEventListener('click', closeInputProgrammDropDown)
-      }
-    }
-  )
-
-  e.preventDefault()
-})
-
-// Dropdown Programm
-inputSelectChooseProgrammDropdown.addEventListener('click', e => {
-  const dropDownProgrammItemsArr = Array.from(dropDownProgrammItems)
-  const dropDownProgrammItemsArrP = Array.from(dropDownProgrammItemsP)
-
-  dropDownProgrammItemsArr.forEach(item => {
-    item.classList.remove('text-highlight--color')
-  })
-  dropDownProgrammItemsArrP.forEach(item => {
-    item.classList.remove('text-highlight--color')
-  })
-
-  // Change the inner text of the select to the selected text
-  if (e.target.tagName === 'svg') {
-    inputSelectChooseProgrammInnerText.innerText =
-      e.target.parentElement.innerText
-    e.target.parentElement.classList.add('text-highlight--color')
-  } else if (e.target.tagName == 'path') {
-    inputSelectChooseProgrammInnerText.innerText =
-      e.target.parentElement.parentElement.innerText
-    e.target.parentElement.parentElement.classList.add('text-highlight--color')
-  } else {
-    inputSelectChooseProgrammInnerText.innerText = e.target.innerText
-    e.target.classList.add('text-highlight--color')
-  }
+// inputSelectChooseUniDropdown.addEventListener('mousedown', (e) => {
+//   // Convert Dropdown Uni items into an array
+//   const dropDownUniItemsArr = Array.from(dropDownUniItems);
+//   const dropDownUniItemsArrP = Array.from(dropDownUniItemsP);
+
+//   // Add the color to the selected text in the dropdown and clean the colors from other elements
+//   dropDownUniItemsArr.forEach((item) => {
+//     item.classList.remove('text-highlight--color');
+//   });
+//   dropDownUniItemsArrP.forEach((item) => {
+//     item.classList.remove('text-highlight--color');
+//   });
+
+//   // Change the inner text of the select to the selected text
+//   if (e.target.tagName === 'svg') {
+//     inputSelectChooseUniInnerText.innerText = e.target.parentElement.innerText;
+
+//     if(inputSelectChooseUniInnerText.innerText !== 'Определюсь после консультации'){
+//       inputSelectChooseUniInnerText.innerText = inputSelectChooseUniInnerText.innerText
+//       .substring(inputSelectChooseUniInnerText.innerText.indexOf('(') + 1)
+//       .slice(0, -1);
+//     }
+
+//     e.target.parentElement.classList.add('text-highlight--color');
+//   } else if (e.target.tagName == 'path') {
+//     inputSelectChooseUniInnerText.innerText =
+//       e.target.parentElement.parentElement.innerText;
+
+//       if(inputSelectChooseUniInnerText.innerText !== 'Определюсь после консультации'){
+//         inputSelectChooseUniInnerText.innerText = inputSelectChooseUniInnerText.innerText
+//         .substring(inputSelectChooseUniInnerText.innerText.indexOf('(') + 1)
+//         .slice(0, -1);
+//       }
+
+//     e.target.parentElement.parentElement.classList.add('text-highlight--color');
+//   } else {
+//     inputSelectChooseUniInnerText.innerText = e.target.innerText;
+
+//     if(inputSelectChooseUniInnerText.innerText !== 'Определюсь после консультации'){
+//       inputSelectChooseUniInnerText.innerText = inputSelectChooseUniInnerText.innerText
+//       .substring(inputSelectChooseUniInnerText.innerText.indexOf('(') + 1)
+//       .slice(0, -1);
+//     }
+
+//     e.target.classList.add('text-highlight--color');
+//   }
+
+//   // Add the color to the selected text in the input
+//   inputSelectChooseUniInnerText.classList.add('text-highlight--color');
+
+//   // On select hide the module
+//   inputSelectChooseUniDropdown.classList.toggle('show-dropdown');
+
+//   e.preventDefault();
+// });
+
+// // Select Dropdown Programm
+// inputSelectChooseProgramm.addEventListener('click', (e) => {
+//   if (
+//     inputSelectChooseProgrammDropdownStepTwo.classList.contains('show-dropdown')
+//   ) {
+//     inputSelectChooseProgrammDropdownStepTwo.classList.remove('show-dropdown');
+//     inputSelectChooseProgrammDropdown.classList.remove('show-dropdown');
+//   } else {
+//     inputSelectChooseProgrammDropdownStepTwo.classList.remove('show-dropdown');
+//     inputSelectChooseProgrammDropdown.classList.toggle('show-dropdown');
+//   }
+
+//   // window.location = '#input-select-choose-uni';
+//   if (
+//     inputSelectChooseProgrammDropdown.classList.contains('show-dropdown') &&
+//     document.body.clientWidth < 768
+//   ) {
+//     inputSelectChooseProgrammInnerText.scrollIntoView({
+//       behavior: 'smooth',
+//     });
+//   }
+
+//   document.body.addEventListener('click', function closeInputProgrammDropDown(
+//     e
+//   ) {
+//     if (
+//       (inputSelectChooseProgrammDropdown.classList.contains('show-dropdown') ||
+//         inputSelectChooseProgrammDropdownStepTwo.classList.contains(
+//           'show-dropdown'
+//         )) &&
+//       !inputSelectChooseProgrammDropdown.contains(e.target) &&
+//       e.target !== inputSelectChooseProgrammDropdown &&
+//       !inputSelectChooseProgramm.contains(e.target) &&
+//       e.target !== inputSelectChooseProgrammDropdownStepTwo &&
+//       !inputSelectChooseProgrammDropdownStepTwo.contains(e.target) &&
+//       e.target !== inputSelectChooseProgramm &&
+//       !selectedItemFromTheFirstStep.contains(e.target) &&
+//       e.target !== selectedItemFromTheFirstStep
+//     ) {
+//       // Close question module
+//       inputSelectChooseProgrammDropdown.classList.remove('show-dropdown');
+//       inputSelectChooseProgrammDropdownStepTwo.classList.remove(
+//         'show-dropdown'
+//       );
+//       document.body.removeEventListener('click', closeInputProgrammDropDown);
+//     }
+//   });
+
+//   e.preventDefault();
+// });
+
+// // Dropdown Programm
+// inputSelectChooseProgrammDropdown.addEventListener('click', (e) => {
+//   const dropDownProgrammItemsArr = Array.from(dropDownProgrammItems);
+//   const dropDownProgrammItemsArrP = Array.from(dropDownProgrammItemsP);
+
+//   dropDownProgrammItemsArr.forEach((item) => {
+//     item.classList.remove('text-highlight--color');
+//   });
+//   dropDownProgrammItemsArrP.forEach((item) => {
+//     item.classList.remove('text-highlight--color');
+//   });
+
+//   // Change the inner text of the select to the selected text
+//   if (e.target.tagName === 'svg') {
+//     inputSelectChooseProgrammInnerText.innerText =
+//       e.target.parentElement.innerText;
+//     e.target.parentElement.classList.add('text-highlight--color');
+//   } else if (e.target.tagName == 'path') {
+//     inputSelectChooseProgrammInnerText.innerText =
+//       e.target.parentElement.parentElement.innerText;
+//     e.target.parentElement.parentElement.classList.add('text-highlight--color');
+//   } else {
+//     inputSelectChooseProgrammInnerText.innerText = e.target.innerText;
+//     e.target.classList.add('text-highlight--color');
+//   }
 
-  // Add the color to the selected text in the input
-  inputSelectChooseProgrammInnerText.classList.add('text-highlight--color')
+//   // Add the color to the selected text in the input
+//   inputSelectChooseProgrammInnerText.classList.add('text-highlight--color');
 
-  // Dropdown Programm Step 2
+//   // Dropdown Programm Step 2
 
-  if (
-    inputSelectChooseProgrammInnerText.innerText ===
-    'Определюсь после консультации'
-  ) {
-    inputSelectChooseProgrammDropdownStepTwo.classList.remove('show-dropdown')
-  } else {
-    inputSelectChooseProgrammDropdownStepTwo.classList.add('show-dropdown')
+//   if (
+//     inputSelectChooseProgrammInnerText.innerText ===
+//     'Определюсь после консультации'
+//   ) {
+//     inputSelectChooseProgrammDropdownStepTwo.classList.remove('show-dropdown');
+//   } else {
+//     inputSelectChooseProgrammDropdownStepTwo.classList.add('show-dropdown');
 
-    const selectedItemFromTheFirstStepText = document.getElementById(
-      'programm-dropdown-step-two-selected-step-one-item'
-    )
+//     const selectedItemFromTheFirstStepText = document.getElementById(
+//       'programm-dropdown-step-two-selected-step-one-item'
+//     );
 
-    const selectedItemFromTheFirstStep = document.getElementById(
-      'inner-dropdown-items__item--selected'
-    )
+//     const selectedItemFromTheFirstStep = document.getElementById(
+//       'inner-dropdown-items__item--selected'
+//     );
 
-    selectedItemFromTheFirstStepText.innerText =
-      inputSelectChooseProgrammInnerText.innerText
+//     selectedItemFromTheFirstStepText.innerText =
+//       inputSelectChooseProgrammInnerText.innerText;
 
-    const listItemsStepTwo = document.getElementById(
-      'inner-dropdown-items--step-two'
-    )
+//     const listItemsStepTwo = document.getElementById(
+//       'inner-dropdown-items--step-two'
+//     );
 
-    const svgArrowBack = `<svg
-    width="9"
-    height="15"
-    viewBox="0 0 9 15"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M8.20471 13.2882L2.41412 7.49765L8.20471 1.70706C8.5953 1.31647 8.5953 0.683529 8.20471 0.292941C7.81412 -0.097647 7.18118 -0.097647 6.79059 0.292941L0.292941 6.79059C-0.0976471 7.18118 -0.0976471 7.81412 0.292941 8.2047L6.79059 14.7024C7.18118 15.0929 7.81412 15.0929 8.20471 14.7024C8.5953 14.3118 8.5953 13.6788 8.20471 13.2882Z"
-      fill="#2874FF"
-    />
-  </svg>`
+//     const svgArrowBack = `<svg
+//     width="9"
+//     height="15"
+//     viewBox="0 0 9 15"
+//     fill="none"
+//     xmlns="http://www.w3.org/2000/svg"
+//   >
+//     <path
+//       d="M8.20471 13.2882L2.41412 7.49765L8.20471 1.70706C8.5953 1.31647 8.5953 0.683529 8.20471 0.292941C7.81412 -0.097647 7.18118 -0.097647 6.79059 0.292941L0.292941 6.79059C-0.0976471 7.18118 -0.0976471 7.81412 0.292941 8.2047L6.79059 14.7024C7.18118 15.0929 7.81412 15.0929 8.20471 14.7024C8.5953 14.3118 8.5953 13.6788 8.20471 13.2882Z"
+//       fill="#2874FF"
+//     />
+//   </svg>`;
 
-    if (selectedItemFromTheFirstStepText.innerText === 'Колледж') {
-      const listItemsStepTwoArr = Array.prototype.slice.call(
-        listItemsStepTwo.childNodes
-      )
+//     if (selectedItemFromTheFirstStepText.innerText === 'Колледж') {
+//       const listItemsStepTwoArr = Array.prototype.slice.call(
+//         listItemsStepTwo.childNodes
+//       );
 
-      listItemsStepTwoArr.forEach((item, index) => {
-        if (index > 3) {
-          item.remove()
-        }
-      })
+//       listItemsStepTwoArr.forEach((item, index) => {
+//         if (index > 3) {
+//           item.remove();
+//         }
+//       });
 
-      dropDownStepTwoInsertItem('Информационные системы и программирование')
+//       dropDownStepTwoInsertItem('Другое');
 
-      dropDownStepTwoInsertItem('Гостиничное дело​')
+//       dropDownStepTwoInsertItem('Информационные системы и программирование');
 
-      dropDownStepTwoInsertItem('Банковское дело​​')
+//       dropDownStepTwoInsertItem('Гостиничное дело​');
 
-      dropDownStepTwoInsertItem('Экономика и бухгалтерский учет по отраслям')
+//       dropDownStepTwoInsertItem('Банковское дело​​');
 
-      dropDownStepTwoInsertItem('Право и организация социального обеспечения')
+//       dropDownStepTwoInsertItem('Экономика и бухгалтерский учет по отраслям');
 
-      dropDownStepTwoInsertItem('Коммерция по отраслям')
-    }
+//       dropDownStepTwoInsertItem('Право и организация социального обеспечения');
 
-    if (selectedItemFromTheFirstStepText.innerText === 'Бакалавриат') {
-      const listItemsStepTwoArr = Array.prototype.slice.call(
-        listItemsStepTwo.childNodes
-      )
+//       dropDownStepTwoInsertItem('Коммерция по отраслям');
 
-      listItemsStepTwoArr.forEach((item, index) => {
-        if (index > 3) {
-          item.remove()
-        }
-      })
+//     }
 
-      dropDownStepTwoInsertItem('Юриспруденция')
+//     if (selectedItemFromTheFirstStepText.innerText === 'Бакалавриат') {
+//       const listItemsStepTwoArr = Array.prototype.slice.call(
+//         listItemsStepTwo.childNodes
+//       );
 
-      dropDownStepTwoInsertItem('Дизайн​')
+//       listItemsStepTwoArr.forEach((item, index) => {
+//         if (index > 3) {
+//           item.remove();
+//         }
+//       });
 
-      dropDownStepTwoInsertItem('Лингвистика')
+//       dropDownStepTwoInsertItem('Другое');
 
-      dropDownStepTwoInsertItem('Информационные системы и технологии')
+//       dropDownStepTwoInsertItem('Юриспруденция');
 
-      dropDownStepTwoInsertItem('Прикладная информатика')
+//       dropDownStepTwoInsertItem('Дизайн​');
 
-      dropDownStepTwoInsertItem('Реклама и связи с общественностью')
+//       dropDownStepTwoInsertItem('Лингвистика');
 
-      dropDownStepTwoInsertItem('Бизнес-информатика')
+//       dropDownStepTwoInsertItem('Информационные системы и технологии');
 
-      dropDownStepTwoInsertItem('Государственное и муниципальное управление')
+//       dropDownStepTwoInsertItem('Прикладная информатика');
 
-      dropDownStepTwoInsertItem('Управление персоналом')
+//       dropDownStepTwoInsertItem('Реклама и связи с общественностью');
 
-      dropDownStepTwoInsertItem('Теплоэнергетика и теплотехника')
+//       dropDownStepTwoInsertItem('Бизнес-информатика');
 
-      dropDownStepTwoInsertItem('Электроэнергетика и электротехника')
+//       dropDownStepTwoInsertItem('Государственное и муниципальное управление');
 
-      dropDownStepTwoInsertItem('Строительство')
+//       dropDownStepTwoInsertItem('Управление персоналом');
 
-      dropDownStepTwoInsertItem('Психолого-педагогическое образование')
+//       dropDownStepTwoInsertItem('Теплоэнергетика и теплотехника');
 
-      dropDownStepTwoInsertItem('Психология')
+//       dropDownStepTwoInsertItem('Электроэнергетика и электротехника');
 
-      dropDownStepTwoInsertItem('Менеджмент')
+//       dropDownStepTwoInsertItem('Строительство');
 
-      dropDownStepTwoInsertItem('Экономика')
-    }
+//       dropDownStepTwoInsertItem('Психолого-педагогическое образование');
 
-    if (selectedItemFromTheFirstStepText.innerText === 'Специалитет') {
-      const listItemsStepTwoArr = Array.prototype.slice.call(
-        listItemsStepTwo.childNodes
-      )
+//       dropDownStepTwoInsertItem('Психология');
 
-      listItemsStepTwoArr.forEach((item, index) => {
-        if (index > 3) {
-          item.remove()
-        }
-      })
+//       dropDownStepTwoInsertItem('Менеджмент');
 
-      dropDownStepTwoInsertItem('Экономическая безопасность')
-    }
+//       dropDownStepTwoInsertItem('Экономика');
+//     }
 
-    if (selectedItemFromTheFirstStepText.innerText === 'Магистратура') {
-      const listItemsStepTwoArr = Array.prototype.slice.call(
-        listItemsStepTwo.childNodes
-      )
+//     if (selectedItemFromTheFirstStepText.innerText === 'Специалитет') {
+//       const listItemsStepTwoArr = Array.prototype.slice.call(
+//         listItemsStepTwo.childNodes
+//       );
 
-      listItemsStepTwoArr.forEach((item, index) => {
-        if (index > 3) {
-          item.remove()
-        }
-      })
+//       listItemsStepTwoArr.forEach((item, index) => {
+//         if (index > 3) {
+//           item.remove();
+//         }
+//       });
 
-      dropDownStepTwoInsertItem('Юриспруденция')
+//       dropDownStepTwoInsertItem('Другое');
 
-      dropDownStepTwoInsertItem('Реклама и связи с общественностью')
+//       dropDownStepTwoInsertItem('Экономическая безопасность');
+//     }
 
-      dropDownStepTwoInsertItem('Психология')
+//     if (selectedItemFromTheFirstStepText.innerText === 'Магистратура') {
+//       const listItemsStepTwoArr = Array.prototype.slice.call(
+//         listItemsStepTwo.childNodes
+//       );
 
-      dropDownStepTwoInsertItem('Прикладная информатика')
+//       listItemsStepTwoArr.forEach((item, index) => {
+//         if (index > 3) {
+//           item.remove();
+//         }
+//       });
 
-      dropDownStepTwoInsertItem('Государственное и муниципальное управление')
+//       dropDownStepTwoInsertItem('Другое');
 
-      dropDownStepTwoInsertItem('Управление персоналом')
+//       dropDownStepTwoInsertItem('Юриспруденция');
 
-      dropDownStepTwoInsertItem('Менеджмент')
+//       dropDownStepTwoInsertItem('Реклама и связи с общественностью');
 
-      dropDownStepTwoInsertItem('Финансы и кредит')
+//       dropDownStepTwoInsertItem('Психология');
 
-      dropDownStepTwoInsertItem('Экономика')
-    }
+//       dropDownStepTwoInsertItem('Прикладная информатика');
 
-    if (
-      selectedItemFromTheFirstStepText.innerText ===
-      'Профессиональная переподготовка'
-    ) {
-      const listItemsStepTwoArr = Array.prototype.slice.call(
-        listItemsStepTwo.childNodes
-      )
+//       dropDownStepTwoInsertItem('Государственное и муниципальное управление');
 
-      listItemsStepTwoArr.forEach((item, index) => {
-        if (index > 3) {
-          item.remove()
-        }
-      })
+//       dropDownStepTwoInsertItem('Управление персоналом');
 
-      dropDownStepTwoInsertItem('Гуманитарные науки')
+//       dropDownStepTwoInsertItem('Менеджмент');
 
-      dropDownStepTwoInsertItem('Электроэнергетика')
+//       dropDownStepTwoInsertItem('Финансы и кредит');
 
-      dropDownStepTwoInsertItem('Строительство')
+//       dropDownStepTwoInsertItem('Экономика');
+//     }
 
-      dropDownStepTwoInsertItem('Теплоэнергетика')
+//     if (
+//       selectedItemFromTheFirstStepText.innerText ===
+//       'Профессиональная переподготовка'
+//     ) {
+//       const listItemsStepTwoArr = Array.prototype.slice.call(
+//         listItemsStepTwo.childNodes
+//       );
 
-      dropDownStepTwoInsertItem('Безопасность дорожного движения')
+//       listItemsStepTwoArr.forEach((item, index) => {
+//         if (index > 3) {
+//           item.remove();
+//         }
+//       });
 
-      dropDownStepTwoInsertItem('Продукты питания - технология производства')
+//       dropDownStepTwoInsertItem('Другое');
 
-      dropDownStepTwoInsertItem('Юриспруденция')
+//       dropDownStepTwoInsertItem('Гуманитарные науки');
 
-      dropDownStepTwoInsertItem('Охрана труда')
+//       dropDownStepTwoInsertItem('Электроэнергетика');
 
-      dropDownStepTwoInsertItem('Информатика и вычислительная техника')
+//       dropDownStepTwoInsertItem('Строительство');
 
-      dropDownStepTwoInsertItem('Реклама и PR')
+//       dropDownStepTwoInsertItem('Теплоэнергетика');
 
-      dropDownStepTwoInsertItem('Журналистика')
+//       dropDownStepTwoInsertItem('Безопасность дорожного движения');
 
-      dropDownStepTwoInsertItem('Дизайн')
+//       dropDownStepTwoInsertItem('Продукты питания - технология производства');
 
-      dropDownStepTwoInsertItem('Маркетинг')
+//       dropDownStepTwoInsertItem('Юриспруденция');
 
-      dropDownStepTwoInsertItem('Туризм')
+//       dropDownStepTwoInsertItem('Охрана труда');
 
-      dropDownStepTwoInsertItem('Государственное и муниципальное управление')
+//       dropDownStepTwoInsertItem('Информатика и вычислительная техника');
 
-      dropDownStepTwoInsertItem('Логистика')
+//       dropDownStepTwoInsertItem('Реклама и PR');
 
-      dropDownStepTwoInsertItem('Социальная работа')
+//       dropDownStepTwoInsertItem('Журналистика');
 
-      dropDownStepTwoInsertItem('Экономика')
+//       dropDownStepTwoInsertItem('Дизайн');
 
-      dropDownStepTwoInsertItem('Психология')
+//       dropDownStepTwoInsertItem('Маркетинг');
 
-      dropDownStepTwoInsertItem('Педагогика')
+//       dropDownStepTwoInsertItem('Туризм');
 
-      dropDownStepTwoInsertItem('Менеджмент')
-    }
+//       dropDownStepTwoInsertItem('Государственное и муниципальное управление');
 
-    if (
-      selectedItemFromTheFirstStepText.innerText === 'Повышение квалификации'
-    ) {
-      const listItemsStepTwoArr = Array.prototype.slice.call(
-        listItemsStepTwo.childNodes
-      )
+//       dropDownStepTwoInsertItem('Логистика');
 
-      listItemsStepTwoArr.forEach((item, index) => {
-        if (index > 3) {
-          item.remove()
-        }
-      })
+//       dropDownStepTwoInsertItem('Социальная работа');
 
-      dropDownStepTwoInsertItem('Гуманитарные науки')
+//       dropDownStepTwoInsertItem('Экономика');
 
-      dropDownStepTwoInsertItem('Электроэнергетика')
+//       dropDownStepTwoInsertItem('Психология');
 
-      dropDownStepTwoInsertItem('Строительство')
+//       dropDownStepTwoInsertItem('Педагогика');
 
-      dropDownStepTwoInsertItem('Теплоэнергетика')
+//       dropDownStepTwoInsertItem('Менеджмент');
+//     }
 
-      dropDownStepTwoInsertItem('Безопасность дорожного движения')
+//     if (
+//       selectedItemFromTheFirstStepText.innerText === 'Повышение квалификации'
+//     ) {
+//       const listItemsStepTwoArr = Array.prototype.slice.call(
+//         listItemsStepTwo.childNodes
+//       );
 
-      dropDownStepTwoInsertItem('Продукты питания - технология производства')
+//       listItemsStepTwoArr.forEach((item, index) => {
+//         if (index > 3) {
+//           item.remove();
+//         }
+//       });
 
-      dropDownStepTwoInsertItem('Юриспруденция')
+//       dropDownStepTwoInsertItem('Другое');
 
-      dropDownStepTwoInsertItem('Охрана труда')
+//       dropDownStepTwoInsertItem('Гуманитарные науки');
 
-      dropDownStepTwoInsertItem('Информатика и вычислительная техника')
+//       dropDownStepTwoInsertItem('Электроэнергетика');
 
-      dropDownStepTwoInsertItem('Реклама и PR')
+//       dropDownStepTwoInsertItem('Строительство');
 
-      dropDownStepTwoInsertItem('Журналистика')
+//       dropDownStepTwoInsertItem('Теплоэнергетика');
 
-      dropDownStepTwoInsertItem('Дизайн')
+//       dropDownStepTwoInsertItem('Безопасность дорожного движения');
 
-      dropDownStepTwoInsertItem('Маркетинг')
+//       dropDownStepTwoInsertItem('Продукты питания - технология производства');
 
-      dropDownStepTwoInsertItem('Туризм')
+//       dropDownStepTwoInsertItem('Юриспруденция');
 
-      dropDownStepTwoInsertItem('Медицина')
+//       dropDownStepTwoInsertItem('Охрана труда');
 
-      dropDownStepTwoInsertItem('Государственное и муниципальное управление')
+//       dropDownStepTwoInsertItem('Информатика и вычислительная техника');
 
-      dropDownStepTwoInsertItem('Логистика')
+//       dropDownStepTwoInsertItem('Реклама и PR');
 
-      dropDownStepTwoInsertItem('Социальная работа​')
+//       dropDownStepTwoInsertItem('Журналистика');
 
-      dropDownStepTwoInsertItem('Экономика​​')
+//       dropDownStepTwoInsertItem('Дизайн');
 
-      dropDownStepTwoInsertItem('Психология')
+//       dropDownStepTwoInsertItem('Маркетинг');
 
-      dropDownStepTwoInsertItem('Педагогика')
+//       dropDownStepTwoInsertItem('Туризм');
 
-      dropDownStepTwoInsertItem('Менеджмент')
-    }
+//       dropDownStepTwoInsertItem('Медицина');
 
-    if (
-      selectedItemFromTheFirstStepText.innerText ===
-      'Master of Business Administration (МВА)'
-    ) {
-      const listItemsStepTwoArr = Array.prototype.slice.call(
-        listItemsStepTwo.childNodes
-      )
+//       dropDownStepTwoInsertItem('Государственное и муниципальное управление');
 
-      listItemsStepTwoArr.forEach((item, index) => {
-        if (index > 3) {
-          item.remove()
-        }
-      })
+//       dropDownStepTwoInsertItem('Логистика');
 
-      dropDownStepTwoInsertItem('MBA Industry')
+//       dropDownStepTwoInsertItem('Социальная работа​');
 
-      dropDownStepTwoInsertItem('MBA Professional')
+//       dropDownStepTwoInsertItem('Экономика​​');
 
-      dropDownStepTwoInsertItem('MBA Intensive')
+//       dropDownStepTwoInsertItem('Психология');
 
-      dropDownStepTwoInsertItem('Mini-MBA')
-    }
+//       dropDownStepTwoInsertItem('Педагогика');
 
-    // Step back
-    selectedItemFromTheFirstStep.addEventListener('click', e => {
-      inputSelectChooseProgrammDropdownStepTwo.classList.remove('show-dropdown')
-      inputSelectChooseProgrammDropdown.classList.add('show-dropdown')
+//       dropDownStepTwoInsertItem('Менеджмент');
+//     }
 
-      e.preventDefault()
-    })
+//     if (
+//       selectedItemFromTheFirstStepText.innerText ===
+//       'Master of Business Administration (МВА)'
+//     ) {
+//       const listItemsStepTwoArr = Array.prototype.slice.call(
+//         listItemsStepTwo.childNodes
+//       );
 
-    inputSelectChooseProgrammDropdownStepTwo.addEventListener('click', e => {
-      const dropDownProgrammItemsStepTwoArr = Array.from(
-        dropDownProgrammItemsStepTwo
-      )
-      const dropDownProgrammItemsPStepTwoArr = Array.from(
-        dropDownProgrammItemsPStepTwo
-      )
+//       listItemsStepTwoArr.forEach((item, index) => {
+//         if (index > 3) {
+//           item.remove();
+//         }
+//       });
 
-      dropDownProgrammItemsStepTwoArr.forEach(item => {
-        item.classList.remove('text-highlight--color')
-      })
-      dropDownProgrammItemsPStepTwoArr.forEach(item => {
-        item.classList.remove('text-highlight--color')
-      })
+//       dropDownStepTwoInsertItem('Другое');
 
-      // Change the inner text of the select to the selected text
-      if (e.target.tagName === 'svg') {
-        // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
-        inputSelectChooseProgrammInnerText.innerText ===
-        e.target.parentElement.innerText
-          ? inputSelectChooseProgrammInnerText.innerText
-          : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerHTML}, ${e.target.parentElement.innerText}`)
+//       dropDownStepTwoInsertItem('MBA Industry');
 
-        e.target.parentElement.classList.add('text-highlight--color')
-      } else if (e.target.tagName == 'path') {
-        // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
-        inputSelectChooseProgrammInnerText.innerText ===
-        e.target.parentElement.parentElement.innerText
-          ? inputSelectChooseProgrammInnerText.innerText
-          : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText}, ${e.target.parentElement.parentElement.innerText}`)
+//       dropDownStepTwoInsertItem('MBA Professional');
 
-        e.target.parentElement.parentElement.classList.add(
-          'text-highlight--color'
-        )
-      } else {
-        // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
-        inputSelectChooseProgrammInnerText.innerText === e.target.innerText
-          ? (inputSelectChooseProgrammInnerText.innerText =
-              inputSelectChooseProgrammInnerText.innerText)
-          : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText}, ${e.target.innerText}`)
+//       dropDownStepTwoInsertItem('MBA Intensive');
 
-        e.target.classList.add('text-highlight--color')
-      }
+//       dropDownStepTwoInsertItem('Mini-MBA');
+//     }
 
-      inputSelectChooseProgrammInnerText.innerHTML =
-        inputSelectChooseProgrammInnerText.innerHTML.replace(/,\s*$/, '')
+//     // Step back
+//     selectedItemFromTheFirstStep.addEventListener('click', (e) => {
+//       inputSelectChooseProgrammDropdownStepTwo.classList.remove(
+//         'show-dropdown'
+//       );
+//       inputSelectChooseProgrammDropdown.classList.add('show-dropdown');
 
-      if (document.body.clientWidth < 768) {
-        inputSelectChooseProgrammInnerText.scrollIntoView({
-          behavior: 'smooth'
-        })
-      }
+//       e.preventDefault();
+//     });
 
-      inputSelectChooseProgrammDropdownStepTwo.classList.remove('show-dropdown')
-    })
-  }
+//     inputSelectChooseProgrammDropdownStepTwo.addEventListener('click', (e) => {
+//       const dropDownProgrammItemsStepTwoArr = Array.from(
+//         dropDownProgrammItemsStepTwo
+//       );
+//       const dropDownProgrammItemsPStepTwoArr = Array.from(
+//         dropDownProgrammItemsPStepTwo
+//       );
 
-  // On select hide the module
-  inputSelectChooseProgrammDropdown.classList.toggle('show-dropdown')
+//       dropDownProgrammItemsStepTwoArr.forEach((item) => {
+//         item.classList.remove('text-highlight--color');
+//       });
+//       dropDownProgrammItemsPStepTwoArr.forEach((item) => {
+//         item.classList.remove('text-highlight--color');
+//       });
 
-  e.preventDefault()
-})
+//       // Change the inner text of the select to the selected text
+//       if (e.target.tagName === 'svg') {
+//         // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
+//         inputSelectChooseProgrammInnerText.innerText ===
+//         e.target.parentElement.innerText
+//           ? inputSelectChooseProgrammInnerText.innerText
+//           : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerHTML}, ${e.target.parentElement.innerText}`);
+
+//         e.target.parentElement.classList.add('text-highlight--color');
+//       } else if (e.target.tagName == 'path') {
+//         // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
+//         inputSelectChooseProgrammInnerText.innerText ===
+//         e.target.parentElement.parentElement.innerText
+//           ? inputSelectChooseProgrammInnerText.innerText
+//           : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText}, ${e.target.parentElement.parentElement.innerText}`);
+
+//         e.target.parentElement.parentElement.classList.add(
+//           'text-highlight--color'
+//         );
+//       } else {
+//         // Make sure we don't insert a step back btn inner text into the div (that looks kinda like select input)
+//         inputSelectChooseProgrammInnerText.innerText === e.target.innerText
+//           ? (inputSelectChooseProgrammInnerText.innerText =
+//               inputSelectChooseProgrammInnerText.innerText)
+//           : (inputSelectChooseProgrammInnerText.innerText = `${inputSelectChooseProgrammInnerText.innerText}, ${e.target.innerText}`);
+
+//         e.target.classList.add('text-highlight--color');
+//       }
+
+//       inputSelectChooseProgrammInnerText.innerHTML = inputSelectChooseProgrammInnerText.innerHTML.replace(
+//         /,\s*$/,
+//         ''
+//       );
+
+//       if (document.body.clientWidth < 768) {
+//         inputSelectChooseProgrammInnerText.scrollIntoView({
+//           behavior: 'smooth',
+//         });
+//       }
+
+//       inputSelectChooseProgrammDropdownStepTwo.classList.remove(
+//         'show-dropdown'
+//       );
+//     });
+//   }
+
+//   // On select hide the module
+//   inputSelectChooseProgrammDropdown.classList.toggle('show-dropdown');
+
+//   e.preventDefault();
+// });
 
 // Show ask question btn on the scroll position
 // window.addEventListener('scroll', function showQuestionBtn(e) {
@@ -1318,15 +1445,18 @@ btnAskQuestion.addEventListener('click', e => {
         moduleStepTwo.classList.add('hidden')
         moduleStepOne.classList.add('hidden')
         moduleStepSuccess.classList.remove('hidden')
+        window.history.pushState({ page_id: 6 }, '', '?thankyou=question')
 
         // Submit
         const question = moduleQuestionTextarea.value.trim()
         const contactWay = moduleStepThreeTitle.innerText.trim()
         const contact = moduleInputContactInfo.value.trim()
 
-        const googleClientId = ga.getAll()[0].get('clientId')
+        // const googleClientId = ga.getAll()[0].get('clientId');
+        const googleClientId = '-'
 
         let number
+
         let double = checkForUniqueUserNum()
 
         const data = {
@@ -1386,6 +1516,7 @@ btnAskQuestion.addEventListener('click', e => {
         moduleStepTwo.classList.add('hidden')
         moduleStepOne.classList.add('hidden')
         moduleStepSuccess.classList.remove('hidden')
+        window.history.pushState({ page_id: 7 }, '', '?thankyou=question')
 
         moduleStepSuccess.classList.add('showed')
 
@@ -1394,9 +1525,11 @@ btnAskQuestion.addEventListener('click', e => {
         const contactWay = moduleStepThreeTitle.innerText.trim()
         const contact = moduleInputContactInfo.value.trim()
 
-        const googleClientId = ga.getAll()[0].get('clientId')
+        // const googleClientId = ga.getAll()[0].get('clientId');
+        const googleClientId = '-'
 
         let number
+
         let double = checkForUniqueUserNum()
 
         const data = {
@@ -1480,54 +1613,290 @@ btnAskQuestion.addEventListener('click', e => {
 })
 
 // Carousel
-const carouselItems = [
-  carouselImgGroupOne,
-  carouselImgGroupTwo,
-  carouselImgGroupThree
-]
+// const carouselItems = [
+//   carouselImgGroupOne,
+//   carouselImgGroupTwo,
+//   carouselImgGroupThree,
+// ];
 
 // Terrible solution for carousel, it works tho
-let i = 0
-carouselBtnRight.addEventListener('click', e => {
-  i > 2 ? (i = 0) : i
-  i < 0 ? (i = 2) : i
+// let i = 0;
+// carouselBtnRight.addEventListener('click', (e) => {
+//   i > 2 ? (i = 0) : i;
+//   i < 0 ? (i = 2) : i;
 
-  carouselItems[i].classList.add('hidden')
-  carouselItems[i + 1 > 2 ? 0 : i + 1].classList.remove('hidden')
-  carouselItems[i - 1 < 0 ? 2 : i - 1].classList.add('hidden')
+//   carouselItems[i].classList.add('hidden');
+//   carouselItems[i + 1 > 2 ? 0 : i + 1].classList.remove('hidden');
+//   carouselItems[i - 1 < 0 ? 2 : i - 1].classList.add('hidden');
 
-  i++
+//   i++;
 
-  e.preventDefault()
-})
+//   e.preventDefault();
+// });
 
 // Don't look below
-carouselBtnLeft.addEventListener('click', e => {
-  i < 0 ? (i = 2) : i
-  i > 2 ? (i = 0) : i
-  carouselItems[i].classList.add('hidden')
-  carouselItems[i + 1 > 2 ? 0 : i + 1].classList.add('hidden')
-  carouselItems[i - 1 < 0 ? 2 : i - 1].classList.remove('hidden')
-  i--
+// carouselBtnLeft.addEventListener('click', (e) => {
+//   i < 0 ? (i = 2) : i;
+//   i > 2 ? (i = 0) : i;
+//   carouselItems[i].classList.add('hidden');
+//   carouselItems[i + 1 > 2 ? 0 : i + 1].classList.add('hidden');
+//   carouselItems[i - 1 < 0 ? 2 : i - 1].classList.remove('hidden');
+//   i--;
 
-  e.preventDefault()
-})
+//   e.preventDefault();
+// });
 
 // On submit
-ctaSubmitBtn.addEventListener('click', e => {
-  const field = inputSelectChooseProgrammInnerText.innerText.trim()
-  const uni = inputSelectChooseUniInnerText.innerText.trim()
-  const number = phoneInputInnerText.value.trim()
-  const userName = userInputNameText.value.trim()
+// ctaSubmitBtn.addEventListener('click', (e) => {
+//   const field = inputSelectChooseProgrammInnerText.innerText.trim();
+//   const uni = inputSelectChooseUniInnerText.innerText.trim();
+//   const number = phoneInputInnerText.value.trim();
+//   const userName = userInputNameText.value.trim();
 
-  const googleClientId = ga.getAll()[0].get('clientId')
+//   // const googleClientId = ga.getAll()[0].get('clientId');
 
+//   const data = {
+//     field,
+//     uni,
+//     number,
+//     userName,
+//     userCity,
+//     userCountry,
+//     // googleClientId,
+//     userDevice,
+//     utmSource,
+//     utmMedium,
+//     utmCampaign,
+//     utmContent,
+//     utmTerm,
+//   };
+
+//   // console.log(data);
+//   // console.log(JSON.stringify(data));
+
+//   // Validate input number
+//   if (number !== '' && number.match(numValidation)) {
+//     const appIsSumbitted = document.getElementById('js-app-is-submitted');
+
+//     window.history.pushState({'page_id': 8}, '', '?thankyou=main');
+//     appIsSumbitted.classList.add('showed');
+
+//     document
+//       .getElementById('step-success-row__back-to-main')
+//       .addEventListener('click', (e) => {
+//         appIsSumbitted.classList.add('removing');
+//         setTimeout(() => {
+//           appIsSumbitted.classList.remove('showed');
+//           appIsSumbitted.classList.remove('removing');
+//         }, 300);
+
+//         e.preventDefault();
+//       });
+
+//     // console.log("correct");
+//     sumbitData(data);
+//   } else {
+//     phoneInputInnerText.classList.add('bg-danger');
+//     // console.log("wrong");
+//     phoneInputInnerText.addEventListener('keyup', (e) => {
+//       // console.log("event keyup");
+//       if (
+//         phoneInputInnerText.value.trim() !== '' &&
+//         phoneInputInnerText.value.trim().match(numValidation)
+//       ) {
+//         // console.log("correct");
+//         phoneInputInnerText.classList.remove('bg-danger');
+//       } else {
+//         // console.log("wrong");
+//         phoneInputInnerText.classList.add('bg-danger');
+//       }
+
+//       e.preventDefault();
+//     });
+//   }
+
+//   e.preventDefault();
+// });
+
+// phoneInputInnerText.addEventListener('input', (e) => {
+//   const number = phoneInputInnerText.value.trim();
+//   // Validate input number
+//   if (number !== '' && number.match(numValidation) && number.length >= 3) {
+//     // console.log(number.length);
+//     userNameInput.classList.add('showed');
+//   }
+// });
+
+// phoneInputInnerText.addEventListener('click', (e) => {
+//   const containerInputPhoneNum = document.getElementById(
+//     'container-input-phone-num'
+//   );
+//   if (document.body.clientWidth < 768) {
+//     containerInputPhoneNum.scrollIntoView({
+//       behavior: 'smooth',
+//     });
+//   }
+// });
+
+// Pop up btns
+function showPopUp(button = '') {
+  const buttonSelected = document.getElementById(button)
+  buttonSelected.addEventListener('click', e => {
+    const popupFormTitle = document.getElementById('pop-up-form-title')
+    const popupFormInfo = document.getElementById('popup-form-info')
+
+    const popUpFormSubmit = document.getElementById('pop-up-form-submit')
+
+    switch (button) {
+      case 'learn-more-btn':
+        // console.log('Узнайте подробнее о вузах');
+        popupFormTitle.innerHTML = 'Узнайте больше о наших вузах-партнерах'
+        popupFormInfo.innerHTML =
+          'Оставьте свои контакты, консультант приемной комиссии подробно расскажет Вам о вузах и подберет программу!'
+        popUpFormSubmit.dataset.form = 'learn-more'
+        break
+      case 'js-popup-choose-from-many':
+        // console.log('Узнайте о наличии своего направления');
+        popupFormTitle.innerHTML = `Узнайте о наличии <br />своего направления`
+        popupFormInfo.innerHTML =
+          'Оставьте свои контакты, менеджер свяжется с Вами и расcкажет на какие направления сейчас идет набор'
+        popUpFormSubmit.dataset.form = 'choose-from-many'
+        break
+      case 'js-popup-what-to-do':
+        // console.log('Узнайте что делать если нет ЕГЭ');
+
+        popupFormInfo.innerHTML =
+          'Оставьте свои контакты, менеджер свяжется с Вами и расскажет как можно поступить без ЕГЭ и диплома колледжа '
+        if (window.screen.width < 371) {
+          popupFormTitle.innerHTML =
+            'Как поступить без ЕГЭ или диплома колледжа'
+        } else {
+          popupFormTitle.innerHTML =
+            'Узнайте, что делать, если нет ЕГЭ и диплома колледжа'
+        }
+        popUpFormSubmit.dataset.form = 'what-to-do'
+        break
+      case 'main-popup-btn':
+        // console.log('Узнайте что делать если нет ЕГЭ');
+        popupFormTitle.innerHTML = 'Заявка на консультацию'
+        popupFormInfo.innerHTML =
+          'Менеджер расскажет о ВУЗах-партнерах, скидках и подберет программу обучения.'
+        popUpFormSubmit.dataset.form = 'main'
+        break
+      case 'show-pop-up-bottom-mobile':
+        // console.log('Узнайте что делать если нет ЕГЭ');
+        popupFormTitle.innerHTML = 'Заявка на консультацию'
+        popupFormInfo.innerHTML =
+          'Менеджер расскажет о ВУЗах-партнерах, скидках и подберет программу обучения.'
+        popUpFormSubmit.dataset.form = 'main'
+        break
+      default:
+        return
+    }
+
+    showPopUpContant()
+
+    submitPopUpForm()
+
+    closePopUpContant()
+
+    e.preventDefault()
+  })
+}
+
+showPopUp('show-pop-up-bottom-mobile')
+showPopUp('main-popup-btn')
+showPopUp('learn-more-btn')
+showPopUp('js-popup-choose-from-many')
+showPopUp('js-popup-what-to-do')
+
+function showPopUpContant() {
+  const moduleForm = document.getElementById('module-popup-form')
+  moduleForm.classList.add('show')
+  btnAskQuestion.classList.add('hidden')
+}
+
+function closePopUpContant() {
+  const moduleForm = document.getElementById('module-popup-form')
+  const popUpForm = document.getElementById('pop-up-form')
+  const learnMoreBtn = document.getElementById('learn-more-btn')
+  const learnMoreBtn2 = document.getElementById('js-popup-choose-from-many')
+  const learnMoreBtn3 = document.getElementById('js-popup-what-to-do')
+  const learnMoreBtn4 = document.getElementById('main-popup-btn')
+  const learnMoreBtn5 = document.getElementById('show-pop-up-bottom-mobile')
+  document.body.addEventListener('click', function closePopUpContactEvent(e) {
+    // console.log(e.target);
+    if (
+      moduleForm.classList.contains('show') &&
+      e.target !== popUpForm &&
+      !popUpForm.contains(e.target) &&
+      e.target !== learnMoreBtn &&
+      !learnMoreBtn.contains(e.target) &&
+      e.target !== learnMoreBtn2 &&
+      !learnMoreBtn2.contains(e.target) &&
+      e.target !== learnMoreBtn3 &&
+      !learnMoreBtn3.contains(e.target) &&
+      e.target !== learnMoreBtn4 &&
+      !learnMoreBtn4.contains(e.target) &&
+      e.target !== learnMoreBtn5 &&
+      !learnMoreBtn5.contains(e.target)
+    ) {
+      // console.log(e.target);
+      moduleForm.classList.remove('show')
+      btnAskQuestion.classList.remove('hidden')
+      document.body.removeEventListener('click', closePopUpContactEvent)
+    }
+  })
+}
+
+// function showMorePartnersDesktop(){
+//   const partnersSecondRow = document.querySelector('.section-trust-boost .content__img-group:nth-child(2)')
+//   if(document.body.clientWidth > 768){
+//     partnersSecondRow.classList.remove('hidden');
+//   }else{
+//     partnersSecondRow.classList.add('hidden');
+//   };
+//   window.addEventListener('resize', () => {
+//     if(document.body.clientWidth > 768){
+//       partnersSecondRow.classList.remove('hidden');
+//     }else{
+//       partnersSecondRow.classList.add('hidden');
+//     };
+//   })
+// }
+
+// showMorePartnersDesktop();
+
+function popUpFormSubmitFunc(e) {
+  const popUpFormSubmit = document.getElementById('pop-up-form-submit')
+  const moduleForm = document.getElementById('module-popup-form')
+  e.preventDefault()
+
+  // Submit
+  const userName = document.getElementById('pop-up-form-name').value.trim()
+  const userNameEl = document.getElementById('pop-up-form-name')
+  const number = document.getElementById('pop-up-form-number').value.trim()
+  const numberEl = document.getElementById('pop-up-form-number')
+
+  // const googleClientId = ga.getAll()[0].get('clientId');
+  const googleClientId = '-'
+
+  let question = ''
   let double = checkForUniqueUserNum()
 
+  if (popUpFormSubmit.dataset.form === 'choose-from-many') {
+    question = 'Огромный выбор специальностей'
+  } else if (popUpFormSubmit.dataset.form === 'learn-more') {
+    question = 'Узнайте подробнее о ВУЗах'
+  } else if (popUpFormSubmit.dataset.form === 'what-to-do') {
+    question = 'Нет ЕГЭ или диплома колледжа?'
+  } else if (popUpFormSubmit.dataset.form === 'main') {
+    question = 'Главная'
+  }
+
   const data = {
-    field,
-    uni,
     number,
+    question,
     userName,
     userCity,
     userCountry,
@@ -1541,18 +1910,37 @@ ctaSubmitBtn.addEventListener('click', e => {
     double
   }
 
-  // console.log(data);
-  // console.log(JSON.stringify(data));
+  if (
+    number !== '' &&
+    number !== null &&
+    number !== undefined &&
+    number.match(numValidation)
+  ) {
+    const appIsSumbitted = document.getElementById(
+      'js-app-is-submitted--learn-more'
+    )
+    // const popUpFormSubmit = document.getElementById('pop-up-form-submit');
 
-  // Validate input number
-  if (number !== '' && number.match(numValidation)) {
-    const appIsSumbitted = document.getElementById('js-app-is-submitted')
+    if (popUpFormSubmit.dataset.form === 'choose-from-many') {
+      // appIsSumbitted.id = 'popup--is-submitted-choose-from-many';
+      window.history.pushState({ page_id: 1 }, '', '?thankyou=choose-from-many')
+    } else if (popUpFormSubmit.dataset.form === 'learn-more') {
+      // appIsSumbitted.id = 'popup--is-submitted-learn-more';
+      window.history.pushState({ page_id: 2 }, '', '?thankyou=learn-more')
+    } else if (popUpFormSubmit.dataset.form === 'what-to-do') {
+      // appIsSumbitted.id = 'popup--is-submitted-what-to-do';
+      window.history.pushState({ page_id: 3 }, '', '?thankyou=what-to-do')
+    } else if (popUpFormSubmit.dataset.form === 'main') {
+      // appIsSumbitted.id = 'popup--is-submitted-main';
+      window.history.pushState({ page_id: 9 }, '', '?thankyou=main')
+    }
 
     appIsSumbitted.classList.add('showed')
 
     document
-      .getElementById('step-success-row__back-to-main')
+      .getElementById('step-success-row__back-to-main--form-popup')
       .addEventListener('click', e => {
+        // appIsSumbitted.id = 'js-app-is-submitted--learn-more';
         appIsSumbitted.classList.add('removing')
         setTimeout(() => {
           appIsSumbitted.classList.remove('showed')
@@ -1562,178 +1950,29 @@ ctaSubmitBtn.addEventListener('click', e => {
         e.preventDefault()
       })
 
-    // console.log("correct");
+    const success = document.getElementById('module-popup-is-submitted')
+    success.classList.remove('hidden')
     sumbitData(data)
+    moduleForm.classList.remove('show')
+    userNameEl.value = ''
+    numberEl.value = ''
   } else {
-    phoneInputInnerText.classList.add('bg-danger')
-    // console.log("wrong");
-    phoneInputInnerText.addEventListener('keyup', e => {
-      // console.log("event keyup");
-      if (
-        phoneInputInnerText.value.trim() !== '' &&
-        phoneInputInnerText.value.trim().match(numValidation)
-      ) {
-        // console.log("correct");
-        phoneInputInnerText.classList.remove('bg-danger')
-      } else {
-        // console.log("wrong");
-        phoneInputInnerText.classList.add('bg-danger')
-      }
-
-      e.preventDefault()
+    numberEl.classList.add('bg-danger')
+    numberEl.focus()
+    numberEl.addEventListener('keyup', e => {
+      e.target.value !== ''
+        ? numberEl.classList.remove('bg-danger')
+        : numberEl.classList.add('bg-danger')
     })
   }
-
-  e.preventDefault()
-})
-
-phoneInputInnerText.addEventListener('keydown', e => {
-  const number = phoneInputInnerText.value.trim()
-  // Validate input number
-  if (number !== '' && number.match(numValidation)) {
-    userNameInput.classList.add('showed')
-  }
-})
-
-phoneInputInnerText.addEventListener('click', e => {
-  const containerInputPhoneNum = document.getElementById(
-    'container-input-phone-num'
-  )
-  if (document.body.clientWidth < 768) {
-    containerInputPhoneNum.scrollIntoView({
-      behavior: 'smooth'
-    })
-  }
-})
-
-// Learn more btn
-const learnMoreBtn = document.getElementById('learn-more-btn')
-learnMoreBtn.addEventListener('click', e => {
-  showPopUpContant()
-
-  submitPopUpForm()
-
-  closePopUpContant()
-
-  e.preventDefault()
-})
-
-function showPopUpContant() {
-  const moduleForm = document.getElementById('module-popup-form')
-  moduleForm.classList.add('show')
 }
-
-function closePopUpContant() {
-  const moduleForm = document.getElementById('module-popup-form')
-  const popUpForm = document.getElementById('pop-up-form')
-  const learnMoreBtn = document.getElementById('learn-more-btn')
-  document.body.addEventListener('click', function closePopUpContactEvent(e) {
-    if (
-      moduleForm.classList.contains('show') &&
-      e.target !== popUpForm &&
-      !popUpForm.contains(e.target) &&
-      e.target !== learnMoreBtn &&
-      !learnMoreBtn.contains(e.target)
-    ) {
-      moduleForm.classList.remove('show')
-      document.body.removeEventListener('click', closePopUpContactEvent)
-    }
-  })
-}
-
-function showMorePartnersDesktop() {
-  const partnersSecondRow = document.querySelector(
-    '.section-trust-boost .content__img-group:nth-child(2)'
-  )
-  if (document.body.clientWidth > 768) {
-    partnersSecondRow.classList.remove('hidden')
-  } else {
-    partnersSecondRow.classList.add('hidden')
-  }
-  window.addEventListener('resize', () => {
-    if (document.body.clientWidth > 768) {
-      partnersSecondRow.classList.remove('hidden')
-    } else {
-      partnersSecondRow.classList.add('hidden')
-    }
-  })
-}
-
-showMorePartnersDesktop()
 
 // Submit Data from Forms
 function submitPopUpForm() {
-  // console.log('test')
   const popUpFormSubmit = document.getElementById('pop-up-form-submit')
   const moduleForm = document.getElementById('module-popup-form')
-  popUpFormSubmit.addEventListener('click', e => {
-    e.preventDefault()
 
-    // Submit
-    const userName = document.getElementById('pop-up-form-name').value.trim()
-    const userNameEl = document.getElementById('pop-up-form-name')
-    const number = document.getElementById('pop-up-form-number').value.trim()
-    const numberEl = document.getElementById('pop-up-form-number')
-
-    const googleClientId = ga.getAll()[0].get('clientId')
-
-    let double = checkForUniqueUserNum()
-
-    const data = {
-      number,
-      userName,
-      userCity,
-      userCountry,
-      googleClientId,
-      userDevice,
-      utmSource,
-      utmMedium,
-      utmCampaign,
-      utmContent,
-      utmTerm,
-      double
-    }
-
-    if (
-      number !== '' &&
-      number !== null &&
-      number !== undefined &&
-      number.match(numValidation)
-    ) {
-      const appIsSumbitted = document.getElementById(
-        'js-app-is-submitted--learn-more'
-      )
-
-      appIsSumbitted.classList.add('showed')
-
-      document
-        .getElementById('step-success-row__back-to-main--form-popup')
-        .addEventListener('click', e => {
-          appIsSumbitted.classList.add('removing')
-          setTimeout(() => {
-            appIsSumbitted.classList.remove('showed')
-            appIsSumbitted.classList.remove('removing')
-          }, 300)
-
-          e.preventDefault()
-        })
-
-      const success = document.getElementById('module-popup-is-submitted')
-      success.classList.remove('hidden')
-      sumbitData(data)
-      moduleForm.classList.remove('show')
-      userNameEl.value = ''
-      numberEl.value = ''
-    } else {
-      numberEl.classList.add('bg-danger')
-      numberEl.focus()
-      numberEl.addEventListener('keyup', e => {
-        e.target.value !== ''
-          ? numberEl.classList.remove('bg-danger')
-          : numberEl.classList.add('bg-danger')
-      })
-    }
-  })
+  popUpFormSubmit.addEventListener('click', popUpFormSubmitFunc)
 }
 
 function submitContactForm() {
@@ -1749,12 +1988,15 @@ function submitContactForm() {
     const number = document.getElementById('number-contact-form').value.trim()
     const numberEl = document.getElementById('number-contact-form')
 
-    const googleClientId = ga.getAll()[0].get('clientId')
-
+    // const googleClientId = ga.getAll()[0].get('clientId');
+    const googleClientId = '-'
     let double = checkForUniqueUserNum()
+
+    const question = 'Возникли вопросы? Поможем!'
 
     const data = {
       number,
+      question,
       userName,
       userCity,
       userCountry,
@@ -1779,6 +2021,7 @@ function submitContactForm() {
       sumbitData(data)
       numberEl.value = ''
       userNameEl.value = ''
+      window.history.pushState({ page_id: 5 }, '', '?thankyou=question')
     } else {
       numberEl.classList.add('bg-danger')
       numberEl.focus()
@@ -1792,3 +2035,394 @@ function submitContactForm() {
 }
 
 submitContactForm()
+
+// AreThereQuestions
+function submitQuestionsForm() {
+  const popUpFormSubmit = document.getElementById(
+    'submit-btn-contact-form-are-there-questions'
+  )
+  popUpFormSubmit.addEventListener('click', e => {
+    e.preventDefault()
+
+    // Submit
+    const userName = document
+      .getElementById('user-name-are-there-questions')
+      .value.trim()
+    const userNameEl = document.getElementById('user-name-are-there-questions')
+    const number = document
+      .getElementById('phone-are-there-questions')
+      .value.trim()
+    const numberEl = document.getElementById('phone-are-there-questions')
+
+    // const googleClientId = ga.getAll()[0].get('clientId');
+    const googleClientId = '-'
+
+    const question = 'Возникли вопросы? Поможем!'
+
+    let double = checkForUniqueUserNum()
+
+    const data = {
+      number,
+      question,
+      userName,
+      userCity,
+      userCountry,
+      googleClientId,
+      userDevice,
+      utmSource,
+      utmMedium,
+      utmCampaign,
+      utmContent,
+      utmTerm,
+      double
+    }
+
+    if (
+      number !== '' &&
+      number !== null &&
+      number !== undefined &&
+      number.match(numValidation)
+    ) {
+      const success = document.getElementById(
+        'are-there-questions-form-is-submitted'
+      )
+      success.classList.remove('hidden')
+      sumbitData(data)
+      numberEl.value = ''
+      userNameEl.value = ''
+      window.history.pushState({ page_id: 4 }, '', '?thankyou=question')
+    } else {
+      numberEl.classList.add('bg-danger')
+      numberEl.focus()
+      numberEl.addEventListener('keyup', e => {
+        e.target.value !== ''
+          ? numberEl.classList.remove('bg-danger')
+          : numberEl.classList.add('bg-danger')
+      })
+    }
+  })
+}
+
+submitQuestionsForm()
+
+// Hide ask question on the top of the page and on the bottom of the page
+btnAskQuestion.classList.add('hidden')
+document.addEventListener('scroll', e => {
+  const popUpForm = document.getElementById('module-popup-form')
+  // moduleQuestions
+  // console.log(window.scrollY);
+  if (
+    moduleQuestions.classList.contains('hidden') &&
+    !popUpForm.classList.contains('show') &&
+    menuToggler.checked === false
+  ) {
+    // if (window.scrollY >= 300)
+    // {
+    //   btnAskQuestion.classList.remove('hidden');
+    // }else{
+    //   btnAskQuestion.classList.add('hidden');
+    // }
+    if (
+      window.innerHeight + window.pageYOffset >=
+        document.body.offsetHeight - 500 ||
+      window.scrollY < 300
+    ) {
+      btnAskQuestion.classList.add('hidden')
+    } else {
+      btnAskQuestion.classList.remove('hidden')
+    }
+  }
+})
+
+const crossPopUpModule = document.getElementById('cross-close-popup-form')
+crossPopUpModule.addEventListener('click', () => {
+  document.getElementById('module-popup-form').classList.remove('show')
+})
+
+function retractableItems() {
+  const titles = Array.from(
+    document.querySelectorAll('.section__content .step__title')
+  )
+  titles[0].nextElementSibling.classList.add('show')
+  titles.forEach((title, index) => {
+    index === 0
+      ? Array.from(title.childNodes[1].childNodes)[1].classList.add('show')
+      : Array.from(title.childNodes[1].childNodes)[3].classList.add('show')
+
+    title.addEventListener('click', () => {
+      if (title.nextElementSibling.classList.contains('show')) {
+        title.nextElementSibling.classList.remove('show')
+
+        // arrow up
+        Array.from(title.childNodes[1].childNodes)[1].classList.remove('show')
+
+        // arrow down
+        Array.from(title.childNodes[1].childNodes)[3].classList.add('show')
+      } else {
+        title.nextElementSibling.classList.add('show')
+
+        // arrow up
+        Array.from(title.childNodes[1].childNodes)[1].classList.add('show')
+
+        // arrow down
+        Array.from(title.childNodes[1].childNodes)[3].classList.remove('show')
+      }
+    })
+  })
+}
+
+retractableItems()
+
+// Swiper
+/*!
+ * swiped-events.js - v@version@
+ * Pure JavaScript swipe events
+ * https://github.com/john-doherty/swiped-events
+ * @inspiration https://stackoverflow.com/questions/16348031/disable-scrolling-when-touch-moving-certain-element
+ * @author John Doherty <www.johndoherty.info>
+ * @license MIT
+ */
+;(function (window, document) {
+  'use strict'
+
+  // patch CustomEvent to allow constructor creation (IE/Chrome)
+  if (typeof window.CustomEvent !== 'function') {
+    window.CustomEvent = function (event, params) {
+      params = params || {
+        bubbles: false,
+        cancelable: false,
+        detail: undefined
+      }
+
+      var evt = document.createEvent('CustomEvent')
+      evt.initCustomEvent(
+        event,
+        params.bubbles,
+        params.cancelable,
+        params.detail
+      )
+      return evt
+    }
+
+    window.CustomEvent.prototype = window.Event.prototype
+  }
+
+  document.addEventListener('touchstart', handleTouchStart, false)
+  document.addEventListener('touchmove', handleTouchMove, false)
+  document.addEventListener('touchend', handleTouchEnd, false)
+
+  var xDown = null
+  var yDown = null
+  var xDiff = null
+  var yDiff = null
+  var timeDown = null
+  var startEl = null
+
+  /**
+   * Fires swiped event if swipe detected on touchend
+   * @param {object} e - browser event object
+   * @returns {void}
+   */
+  function handleTouchEnd(e) {
+    // if the user released on a different target, cancel!
+    if (startEl !== e.target) return
+
+    var swipeThreshold = parseInt(
+      getNearestAttribute(startEl, 'data-swipe-threshold', '20'),
+      10
+    ) // default 20px
+    var swipeTimeout = parseInt(
+      getNearestAttribute(startEl, 'data-swipe-timeout', '500'),
+      10
+    ) // default 500ms
+    var timeDiff = Date.now() - timeDown
+    var eventType = ''
+    var changedTouches = e.changedTouches || e.touches || []
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+      // most significant
+      if (Math.abs(xDiff) > swipeThreshold && timeDiff < swipeTimeout) {
+        if (xDiff > 0) {
+          eventType = 'swiped-left'
+        } else {
+          eventType = 'swiped-right'
+        }
+      }
+    } else if (Math.abs(yDiff) > swipeThreshold && timeDiff < swipeTimeout) {
+      if (yDiff > 0) {
+        eventType = 'swiped-up'
+      } else {
+        eventType = 'swiped-down'
+      }
+    }
+
+    if (eventType !== '') {
+      var eventData = {
+        dir: eventType.replace(/swiped-/, ''),
+        xStart: parseInt(xDown, 10),
+        xEnd: parseInt((changedTouches[0] || {}).clientX || -1, 10),
+        yStart: parseInt(yDown, 10),
+        yEnd: parseInt((changedTouches[0] || {}).clientY || -1, 10)
+      }
+
+      // fire `swiped` event event on the element that started the swipe
+      startEl.dispatchEvent(
+        new CustomEvent('swiped', {
+          bubbles: true,
+          cancelable: true,
+          detail: eventData
+        })
+      )
+
+      // fire `swiped-dir` event on the element that started the swipe
+      startEl.dispatchEvent(
+        new CustomEvent(eventType, {
+          bubbles: true,
+          cancelable: true,
+          detail: eventData
+        })
+      )
+    }
+
+    // reset values
+    xDown = null
+    yDown = null
+    timeDown = null
+  }
+
+  /**
+   * Records current location on touchstart event
+   * @param {object} e - browser event object
+   * @returns {void}
+   */
+  function handleTouchStart(e) {
+    // if the element has data-swipe-ignore="true" we stop listening for swipe events
+    if (e.target.getAttribute('data-swipe-ignore') === 'true') return
+
+    startEl = e.target
+
+    timeDown = Date.now()
+    xDown = e.touches[0].clientX
+    yDown = e.touches[0].clientY
+    xDiff = 0
+    yDiff = 0
+  }
+
+  /**
+   * Records location diff in px on touchmove event
+   * @param {object} e - browser event object
+   * @returns {void}
+   */
+  function handleTouchMove(e) {
+    if (!xDown || !yDown) return
+
+    var xUp = e.touches[0].clientX
+    var yUp = e.touches[0].clientY
+
+    xDiff = xDown - xUp
+    yDiff = yDown - yUp
+  }
+
+  /**
+   * Gets attribute off HTML element or nearest parent
+   * @param {object} el - HTML element to retrieve attribute from
+   * @param {string} attributeName - name of the attribute
+   * @param {any} defaultValue - default value to return if no match found
+   * @returns {any} attribute value or defaultValue
+   */
+  function getNearestAttribute(el, attributeName, defaultValue) {
+    // walk up the dom tree looking for data-action and data-trigger
+    while (el && el !== document.documentElement) {
+      var attributeValue = el.getAttribute(attributeName)
+
+      if (attributeValue) {
+        return attributeValue
+      }
+
+      el = el.parentNode
+    }
+
+    return defaultValue
+  }
+})(window, document)
+
+// document.addEventListener('swiped-left', function(e) {
+//   // console.log(e.target); // the element that was swiped
+//   console.log('Влево');
+// });
+
+// document.addEventListener('swiped-right', function(e) {
+//   // console.log(e.target); // the element that was swiped
+//   console.log('Вправо');
+// });
+
+function coolCarousel() {
+  const carousel = document.querySelector(
+    '.section-trust-boost .content__img-group'
+  )
+  let i = 0
+  let val = i + 'rem'
+
+  const firstDot = document.querySelector(
+    '.nav-dots .nav-dots__dot:nth-child(1)'
+  )
+  const secondDot = document.querySelector(
+    '.nav-dots .nav-dots__dot:nth-child(2)'
+  )
+  const thirdDot = document.querySelector(
+    '.nav-dots .nav-dots__dot:nth-child(3)'
+  )
+
+  firstDot.classList.add('active')
+
+  carousel.addEventListener('swiped-right', e => {
+    const currentRightVal = Number(carousel.style.right.slice(0, -3))
+    if (currentRightVal > 0) {
+      i -= 8
+      val = i + 'rem'
+      carousel.style.right = val
+
+      console.log(currentRightVal)
+
+      if (currentRightVal < 24) {
+        firstDot.classList.add('active')
+        secondDot.classList.remove('active')
+        thirdDot.classList.remove('active')
+      } else if (currentRightVal <= 48) {
+        firstDot.classList.remove('active')
+        secondDot.classList.add('active')
+        thirdDot.classList.remove('active')
+      } else {
+        firstDot.classList.remove('active')
+        secondDot.classList.remove('active')
+        thirdDot.classList.add('active')
+      }
+    }
+  })
+  carousel.addEventListener('swiped-left', e => {
+    const currentRightVal = Number(carousel.style.right.slice(0, -3))
+    if (currentRightVal < 80) {
+      i += 8
+      val = i + 'rem'
+      carousel.style.right = val
+
+      console.log(currentRightVal)
+
+      if (currentRightVal < 24) {
+        firstDot.classList.add('active')
+        secondDot.classList.remove('active')
+        thirdDot.classList.remove('active')
+      } else if (currentRightVal <= 48) {
+        firstDot.classList.remove('active')
+        secondDot.classList.add('active')
+        thirdDot.classList.remove('active')
+      } else {
+        firstDot.classList.remove('active')
+        secondDot.classList.remove('active')
+        thirdDot.classList.add('active')
+      }
+    }
+  })
+}
+
+coolCarousel()
