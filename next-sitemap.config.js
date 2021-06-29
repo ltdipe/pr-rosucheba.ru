@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: process.env.PROD_ROOT_FRONT_URL || 'https://pr.rosucheba.ru',
+  siteUrl: process.env.PROD_ROOT_FRONT_URL || 'https://pr-rosucheba.ru',
   changefreq: 'daily',
   priority: 0.7,
   sitemapSize: 5000,
