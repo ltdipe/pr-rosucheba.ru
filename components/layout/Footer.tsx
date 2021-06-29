@@ -100,7 +100,7 @@ const Footer = () => {
             </p>
             <a
               className='left__item'
-              href='/Политика_в_отношении_обработки_персональных_данных.pdf'
+              href='/doc-1.pdf'
               target='_blank'
               rel='noopener noreferrer'>
               ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ
