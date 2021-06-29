@@ -64,7 +64,7 @@
 // }
 
 .container-flex--jc-start {
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .row {
@@ -172,7 +172,7 @@
   color: $danger-color;
 }
 
-.text-highlight--color-success{
+.text-highlight--color-success {
   color: $btn-color-primary;
 }
 

@@ -1,0 +1,76 @@
+@media only screen and (max-width: 768px) {
+  .steps__step {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    position: relative;
+
+    & .step__title {
+      width: 100%;
+      background-color: $secondary-color;
+      border-radius: 5px;
+      flex-grow: 1;
+      min-height: 49px;
+      margin-right: auto;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-right: 21px;
+      padding-left: 21px;
+      & .title__mobile-style {
+        color: #fff;
+        display: flex;
+        font-weight: 700;
+        & .mobile-style__number {
+          font-weight: 700;
+          background-color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          width: 17px;
+          height: 17px;
+          margin-right: 13px;
+          font-size: 12px;
+        }
+      }
+    }
+    & .step__text {
+      background: $secondary-color--dim;
+      border-radius: 0px 0px 5px 5px;
+      padding: 1rem;
+      & p {
+        font-weight: 300;
+      }
+    }
+  }
+
+  // Collapsible
+  .section-how-it-works {
+    & .content__steps {
+      width: 100%;
+    }
+    & .step__text {
+      display: none;
+      width: 100%;
+      &.show {
+        display: block;
+      }
+    }
+  }
+
+  .icon-retractable-arrows {
+    position: absolute;
+    right: 2rem;
+    & .icon-retractable-arrows__up,
+    & .icon-retractable-arrows__down {
+      display: none;
+      position: absolute;
+      top: -4px;
+      left: 0;
+      &.show {
+        display: block;
+      }
+    }
+  }
+}

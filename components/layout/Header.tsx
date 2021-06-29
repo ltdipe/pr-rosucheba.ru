@@ -1,10 +1,14 @@
+import Image from 'next/image'
 import IconLogo from '@/components/icons/IconLogo'
 import IconLocation from '@/components/icons/IconLocation'
 import IconClock from '@/components/icons/IconClock'
+import ImgRaboLogo from '@/public/assets/images/other/rabo.png'
+import ImgDecmLogo from '@/public/assets/images/other/decm.png'
 
 const Header = () => {
   return (
     <header>
+      <div className='rectangle-gradient-maker--header'></div>
       <div className='container'>
         <div className='header-wrapper'>
           <div className='header-wrapper__header-items'>
@@ -32,11 +36,38 @@ const Header = () => {
                 </div>
               </div>
             </div>
+            <div className='header-items__item-group-container fd-row'>
+              <Image
+                src={ImgRaboLogo}
+                alt='Российская ассоциация бизнес-образования'
+                width={146}
+                height={76}
+                layout='fixed'
+                placeholder='blur'
+              />
+              <Image
+                src={ImgDecmLogo}
+                alt='Департамент образования города Москвы'
+                width={146}
+                height={55}
+                layout='fixed'
+                placeholder='blur'
+              />
+            </div>
             <div className='header-items__item-group-container'>
               <div className='item-group-container__row-wrapper mb-0'>
-                <div className='row-wrapper__text row-wrapper__text--bigger big-number'>
+                <div
+                  className='
+                    row-wrapper__text
+                    fd-column
+                    row-wrapper__text--bigger
+                    big-number
+                  '>
                   <p className='text-highlight--color text-highlight--bold mr-4'>
                     +7 (499) 490-29-60
+                  </p>
+                  <p className='text-highlight--color are-there-questions-p'>
+                    Есть вопросы? Звоните, проконсультируем!
                   </p>
                 </div>
               </div>
@@ -80,8 +111,7 @@ const Header = () => {
                     <ul className='side-panel-nav__side-panel-nav-items'>
                       <li className='side-panel-nav-items__nav-item'>
                         <a href='#about' className='nav-item__link'>
-                          {' '}
-                          О проекте{' '}
+                          О Rosucheba
                         </a>
                       </li>
                       <li className='side-panel-nav-items__nav-item'>
@@ -90,8 +120,13 @@ const Header = () => {
                         </a>
                       </li>
                       <li className='side-panel-nav-items__nav-item'>
-                        <a href='#trusted-by' className='nav-item__link'>
-                          С Кем сотрудничаем
+                        <a href='#choose-from-many' className='nav-item__link'>
+                          Специальности
+                        </a>
+                      </li>
+                      <li className='side-panel-nav-items__nav-item'>
+                        <a href='#what-to-do' className='nav-item__link'>
+                          Поступление без ЕГЭ
                         </a>
                       </li>
                     </ul>
@@ -106,26 +141,34 @@ const Header = () => {
             <hr className='header-wrapper__menu__line border-highlight--color' />
             <nav className='menu__menu-items-container'>
               <ul className='menu-items-container__menu-items'>
-                <li className='menu-items__menu-item menu-items__menu-item--highlight'>
-                  <a
-                    href='#js-section-heading'
-                    className='menu-item__link text-highlight--color'>
-                    Программы
-                  </a>
-                </li>
                 <li className='menu-items__menu-item'>
                   <a href='#about' className='menu-item__link'>
                     О Rosucheba
                   </a>
                 </li>
                 <li className='menu-items__menu-item'>
-                  <a href='#how-it-works' className='menu-item__link'>
-                    Как работаем
+                  <a href='#partners' className='menu-item__link'>
+                    Вузы-партнеры
                   </a>
                 </li>
                 <li className='menu-items__menu-item'>
-                  <a href='#partners' className='menu-item__link'>
-                    Вузы-партнеры
+                  <a href='#needed-docs' className='menu-item__link'>
+                    Документы для поступления
+                  </a>
+                </li>
+                <li className='menu-items__menu-item'>
+                  <a href='#choose-from-many' className='menu-item__link'>
+                    Специальности
+                  </a>
+                </li>
+                <li className='menu-items__menu-item'>
+                  <a href='#what-to-do' className='menu-item__link'>
+                    Поступление без ЕГЭ
+                  </a>
+                </li>
+                <li className='menu-items__menu-item'>
+                  <a href='#price-info' className='menu-item__link'>
+                    Стоимость обучения
                   </a>
                 </li>
               </ul>

@@ -1,7 +1,12 @@
 const ThankyouPopupAlt = () => {
   return (
     <div id='js-app-is-submitted--learn-more' className='app--is-sumbitted'>
-      <div className='row step-success__step-success-row step-success__step-success-row--full-screen'>
+      <div
+        className='
+            row
+            step-success__step-success-row
+            step-success__step-success-row--full-screen
+          '>
         <svg
           className='success-check-icon mt-0'
           width='68'
@@ -23,10 +28,21 @@ const ThankyouPopupAlt = () => {
             fill='white'
           />
         </svg>
-        <p className='step-success-row__p text-highlight--font-22 text-highlight--color text-highlight--bold'>
+        <p
+          className='
+              step-success-row__p
+              text-highlight--font-22 text-highlight--color text-highlight--bold
+            '>
           Спасибо за заявку!
         </p>
-        <p className='step-success-row__p text-highlight--font-12 text-highlight--color text-highlight--fw-300 mb-31'>
+        <p
+          className='
+              step-success-row__p
+              text-highlight--font-12
+              text-highlight--color
+              text-highlight--fw-300
+              mb-31
+            '>
           Менеджер свяжется с Вами в ближайшее время
         </p>
         <a

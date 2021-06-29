@@ -1,8 +1,10 @@
 // Section partners
 .section-partners {
   padding-top: $sections-top-padding;
-  background-color: $section-bg-primary-color;
+  background-color: $secondary-color--dim;
   padding-bottom: 4.375rem;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .section__content {
@@ -24,6 +26,7 @@
   background-color: #fff;
   border-radius: $_5px;
   margin-bottom: $_17px;
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.04);
 }
 
 .img-wrapper__img {
@@ -38,7 +41,7 @@
   height: 100%;
   padding: 0.5rem;
   background-color: #fff;
-  border: $_1px solid #efefef;
+  // border: $_1px solid #efefef;
   border-radius: $_5px;
   background-position: center;
 }
@@ -52,7 +55,7 @@
 .img__sinergy {
   @include c-fff_bgr-norepeat_bgs-contain;
   background-position: center;
-  background-image: url("/assets/images/partners/sinergy.jpg");
+  background-image: url('/assets/images/partners/sinergy.jpg');
   height: 18px;
   width: 85%;
 }
@@ -60,7 +63,7 @@
 .img__business-academy {
   @include c-fff_bgr-norepeat_bgs-contain;
   background-position: center;
-  background-image: url("/assets/images/partners/business-academy.jpg");
+  background-image: url('/assets/images/partners/business-academy.jpg');
   height: 30px;
   width: 85%;
 }
@@ -68,7 +71,7 @@
 .img__tambov {
   @include c-fff_bgr-norepeat_bgs-contain;
   background-position: center;
-  background-image: url("/assets/images/partners/tambov.jpg");
+  background-image: url('/assets/images/partners/tambov.jpg');
   height: 35px;
   width: 85%;
 }
@@ -76,7 +79,7 @@
 .img__ipe {
   @include c-fff_bgr-norepeat_bgs-contain;
   background-position: center;
-  background-image: url("/assets/images/partners/ipe.jpg");
+  background-image: url('/assets/images/partners/ipe.jpg');
   height: 32px;
   width: 85%;
 }
@@ -84,131 +87,57 @@
 .img__roc-hoy {
   @include c-fff_bgr-norepeat_bgs-contain;
   background-position: center;
-  background-image: url("/assets/images/partners/roc-hoy.jpg");
+  background-image: url('/assets/images/partners/roc-hoy.jpg');
   height: 45px;
   width: 85%;
 }
 
-// Section trust-boost
-.section-trust-boost {
-  padding-top: $sections-top-padding;
-  padding-bottom: $sections-top-padding;
-}
-
-.content__img-group {
-  @include d-flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  animation-name: carouselSlide;
-  animation-duration: 0.8s;
-  // animation-delay: 0.2s;
-  animation-fill-mode: forwards;
-  @keyframes carouselSlide {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
+@include mediaMd {
+  .section__content {
+    & .content__img-wrapper {
+      &:nth-child(1) {
+        order: 1;
+      }
+      &:nth-child(2) {
+        order: 2;
+      }
+      &:nth-child(3) {
+        order: 4;
+      }
+      &:nth-child(4) {
+        order: 5;
+      }
+      &:nth-child(5) {
+        order: 3;
+      }
+      &:nth-child(6) {
+        order: 6;
+      }
+      & .img-wrapper__img {
+        position: relative;
+        & .img__promo {
+          position: absolute;
+          padding: 0.5rem 1rem;
+          top: $_9px;
+          right: $_10px;
+          background-color: $color-info;
+          border-radius: 5px;
+        }
+      }
     }
   }
-
-  &.hidden {
-    display: none;
+  .section-partners {
+    & .title__p {
+      font-weight: 300;
+      font-size: 25px;
+      line-height: 29px;
+      padding-bottom: 46px;
+    }
   }
 }
 
-.img-group__img-wrapper {
-  flex: 0 50%;
-  @include d-flex;
-  justify-content: center;
-  align-items: center;
-
-  // &:nth-child(even) {
-  //   justify-content: flex-end;
-  // }
-}
-
-.img__hh {
-  background-image: url("/assets/images/trusted_by/hh.jpg");
-}
-
-.img__rosseti {
-  background-image: url("/assets/images/trusted_by/rosseti.jpg");
-}
-
-.img__rzhd {
-  background-image: url("/assets/images/trusted_by/rzhd.jpg");
-}
-
-.img__rosneft {
-  background-image: url("/assets/images/trusted_by/rosneft.jpg");
-}
-
-.img__tomc {
-  background-image: url("/assets/images/trusted_by/tomc.jpg");
-}
-
-.img__greenworks {
-  background-image: url("/assets/images/trusted_by/greenworks.jpg");
-}
-
-.img__tatehepro {
-  background-image: url("/assets/images/trusted_by/tatehepro.jpg");
-}
-
-.img__business-partner {
-  background-image: url("/assets/images/trusted_by/business-partner.jpg");
-}
-
-.img__ramport {
-  background-image: url("/assets/images/trusted_by/ramport.jpg");
-}
-
-.img__sberbank {
-  background-image: url("/assets/images/trusted_by/sberbank.jpg");
-}
-
-.img__mtcrob {
-  background-image: url("/assets/images/trusted_by/mtcrob.jpg");
-}
-
-.img__qayar {
-  background-image: url("/assets/images/trusted_by/qayar.jpg");
-}
-
-.section__section-nav {
-  @include d-flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  margin-top: 2.5rem;
-}
-
-.section-nav__arrow-left {
-  margin-right: 2.0625rem;
-}
-
-// .arrow-left__link,
-// .arrow-right__link {
-
-//   &:hover,
-//   &:focus {
-//     -webkit-touch-callout: none;
-//     -webkit-user-select: none;
-//     -khtml-user-select: none;
-//     -moz-user-select: none;
-//     -ms-user-select: none;
-//     user-select: none;
-//     -webkit-tap-highlight-color: transparent;
-
-//     -webkit-touch-callout: none;
-//     /* prevent callout to copy image, etc when tap to hold */
-//     -webkit-text-size-adjust: none;
-//     /* prevent webkit from resizing text to fit */
-//     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-//     /* prevent tap highlight color / shadow */
-//     -webkit-user-select: none;
-//     /* prevent copy paste, to allow, change 'none' to 'text' */
+// .section-partners{
+//   & .title__p{
+//     padding-bottom: 46px;
 //   }
 // }

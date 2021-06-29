@@ -1,7 +1,14 @@
 // Section about
 .section-about {
-  padding-top: $sections-top-padding;
+  // padding-top: $sections-top-padding;
   padding-bottom: $sections-bottom-padding;
+  & .section__content div p span,
+  & .section__content div p{
+    &::selection{
+      color: $secondary-color;
+      background-color: #fff;
+    }
+  }
 }
 
 .content__showing-off-numbers {
@@ -13,7 +20,8 @@
 .showing-off-number__line {
   height: $_3px;
   width: $_32px;
-  background-color: #c4c4c4;
+  // background-color: #c4c4c4;
+  background-color: #fff;
 }
 
 .showing-off-numbers__showing-off-number {
@@ -29,4 +37,41 @@
   text-transform: uppercase;
   font-size: $_11px;
   line-height: $_13px;
+  text-align: center;
+}
+
+.container--about {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  // margin-left: 3.1875rem;
+  // margin-right: 3.1875rem;
+  background-color: $secondary-color;
+  box-shadow: 0px 50px 40px rgba(0, 0, 0, 0.1);
+  border-radius: $_10px;
+  color: #fff;
+  & .text-highlight--color {
+    color: #fff;
+  }
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  // align-items: center;
+  // min-height: 20.9375rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  max-width: 1137px;
+  & .section__content {
+    flex: auto;
+    // flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 100%;
+    position: relative;
+    & .content__info{
+      & p{
+        font-weight: 300;
+        font-size: 14px;
+      }
+    }
+  }
 }

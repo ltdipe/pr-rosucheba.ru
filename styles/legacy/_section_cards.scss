@@ -34,7 +34,7 @@
 
 .card__img {
   background-color: $secondary-color;
-  background-image: url("/assets/images/card-img-1.jpg");
+  background-image: url('/assets/images/card-img-1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 10.875rem;
@@ -44,7 +44,7 @@
   position: relative;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
@@ -62,27 +62,27 @@
 }
 
 .card__img--construction {
-  background-image: url("/assets/images/learning_programs/construction.jpg");
+  background-image: url('/assets/images/learning_programs/construction.jpg');
 }
 
 .card__img--electrical {
-  background-image: url("/assets/images/learning_programs/electrical_equipment_and_facilities.jpg");
+  background-image: url('/assets/images/learning_programs/electrical_equipment_and_facilities.jpg');
 }
 
 .card__img--heat_engineering {
-  background-image: url("/assets/images/learning_programs/heat_engineering.jpg");
+  background-image: url('/assets/images/learning_programs/heat_engineering.jpg');
 }
 
 .card__img--business_managment {
-  background-image: url("/assets/images/learning_programs/small_business_managment.jpg");
+  background-image: url('/assets/images/learning_programs/small_business_managment.jpg');
 }
 
 .card__img--mining {
-  background-image: url("/assets/images/learning_programs/mining_economics.jpg");
+  background-image: url('/assets/images/learning_programs/mining_economics.jpg');
 }
 
 .card__img--economic_security {
-  background-image: url("/assets/images/learning_programs/economic_security.jpg");
+  background-image: url('/assets/images/learning_programs/economic_security.jpg');
 }
 
 .card__card-content {

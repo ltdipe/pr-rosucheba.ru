@@ -172,7 +172,11 @@ const MobileQuestionModule = () => {
         </svg>
 
         <div className='row step-two__step-two-row'>
-          <div className='step_two-row__step-row-title step-two-row__step-two-row-title'>
+          <div
+            className='
+            step_two-row__step-row-title
+            step-two-row__step-two-row-title
+          '>
             <svg
               id='step-two-arrow-step-back'
               className='arrow-step-back'
@@ -289,7 +293,11 @@ const MobileQuestionModule = () => {
         </svg>
 
         <div className='row step-three__step-three-row'>
-          <div className='step_two-row__step-row-title step-two-row__step-three-row-title'>
+          <div
+            className='
+            step_two-row__step-row-title
+            step-two-row__step-three-row-title
+          '>
             <svg
               id='step-three-arrow-step-back'
               className='arrow-step-back'
@@ -360,10 +368,22 @@ const MobileQuestionModule = () => {
                 fill='white'
               />
             </svg>
-            <p className='step-success-row__p text-highlight--font-22 text-highlight--color text-highlight--bold'>
+            <p
+              className='
+              step-success-row__p
+              text-highlight--font-22
+              text-highlight--color
+              text-highlight--bold
+            '>
               Спасибо за заявку!
             </p>
-            <p className='step-success-row__p text-highlight--font-12 text-highlight--color text-highlight--fw-300'>
+            <p
+              className='
+              step-success-row__p
+              text-highlight--font-12
+              text-highlight--color
+              text-highlight--fw-300
+            '>
               Менеджер свяжется с Вами в ближайшее время
             </p>
           </div>

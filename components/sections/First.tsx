@@ -3,7 +3,13 @@ const First = () => {
     <section id='js-section-heading' className='section-heading'>
       <div className='rectangle-gradient-maker'></div>
       <div className='rectangle-gradient-maker-desktop desktop-only'></div>
-      <div className='container container-flex container-flex--jc-start container-flex--row'>
+      <div
+        className='
+        container
+        container-flex
+        container-flex--jc-start
+        container-flex--row
+      '>
         <div className='section-heading__left'>
           <div className='left__text-headings'>
             <h1 className='h1 text-heading__primary text-highlight--bold'>
@@ -15,481 +21,13 @@ const First = () => {
             </h1>
 
             <h2 className='h5 text-headings__secondary'>
-              <span className='text-highlight--bold'>
+              <span className='text-highlight--fw-500'>
                 Подайте заявку на обучение или консультацию сейчас!
               </span>{' '}
-              Менеджер расскажет о ВУЗах-партнерах и поможет подобрать
-              направление.
+              Менеджер расскажет о ВУЗах-партнерах, возможных скидках и подберет
+              программу обучения.
             </h2>
           </div>
-
-          <div id='submit-app' className='left__left-inputs'>
-            <div className='left-inputs__left-inputs-inner'>
-              <div id='fill-in-fields' className='fill-in-fields-below hidden'>
-                <p>Заполните поля ниже</p>
-                <svg
-                  width='22'
-                  height='21'
-                  viewBox='0 0 22 21'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'>
-                  <path
-                    fillRule='evenodd'
-                    clipRule='evenodd'
-                    d='M14 16.5355L16.8284 19.3639L17.5355 20.0711L18.2426 19.3639L21.0711 16.5355L20.364 15.8284L17.5355 18.6568L14.7071 15.8284L14 16.5355Z'
-                    fill='#FB0000'
-                  />
-                  <path
-                    d='M1 0.500021C15.3057 0.4422 18.0509 5.29583 17.5 19'
-                    stroke='#FB0000'
-                  />
-                </svg>
-              </div>
-              {/*  Input one  */}
-              <div className='container-input'>
-                <div
-                  id='input-select-choose-uni'
-                  className='container-input__inner input-select-choose-uni'>
-                  <div className='input-select__arrow-down'>
-                    <svg
-                      width='26'
-                      height='14'
-                      viewBox='0 0 26 14'
-                      fill='none'
-                      xmlns='http://www.w3.org/2000/svg'>
-                      <path
-                        d='M24.3295 0L13.0013 10.8095L1.67047 0L0 1.59398L11.3282 12.406L13.0013 14L14.6718 12.406L26 1.59398L24.3295 0Z'
-                        fill='white'
-                      />
-                    </svg>
-                  </div>
-                  <div
-                    id='input-select-choose-uni-inner-text'
-                    className='input-style-primary input-style-select-primary'>
-                    Выберите ВУЗ
-                  </div>
-                </div>
-                <div
-                  id='input-select-choose-uni-dropdown'
-                  className='container-input__inner-dropdown input-select-choose-uni-dropdown'>
-                  <ul className='inner-dropdown__inner-dropdown-items'>
-                    <li
-                      className='inner-dropdown-items__item'
-                      data-uni='consultation-is-needed'>
-                      <p>
-                        <svg
-                          className='inner-dropdown-items-uni__item__icon'
-                          width='12'
-                          height='9'
-                          viewBox='0 0 12 9'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            fillRule='evenodd'
-                            clipRule='evenodd'
-                            d='M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z'
-                            fill='#fff'
-                          />
-                        </svg>
-                        Определюсь после консультации
-                      </p>
-                    </li>
-                    <li
-                      className='inner-dropdown-items__item'
-                      data-uni='synergy'>
-                      <p>
-                        <svg
-                          className='inner-dropdown-items-uni__item__icon'
-                          width='12'
-                          height='9'
-                          viewBox='0 0 12 9'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            fillRule='evenodd'
-                            clipRule='evenodd'
-                            d='M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z'
-                            fill='#fff'
-                          />
-                        </svg>
-                        Московский финансово-промышленный университет (Синергия)
-                      </p>
-                    </li>
-                    <li className='inner-dropdown-items__item' data-uni='IPO'>
-                      <p>
-                        <svg
-                          className='inner-dropdown-items-uni__item__icon'
-                          width='12'
-                          height='9'
-                          viewBox='0 0 12 9'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            fillRule='evenodd'
-                            clipRule='evenodd'
-                            d='M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z'
-                            fill='#fff'
-                          />
-                        </svg>
-                        Институт профессионального образования (ИПО)
-                      </p>
-                    </li>
-                    <li className='inner-dropdown-items__item' data-uni='MOI'>
-                      <p>
-                        <svg
-                          className='inner-dropdown-items-uni__item__icon'
-                          width='12'
-                          height='9'
-                          viewBox='0 0 12 9'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            fillRule='evenodd'
-                            clipRule='evenodd'
-                            d='M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z'
-                            fill='#fff'
-                          />
-                        </svg>
-                        Московский Открытый Институт (МОИ)
-                      </p>
-                    </li>
-                    <li
-                      className='inner-dropdown-items__item'
-                      data-uni='PocHOY'>
-                      <p>
-                        <svg
-                          className='inner-dropdown-items-uni__item__icon'
-                          width='12'
-                          height='9'
-                          viewBox='0 0 12 9'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            fillRule='evenodd'
-                            clipRule='evenodd'
-                            d='M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z'
-                            fill='#fff'
-                          />
-                        </svg>
-                        Российский Новый Университет (РосНОУ)
-                      </p>
-                    </li>
-                    <li className='inner-dropdown-items__item' data-uni='TGY'>
-                      <p>
-                        <svg
-                          className='inner-dropdown-items-uni__item__icon'
-                          width='12'
-                          height='9'
-                          viewBox='0 0 12 9'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            fillRule='evenodd'
-                            clipRule='evenodd'
-                            d='M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z'
-                            fill='#fff'
-                          />
-                        </svg>
-                        Тамбовский государственный университет (ТГУ)
-                      </p>
-                    </li>
-                    <li className='inner-dropdown-items__item' data-uni='CBA'>
-                      <p>
-                        <svg
-                          className='inner-dropdown-items-uni__item__icon'
-                          width='12'
-                          height='9'
-                          viewBox='0 0 12 9'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            fillRule='evenodd'
-                            clipRule='evenodd'
-                            d='M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z'
-                            fill='#fff'
-                          />
-                        </svg>
-                        Столичная Бизнес Академия (СБА)
-                      </p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              {/*  Input two  */}
-              <div className='container-input'>
-                <div
-                  id='input-select-choose-programm'
-                  className='container-input__inner input-select-choose-programm'>
-                  <div className='input-select__arrow-down'>
-                    <svg
-                      width='26'
-                      height='14'
-                      viewBox='0 0 26 14'
-                      fill='none'
-                      xmlns='http://www.w3.org/2000/svg'>
-                      <path
-                        d='M24.3295 0L13.0013 10.8095L1.67047 0L0 1.59398L11.3282 12.406L13.0013 14L14.6718 12.406L26 1.59398L24.3295 0Z'
-                        fill='white'
-                      />
-                    </svg>
-                  </div>
-                  <div
-                    id='input-select-choose-programm-inner-text'
-                    className='input-style-primary input-style-select-primary'>
-                    Подберите направление
-                  </div>
-                </div>
-
-                {/*  Programm dropdown step 1  */}
-                <div
-                  id='input-select-choose-programm-dropdown'
-                  className='container-input__inner-dropdown input-select-choose-programm-dropdown'>
-                  <ul className='inner-dropdown__inner-dropdown-items'>
-                    <li className='inner-dropdown-items__item'>
-                      <p>
-                        <svg
-                          className='inner-dropdown-items-programm__item__icon'
-                          width='12'
-                          height='9'
-                          viewBox='0 0 12 9'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            fillRule='evenodd'
-                            clipRule='evenodd'
-                            d='M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z'
-                            fill='#fff'
-                          />
-                        </svg>
-                        Определюсь после консультации
-                      </p>
-                    </li>
-                    <li className='inner-dropdown-items__item'>
-                      <p>
-                        <svg
-                          className='inner-dropdown-items-programm__item__icon'
-                          width='12'
-                          height='9'
-                          viewBox='0 0 12 9'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            fillRule='evenodd'
-                            clipRule='evenodd'
-                            d='M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z'
-                            fill='#fff'
-                          />
-                        </svg>
-                        Колледж
-                      </p>
-                    </li>
-                    <li className='inner-dropdown-items__item'>
-                      <p>
-                        <svg
-                          className='inner-dropdown-items-programm__item__icon'
-                          width='12'
-                          height='9'
-                          viewBox='0 0 12 9'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            fillRule='evenodd'
-                            clipRule='evenodd'
-                            d='M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z'
-                            fill='#fff'
-                          />
-                        </svg>
-                        Бакалавриат
-                      </p>
-                    </li>
-                    <li className='inner-dropdown-items__item'>
-                      <p>
-                        <svg
-                          className='inner-dropdown-items-programm__item__icon'
-                          width='12'
-                          height='9'
-                          viewBox='0 0 12 9'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            fillRule='evenodd'
-                            clipRule='evenodd'
-                            d='M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z'
-                            fill='#fff'
-                          />
-                        </svg>
-                        Специалитет
-                      </p>
-                    </li>
-                    <li className='inner-dropdown-items__item'>
-                      <p>
-                        <svg
-                          className='inner-dropdown-items-programm__item__icon'
-                          width='12'
-                          height='9'
-                          viewBox='0 0 12 9'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            fillRule='evenodd'
-                            clipRule='evenodd'
-                            d='M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z'
-                            fill='#fff'
-                          />
-                        </svg>
-                        Магистратура
-                      </p>
-                    </li>
-                    <li className='inner-dropdown-items__item'>
-                      <p>
-                        <svg
-                          className='inner-dropdown-items-programm__item__icon'
-                          width='12'
-                          height='9'
-                          viewBox='0 0 12 9'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            fillRule='evenodd'
-                            clipRule='evenodd'
-                            d='M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z'
-                            fill='#fff'
-                          />
-                        </svg>
-                        Профессиональная переподготовка
-                      </p>
-                    </li>
-                    <li className='inner-dropdown-items__item'>
-                      <p>
-                        <svg
-                          className='inner-dropdown-items-programm__item__icon'
-                          width='12'
-                          height='9'
-                          viewBox='0 0 12 9'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            fillRule='evenodd'
-                            clipRule='evenodd'
-                            d='M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z'
-                            fill='#fff'
-                          />
-                        </svg>
-                        Повышение квалификации
-                      </p>
-                    </li>
-                    <li className='inner-dropdown-items__item'>
-                      <p>
-                        <svg
-                          className='inner-dropdown-items-programm__item__icon'
-                          width='12'
-                          height='9'
-                          viewBox='0 0 12 9'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            fillRule='evenodd'
-                            clipRule='evenodd'
-                            d='M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z'
-                            fill='#fff'
-                          />
-                        </svg>
-                        Master of Business Administration (МВА)
-                      </p>
-                    </li>
-                  </ul>
-                </div>
-
-                {/*  Programm dropdown step 2  */}
-                <div
-                  id='input-select-choose-programm-dropdown--step-two'
-                  className='container-input__inner-dropdown input-select-choose-programm-dropdown--step-two'>
-                  <ul
-                    id='inner-dropdown-items--step-two'
-                    className='inner-dropdown__inner-dropdown-items'>
-                    <li
-                      id='inner-dropdown-items__item--selected'
-                      className='inner-dropdown-items__item inner-dropdown-items__item--selected'>
-                      <p>
-                        <svg
-                          width='9'
-                          height='15'
-                          viewBox='0 0 9 15'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            d='M8.20471 13.2882L2.41412 7.49765L8.20471 1.70706C8.5953 1.31647 8.5953 0.683529 8.20471 0.292941C7.81412 -0.097647 7.18118 -0.097647 6.79059 0.292941L0.292941 6.79059C-0.0976471 7.18118 -0.0976471 7.81412 0.292941 8.2047L6.79059 14.7024C7.18118 15.0929 7.81412 15.0929 8.20471 14.7024C8.5953 14.3118 8.5953 13.6788 8.20471 13.2882Z'
-                            fill='#2874FF'
-                          />
-                        </svg>
-                        <span
-                          id='programm-dropdown-step-two-selected-step-one-item'
-                          className='text-highlight--color'></span>
-                      </p>
-                    </li>
-                    <li
-                      id='js-insert-after--step-two'
-                      className='inner-dropdown-items__item'>
-                      <p>
-                        <svg
-                          className='inner-dropdown-items-programm__item__icon'
-                          width='12'
-                          height='9'
-                          viewBox='0 0 12 9'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            fillRule='evenodd'
-                            clipRule='evenodd'
-                            d='M3.57331 8.62947C3.61787 8.69409 3.67213 8.75362 3.73587 8.80587C4.10173 9.10576 4.64142 9.05228 4.94131 8.68643L10.9143 1.39957C11.2142 1.03371 11.1607 0.494021 10.7948 0.194132C10.429 -0.105757 9.88928 -0.05228 9.58939 0.313576L4.25631 6.81979L1.49654 3.71731C1.18213 3.36385 0.640721 3.3322 0.287266 3.64661C-0.0661882 3.96102 -0.09784 4.50243 0.216571 4.85589L3.57331 8.62947Z'
-                            fill='#fff'
-                          />
-                        </svg>
-                        Определюсь после консультации
-                      </p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              {/*  Input three  */}
-              <div id='container-input-phone-num' className='container-input'>
-                <label htmlFor='phone-number'>
-                  <p className='text-highlight--font-12 text-highlight--bold'>
-                    <span className='text-highlight--color-red'> * </span>
-                    Напишите свой номер:
-                  </p>
-                </label>
-                <input
-                  type='tel'
-                  className='container-input-phone-number__input input-style-primary'
-                  name='phone-number'
-                  id='phone-number'
-                  placeholder='Номер телефона'
-                />
-              </div>
-
-              {/*  Input four  */}
-              <div
-                id='container-input--user-name'
-                className='container-input container-input--user-name'>
-                <label htmlFor='user-name'>
-                  <p className='text-highlight--font-12 text-highlight--bold'>
-                    Ваше имя:
-                  </p>
-                </label>
-                <input
-                  type='text'
-                  className='container-input-phone-number__input input-style-primary'
-                  name='user-name'
-                  id='user-name'
-                  placeholder=''
-                />
-              </div>
-            </div>
-          </div>
-
           <div className='left__call-to-action'>
             <div className='call-to-action__btn-group'>
               <p className='btn-group__limited'>
@@ -499,7 +37,7 @@ const First = () => {
               </p>
 
               <a
-                id='cta-submit-application'
+                id='main-popup-btn'
                 href='#!'
                 className='btn-group__btn btn btn-primary'
                 type='button'>
@@ -566,6 +104,42 @@ const First = () => {
                   </span>{' '}
                   Успейте получить!
                 </p>
+              </div>
+            </div>
+          </div>
+          <div className='numbers-in-the-header'>
+            <div className='content__showing-off-numbers'>
+              <div className='showing-off-numbers__showing-off-number'>
+                <div className='showing-off-number__number'>
+                  <p
+                    className='
+                    text-highlight--font-60
+                    text-highlight--color
+                    text-highlight--bold
+                  '>
+                    6
+                  </p>
+                </div>
+                <div className='showing-off-number__line'></div>
+                <div className='showing-off-number__description'>
+                  <p className='text-highlight--fw-700'>Вузов-партнеров</p>
+                </div>
+              </div>
+              <div className='showing-off-numbers__showing-off-number'>
+                <div className='showing-off-number__number'>
+                  <p
+                    className='
+                    text-highlight--font-60
+                    text-highlight--color
+                    text-highlight--bold
+                  '>
+                    50+
+                  </p>
+                </div>
+                <div className='showing-off-number__line'></div>
+                <div className='showing-off-number__description'>
+                  <p className='text-highlight--fw-700'>Специальностей</p>
+                </div>
               </div>
             </div>
           </div>

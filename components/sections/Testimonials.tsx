@@ -31,7 +31,8 @@ const Testimonials = () => {
             </div>
             <div className='testimonial__text-container'>
               <p>
-                Дистанционное обучение и сдача экзаменов без отрыва от работы
+                Во всех вузах-партнерах дистанционное обучение и сдача сессий
+                без отрыва от работы
               </p>
             </div>
           </div>
@@ -74,9 +75,13 @@ const Testimonials = () => {
             <div className='testimonial__text-container'>
               <p>
                 От
-                <span className='text-highlight--crossed'>35 000 р.</span>
-                <span className='text-highlight--color'>16 700 р.</span> за
-                семестр и дополнительные скидки при оплате за год!
+                <span className='text-highlight--crossed price-regular'>
+                  35 000 р.
+                </span>
+                <span className='text-highlight--color price-discount'>
+                  16 700 р.
+                </span>
+                за семестр и дополнительные скидки при оплате за год!
               </p>
             </div>
           </div>
@@ -118,11 +123,14 @@ const Testimonials = () => {
             </div>
             <div className='testimonial__title'>
               <p className='text-highlight--color text-highlight--bold'>
-                ГОСДИПЛОМЫ
+                ГОС. ДИПЛОМЫ
               </p>
             </div>
             <div className='testimonial__text-container'>
-              <p>Дипломы государственного образца от московских ВУЗов</p>
+              <p>
+                Сотрудничаем только с теми вузами, которые выдают дипломы гос.
+                образца
+              </p>
             </div>
           </div>
           <div className='testimonials__testimonial'>
@@ -157,7 +165,10 @@ const Testimonials = () => {
               </p>
             </div>
             <div className='testimonial__text-container'>
-              <p>Все программы наших ВУЗов аккредитованы и сертифицированы</p>
+              <p>
+                Все программы наших вузов-партнеров аккредитованы и
+                сертифицированы
+              </p>
             </div>
           </div>
           <div className='testimonials__testimonial'>
@@ -187,7 +198,7 @@ const Testimonials = () => {
               </p>
             </div>
             <div className='testimonial__text-container'>
-              <p>Дипломы котируются по всему миру</p>
+              <p>Дипломы наших вузов-партнеров котируются по всему миру</p>
             </div>
           </div>
           <div className='testimonials__testimonial'>
@@ -243,8 +254,8 @@ const Testimonials = () => {
             </div>
             <div className='testimonial__text-container'>
               <p>
-                Можете начать учиться уже в следующем месяце
-                <span className='inserted-text-1'></span>
+                Можете начать учиться уже в следующем месяце, зачисляем круглый
+                год!
               </p>
             </div>
           </div>

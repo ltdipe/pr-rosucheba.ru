@@ -15,6 +15,14 @@
   &:active {
     transform: scale(0.98);
   }
+
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .btn-primary {
@@ -64,13 +72,6 @@
   max-width: 16.8125rem;
   background-color: $btn-color-primary;
   padding: 1.5rem;
-}
-
-.learn-more-btn {
-  &.btn-primary {
-    min-width: auto;
-    max-width: 15.5rem;
-  }
 }
 
 .btn-questions-module {

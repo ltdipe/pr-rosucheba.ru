@@ -1,9 +1,18 @@
+import IconArrowUp from '@/components/icons/IconArrowUp'
+import IconArrowDown from '@/components/icons/IconArrowDown'
+
 const HowItWorks = () => {
   return (
-    <section id='how-it-works' className='section-how-it-works desktop-only'>
+    <section id='how-it-works' className='section-how-it-works'>
       <div className='container'>
         <div className='section__title'>
-          <h2 className='h1 h1--padding-bottom text-highlight--color text-highlight--uppercase--desktop text-highlight--bold-mobile'>
+          <h2
+            className='
+            h1 h1--padding-bottom
+            text-highlight--color
+            text-highlight--uppercase--desktop
+            text-highlight--bold-mobile
+          '>
             Как работает ROSUCHEBA
           </h2>
         </div>
@@ -12,6 +21,7 @@ const HowItWorks = () => {
             <div className='steps__step'>
               <div className='step__icon'>
                 <svg
+                  className='desktop-only'
                   width='56'
                   height='121'
                   viewBox='0 0 56 121'
@@ -25,7 +35,28 @@ const HowItWorks = () => {
                 </svg>
               </div>
               <div className='step__title'>
-                <p className='text-highlight--color text-highlight--bold'>
+                <div className='icon-retractable-arrows mobile-only'>
+                  <div className='icon-retractable-arrows__up'>
+                    <IconArrowUp />
+                  </div>
+
+                  <div className='icon-retractable-arrows__down'>
+                    <IconArrowDown />
+                  </div>
+                </div>
+                <p
+                  className='
+                  title__mobile-style
+                  text-highlight--color text-highlight--bold
+                '>
+                  <span
+                    className='
+                    mobile-style__number
+                    mobile-only
+                    text-highlight--color text-highlight--bold
+                  '>
+                    1
+                  </span>
                   ЗАЯВКА
                 </p>
               </div>
@@ -37,6 +68,7 @@ const HowItWorks = () => {
             <div className='steps__step'>
               <div className='step__icon'>
                 <svg
+                  className='desktop-only'
                   width='87'
                   height='123'
                   viewBox='0 0 87 123'
@@ -50,7 +82,27 @@ const HowItWorks = () => {
                 </svg>
               </div>
               <div className='step__title'>
-                <p className='text-highlight--color text-highlight--bold'>
+                <div className='icon-retractable-arrows mobile-only'>
+                  <div className='icon-retractable-arrows__up'>
+                    <IconArrowUp />
+                  </div>
+                  <div className='icon-retractable-arrows__down'>
+                    <IconArrowDown />
+                  </div>
+                </div>
+                <p
+                  className='
+                  title__mobile-style
+                  text-highlight--color text-highlight--bold
+                '>
+                  <span
+                    className='
+                    mobile-style__number
+                    mobile-only
+                    text-highlight--color text-highlight--bold
+                  '>
+                    2
+                  </span>
                   СВЯЗЫВАЕМСЯ С ВАМИ
                 </p>
               </div>
@@ -65,6 +117,7 @@ const HowItWorks = () => {
             <div className='steps__step'>
               <div className='step__icon'>
                 <svg
+                  className='desktop-only'
                   width='88'
                   height='125'
                   viewBox='0 0 88 125'
@@ -78,7 +131,27 @@ const HowItWorks = () => {
                 </svg>
               </div>
               <div className='step__title'>
-                <p className='text-highlight--color text-highlight--bold'>
+                <div className='icon-retractable-arrows mobile-only'>
+                  <div className='icon-retractable-arrows__up'>
+                    <IconArrowUp />
+                  </div>
+                  <div className='icon-retractable-arrows__down'>
+                    <IconArrowDown />
+                  </div>
+                </div>
+                <p
+                  className='
+                  title__mobile-style
+                  text-highlight--color text-highlight--bold
+                '>
+                  <span
+                    className='
+                    mobile-style__number
+                    mobile-only
+                    text-highlight--color text-highlight--bold
+                  '>
+                    3
+                  </span>
                   ПОДБИРАЕМ ВУЗ
                 </p>
               </div>
@@ -93,6 +166,7 @@ const HowItWorks = () => {
             <div className='steps__step'>
               <div className='step__icon'>
                 <svg
+                  className='desktop-only'
                   width='89'
                   height='121'
                   viewBox='0 0 89 121'
@@ -106,13 +180,34 @@ const HowItWorks = () => {
                 </svg>
               </div>
               <div className='step__title'>
-                <p className='text-highlight--color text-highlight--bold'>
+                <div className='icon-retractable-arrows mobile-only'>
+                  <div className='icon-retractable-arrows__up'>
+                    <IconArrowUp />
+                  </div>
+                  <div className='icon-retractable-arrows__down'>
+                    <IconArrowDown />
+                  </div>
+                </div>
+                <p
+                  className='
+                  title__mobile-style
+                  text-highlight--color text-highlight--bold
+                '>
+                  <span
+                    className='
+                    mobile-style__number
+                    mobile-only
+                    text-highlight--color text-highlight--bold
+                  '>
+                    4
+                  </span>
                   ПОДБОР ПРОГРАММЫ
                 </p>
               </div>
               <div className='step__text'>
                 <p>
                   На основе уровня образования и предпочтений подбирают
+                  <br />
                   направление обучения
                 </p>
               </div>
@@ -121,6 +216,7 @@ const HowItWorks = () => {
             <div className='steps__step'>
               <div className='step__icon'>
                 <svg
+                  className='desktop-only'
                   width='86'
                   height='123'
                   viewBox='0 0 86 123'
@@ -134,7 +230,27 @@ const HowItWorks = () => {
                 </svg>
               </div>
               <div className='step__title'>
-                <p className='text-highlight--color text-highlight--bold'>
+                <div className='icon-retractable-arrows mobile-only'>
+                  <div className='icon-retractable-arrows__up'>
+                    <IconArrowUp />
+                  </div>
+                  <div className='icon-retractable-arrows__down'>
+                    <IconArrowDown />
+                  </div>
+                </div>
+                <p
+                  className='
+                  title__mobile-style
+                  text-highlight--color text-highlight--bold
+                '>
+                  <span
+                    className='
+                    mobile-style__number
+                    mobile-only
+                    text-highlight--color text-highlight--bold
+                  '>
+                    5
+                  </span>
                   ЗАЧИСЛЯЕМ
                 </p>
               </div>
@@ -150,6 +266,7 @@ const HowItWorks = () => {
             <div className='steps__step'>
               <div className='step__icon'>
                 <svg
+                  className='desktop-only'
                   width='87'
                   height='125'
                   viewBox='0 0 87 125'
@@ -163,7 +280,27 @@ const HowItWorks = () => {
                 </svg>
               </div>
               <div className='step__title'>
-                <p className='text-highlight--color text-highlight--bold'>
+                <div className='icon-retractable-arrows mobile-only'>
+                  <div className='icon-retractable-arrows__up'>
+                    <IconArrowUp />
+                  </div>
+                  <div className='icon-retractable-arrows__down'>
+                    <IconArrowDown />
+                  </div>
+                </div>
+                <p
+                  className='
+                  title__mobile-style
+                  text-highlight--color text-highlight--bold
+                '>
+                  <span
+                    className='
+                    mobile-style__number
+                    mobile-only
+                    text-highlight--color text-highlight--bold
+                  '>
+                    6
+                  </span>
                   ПОЛУЧАЕТЕ ДИПЛОМ
                 </p>
               </div>
