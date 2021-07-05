@@ -92,6 +92,7 @@ const email = async (req, res) => {
   }
 
   const locationData = await getUserLocation()
+  console.log(locationData)
 
   const data = {
     id: uuidv4(),
