@@ -52,46 +52,6 @@
   height: 6.375rem;
 }
 
-.img__sinergy {
-  @include c-fff_bgr-norepeat_bgs-contain;
-  background-position: center;
-  background-image: url('/assets/images/partners/sinergy.jpg');
-  height: 18px;
-  width: 85%;
-}
-
-.img__business-academy {
-  @include c-fff_bgr-norepeat_bgs-contain;
-  background-position: center;
-  background-image: url('/assets/images/partners/business-academy.jpg');
-  height: 30px;
-  width: 85%;
-}
-
-.img__tambov {
-  @include c-fff_bgr-norepeat_bgs-contain;
-  background-position: center;
-  background-image: url('/assets/images/partners/tambov.jpg');
-  height: 35px;
-  width: 85%;
-}
-
-.img__ipe {
-  @include c-fff_bgr-norepeat_bgs-contain;
-  background-position: center;
-  background-image: url('/assets/images/partners/ipe.jpg');
-  height: 32px;
-  width: 85%;
-}
-
-.img__roc-hoy {
-  @include c-fff_bgr-norepeat_bgs-contain;
-  background-position: center;
-  background-image: url('/assets/images/partners/roc-hoy.jpg');
-  height: 45px;
-  width: 85%;
-}
-
 @include mediaMd {
   .section__content {
     & .content__img-wrapper {
