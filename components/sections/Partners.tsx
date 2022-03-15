@@ -4,6 +4,7 @@ import IconSBALogo from '@/components/icons/partners/IconSBALogo'
 import IconTgudLogo from '@/components/icons/partners/IconTgudLogo'
 import IconIpeLogo from '@/components/icons/partners/IconIpeLogo'
 import IconRocHoyLogo from '@/components/icons/partners/IconRocHoyLogo'
+import IconMituLogo from '@/components/icons/partners/IconMituLogo'
 
 const Partners = () => {
   return (
@@ -55,7 +56,7 @@ const Partners = () => {
         <div className='section__content'>
           <div className='content__img-wrapper'>
             <div className='img-wrapper__img'>
-              <IconMoiLogo />
+              <IconMituLogo />
             </div>
           </div>
           <div className='content__img-wrapper'>
@@ -71,7 +72,7 @@ const Partners = () => {
           </div>
           <div className='content__img-wrapper'>
             <div className='img-wrapper__img'>
-              <IconTgudLogo />
+              <IconMoiLogo />
             </div>
           </div>
           <div className='content__img-wrapper'>
